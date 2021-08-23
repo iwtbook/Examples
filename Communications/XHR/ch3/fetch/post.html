@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter 3 : Fetch - POST </title>
+
+  <script>
+    function sendRequest(url, payload) {
+      fetch(url, {
+        method: 'POST', 
+        body: payload
+      })
+      .then(response => handleResponse(response));
+    }
+
+    function handleResponse(response) {
+      if (response.ok) {
+        response.text().then(responseText => {
+          document.getElementById('responseOutput').innerHTML = responseText;
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.ratingForm.addEventListener('submit', function (e) { 
+        e.preventDefault();
+
+        let url = 'http://ajaxref.com/ch3/setrating.php';
+        let formData = new FormData(this);
+
+        sendRequest(url, formData);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h3>How do you feel about Ajax?</h3>
+  <form name="ratingForm" method="post">
+    <em>Hate It - </em> [
+    <input type="radio" name="rating" value="1" /> 1
+    <input type="radio" name="rating" value="2" /> 2
+    <input type="radio" name="rating" value="3" /> 3
+    <input type="radio" name="rating" value="4" /> 4
+    <input type="radio" name="rating" value="5" /> 5
+    ] <em> - Love It</em><br /><br />
+    <label>Comments:<br />
+      <textarea id="comment" name="comment" rows="5" cols="40"></textarea></label><br />
+    <input type="submit" value="vote" />
+  </form>
+  <br />
+  <output id="responseOutput">&nbsp;</output>
+</body>
+
+</html>

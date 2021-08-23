@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter 3 : XMLHttpRequest - Abort </title>
+  <script>
+
+    function encodeValue(val) {
+      let encodedVal = encodeURIComponent(val);
+      
+      // fix the omissions 
+      encodedVal = encodedVal.replace(/~/g, '%7E');
+      encodedVal = encodedVal.replace(/!/g, '%21');
+      encodedVal = encodedVal.replace(/\(/g, '%28');
+      encodedVal = encodedVal.replace(/\)/g, '%29');
+      encodedVal = encodedVal.replace(/'/g, '%27');
+
+      // clean up the spaces and return 
+      return encodedVal.replace(/\%20/g, '+');
+    }
+
+    function sendRequest(url, payload) {
+      const xhr = new XMLHttpRequest();
+      g_abort = false;
+      if (xhr) {
+        xhr.open('GET', `${url}?${payload}`, true);
+        xhr.addEventListener('load', () => handleResponse(xhr));
+        xhr.send(null);
+        timeoutID = window.setTimeout(() => cancelRequest(xhr), 3000);
+      }
+    }
+
+    function cancelRequest(xhr) {
+      g_abort = true; //we have to use this variable because after it aborts, the ready state will change to 4.
+      xhr.abort();
+      const responseOutput = document.getElementById('responseOutput');
+      responseOutput.innerHTML = 'Sorry, your request timed out.  Please try again later.';
+    }
+
+    function handleResponse(xhr) {
+      if (!g_abort && xhr.readyState == 4 && xhr.status == 200) {
+        clearTimeout(timeoutID);
+        const responseOutput = document.getElementById('responseOutput');
+        responseOutput.innerHTML = xhr.responseText;
+      }
+    }
+
+    function rate(rating) {
+      const url = 'http://ajaxref.com/ch3/setrating.php';
+      const payload = `delay=10&rating=${encodeValue(rating)}`;
+
+      sendRequest(url, payload);
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      const radios = document.getElementsByName('rating');
+      for (const radio of radios) {
+        radio.addEventListener('click', function() { rate(this.value); });
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+  <h3>How do you feel about Ajax?</h3>
+  <form>
+    <em>Hate It - </em> [
+    <input type="radio" name="rating" value="1" /> 1
+    <input type="radio" name="rating" value="2" /> 2
+    <input type="radio" name="rating" value="3" /> 3
+    <input type="radio" name="rating" value="4" /> 4
+    <input type="radio" name="rating" value="5" /> 5
+    ] <em> - Love It</em>
+  </form>
+  <br />
+  <output id="responseOutput">&nbsp;</output>
+</body>
+
+</html>

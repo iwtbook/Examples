@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JWT Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" type="module"></script>
+</head>
+
+<body>
+  <h1>JWT Demo</h1>
+
+  <section id="loginSection">
+    <p>Login Form (Gets JWT)</p>
+    <form action="http://localhost:3000/api/login" method="POST">
+      <label for="username">Username:
+        <input type="text" id="username" name="username" />
+      </label>
+      <label for="email">Email:
+        <input type="email" id="email" name="email" />
+      </label>
+      <label for="password">Password:
+        <input type="password" id="password" name="password" />
+      </label>
+      <button type="submit">Login</button>
+      <button type="button">Delete Token</button>
+    </form>
+  </section>
+
+  <section id="serverResponse">
+    <output>JWT Token:</output>
+  </section>
+
+  <section id="getData">
+    <button>Attempt to get Data</button>
+    <output></output>
+  </section>
+</body>
+
+</html>

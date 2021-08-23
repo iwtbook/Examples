@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="global.css" type="text/css" media="screen" />
+<title>Chapter 3 : XMLHttpRequest - Authentication</title>
+<script type="text/javascript">
+ 
+function encodeValue(val)
+{
+ var encodedVal;
+ if (!encodeURIComponent)
+ {
+   encodedVal = escape(val);
+   /* fix the omissions */
+   encodedVal = encodedVal.replace(/@/g, '%40');
+   encodedVal = encodedVal.replace(/\//g, '%2F');
+   encodedVal = encodedVal.replace(/\+/g, '%2B');
+ }
+ else
+ {
+   encodedVal = encodeURIComponent(val);
+   /* fix the omissions */
+   encodedVal = encodedVal.replace(/~/g, '%7E');
+   encodedVal = encodedVal.replace(/!/g, '%21');
+   encodedVal = encodedVal.replace(/\(/g, '%28');
+   encodedVal = encodedVal.replace(/\)/g, '%29');
+   encodedVal = encodedVal.replace(/'/g, '%27');
+ }
+ /* clean up the spaces and return */
+ return encodedVal.replace(/\%20/g,'+'); 
+}
+ 
+function createXHR()
+{
+   try { return new XMLHttpRequest(); } catch(e) {}
+   try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) {}
+   try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) {}
+   try { return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {}
+   try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {}
+ 
+   return null;
+}
+ 
+function sendRequest()
+{
+    var username = document.getElementById('txtUser').value;
+    var password = document.getElementById('txtPass').value;
+    var url = "protected/authentication.php";
+ 
+    var xhr = createXHR();
+    if (xhr)
+    {
+        xhr.open("GET", url, true, username, password);
+        xhr.onreadystatechange = function(){handleResponse(xhr);}; 
+        xhr.send(null);
+    }
+    
+    return false;
+}
+ 
+function handleResponse(xhr)
+{
+    if (xhr.readyState == 4 && xhr.status == 200)
+    {
+     var responseOutput = document.getElementById("responseOutput");
+     responseOutput.innerHTML = "<h3>reponseText</h3>" + xhr.responseText;
+     responseOutput.style.display = "";
+    }
+}
+ 
+window.onload = function () 
+{ 
+ document.requestForm.requestButton.onclick = function () { return sendRequest(); };
+};
+</script>
+ 
+</head>
+    <body>
+        <h3><span style="color: #000000; text-decoration: none;">Login</span></h3>
+        Use AjaxLogin/thepassword for the correct login.
+        <div style="width: 500px;">
+            <form name="requestForm" action="#">
+            <table>
+            <tr>
+            <td style="font-weight:bold;">Username: </td>
+            <td><input type="text" id="txtUser" name="txtUser" /></td>
+            </tr>
+            <tr>
+            <td style="font-weight:bold;">Password: </td>
+            <td><input type="password" id="txtPass" name="txtPass" /></td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center">
+                <input type="submit" id="requestButton" name="requestButton" value="Login" />
+            </td>
+            </tr>
+            </table>
+            <br />
+                <div id="responseOutput" class="results" style="display:none;">&nbsp;</div>
+            </form>
+        </div>
+    </body>
+</html>

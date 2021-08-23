@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=\, initial-scale=1.0" />
+  <title>CSS Transitions - Longhand</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    #parent {
+      box-sizing: border-box;
+      display: grid;
+      column-gap: 10px;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      height: 100%;
+      padding: 10px;
+      row-gap: 10px;
+      width: 100%;
+    }
+
+    #parent div {
+      background-color: rgb(254, 204, 212);
+      height: 100%;
+      opacity: 1;
+      transition: opacity 1.5s linear 0s;
+      width: 100%;
+    }
+
+    #parent div:hover {
+      opacity: 0.15;
+      transition: opacity 0.2s linear 0s;
+    }
+
+    #parent div:active {
+      opacity: 0;
+      transition: opacity 0s linear 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parent">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>

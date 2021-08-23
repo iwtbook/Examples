@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Chapter 3 : XMLHttpRequest - Partial Data with onprogress</title>
+<link rel="stylesheet" href="http://ajaxref.com/ch3/global.css" type="text/css" media="screen" />
+<script type="text/javascript">
+ 
+ 
+function createXHR()
+{
+   try { return new XMLHttpRequest(); } catch(e) {}
+   try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) {}
+   try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) {}
+   try { return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {}
+   try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {}
+ 
+   return null;
+}
+ 
+function sendRequest()
+{
+    document.getElementById("responseOutput").innerHTML = "";
+    var url = "http://ajaxref.com/ch3/largefile.php";
+    var xhr = createXHR();
+    if (xhr)
+    {
+        xhr.onprogress = handleProgress;
+        xhr.open("GET", url, true);
+        xhr.onload = handleLoad;
+        xhr.send(null);
+    }
+    
+}
+ 
+function handleProgress(e) {
+  var percentComplete = (e.position / e.totalSize)*100;
+  document.getElementById("responseOutput").style.display = "";
+  document.getElementById("responseOutput").innerHTML += "<h3>reponseText - " + Math.round(percentComplete) + "%</h3>" + e.target.responseText;
+}
+ 
+ 
+function handleLoad(e)
+{
+  document.getElementById("responseOutput").style.display = "";
+  document.getElementById("responseOutput").innerHTML += "<h3>xhr.responseText</h3>" + e.target.responseText;
+}
+ 
+window.onload = function () 
+{ 
+ document.requestForm.requestButton.onclick = function () { sendRequest(); };
+};
+</script>
+ 
+</head>
+<body>
+ 
+<form action="#" name="requestForm">
+  <input type="button" name="requestButton" value="Send Request" />
+</form>
+<br />
+<div id="responseOutput" class="results" style="display:none;">&nbsp;</div>
+ 
+ 
+</body>
+</html>

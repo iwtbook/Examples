@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow DOM</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Web Component -->
+  <script src="player-card.js" type="module"></script>
+  <script src="script.js" type="module"></script>
+</head>
+
+<body>
+  <div id="elementWrapper"></div>
+  <form>
+    <button id="btn-define">1. Define Custom Element</button>
+    <button id="btn-create">2. Create Custom Element</button>
+    <button id="btn-add">3. Add Element to Page</button>
+    <button id="btn-modify">4. Modify Element</button>
+    <button id="btn-remove">5. Remove Element from Page</button>
+  </form>
+  <output>
+    <p>Current Stage: <span id="currentStage"></span></p>
+    <p>Previous Stages:</p>
+    <ol id="prevStages" reversed></ol>
+  </output>
+</body>
+
+</html>

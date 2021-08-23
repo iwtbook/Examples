@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;iframe&gt;</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 10px 20px 0 0;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>&lt;iframe&gt;</h1>
+  </header>
+  <main>
+    <a href="public/download.txt" download="download.txt">Download File</a>
+    <form action="/test">
+      <label for="test">Test</label>
+      <input type="text" id="test" name="test" placeholder="test..." />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <button>Alert</button>
+  </main>
+</body>
+
+</html>

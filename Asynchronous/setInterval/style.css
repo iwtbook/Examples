@@ -1,0 +1,50 @@
+/* style.css */
+
+body {
+  align-items: center;
+  display: grid;
+  height: 50vh;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button[disabled]:hover {
+  cursor: default;
+}
+
+main {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: 134px;
+}
+
+#buttonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#stopwatchWrapper {
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: grid;
+  height: 40px;
+  justify-items: center;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+#stopwatch {
+  font-family: monospace;
+  font-size: 1.4rem;
+  margin: 0 0 -3px 0;
+  padding: 0;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Ajax World</title>
+
+  <script>
+    function sendRequest() {
+      fetch('http://ajaxref.com/ch1/sayhello.php', {
+        method: 'GET',
+      })
+      .then(response => response.text())
+      .then(responseText => {
+        let parsedResponse = (new window.DOMParser()).parseFromString(responseText, 'text/xml');
+        let msg = parsedResponse.querySelector('message').firstChild.nodeValue;
+        document.getElementById('responseOutput').innerHTML = msg;
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('helloButton').addEventListener('click', sendRequest);
+    });
+  </script>
+</head>
+
+<body>
+  <form>
+    <input type="button" value="Say Hello" id="helloButton" />
+  </form>
+
+  <br /><br />
+  <output id="responseOutput">&nbsp;</output>
+</body>
+</html>

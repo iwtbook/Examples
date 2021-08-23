@@ -1,0 +1,25 @@
+/* style.css */
+
+* {
+  font-family: sans-serif;
+}
+
+form {
+  display: grid;
+  margin-top: 10px;
+  row-gap: 10px;
+  width: 300px;
+}
+
+form button {
+  height: 25px;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+#elementWrapper {
+  height: 582.5px;
+  width: 350px;
+}

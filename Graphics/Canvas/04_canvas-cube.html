@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Cube Example</title>
+  <style>
+    body {
+      background-color: #E67B34;
+    }
+  </style>
+  <script>
+    function init() {
+      let context = document.getElementById("canvas").getContext("2d");
+
+      context.fillStyle = "#fff";
+      context.strokeStyle = "black";
+      context.beginPath();
+      context.moveTo(188, 38);
+      context.lineTo(59, 124);
+      context.lineTo(212, 197);
+      context.lineTo(341, 111);
+      context.lineTo(188, 38);
+      context.closePath();
+      context.fill();
+      context.stroke();
+
+      context.fillStyle = "#ccc";
+      context.strokeStyle = "black";
+      context.beginPath();
+      context.moveTo(341, 111);
+      context.lineTo(212, 197);
+      context.lineTo(212, 362);
+      context.lineTo(341, 276);
+      context.lineTo(341, 111);
+      context.closePath();
+      context.fill();
+      context.stroke();
+
+      context.fillStyle = "#999";
+      context.strokeStyle = "black";
+      context.beginPath();
+      context.moveTo(59, 289);
+      context.lineTo(59, 124);
+      context.lineTo(212, 197);
+      context.lineTo(212, 362);
+      context.lineTo(59, 289);
+      context.closePath();
+      context.fill();
+      context.stroke();
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Canvas Perspective</h1>
+  </header>
+  <canvas id="canvas" width="400" height="400">
+    <strong>Canvas Supporting Browser Required</strong>
+  </canvas>
+</body>
+
+</html>

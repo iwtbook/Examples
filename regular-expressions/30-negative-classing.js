@@ -1,0 +1,1 @@
+let negPattern = /[^a-zA-Z]+/;

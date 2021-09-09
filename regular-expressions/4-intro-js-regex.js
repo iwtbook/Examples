@@ -1,0 +1,1 @@
+let myMatcher = /pattern/modifiers;

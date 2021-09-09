@@ -1,0 +1,1 @@
+let pattern = /ab{3,}c/;

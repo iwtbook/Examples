@@ -1,0 +1,1 @@
+let dotCom = /\.com$/;   // match strings ending in .com

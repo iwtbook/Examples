@@ -1,0 +1,1 @@
+let weather = /It is (very){1,3} hot/;  // Plain hot is not enough it is got to be very hot!

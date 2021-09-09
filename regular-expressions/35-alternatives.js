@@ -1,0 +1,1 @@
+var pattern = /^(http|ftp|https)/;

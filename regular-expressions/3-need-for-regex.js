@@ -1,0 +1,1 @@
+const isPhoneNumber = (num) => (/^\d{3}-\d{3}-\d{4}$/.test(num));

@@ -1,0 +1,1 @@
+let regexName = new RegExp(pattern, modifiers);

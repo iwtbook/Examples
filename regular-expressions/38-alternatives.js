@@ -1,1 +1,1 @@
-var pattern = /^(http|ftp|https)/;
+var pattern = /(James|Jim|Charlie) Brown/;

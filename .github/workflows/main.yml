@@ -1,0 +1,25 @@
+name: Deployment Workflow
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Building examples.introweb.tech
+      uses: appleboy/ssh-action@master
+      with:
+        host: introweb.tech
+        username: camdyn
+        key: ${{ secrets.SSH_KEY }}
+        port: 22
+        script: |
+          cd /var/repo/examples.introweb.tech
+          git pull
+          npm install
+          npm audit fix
+          npm run build:prod
+          cd dist
+          rsync -ruv /var/repo/examples.introweb.tech/dist/ /var/www/examples.introweb.tech

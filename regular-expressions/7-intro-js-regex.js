@@ -1,4 +1,4 @@
-let regexName = new RegExp(pattern, modifiers);
+let myMatcher = new RegExp('https');
 
 console.log(myMatcher.test('https://example.org')); // true
 console.log(myMatcher.test('example.org')); // false

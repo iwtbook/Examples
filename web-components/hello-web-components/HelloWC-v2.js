@@ -7,6 +7,7 @@ class HelloWC extends HTMLElement {
 
   render() {
     this.innerHTML = '<h1>Hello, Web Components!</h1>';
+    return this;
   }
 }
 

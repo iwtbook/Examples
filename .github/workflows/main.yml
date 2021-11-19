@@ -18,8 +18,8 @@ jobs:
         script: |
           cd /var/repo/examples.introweb.tech
           git pull
+          rm package-lock.json
           npm install
-          npm audit fix
           npm run build:prod
           cd dist
           rsync -ruv /var/repo/examples.introweb.tech/dist/ /var/www/examples.introweb.tech

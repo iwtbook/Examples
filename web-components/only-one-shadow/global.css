@@ -4,7 +4,7 @@
   font-family: sans-serif;
 }
 
-open-vs-closed {
+only-one-shadow {
   align-items: center;
   background-color: lightgray;
   border: 2px solid gray;
@@ -17,8 +17,8 @@ open-vs-closed {
   width: 400px;
 }
 
-#btn-edit-text {
-  grid-area: edit;
+#btn-attach-shadow {
+  grid-area: open;
 }
 
 #btn-reset {
@@ -31,8 +31,7 @@ open-vs-closed {
   display: grid;
   justify-items: center;
   grid-template-areas:
-    'open closed'
-    'edit edit'
+    'open open'
     'reset reset';
   margin-top: 10px;
   row-gap: 10px;

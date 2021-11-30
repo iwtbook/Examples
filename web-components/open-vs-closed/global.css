@@ -1,0 +1,61 @@
+/* global.css */
+
+* {
+  font-family: sans-serif;
+}
+
+open-vs-closed {
+  align-items: center;
+  background-color: lightgray;
+  border: 2px solid gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: rgb(118, 118, 118);
+  display: grid;
+  height: 200px;
+  justify-items: center;
+  width: 400px;
+}
+
+#shadow-btn-wrapper {
+  align-items: center;
+  column-gap: 10px;
+  display: grid;
+  justify-items: center;
+  grid-template-areas:
+    'open closed'
+    'edit edit'
+    'reset reset';
+  margin-top: 10px;
+  row-gap: 10px;
+  width: 400px;
+}
+
+#shadow-btn-wrapper button {
+  background-color: rgb(210, 210, 210);
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  transition: 0.2s ease all;
+  width: 100%;
+}
+
+#shadow-btn-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgb(187, 187, 187);
+  transition: 0.2s ease all;
+}
+
+#shadow-btn-wrapper button[disabled]:hover {
+  cursor: not-allowed;
+  background-color: rgb(210, 210, 210);
+  transition: none;
+}
+
+#btn-edit-text {
+  grid-area: edit;
+}
+
+#btn-reset {
+  grid-area: reset;
+}

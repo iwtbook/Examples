@@ -1,4 +1,4 @@
-// open-vs-closed.js
+// part-attribute.js
 
 class PartAttribute extends HTMLElement {
   // Private property named shadow which will store the closed shadowRoot

@@ -1,4 +1,4 @@
-// open-vs-closed.js
+// only-one-shadow.js
 
 class OnlyOneShadow extends HTMLElement {
   // Private property named shadow which will store the closed shadowRoot

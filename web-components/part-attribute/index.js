@@ -47,8 +47,7 @@ function init() {
   });
 
   /**
-   * Attempts to modify the text displayed in the shadowRoot of the
-   * web component
+   * Adds the "blue" class to the <part-attribute> element
    */
   addBlue.addEventListener('click', () => {
     partAttribute.classList.add('blue');

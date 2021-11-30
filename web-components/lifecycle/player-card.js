@@ -1,3 +1,5 @@
+// player-card.js
+
 export class PlayerCard extends HTMLElement {
   constructor() {
     super();

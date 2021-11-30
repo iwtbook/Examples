@@ -67,7 +67,8 @@ function init() {
     partAttribute.remove();
     partAttribute = document.createElement('part-attribute');
     partAttribute.innerHTML = ' No Shadow Root ';
-    document.body.insertAdjacentElement('afterbegin', partAttribute);
+    const componentWrapper = document.querySelector('#component-wrapper');
+    componentWrapper.insertAdjacentElement('afterbegin', partAttribute);
     // Allow the user to click the attach shadow buttons
     attachOpen.removeAttribute('disabled');
     attachClosed.removeAttribute('disabled');

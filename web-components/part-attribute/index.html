@@ -21,14 +21,34 @@
 </head>
 
 <body>
-  <part-attribute>
-    No Shadow Root
-  </part-attribute>
-  <div id="shadow-btn-wrapper">
-    <button id="btn-attach-open">Attach Open Shadow</button>
-    <button id="btn-attach-closed">Attach Closed Shadow</button>
-    <button id="btn-add-blue" disabled>Add "blue" class to shadow host</button>
-    <button id="btn-reset" disabled>Reset Demo</button>
+  <div id="demo-wrapper">
+    <div id="component-wrapper">
+      <part-attribute>
+        No Shadow Root
+      </part-attribute>
+      <div id="shadow-btn-wrapper">
+        <button id="btn-attach-open">Attach Open Shadow</button>
+        <button id="btn-attach-closed">Attach Closed Shadow</button>
+        <button id="btn-add-blue" disabled>Add "blue" class to <span>&lt;part-attribute&gt;</span></button>
+        <button id="btn-reset" disabled>Reset Demo</button>
+      </div>
+    </div>
+    <div id="code-wrapper">
+      <pre><code>
+      <span class="comment">/* Light DOM CSS in global.css */</span>
+      <span class="element">part-attribute</span><span class="className">.blue</span><span class="highlight">::part(paragraph)</span> {
+          <span class="prop">background-color</span>: <span class="value">lightblue</span>;
+          <span class="prop">border</span>: <span class="value">1px solid navy</span>;
+          <span class="prop">border-radius</span class="value">: <span>4px</span>;
+          <span class="prop">color</span>: <span class="value">black</span>;
+          <span class="prop">padding</span>: <span class="value">3px 7px</span>;
+      }
+
+
+      <span class="comment">&lt;!-- Shadow DOM markup in the &lt;part-attribute&gt; element --&gt;</span>
+      <span class="element">&lt;p</span> <span class="highlight">part="paragraph"</span><span class="element">&gt;</span>Shadow Root Open<span class="element">&lt;/p&gt;</span>
+      </code></pre>
+    </div>
   </div>
   <custom-console></custom-console>
 </body>

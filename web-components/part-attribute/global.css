@@ -4,6 +4,17 @@
   font-family: sans-serif;
 }
 
+code {
+  line-height: 1.45;
+}
+
+pre {
+  border: 2px solid gray;
+  border-radius: 4px;
+  margin-top: 0;
+  padding-right: 30px;
+}
+
 part-attribute {
   align-items: center;
   background-color: lightgray;
@@ -17,7 +28,7 @@ part-attribute {
   width: 400px;
 }
 
-/* Testing out the ::part selector on the web component here */
+/* Testing out the ::part selector on the web component */
 part-attribute.blue::part(paragraph) {
   background-color: lightblue;
   border: 1px solid navy;
@@ -26,12 +37,44 @@ part-attribute.blue::part(paragraph) {
   padding: 3px 7px;
 }
 
+span.className {
+  color: rgb(71, 71, 176);
+}
+
+span.comment {
+  color: rgb(74, 181, 74);
+}
+
+span.element {
+  color: rgb(203, 38, 82);
+}
+
+span.highlight {
+  background-color: yellow;
+}
+
+span.prop {
+  color: rgb(97, 97, 97);
+}
+
 #btn-add-blue {
   grid-area: blue;
 }
 
+#btn-add-blue span {
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
 #btn-reset {
   grid-area: reset;
+}
+
+#demo-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: flex-start;
+  width: 910px;
 }
 
 #shadow-btn-wrapper {

@@ -16,6 +16,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 22
         script: |
+          nvm use 12
           cd /var/repo/examples.introweb.tech
           git pull
           rm package-lock.json

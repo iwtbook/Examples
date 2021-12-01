@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Components & CSS Vars</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="global.css" />
+
+  <!-- custom-console component -->
+  <script src="custom-console.js"></script>
+
+  <!-- css-variables component -->
+  <script src="constants.js" type="module"></script>
+  <script src="css-variables.js" type="module"></script>
+
+  <!-- Main script -->
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <css-variables>
+    No Shadow Root
+  </css-variables>
+  <div id="shadow-btn-wrapper">
+    <button id="btn-attach-open">Attach Open Shadow</button>
+    <button id="btn-attach-closed">Attach Closed Shadow</button>
+    <button id="btn-reset" disabled>Reset Demo</button>
+  </div>
+  <custom-console></custom-console>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter 3 : Fetch - Partial Data with onprogress</title>
+  <link rel="stylesheet" href="http://ajaxref.com/ch3/global.css" />
+  <script>
+
+    function sendRequest() {
+      let url = 'http://ajaxref.com/ch3/largefile.php';
+
+      fetch(url).then(async response => {
+        let contentLength = response.headers.get('Content-Length');
+        let total = parseInt(contentLength);
+        let loaded = 0;
+
+        let reader = response.body.getReader(); // creates reader
+        let array = new Uint8Array(contentLength);
+
+        while(true) {
+          const { done, value } = await reader.read(); // reads one chunk, which is a Uint8Array stored in value
+          let currentText;
+
+          if (done) { // true when there are no more chunks to read
+            break;
+          }
+
+          array.set(value, loaded);
+          loaded += value.length;
+
+          let percentComplete = (loaded / total) * 100;
+          currentText = new TextDecoder("utf-8").decode(array);
+
+          document.getElementById('responseOutput').innerHTML += `<h3>downloaded - ${Math.round(percentComplete)}%</h3>${currentText}`;
+        }
+        
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('requestButton').addEventListener('click', sendRequest);
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="button" id="requestButton" value="Send Request" />
+  </form>
+  <br />
+  <div id="responseOutput" class="results">&nbsp;</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Chapter 3 : XMLHttpRequest - Head Request</title>
+  <link rel="stylesheet" href="http://ajaxref.com/ch3/global.css">
+  
+  <script>
+    function sendRequest() {
+      const url = 'http://ajaxref.com/ch3/headrequest.html';
+      const xhr = new XMLHttpRequest();
+      if (xhr) {
+        xhr.open('HEAD', url, true);
+        xhr.addEventListener('load', () => handleResponse(xhr));
+        xhr.send(null);
+      }
+    }
+
+    function handleResponse(xhr) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        let responseOutput = document.getElementById('responseOutput');
+
+        let converted = xhr.getAllResponseHeaders().replace(/<([^>]*)>/g, '&lt;$1&gt;')
+        converted = converted.replace(/\n/g, '<br />');
+
+        responseOutput.innerHTML = `
+          <h3>responseText</h3>
+          <div class="data"> ${xhr.responseText}</div>
+          
+          <h3>getAllResponseHeaders()</h3>
+          <div class="data">${converted}</div>
+          
+          <h3>getResponseHeader("Content-Length")</h3>
+          <div class="data">${xhr.getResponseHeader("Content-Length")}</div>
+        `;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('requestButton').addEventListener('click', sendRequest);
+    });
+  </script>
+</head>
+
+<body>
+  <form>
+    <input type="button" id="requestButton" value="Make Head Request">
+  </form>
+  <br>
+
+  <output id="responseOutput" class="results">&nbsp;</output>
+
+
+
+</body></html>

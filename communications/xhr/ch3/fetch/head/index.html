@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter 3 : Fetch - Head Request</title>
+  <link rel="stylesheet" href="http://ajaxref.com/ch3/global.css" />
+  
+  <script>
+    function sendRequest() {
+      const url = 'http://ajaxref.com/ch3/headrequest.html';
+      fetch(url, {
+        method: 'HEAD'
+      }).then(response => handleResponse(response));
+    }
+
+    function handleResponse(response) {
+      if (response.ok) {
+        response.text().then(responseText => {
+          let responseOutput = document.getElementById('responseOutput');
+
+          let headerString = '';
+          response.headers.forEach((value, name) => {
+            headerString += `${name}: ${value}<br />`;
+          });
+          
+          responseOutput.innerHTML = `
+            <h3>responseText</h3>
+            <div class="data"> ${responseText}</div>
+
+            <h3>getAllResponseHeaders()</h3>
+            <div class="data">${headerString}</div>
+
+            <h3>getResponseHeader("Content-Length")</h3>
+            <div class="data">${response.headers.get('Content-Length')}</div>
+          `;
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('requestButton').addEventListener('click', sendRequest);
+    });
+  </script>
+</head>
+
+<body>
+  <form>
+    <input type="button" id="requestButton" value="Make Head Request" />
+  </form>
+  <br />
+
+  <output id="responseOutput" class="results">&nbsp;</output>
+</body>
+
+</html>

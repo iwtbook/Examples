@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter 3 : Fetch - responseText </title>
+  <script src="json.js"></script>
+  <script>
+
+    function encodeValue(val) {
+      let encodedVal = encodeURIComponent(val);
+
+      // fix the omissions
+      encodedVal = encodedVal.replace(/~/g, '%7E');
+      encodedVal = encodedVal.replace(/!/g, '%21');
+      encodedVal = encodedVal.replace(/\(/g, '%28');
+      encodedVal = encodedVal.replace(/\)/g, '%29');
+      encodedVal = encodedVal.replace(/'/g, '%27');
+
+      // clean up the spaces and return
+      return encodedVal.replace(/\%20/g, '+');
+    }
+
+
+    function sendRequest(url, payload) {
+      fetch(`${url}?${payload}`)
+        .then(response => handleResponse(response));
+    }
+
+    function handleResponse(response) {
+      response.text().then(data => {
+        if (response.ok) {
+          let responseType = response.headers.get('Ajax-Response-Type');
+          let responseOutput = document.getElementById('responseOutput');
+          let responseText;
+          if (responseType != 'encoded') {
+            responseText = data.replace(/<([^>]*)>/g, '&lt;$1&gt;');
+            responseText = responseText.replace(/\n/g, '<br />');
+          } else {
+            responseText = data;
+          }
+          responseOutput.innerHTML = `<h3>Response Text</h3>${responseText}`;
+
+          responseOutput.innerHTML += '<h3>Processed</h3>';
+          switch (responseType) {
+            case 'html':
+            case 'text':
+              responseOutput.innerHTML += data;
+              break;
+            case 'xml': {
+              let xmlDoc = (new window.DOMParser().parseFromString(data, 'text/xml'));
+              let average = xmlDoc.getElementsByTagName('average')[0].firstChild.nodeValue;
+              let total = xmlDoc.getElementsByTagName('votes')[0].firstChild.nodeValue;
+              let rating = xmlDoc.getElementsByTagName('rating')[0].firstChild.nodeValue;
+              responseOutput.innerHTML += `Thank you for voting.  You rated this a <strong>${rating}</strong>.  There are <strong>${total}</strong> total votes.  The average is <strong>${average}</strong>.  You can see the ratings in the <a href='http://ajaxref.com/ch2/ratings.txt' target='_blank'>ratings file</a>.`;
+              break;
+            }
+            case 'json': {
+              let jsonObject = AjaxTCR.JSON.decode(data);
+              let { rating, total, average } = jsonObject;
+              responseOutput.innerHTML += `Thank you for voting.  You rated this a <strong>${rating}</strong>.  There are <strong>${total}</strong> total votes.  The average is <strong>${average}</strong>.  You can see the ratings in the <a href='http://ajaxref.com/ch2/ratings.txt' target='_blank'>ratings file</a>.`;
+              break;
+            }
+            case 'javascript': {
+              eval(data);
+              break;
+            }
+            case 'encoded':
+              responseOutput.innerHTML += decode64(responseText);
+              break;
+            case 'csv': {
+              let results = data.split(',');
+              let [rating, average, total] = results;
+              responseOutput.innerHTML += `Thank you for voting.  You rated this a <strong>${rating}</strong>.  There are <strong>${total}</strong> total votes.  The average is <strong>${average}</strong>.  You can see the ratings in the <a href='http://ajaxref.com/ch2/ratings.txt' target='_blank'>ratings file</a>.`;
+              break;
+            }
+          }
+        }
+      });
+    }
+
+    function rate(rating, responseType) {
+      // determine rating value
+      let ratingVal = 0;
+      for (const input of rating) {
+        if (input.checked) {
+          ratingVal = input.value;
+          break;
+        }
+      }
+
+      responseType = responseType.options[responseType.selectedIndex].text;
+      let url = 'http://ajaxref.com/ch3/setrating.php';
+      let payload = `rating=${encodeValue(ratingVal)}`;
+      payload += `&response=${responseType}`;
+
+      sendRequest(url, payload);
+    }
+
+    //NOTE: Adopted from http://rumkin.com/tools/compression/base64.php
+    function decode64(input) {
+      let keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+      let output = '';
+      let chr1, chr2, chr3;
+      let enc1, enc2, enc3, enc4;
+      let i = 0;
+
+      // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+      input = input.replace(/[^A-Za-z0-9\+\/\=]/g, '');
+
+      do {
+        enc1 = keyStr.indexOf(input.charAt(i++));
+        enc2 = keyStr.indexOf(input.charAt(i++));
+        enc3 = keyStr.indexOf(input.charAt(i++));
+        enc4 = keyStr.indexOf(input.charAt(i++));
+
+        chr1 = (enc1 << 2) | (enc2 >> 4);
+        chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+        chr3 = ((enc3 & 3) << 6) | enc4;
+
+        output = output + String.fromCharCode(chr1);
+
+        if (enc3 != 64) {
+          output = output + String.fromCharCode(chr2);
+        }
+        if (enc4 != 64) {
+          output = output + String.fromCharCode(chr3);
+        }
+      } while (i < input.length);
+
+      return output;
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      document.ratingForm.addEventListener('submit', function (e) { 
+        e.preventDefault();
+        return rate(this.rating, this.responseType); 
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <h3>How do you feel about Ajax?</h3>
+  <form method="get" name="ratingForm">
+    <em>Hate It - </em> [
+    <input type="radio" name="rating" value="1" /> 1
+    <input type="radio" name="rating" value="2" /> 2
+    <input type="radio" name="rating" value="3" /> 3
+    <input type="radio" name="rating" value="4" /> 4
+    <input type="radio" name="rating" value="5" /> 5
+    ] <em> - Love It</em>
+    <label>Response:
+      <select name="responseType">
+        <option>Text</option>
+        <option>HTML</option>
+        <option>XML</option>
+        <option>JSON</option>
+        <option>JavaScript</option>
+        <option>Encoded</option>
+        <option>CSV</option>
+      </select>
+
+    </label>
+    <input type="submit" value="vote" />
+  </form>
+  <br />
+  <output id="responseOutput">&nbsp;</output>
+</body>
+
+</html>

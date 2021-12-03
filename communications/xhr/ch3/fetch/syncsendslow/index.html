@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter 3 : Fetch - Problem with Synchronous Send</title>
+  <link rel="stylesheet" href="global.css" />
+  
+  <script class="showSource">
+    async function sendRequest() {
+      let responseOutput = document.getElementById('responseOutput');
+      responseOutput.style.display = '';
+
+      let response = await fetch('http://ajaxref.com/ch3/helloworldslow.php');
+      let responseText = await response.text();
+      responseOutput.innerHTML = `<h3>responseText</h3>${responseText}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('requestButton').addEventListener('click', sendRequest);
+    });
+  </script>
+</head>
+
+<body>
+  <form>
+    <input type="button" id="requestButton" value="Send Slow Synchronous Request" />
+  </form>
+  <br />
+  <output id="responseOutput" class="results" style="display:none;">&nbsp;</output>
+</body>
+</html>

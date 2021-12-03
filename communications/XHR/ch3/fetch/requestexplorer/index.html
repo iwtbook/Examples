@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Chapter 3 : Fetch - Request Explorer</title>
+<link rel="stylesheet" href="http://ajaxref.com/ch3/global.css" />
+<script>
+
+  function escapeValue(value) {
+    let escapedVal = encodeURIComponent(value);
+    return escapedVal.replace(/\%20/g,'+');
+  }
+
+
+  function sendRequest(headerName) {
+    let url = 'http://ajaxref.com/ch3/requestexplorerscript.php';
+    let responseOutput = document.getElementById('responseOutput');
+    
+    let payload = `headermodified=${escapeValue(headerName)}`;
+    
+    fetch(`${url}?${payload}`, {
+      method: 'GET',
+      headers: {
+        [headerName]: 'javascriptmodified'
+      }
+    }).then(response => handleResponse(response));
+  }
+
+  function handleResponse(response) {
+    response.text().then((responseText) => {
+      let responseOutput = document.getElementById('responseOutput');
+
+      responseOutput.innerHTML += `<div class="data"> ${response.ok ? responseText : response.status + response.statusText}</div>`;
+      responseOutput.style.display = '';
+    });
+  }
+
+  function sendHeaders() {
+    document.getElementById('responseOutput').innerHTML = '<h3>responseText</h3>';
+    let headers = ['Accept','Accept-Charset','Accept-Encoding','Accept-Language','Authorization','Cache-Control','Charge-To','Connection','Content-Base','Content-Language','Content-Encoding','Content-Length', 'Content-Location','Content-MD5','Content-Range','Content-Type','Content-Version','Host','Date','Delta-Base', 'Depth', 'Destination', 'ETag', 'Expect', 'From', 'If-Match', 'If-Modified-Since', 'If-None-Match', 'If-Range', 'If-Unmodified-Since', 'Keep-Alive', 'Max-Forwards', 'MIME-Version', 'Overwrite', 'Pragma', 'Proxy-Authorization', 'Range', 'Referer', 'SOAPAction', 'TE', 'Timeout', 'Trailer', 'Transfer-Encoding', 'Upgrade', 'User-Agent', 'Via', 'Warning'];
+    for (const header of headers) {
+      sendRequest(header);
+    }
+  }
+
+
+  window.addEventListener('DOMContentLoaded', () => { 
+    document.getElementById('requestButton').addEventListener('click', sendHeaders);
+  });
+</script>
+
+</head>
+<body>
+  <div id="scenarios" class="content">  
+    <h3>Scenario</h3>  
+    <p>In this example, we run through all of the possible request headers and try to set them using the XHR's setRequestHeader method.  According to the specification, some of these 
+      headers are allowed to be set, some should be appended to the current value, and some should be replaced.  All browsers follow different rules and none strictly follow the specification.
+    <br /><br />To see how the common browsers perform, visit <a href="http://ajaxref.com/ch3/requestexplorerresults.php">http://ajaxref.com/ch3/requestexplorerresults.php</a>
+    </p>  
+  </div>  
+  <form>
+    <input type="button" id="requestButton" value="Check setRequestHeader Support" />
+  </form>
+  <br />
+
+  <output id="responseOutput" class="results" style="display:none;">&nbsp;</output>
+</body>
+</html>

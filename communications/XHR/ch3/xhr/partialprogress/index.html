@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Chapter 3 : XMLHttpRequest - Partial Data with onprogress</title>
+  <link rel="stylesheet" href="http://ajaxref.com/ch3/global.css">
+  <script>
+
+    function sendRequest() {
+      document.getElementById('responseOutput').innerHTML = '';
+      let url = 'http://ajaxref.com/ch3/largefile.php';
+      let xhr = new XMLHttpRequest();
+      if (xhr) {
+        xhr.addEventListener('progress', handleProgress);
+        xhr.open('GET', url, true);
+        xhr.addEventListener('load', handleLoad);
+        xhr.send(null);
+      }
+    }
+
+    function handleProgress(e) {
+      let percentComplete = (e.loaded / e.total) * 100;
+      document.getElementById('responseOutput').style.display = '';
+      document.getElementById('responseOutput').innerHTML += `<h3>responseText - ${Math.round(percentComplete)}%</h3>${e.target.responseText}`;
+    }
+
+
+    function handleLoad(e) {
+      document.getElementById('responseOutput').innerHTML += `<h3>xhr.responseText</h3>${e.target.responseText}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('requestButton').addEventListener('click', sendRequest);
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="button" id="requestButton" value="Send Request">
+  </form>
+  <br>
+  <div id="responseOutput" class="results" style="display:none;">&nbsp;</div>
+
+
+
+
+</body></html>

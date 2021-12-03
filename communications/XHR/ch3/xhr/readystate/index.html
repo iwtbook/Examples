@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Chapter 3 : XMLHttpRequest - Ready State</title>
+  <link rel="stylesheet" href="global.css">
+  <script>
+
+    function sendRequest() {
+      let url = 'http://ajaxref.com/ch3/helloworldslow.php';
+      let readyStateOutput = document.getElementById('readyStateOutput');
+      readyStateOutput.style.display = '';
+
+      let xhr = new XMLHttpRequest();
+
+      if (xhr) {
+        readyStateOutput.innerHTML = `Before Open: readyState: ${xhr.readyState}<br />`;
+        xhr.open('GET', url, true);
+        readyStateOutput.innerHTML += `After Open/Before Send: readyState: ${xhr.readyState}<br />`;
+        xhr.addEventListener('readystatechange', () => handleResponse(xhr));
+        xhr.send(null);
+      }
+    }
+
+    function handleResponse(xhr) {
+      let readyStateOutput = document.getElementById("readyStateOutput");
+      readyStateOutput.innerHTML += `In onreadystatechange function: readyState: ${xhr.readyState}<br />`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('requestButton').addEventListener('click', sendRequest);
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="button" id="requestButton" value="Make Request">
+  </form>
+  <div id="readyStateOutput" class="results" style="display:none;">&nbsp;</div>
+
+
+
+</body></html>

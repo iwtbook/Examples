@@ -1,0 +1,22 @@
+/* style.css */
+
+* {
+  font-family: sans-serif;
+}
+
+button {
+  margin: 15px 0 30px 0;
+}
+
+iframe[name="formiframe"] {
+  border: 1px solid #000000;
+  width: 300px;
+}
+
+label {
+  display: block;
+}
+
+label:not(:first-of-type) {
+  margin-top: 10px;
+}

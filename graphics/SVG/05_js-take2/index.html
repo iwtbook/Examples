@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SVG JS Take 2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-language" content="en">
+  <script type="text/javascript">
+    function init() {
+
+      function _r_(min, max) {
+        return parseInt(min + (max - min) * Math.random());
+      }
+
+      function _element_(sTag, sNs, oDoc) {
+        oDoc = oDoc || document;
+        let oElement;
+        if (sNs != null) {
+          if (oDoc.createElementNS) {
+            oElement = oDoc.createElementNS(sNs, sTag);
+          } else {
+            oElement = oDoc.createElement(sTag);
+            oElement.setAttribute('xmlns', sNs);
+          }
+        } else {
+          oElement = oDoc.createElement(sTag);
+        }
+        return oElement;
+      }
+
+      let svg = _element_('svg', 'http://www.w3.org/2000/svg');
+
+      if (svg.setAttributeNS) {
+        svg.setAttributeNS(null, 'xlink', 'http://www.w3.org/1999/xlink');
+      }
+
+      svg.setAttribute('version', '1.1');
+      svg.setAttribute('width', 600);
+      svg.setAttribute('height', 400);
+      document.body.appendChild(svg);
+
+      for (let i = 0; i < 20; i++) {
+        let rect = _element_('rect', 'http://www.w3.org/2000/svg');
+        rect.setAttribute('x', _r_(10, 400));
+        rect.setAttribute('y', _r_(10, 300));
+        rect.setAttribute('width', _r_(40, 200));
+        rect.setAttribute('height', _r_(20, 100));
+        rect.setAttribute('stroke-width', _r_(1, 5));
+        rect.setAttribute('stroke', 'blue');
+        rect.setAttribute('fill', '#f00');
+        rect.setAttribute('fill-opacity', _r_(2, 8) / 10);
+        svg.appendChild(rect);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</head>
+
+<body></body>
+
+</html>

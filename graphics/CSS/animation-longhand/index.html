@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Animations - Longhand</title>
+  <style>
+    @keyframes move {
+      0% {
+        transform: rotate(0deg) translate(-200px) rotate(0deg) scaleX(-1);
+      }
+
+      49.99% {
+        transform: rotate(180deg) translate(-200px) rotate(-180deg) scaleX(-1);
+      }
+
+      50% {
+        transform: rotate(180deg) translate(-200px) rotate(-180deg) scaleX(1);
+      }
+
+      99.99% {
+        transform: rotate(360deg) translate(-200px) rotate(-360deg) scaleX(1);
+      }
+
+      100% {
+        transform: rotate(360deg) translate(-200px) rotate(-360deg) scaleX(-1);
+      }
+    }
+
+    #racecar {
+      animation-name: move;
+      animation-duration: 4s;
+      animation-timing-function: linear;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+      border-radius: 8px;
+      left: 250px;
+      position: absolute;
+      top: 250px;
+      width: 200px;
+    }
+
+    .paused {
+      animation-play-state: paused !important;
+    }
+
+    button {
+      left: 20px;
+      position: absolute;
+      top: 20px;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="resources/racecar.png" alt="Dog" id="racecar" class="paused" />
+  <button>Play</button>
+
+  <script>
+    let pauseBtn = document.querySelector('button');
+    pauseBtn.addEventListener('click', () => {
+      document.querySelector('#racecar').classList.toggle('paused');
+      pauseBtn.innerText = pauseBtn.innerText == 'Pause' ? 'Play' : 'Pause';
+    });
+  </script>
+</body>
+
+</html>

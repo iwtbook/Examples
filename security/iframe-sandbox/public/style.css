@@ -1,0 +1,23 @@
+/* style.css */
+
+* {
+  font-family: sans-serif;
+}
+
+form {
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+#iframeWrapper {
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  filter: drop-shadow(0px 0px 11px rgb(0,0,0,0.5));
+  margin: 15px;
+}

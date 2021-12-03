@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Post Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Form Post Demo</h1>
+
+  <form action="http://localhost:3000" method="GET" name="information" id="information">
+    <label for="telnum">Telephone #:
+      <input type="tel" name="telnum" id="telnum" size="30" required pattern="\d{3}-\d{3}-\d{4}"
+        title="Please enter phone number in xxx-xxx-xxxx format" placeholder="Enter your phone number here" />
+    </label>
+    <label for="faxnum">Fax #:
+      <input type="tel" name="faxnum" id="faxnum" size="30" required pattern="\d{3}-\d{3}-\d{4}"
+        title="Please enter fax in xxx-xxx-xxxx format" placeholder="Enter your fax number here" />
+    </label>
+    <label for="email">Email:
+      <input type="email" name="email" id="email" size="30" required placeholder="Enter your email address here" />
+    </label>
+    <label for="url">URL:
+      <input type="url" name="url" id="url" size="30" required placeholder="Enter your URL here" />
+    </label>
+    <label for="age">Age:
+      <input type="number" name="age" id="age" required placeholder="Enter your age here" />
+    </label>
+    <label for="picture">Upload Picture:
+      <input type="file" name="picture" id="picture" />
+    </label>
+    <button type="submit">Submit</button>
+    <button type="submit" formmethod="POST" formaction="http://localhost:3000">Submit as POST</button>
+    <button type="submit" formnovalidate>Submit without Validation</button>
+    <button type="submit" formtarget="formiframe">Submit to Iframe</button>
+    <button type="submit" formmethod="POST" formenctype="multipart/form-data" formaction="http://localhost:3000">
+      Submit with File
+    </button>
+  </form>
+
+  <iframe name='formiframe'></iframe>
+</body>
+
+</html>

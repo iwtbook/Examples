@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Same-Origin Policy</title>
+  <link rel="stylesheet" href="/public/style.css" type="text/css" />
+  <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <h1>Same-Origin Policy</h1>
+  <p class="csp enabled">Content-Security Policy Enabled</p>
+  <a href="http://localhost:3000/withoutCSP">Disable CSP</a>
+  <code>Content-Security-Policy: default-src 'self';<br />&nbsp;&nbsp;script-src
+  'sha256-fxFySRzD+8LPz0uDM/VyPnZ7Cu16vFBN40VATi62wF8='</code>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Origin</th>
+        <th>Host</th>
+        <th>CSP</th>
+        <th>CORS</th>
+        <th>Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">http://localhost<span class="blue">:3000</span></td>
+        <td class="mono">http://localhost<span class="blue">:3000</span></td>
+        <td>Enabled</td>
+        <td>N / A</td>
+        <td id="outcomeLocal" class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="mono">http://localhost<span class="blue">:3000</span></td>
+        <td class="mono">http://localhost<span class="highlight">:3001</span></td>
+        <td>Enabled</td>
+        <td class="enabled">Enabled</td>
+        <td id="outcomeCORSenabled" class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="mono">http://localhost<span class="blue">:3000</span></td>
+        <td class="mono">http://localhost<span class="highlight">:3001</span></td>
+        <td>Enabled</td>
+        <td class="disabled">Disabled</td>
+        <td id="outcomeCORSdisabled" class="failed">Failed</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="/public/script.js" type="module"
+    integrity="sha256-fxFySRzD+8LPz0uDM/VyPnZ7Cu16vFBN40VATi62wF8="></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+/* style.css */
+
+* {
+  font-family: sans-serif;
+}
+
+main > section:nth-child(3) {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+section > p {
+  color: rgb(104, 104, 104);
+}
+
+.noConnection {
+  color: red;
+}
+
+.serverConnection {
+  color: blue;
+}
+
+.peerConnection {
+  color: green;
+}
+
+#yourID {
+  color: black;
+}

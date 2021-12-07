@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>canvas translate() Example</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+
+      /* translate to the bottom right */
+      context.translate(100, 100);
+      writeBoxes(context);
+
+      /* reset canvas and context */
+      canvas = document.getElementById("canvas2");
+      context = canvas.getContext("2d");
+
+      /* move a bit off top left */
+      context.translate(-20, -10);
+
+      writeBoxes(context);
+    }
+
+    function writeBoxes(context) {
+      context.fillStyle = "rgba(166,42,42,.4)";
+      context.beginPath();
+      context.fillRect(0, 0, 100, 100);
+      context.beginPath();
+      context.fillStyle = "rgba(74,118,110,.6)";
+      context.fillRect(50, 50, 100, 100);
+      context.beginPath();
+      context.fillStyle = "rgba(166,42,42,.4)";
+      context.fillRect(100, 100, 100, 100);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Simple Translation</h1>
+  <canvas id="canvas" width="300" height="300">
+    <strong>Canvas Supporting Browser Required</strong>
+  </canvas>
+
+  <canvas id="canvas2" width="300" height="300">
+    <strong>Canvas Supporting Browser Required</strong>
+  </canvas>
+
+</body>
+
+</html>

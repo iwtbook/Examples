@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>canvas drawImage() Example</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function () {
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+
+      var img = new Image();
+      img.src = "dog.jpg";
+      img.onload = function () {
+        context.lineWidth = 5;
+        context.drawImage(img, 0, 0, 400, 400);
+        context.beginPath();
+        context.lineWidth = 5;
+        context.fillStyle = "orange";
+        context.strokeStyle = "black";
+        context.rect(50, 340, 300, 50);
+        context.fill();
+        context.stroke();
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <canvas id="canvas" width="400" height="400">
+    <strong>Canvas Supporting Browser Required</strong>
+  </canvas>
+
+</body>
+
+</html>

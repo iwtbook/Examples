@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTML5 audio examples</title>
+</head>
+
+<body>
+
+  <h1>Simple Audio Examples</h1>
+
+  <h2>wav Format</h2>
+  <audio src="http://htmlref.com/ch2/music.wav" controls></audio>
+
+
+  <h2>ogg Format</h2>
+  <audio src="http://htmlref.com/ch2/music.ogg" controls></audio>
+
+
+  <h2>Multiple Formats and Fallback</h2>
+  <!-- autobuffer attribute removed from later HTML5 specs -->
+  <audio controls autoplay>
+    <source src="http://htmlref.com/ch2/music.ogg" type="audio/ogg">
+    <source src="http://htmlref.com/ch2/music.wav" type="audio/wav">
+    <!--[if IE]>
+ <bgsound src="http://htmlref.com/ch2/music.wav">
+ <![endif]-->
+  </audio>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+// repo-api.js
+
+const fs = require('fs');
+const express = require('express');
+const app = express();
+const port = 3015;
+
+// Files & Directories to exclude from the repo search
+const exclude = ['README.md', 'node_modules'];
+// List of supported repos, currently only this repo is supported
+const supportedRepos = ['examples'];
+
+
+/********************************/
+/***          ROUTES          ***/
+/********************************/
+
+/**
+ * Fetches all of the file paths for every file (and a URL to reach the file
+ * contents at) in a given repository
+ * @param {string} repo the repository to get all of the files from
+ * @return {array<object>} an array of all of the files found, formatted with
+ *         their path, their type (all will be of type 'blob') and a URL to
+ *         fetch the file from
+ */
+app.get('/:repo', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) return;
+  // The string path to the current repo we are in
+  const repoDir = getCurrentRepo();
+  // All of the desired files in our current repo
+  let files = recursiveFileSearch(repoDir, exclude, []);
+  // Format the files so that they are easily parsable
+  files = files.map(file => {
+    let urlSafeRoute = encodeURI(file);
+    file = file.replaceAll(repoDir + '/', '');
+    return {
+      path: file,
+      type: 'blob',
+      url: `http://localhost:3015/${req.params.repo}/file${urlSafeRoute}`
+    };
+  });
+  // Send the files back
+  res.json({ tree: files });
+});
+
+/**
+ * Fetches the contents of the specified file from the specified repo
+ * @param {string} repo the repository to fetch the file from
+ * @param {string} file the file to grab the contents of
+ * @return {object} the contents of the specified file and some other metadata
+ *                  on the file
+ */
+app.get('/:repo/file/*', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) return;
+  // Everything after file/ must be the file path
+  const filePath = '/' + decodeURI(req.params['0']);
+  // Grab the contents of the file
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  // Format everything and send it back
+  res.json({
+    path: filePath,
+    content: Buffer.from(fileContents).toString('base64'),
+    encoding: 'base64'
+  });
+});
+
+/**
+ * Begins the server, starts listening for incoming requests.
+ * Not technically a route.
+ */
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+
+
+/******************************************/
+/***          HELPER FUNCTIONS          ***/
+/******************************************/
+
+/**
+ * Gets the path of the current repo (not __dirname since this is in a subfolder)
+ * @returns {string} the path of the current directory
+ */
+function getCurrentRepo() {
+  let repoDir = __dirname.split('/');
+  repoDir.pop();
+  return repoDir.join('/');
+}
+
+/**
+ * 
+ * @param {string} dir the directory with which to search for files
+ * @param {array<string>} exclude A list of files / directories to exclude in
+ *                                file search
+ * @returns {array<string>} an array of all of the paths of the found files
+ */
+function recursiveFileSearch(dir, exclude) {
+  let entitiesInDir, dirsInDir, filesInDir;
+  // Get everything in the directory first
+  entitiesInDir = fs.readdirSync(dir);
+  // Filter out everything that's not allowed
+  entitiesInDir = entitiesInDir.filter(entity => {
+    if (exclude.includes(entity)) return false;
+    if (entity.charAt(0) == '.' || entity.charAt(0) == '_') return false;
+    return true;
+  });
+  // Separate the directories and files
+  filesInDir = [];
+  dirsInDir = entitiesInDir.filter(entity => {
+    // if it's a directory keep it so it can be stored in dirsInDir
+    if (fs.lstatSync(`${dir}/${entity}`).isDirectory()) return true;
+    // otherwise add it to our list of files
+    filesInDir.push(`${dir}/${entity}`);
+    // and filter it out by returning false
+    return false;
+  });
+  // Add all of the files in the directories we found in our main files array
+  dirsInDir.forEach(subDir => {
+    filesInDir = filesInDir.concat(recursiveFileSearch(`${dir}/${subDir}`, []));
+  });
+  // Return our main files array
+  return filesInDir;
+}

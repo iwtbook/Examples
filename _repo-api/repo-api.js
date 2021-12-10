@@ -3,7 +3,7 @@
 const fs = require('fs');
 const express = require('express');
 const app = express();
-const port = 3015;
+const port = 3001;
 
 // Files & Directories to exclude from the repo search
 const exclude = ['README.md', 'node_modules'];

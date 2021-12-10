@@ -1,4 +1,4 @@
-// repo-api.js
+// content-api.js
 
 const fs = require('fs');
 const express = require('express');
@@ -37,7 +37,7 @@ app.get('/:repo', (req, res) => {
     return {
       path: file,
       type: 'blob',
-      url: `http://localhost:3015/${req.params.repo}/file${urlSafeRoute}`
+      url: `http://localhost:${port}/${req.params.repo}/file${urlSafeRoute}`
     };
   });
   // Send the files back

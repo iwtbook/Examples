@@ -135,7 +135,7 @@ async function fetchRepoData(repo, dir) {
         });
         // Format files so the filename and URL are easily accessible
         files = files.map(file => {
-          let fileName = file.path.slice(dir.length + 1)
+          let fileName = file.path.slice(dir.length + 1);
           return {
             fileName: fileName,
             url: file.url
@@ -168,7 +168,7 @@ async function fetchFiles(files) {
         .then(data => {
           // Push the newly downloaded content into the array
           downloaded.push({
-            name: data.fileName,
+            name: file.fileName,
             type: 'string',
             // The buffer converts the content from base64 encoding
             data: Buffer.from(data.content, 'base64').toString('utf-8')

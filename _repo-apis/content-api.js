@@ -45,9 +45,9 @@ app.get('/:repo', (req, res) => {
 });
 
 /**
- * Fetches the contents of the specified file from the specified repo
+ * Fetches the contents and metadata of the specified file from the specified repo
  * @param {string} repo the repository to fetch the file from
- * @param {string} file the file to grab the contents of
+ * @param {string} file/* the file to grab the data of
  * @return {object} the contents of the specified file and some other metadata
  *                  on the file
  */
@@ -55,7 +55,7 @@ app.get('/:repo/file/*', (req, res) => {
   // Right now only the examples repo is supported
   if (!supportedRepos.includes(req.params.repo)) return;
   // Everything after file/ must be the file path
-  const filePath = '/' + decodeURI(req.params['0']);
+  const filePath = getCurrentRepo() + '/' + decodeURI(req.params['0']);
   // Grab the contents of the file
   const fileContents = fs.readFileSync(filePath, 'utf8');
   // Format everything and send it back
@@ -65,6 +65,25 @@ app.get('/:repo/file/*', (req, res) => {
     encoding: 'base64'
   });
 });
+
+/**
+ * Fetches the direct contents of the specified file from the specified repo
+ * @param {string} repo the repository to fetch the file from
+ * @param {string} contents/* the file to grab the contents of
+ * @return {object} the contents of the specified file and some other metadata
+ *                  on the file
+ */
+app.get('/:repo/contents/*', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) return;
+  // Everything after file/ must be the file path
+  const filePath = getCurrentRepo() + '/' + decodeURI(req.params['0']);
+  // Grab the contents of the file
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  // Send it back
+  res.send(fileContents);
+});
+
 
 /**
  * Begins the server, starts listening for incoming requests.

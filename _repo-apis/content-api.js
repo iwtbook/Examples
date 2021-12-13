@@ -61,7 +61,6 @@ app.get('/:repo/file/*', (req, res) => {
   // Format everything and send it back
   res.json({
     path: filePath,
-    absolutePath: absolutePath,
     content: Buffer.from(fileContents).toString('base64'),
     encoding: 'base64'
   });

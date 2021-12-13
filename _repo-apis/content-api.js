@@ -57,10 +57,11 @@ app.get('/:repo/file/*', (req, res) => {
   // Everything after file/ must be the file path
   const filePath = '/' + decodeURI(req.params['0']);
   // Grab the contents of the file
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const fileContents = fs.readFileSync(getCurrentRepo() + filePath, 'utf8');
   // Format everything and send it back
   res.json({
     path: filePath,
+    absolutePath: absolutePath,
     content: Buffer.from(fileContents).toString('base64'),
     encoding: 'base64'
   });

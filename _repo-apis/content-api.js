@@ -55,7 +55,7 @@ app.get('/:repo/file/*', (req, res) => {
   // Right now only the examples repo is supported
   if (!supportedRepos.includes(req.params.repo)) return;
   // Everything after file/ must be the file path
-  const filePath = getCurrentRepo() + '/' + decodeURI(req.params['0']);
+  const filePath = '/' + decodeURI(req.params['0']);
   // Grab the contents of the file
   const fileContents = fs.readFileSync(filePath, 'utf8');
   // Format everything and send it back

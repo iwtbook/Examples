@@ -49,12 +49,11 @@ app.get('/', async (req, res, next) => {
   // Grab the filename for the zip and make a directory for it
   let zipFileName = dir;
   zipFileName = zipFileName.split('/').pop();
-  fs.mkdirSync(`temp-${timestamp}`);
+  // fs.mkdirSync(`temp-${timestamp}`);
 
   // Write each of the files to disk
   files.forEach(file => {
-    fs.ensureFileSync(`temp-${timestamp}/${file.name}`);
-    fs.writeFileSync(`temp-${timestamp}/${file.name}`, file.data);
+    fs.outputFileSync(`temp-${timestamp}/${file.name}`, file.data);
   });
 
   // Update the data for each of the files
@@ -169,7 +168,7 @@ async function fetchFiles(files) {
         .then(data => {
           // Push the newly downloaded content into the array
           downloaded.push({
-            name: file.fileName,
+            name: data.fileName,
             type: 'string',
             // The buffer converts the content from base64 encoding
             data: Buffer.from(data.content, 'base64').toString('utf-8')

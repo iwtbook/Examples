@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTML 5 spellcheck Attribute Examples</title>
+</head>
+
+<body>
+  <h1>spellcheck Attribute Examples</h1>
+
+
+  <p spellcheck="true" contenteditable="true">Spellcheck on: There is a tyyypooo here. Did the browser spot it?</p>
+
+  <p spellcheck="false" contenteditable="true">Spellcheck off: There is a tyyypooo here. Did the browser spot it?</p>
+
+
+  <form action="#" method="get">
+
+    <p><label>Text field: (spellcheck on)
+        <input type="text" name="textfield" spellcheck="true" value="There is a tyyypoo here. Did the browser spot it?">
+      </label></p>
+
+    <p><label>Text field: (spellcheck off)
+        <input type="text" name="textfield" spellcheck="false"
+          value="There is a tyyypoo here. Did the browser spot it?">
+      </label></p>
+
+
+    <p><label>Text area: (spellcheck on)
+        <textarea name="comments"
+          spellcheck="true">There is a tyyypooo here.  Did the browser spot it?</textarea></label>
+    </p>
+
+    <p><label>Text area: (spellcheck off)
+        <textarea name="comments"
+          spellcheck="false">There is a tyyypooo here.  Did the browser spot it?</textarea></label>
+    </p>
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Drag and Drop</title>
+  <link rel="stylesheet" type="text/css" href="drag.css" />
+  <script>
+    window.onload = function () {
+      var drag = document.getElementById("dragbox");
+      drag.addEventListener("dragstart", dragstart, false);
+      drag.addEventListener("dragend", dragend, false);
+
+      var drop = document.getElementById("dropzone");
+      drop.addEventListener("dragenter", dragenter, false);
+      drop.addEventListener("dragleave", dragleave, false);
+      drop.addEventListener("dragover", dragover, false);
+      drop.addEventListener("drop", drops, false);
+    }
+
+    function dragover(e) {
+      e.preventDefault();
+    }
+
+    function dragstart(e) {
+      var dt = e.dataTransfer;
+      dt.setData("Text", "Dropped in zone!");
+      return true;
+    }
+
+    function dragend(e) {
+      log('Drag ended');
+      return false;
+    }
+
+    function dragenter(e) {
+      e.target.style.backgroundColor = "#8f8";
+      return false;
+    }
+
+    function dragleave(e) {
+      e.target.style.backgroundColor = "#eee";
+      return false;
+    }
+
+    function drops(e) {
+      var dt = e.dataTransfer;
+      log(dt.getData("Text"));
+    }
+
+    function log(msg) {
+      var d = new Date();
+
+      var message = '<li class="line"><span class="time">' + d + '</span>';
+      message += '<span class="txt">' + msg + '</span></li>';
+
+      var oldmessage = document.getElementById("message").innerHTML;
+      document.getElementById("message").innerHTML = message + oldmessage;
+    }
+  </script>
+</head>
+
+<body>
+  <div id="newschool">
+    <h2>New school drag and drop</h2>
+    <div id="dragbox" class="dragme" draggable="true">Drag me!</div>
+    <div id="dropzone" class="drophere">Drop here!</div>
+    <ul class="messages" id="message"></ul>
+  </div>
+</body>
+
+</html>

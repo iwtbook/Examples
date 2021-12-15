@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>canvas transform() Example</title>
-  <style type="text/css">
+  <style>
     canvas {
       border: 1px solid black;
     }
   </style>
-  <script type="text/javascript">
-    window.onload = function () {
-      var canvas = document.getElementById("canvas");
-      var context = canvas.getContext("2d");
-
-      context.fillStyle = "rgba(255,0,0,.4)";
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+      // Red square - upper left
+      context.fillStyle = 'rgba(255,0,0,.4)';
       context.rect(0, 0, 100, 100);
       context.fill();
-
+      // Green rhombus - center right
       context.setTransform(1, 1, 1, 0, 0, 0);
       context.beginPath();
-      context.fillStyle = "rgba(0,255,0,.4)";
+      context.fillStyle = 'rgba(0,255,0,.4)';
       context.rect(75, 75, 100, 100);
       context.fill();
-
+      // Blue rhombus - center left
       context.setTransform(0, .5, 1, .8, 0, 0);
       context.beginPath();
-      context.fillStyle = "rgba(0,0,255,.4)";
+      context.fillStyle = 'rgba(0,0,255,.4)';
       context.rect(50, 50, 100, 100);
       context.fill();
-    }
+    });
   </script>
 </head>
 
 <body>
-  <h1>Simple Transforms</h1>
+  <header>
+    <h1>Simple Transforms</h1>
+  </header>
   <canvas id="canvas" width="400" height="300">
     <strong>Canvas Supporting Browser Required</strong>
   </canvas>

@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drag and Drop</title>
   <link rel="stylesheet" type="text/css" href="drag.css" />
   <script>
-    window.onload = function () {
-      var drag = document.getElementById("dragbox");
-      drag.addEventListener("dragstart", dragstart, false);
-      drag.addEventListener("dragend", dragend, false);
+    window.addEventListener('DOMContentLoaded', function () {
+      const drag = document.getElementById('dragbox');
+      drag.addEventListener('dragstart', dragstart, false);
+      drag.addEventListener('dragend', dragend, false);
 
-      var drop = document.getElementById("dropzone");
-      drop.addEventListener("dragenter", dragenter, false);
-      drop.addEventListener("dragleave", dragleave, false);
-      drop.addEventListener("dragover", dragover, false);
-      drop.addEventListener("drop", drops, false);
-    }
+      const drop = document.getElementById("dropzone");
+      drop.addEventListener('dragenter', dragenter, false);
+      drop.addEventListener('dragleave', dragleave, false);
+      drop.addEventListener('dragover', dragover, false);
+      drop.addEventListener('drop', drops, false);
+    });
 
     function dragover(e) {
       e.preventDefault();
     }
 
     function dragstart(e) {
-      var dt = e.dataTransfer;
-      dt.setData("Text", "Dropped in zone!");
+      const dt = e.dataTransfer;
+      dt.setData('Text', 'Dropped in zone!');
       return true;
     }
 
@@ -34,28 +35,28 @@
     }
 
     function dragenter(e) {
-      e.target.style.backgroundColor = "#8f8";
+      e.target.style.backgroundColor = '#8f8';
       return false;
     }
 
     function dragleave(e) {
-      e.target.style.backgroundColor = "#eee";
+      e.target.style.backgroundColor = '#eee';
       return false;
     }
 
     function drops(e) {
-      var dt = e.dataTransfer;
-      log(dt.getData("Text"));
+      const dt = e.dataTransfer;
+      log(dt.getData('Text'));
     }
 
     function log(msg) {
-      var d = new Date();
+      const d = new Date();
 
-      var message = '<li class="line"><span class="time">' + d + '</span>';
-      message += '<span class="txt">' + msg + '</span></li>';
+      let message = `<li class="line"><span class="time">${d}</span>`;
+      message += `<span class="txt">${msg}</span></li >`;
 
-      var oldmessage = document.getElementById("message").innerHTML;
-      document.getElementById("message").innerHTML = message + oldmessage;
+      const oldmessage = document.getElementById('message').innerHTML;
+      document.getElementById('message').innerHTML = message + oldmessage;
     }
   </script>
 </head>

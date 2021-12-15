@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canvas Cube Example</title>
-  <style type="text/css" media="screen">
+  <style>
     body {
       background-color: #E67B34;
     }
   </style>
-  <script type="text/javascript" src="excanvas.js"></script>
-  <script type="text/javascript">
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
 
-    window.onload = function () {
+      const context = document.getElementById('canvas').getContext('2d');
 
-      var context = document.getElementById("canvas").getContext("2d");
-
-      context.fillStyle = "#fff";
-      context.strokeStyle = "black";
+      // TOP
+      context.fillStyle = '#fff';
+      context.strokeStyle = 'black';
       context.beginPath();
       context.moveTo(188, 38);
       context.lineTo(59, 124);
@@ -28,8 +28,9 @@
       context.fill();
       context.stroke();
 
-      context.fillStyle = "#ccc";
-      context.strokeStyle = "black";
+      // RIGHT
+      context.fillStyle = '#ccc';
+      context.strokeStyle = 'black';
       context.beginPath();
       context.moveTo(341, 111);
       context.lineTo(212, 197);
@@ -40,10 +41,9 @@
       context.fill();
       context.stroke();
 
-
-
-      context.fillStyle = "#999";
-      context.strokeStyle = "black";
+      // LEFT
+      context.fillStyle = '#999';
+      context.strokeStyle = 'black';
       context.beginPath();
       context.moveTo(59, 289);
       context.lineTo(59, 124);
@@ -53,13 +53,16 @@
       context.closePath();
       context.fill();
       context.stroke();
-    }
+    });
 
   </script>
 </head>
 
 <body>
-  <h1>Canvas Perspective</h1>
+  <header>
+    <h1>Canvas Perspective</h1>
+  </header>
+
   <canvas id="canvas" width="400" height="400">
     <strong>Canvas Supporting Browser Required</strong>
   </canvas>

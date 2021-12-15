@@ -1,56 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>canvas scale() Example</title>
-  <style type="text/css">
+  <style>
     canvas {
       border: 1px solid black;
     }
   </style>
 
-  <script type="text/javascript">
-    window.onload = function () {
-      var canvas = document.getElementById("canvas");
-      var context = canvas.getContext("2d");
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
 
       /* draw original boxes */
       writeBoxes(context);
 
       /* reset canvas and context */
-      canvas = document.getElementById("canvas2");
-      context = canvas.getContext("2d");
+      canvas = document.getElementById('canvas2');
+      context = canvas.getContext('2d');
 
       /* scale tall and thin */
       context.scale(.5, 1.5);
       writeBoxes(context);
 
       /* reset canvas and context */
-      canvas = document.getElementById("canvas3");
-      context = canvas.getContext("2d");
+      canvas = document.getElementById('canvas3');
+      context = canvas.getContext('2d');
 
       /* move short and wide */
       context.scale(1.75, .2);
       writeBoxes(context);
-    }
+    });
 
     function writeBoxes(context) {
-      context.fillStyle = "rgba(166,42,42,.4)";
+      context.fillStyle = 'rgba(166,42,42,.4)';
       context.beginPath();
       context.fillRect(0, 0, 100, 100);
       context.beginPath();
-      context.fillStyle = "rgba(74,118,110,.6)";
+      context.fillStyle = 'rgba(74,118,110,.6)';
       context.fillRect(50, 50, 100, 100);
       context.beginPath();
-      context.fillStyle = "rgba(166,42,42,.4)";
+      context.fillStyle = 'rgba(166,42,42,.4)';
       context.fillRect(100, 100, 100, 100);
     }
   </script>
 </head>
 
 <body>
-  <h1>Simple Scale</h1>
+  <header>
+    <h1>Simple Scale</h1>
+  </header>
+
   <canvas id="canvas" width="300" height="300">
     <strong>Canvas Supporting Browser Required</strong>
   </canvas>
@@ -62,7 +66,6 @@
   <canvas id="canvas3" width="300" height="300">
     <strong>Canvas Supporting Browser Required</strong>
   </canvas>
-
 </body>
 
 </html>

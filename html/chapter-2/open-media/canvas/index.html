@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HTML5 canvas example</title>
   <script type="text/javascript">
-    window.onload = function () {
-      var canvas = document.getElementById("canvas");
-      var context = canvas.getContext("2d");
-      context.strokeStyle = "blue";
+    window.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+      context.strokeStyle = 'blue';
       context.strokeRect(10, 10, 150, 50);
 
-      context.fillStyle = "rgba(218,0,0,0.4)";
+      context.fillStyle = 'rgba(218,0,0,0.4)';
       context.fillRect(150, 30, 75, 75);
-    }
+    });
   </script>
 </head>
 
 <body>
-
-  <h1>Simple Canvas Examples</h1>
+  <header>
+    <h1>Simple Canvas Examples</h1>
+  </header>
 
   <canvas id="canvas" width="300" height="300">
     <strong>Canvas Supporting Browser Required</strong>
   </canvas>
-
 </body>
 
 </html>

@@ -1,54 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>canvas Text Example</title>
-  <style type="text/css">
+  <style>
     canvas {
       border: 1px solid black;
     }
   </style>
-  <script type="text/javascript">
-    window.onload = function () {
-      var canvas = document.getElementById("canvas");
-      var context = canvas.getContext("2d");
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
 
-      var img = new Image();
-      img.src = "dog.jpeg";
+      const img = new Image();
+      img.src = 'dog.jpeg';
 
-      img.onload = function () {
+      img.addEventListener('load', function () {
+        // Text Background
         context.lineWidth = 5;
         context.drawImage(img, 0, 0, 400, 400);
         context.beginPath();
         context.lineWidth = 5;
-        context.fillStyle = "orange";
-        context.strokeStyle = "black";
+        context.fillStyle = 'orange';
+        context.strokeStyle = 'black';
         context.rect(50, 340, 300, 50);
         context.fill();
         context.stroke();
 
+        // Text - 'Canvas is great!'
         context.lineWidth = 2;
         context.font = '40px sans-serif';
-        context.strokeStyle = "black";
-        context.fillStyle = "white";
-        context.fillText("Canvas is great!", 60, 375);
+        context.strokeStyle = 'black';
+        context.fillStyle = 'white';
+        context.fillText('Canvas is great!', 60, 375);
         context.shadowOffsetX = 10;
         context.shadowOffsetY = 5;
-        context.shadowColor = "rgba(0, 48, 48, 0.5)";
+        context.shadowColor = 'rgba(0, 48, 48, 0.5)';
         context.shadowBlur = 5;
-        context.strokeText("Canvas is great!", 60, 375);
-      }
-    }
+        context.strokeText('Canvas is great!', 60, 375);
+      });
+    });
   </script>
 </head>
 
 <body>
-
   <canvas id="canvas" width="400" height="400">
     <strong>Canvas Supporting Browser Required</strong>
   </canvas>
-
 </body>
 
 </html>

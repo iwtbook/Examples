@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canvas Face Example</title>
-  <script type="text/javascript" src="excanvas.js"></script>
-  <script type="text/javascript">
-    window.onload = function () {
-      var canvas = document.getElementById('canvas');
-      var context = canvas.getContext('2d');
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
 
-      context.strokeStyle = "black";
+      context.strokeStyle = 'black';
       context.lineWidth = 5;
 
       /* create a frame for our drawing */
       context.beginPath();
-      context.fillStyle = "blue";
+      context.fillStyle = 'blue';
       context.moveTo(50, 20);
       context.arcTo(280, 20, 280, 280, 30);
       context.arcTo(280, 280, 20, 280, 30);
@@ -26,7 +26,7 @@
 
       /* draw circle for head */
       context.beginPath();
-      context.fillStyle = "yellow";
+      context.fillStyle = 'yellow';
       context.arc(150, 150, 100, 0, Math.PI * 2, true);
       context.fill();
 
@@ -42,12 +42,14 @@
       context.quadraticCurveTo(150, 250, 200, 175);
       context.moveTo(50, 20);
       context.stroke();
-    }
+    });
   </script>
 </head>
 
 <body>
-  <h1>Smile you're on canvas</h1>
+  <header>
+    <h1>Smile you're on canvas</h1>
+  </header>
 
   <canvas id="canvas" width="300" height="300">
     <strong>Canvas Supporting Browser Required</strong>

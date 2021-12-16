@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- CSS Library - Tailwind CSS -->
+  <link rel="stylesheet" href="tailwind.min.css" />
+
+  <style>
+    body {
+      margin: 0 20px;
+    }
+
+    h1,
+    h2 {
+      font-size: revert;
+      font-weight: revert;
+      margin: 16px 0;
+    }
+
+    #native button {
+      border-style: solid;
+      border-width: 0px;
+      border-radius: 8px;
+      color: white;
+      font-size: 18px;
+      padding: 8px 20px;
+      /* colors */
+      --primary: #3B82F6;
+      --secondary: #6B7280;
+      --warning: #F59E0B;
+      --hazard: #EF4444;
+      --success: #10B981;
+    }
+
+    #native button.primary,
+    #native button.primary:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    #native button.secondary,
+    #native button.secondary:hover {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+
+    #native button.warning,
+    #native button.warning:hover {
+      background-color: var(--warning);
+      border-color: var(--warning);
+      color: var(--warning);
+    }
+
+    #native button.hazard,
+    #native button.hazard:hover {
+      background-color: var(--hazard);
+      border-color: var(--hazard);
+      color: var(--hazard);
+    }
+
+    #native button.success,
+    #native button.success:hover {
+      background-color: var(--success);
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    #native button.outline {
+      background-color: white;
+      border-width: 2px;
+    }
+
+    #native button:not(.outline),
+    #native button.outline:hover {
+      color: white !important;
+    }
+
+    #native>p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #native>p:last-of-type {
+      margin-top: 16px;
+    }
+
+    section {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Native CSS vs Library CSS</h1>
+  </header>
+  <section id="native">
+    <header>
+      <h2>Using Native CSS (1 KB unminified)</h2>
+    </header>
+    <p>Filled Buttons</p>
+    <div>
+      <button class="primary">Primary</button>
+      <button class="secondary">Secondary</button>
+      <button class="warning">Warning</button>
+      <button class="hazard">Hazard</button>
+      <button class="success">Success</button>
+    </div>
+    <p>Outline Buttons</p>
+    <div>
+      <button class="primary outline">Primary</button>
+      <button class="secondary outline">Secondary</button>
+      <button class="warning outline">Warning</button>
+      <button class="hazard outline">Hazard</button>
+      <button class="success outline">Success</button>
+    </div>
+  </section>
+  <section id="tailwind">
+    <header>
+      <h2>Using Tailwind CSS (2,929 KB minified)</h2>
+    </header>
+    <p class="text-lg text-cyan-500 font-bold">Filled Buttons</p>
+    <button
+      class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Primary</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300">Secondary</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300">Warning</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-red-500 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">Hazard</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-green-500 text-gray-100 text-lg rounded-lg focus:border-4 border-green-300">Success</button>
+    <p class="text-lg text-cyan-500 font-bold mt-4">Outline Buttons</p>
+    <button
+      class="p-2 pl-5 pr-5 bg-transparent border-2 border-blue-500 text-blue-500 text-lg rounded-lg hover:bg-blue-500 hover:text-gray-100 focus:border-4 focus:border-blue-300">Primary</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-transparent border-2 border-gray-500 text-gray-500 text-lg rounded-lg hover:bg-gray-500 hover:text-gray-100 focus:border-4 focus:border-gray-300">Secondary</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-transparent border-2 border-yellow-500 text-yellow-500 text-lg rounded-lg hover:bg-yellow-500 hover:text-gray-100 focus:border-4 focus:border-yellow-300">Warning</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-transparent border-2 border-red-500 text-red-500 text-lg rounded-lg hover:bg-red-500 hover:text-gray-100 focus:border-4 focus:border-red-300">Hazard</button>
+    <button
+      class="p-2 pl-5 pr-5 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Success</button>
+  </section>
+</body>
+
+</html>

@@ -18,6 +18,11 @@
       width: 600px;
     }
 
+    #loading {
+      color: gray;
+      font-size: 1.5rem;
+    }
+
     #time {
       color: red;
     }
@@ -25,11 +30,13 @@
 </head>
 
 <body>
+  <p id="loading">Loading script...</p>
   <h1>Render Blocking Demo</h1>
   <p>Once this page started to render, it took <span id="time"></span> seconds
     for the first contentful paint to occur since the loading of our heavy
     non-critical script was deferred</p>
   <script>
+    document.getElementById('loading').setAttribute('hidden', 'true');
     document.getElementById('time').innerHTML = (new Date().getTime() - startTime) / 1000;
   </script>
 </body>

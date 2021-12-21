@@ -8,10 +8,14 @@
   <script>
     const startTime = new Date().getTime();
   </script>
-  <script src="https://httplayground.introweb.tech/delay/5"></script>
+  <script src="https://httplayground.introweb.tech/delay/5" defer></script>
   <style>
     * {
       font-family: sans-serif;
+    }
+
+    body {
+      width: 600px;
     }
 
     #time {
@@ -23,7 +27,8 @@
 <body>
   <h1>Render Blocking Demo</h1>
   <p>Once this page started to render, it took <span id="time"></span> seconds
-    for the first contentful paint to occur due to a render blocking script</p>
+    for the first contentful paint to occur since the loading of our heavy
+    non-critical script was deferred</p>
   <script>
     document.getElementById('time').innerHTML = (new Date().getTime() - startTime) / 1000;
   </script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emojis</title>
+  <style>
+    .🔥 {
+      background-color: red;
+    }
+
+    #💣 {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Emojis - Direct</h1>
+  <p>😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇</p>
+  <p>&#x1F525</p>
+  <p>:fire:</p>
+  <a href="./😀.html">Emoji File Name - 😀</a>
+
+  <h2>Emoji in Attributes</h2>
+  <p class="🔥">🔥 as a class</p>
+  <p id="💣">💣 as an id</p>
+  <button onclick="whaat()">Click me!</button>
+
+  <script>
+    function whaat() {
+      let bomb = document.querySelector('#💣');
+      alert(bomb.innerHTML);
+    }
+
+    // You can no longer use emojis for variable names in JavaScript
+    // See more here: https://mathiasbynens.be/notes/javascript-identifiers-es6
+    //                https://thekevinscott.com/emojis-in-javascript/
+  </script>
+</body>
+
+</html>

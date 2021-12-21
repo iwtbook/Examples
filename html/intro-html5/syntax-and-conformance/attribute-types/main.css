@@ -1,0 +1,53 @@
+body {
+      width: 50%;
+    }
+
+    code {
+      background-color: yellow;
+      display: inline-block;
+      padding: 2px 5px;
+    }
+
+    h1,
+    .attributes {
+      border-radius: 4px;
+      font-family: sans-serif;
+      padding: 10px 15px;
+    }
+
+    span[role="tooltip"] {
+      background-color: rgb(255, 202, 234);
+      display: none;
+    }
+
+    #a11y {
+      border: 1.5px solid gray;
+      box-sizing: border-box;
+    }
+
+    #core:hover {
+      background-color: rgb(121, 218, 121) !important;
+      cursor: default;
+    }
+
+    #events {
+      background-color: lightblue;
+      user-select: none;
+    }
+
+    #events:hover {
+      cursor: pointer;
+    }
+
+    #hover-this {
+      background-color:rgb(191, 222, 255);
+      cursor: default;
+    }
+
+    #hover-this:hover~span[role="tooltip"] {
+      display: inline;
+    }
+
+    #i18n {
+      background-color: rgb(255, 210, 128);
+    }

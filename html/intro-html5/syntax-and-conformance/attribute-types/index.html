@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attribute Types</title>
+
+  <!-- stylsheet -->
+  <link rel="stylesheet" href="main.css" />
+
+  <script>
+    function changeColor(elem) {
+      const red = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+      elem.style.backgroundColor = `rgba(${red},${green},${blue},0.3)`;
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Types of Attributes</h1>
+  </header>
+  <main>
+    <p id="core" class="attributes" style="background-color:lightgreen"
+      title="Core Attributes">There are many global attributes that every
+      element has, but the four <strong>core</strong> attributes often used
+      are: <code>class</code>, <code>id</code>, <code>style</code>,
+      and <code>title</code>.
+    </p>
+    <p id="events" class="attributes" onclick="changeColor(this)">Some
+      attributes start with the keyword <code>on</code>, these are hooks that
+      link into javascript, allowing you to execute code for various related
+      events. Try clicking this element.
+    </p>
+    <p id="i18n" class="attributes"><span lang="en">Some attributes exist to
+        help give context to the element so it can be localized easier in
+        another country. One example of this is the <code>lang</code>
+        attribute</span> So far this has all been in english, but now <span
+        lang="fr">c'est tout français</span></p>
+    <p id="a11y" class="attributes">Other attributes exist to allow robots to
+      more easily parse what is going on for those that have limited vision.
+      Attributes such as <code>aria-*</code>, <code>alt</code>, and
+      <code>tabindex</code>. Be careful using <code>aria-*</code> attributes
+      though, they should not take the place of proper semantic markup.
+      <span id="hover-this">Hover this.</span><span role="tooltip">This is a
+        tooltip!</span>
+    </p>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Entities &hearts;</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 50%;
+    }
+
+    code {
+      border-radius: 4px;
+      display: inline-block;
+      padding: 2px 4px 4px 5px;
+    }
+
+    table {
+      margin-left: 20px;
+      width: 500px;
+    }
+
+    td:first-child,
+    td:nth-child(3) {
+      font-family: monospace;
+      font-size: 1.1rem;
+    }
+
+    td:nth-child(2),
+    td:nth-child(4) {
+      font-size: 1.2em;
+    }
+
+    td,
+    th {
+      padding: 5px;
+    }
+
+    table:not(:first-of-type) {
+      margin-top: 30px;
+    }
+
+    table caption {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .highlight {
+      background-color: rgb(255, 204, 0);
+    }
+
+    th,
+    .rowcolor {
+      background-color: rgb(210, 210, 210);
+    }
+
+    tr:not(.rowcolor) {
+      background-color: rgb(240, 240, 240);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>HTML Entities &hearts;</h1>
+  </header>
+
+  <p>You're probably familiar with them, maybe you've seen
+    <code class="highlight">&amp;amp;</code> on a website and wondered what is
+    was
+  </p>
+  <p>HTML entities serve two purposes:</p>
+  <ol>
+    <li>They allow for you to use
+      characters which are normally probited in content by HTML (such as the
+      &lt;
+      symbol)</li>
+    <li>They acted as a proto-emoji in the early days of the net</li>
+  </ol>
+
+  <table>
+    <caption>Latin Extended-A and -B</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="80"><b>Element</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;OElig;</td>
+        <td valign="top">&OElig;</td>
+        <td valign="top">&amp;#338;</td>
+        <td valign="top">&#338;</td>
+        <td valign="top">Uppercase ligature &quot;oe&quot;</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;oelig;</td>
+        <td valign="top">&oelig;</td>
+        <td valign="top">&amp;#339;</td>
+        <td valign="top">&#339;</td>
+        <td valign="top">Lowercase ligature &quot;oe&quot;</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Scaron;</td>
+        <td valign="top">&Scaron;</td>
+        <td valign="top">&amp;#352;</td>
+        <td valign="top">&#352;</td>
+        <td valign="top">Uppercase &quot;s&quot; with caron</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;scaron;</td>
+        <td valign="top">&scaron;</td>
+        <td valign="top">&amp;#353;</td>
+        <td valign="top">&#353;</td>
+        <td valign="top">Lowercase &quot;s&quot; with caron</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Yuml;</td>
+        <td valign="top">&Yuml;</td>
+        <td valign="top">&amp;#376;</td>
+        <td valign="top">&#376;</td>
+        <td valign="top">Uppercase &quot;y&quot; with umlaut
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Spacing Modifiers</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="80"><b>Element</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;circ;</td>
+        <td valign="top">&circ;</td>
+        <td valign="top">&amp;#710;</td>
+        <td valign="top">&#710;</td>
+        <td valign="top">Circumflex<br />accent</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;tilde;</td>
+        <td valign="top">&tilde;</td>
+        <td valign="top">&amp;#732;</td>
+        <td valign="top">&#732;</td>
+        <td valign="top">Small tilde</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>General Punctuation</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="75"><b>Element</b></th>
+        <th valign="top" width="55"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="55"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;ensp;</td>
+        <td valign="top">x&ensp;x</td>
+        <td valign="top">&amp;#8194;</td>
+        <td valign="top">x&#8194;x</td>
+        <td valign="top">En space</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;emsp;</td>
+        <td valign="top">x&emsp;x</td>
+        <td valign="top">&amp;#8195;</td>
+        <td valign="top">x&#8195;x</td>
+        <td valign="top">Em space</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;thinsp;</td>
+        <td valign="top">x&thinsp;x</td>
+        <td valign="top">&amp;#8201;</td>
+        <td valign="top">x&#8201;x</td>
+        <td valign="top">Thin space</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;zwnj;</td>
+        <td valign="top">&zwnj;</td>
+        <td valign="top">&amp;#8204;</td>
+        <td valign="top">&#8204;</td>
+        <td valign="top">Zero width non-joiner</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;zwj;</td>
+        <td valign="top">&zwj;</td>
+        <td valign="top">&amp;#8205;</td>
+        <td valign="top">&#8205;</td>
+        <td valign="top">Zero width joiner</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;lrm;</td>
+        <td valign="top">&lrm;</td>
+        <td valign="top">&amp;#8206;</td>
+        <td valign="top">&#8206;</td>
+        <td valign="top">Left-to-right mark</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;rlm;</td>
+        <td valign="top">&rlm;</td>
+        <td valign="top">&amp;#8207;</td>
+        <td valign="top">&#8207;</td>
+        <td valign="top">right-to-left mark</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;ndash;</td>
+        <td valign="top">&ndash;</td>
+        <td valign="top">&amp;#8211;</td>
+        <td valign="top">&#8211;</td>
+        <td valign="top">En dash</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;mdash;</td>
+        <td valign="top">&mdash;</td>
+        <td valign="top">&amp;#8212;</td>
+        <td valign="top">&#8212;</td>
+        <td valign="top">Em dash</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;lsquo;</td>
+        <td valign="top">&lsquo;</td>
+        <td valign="top">&amp;#8216;</td>
+        <td valign="top">&#8216;</td>
+        <td valign="top">Left single quotation mark</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;rsquo;</td>
+        <td valign="top">&rsquo;</td>
+        <td valign="top">&amp;#8217;</td>
+        <td valign="top">&#8217;</td>
+        <td valign="top">Right single quotation mark</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;sbquo;</td>
+        <td valign="top">&sbquo;</td>
+        <td valign="top">&amp;#8218;</td>
+        <td valign="top">&#8218;</td>
+        <td valign="top">Single low-9 quotation mark</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;ldquo;</td>
+        <td valign="top">&ldquo;</td>
+        <td valign="top">&amp;#8220;</td>
+        <td valign="top">&#8220;</td>
+        <td valign="top">Left double quotation mark</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;rdquo;</td>
+        <td valign="top">&rdquo;</td>
+        <td valign="top">&amp;#8221;</td>
+        <td valign="top">&#8221;</td>
+        <td valign="top">Right double quotation mark</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;bdquo;</td>
+        <td valign="top">&bdquo;</td>
+        <td valign="top">&amp;#8222;</td>
+        <td valign="top">&#8222;</td>
+        <td valign="top">Double low-9 quotation mark
+        </td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;dagger;</td>
+        <td valign="top">&dagger;</td>
+        <td valign="top">&amp;#8224;</td>
+        <td valign="top">&#8224;</td>
+        <td valign="top">Dagger</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Dagger;</td>
+        <td valign="top">&Dagger;</td>
+        <td valign="top">&amp;#8225;</td>
+        <td valign="top">&#8225;</td>
+        <td valign="top">Double dagger
+        </td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;bull;</td>
+        <td valign="top">&bull;</td>
+        <td valign="top">&amp;#8226;</td>
+        <td align="center" valign="top">&#8226;</td>
+        <td valign="top">Bullet</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;hellip;</td>
+        <td valign="top">&hellip;</td>
+        <td valign="top">&amp;#8230;</td>
+        <td align="center" valign="top">&#8230;</td>
+        <td valign="top">Horizontal ellipsis</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;permil;</td>
+        <td valign="top">&permil;</td>
+        <td valign="top">&amp;#8240;</td>
+        <td valign="top">&#8240;</td>
+        <td valign="top">Per thousand sign</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;prime;</td>
+        <td valign="top">&prime;</td>
+        <td valign="top">&amp;#8242;</td>
+        <td align="center" valign="top">&#8242;</td>
+        <td valign="top">Prime, minutes, or feet</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Prime;</td>
+        <td valign="top">&Prime;</td>
+        <td valign="top">&amp;#8243;</td>
+        <td align="center" valign="top">&#8243;</td>
+        <td valign="top">Double prime, seconds, or inches</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;lsaquo;</td>
+        <td valign="top">&lsaquo;</td>
+        <td valign="top">&amp;#8249;</td>
+        <td valign="top">&#8249;</td>
+        <td valign="top">Single left-pointing angle quotation mark</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;rsaquo;</td>
+        <td valign="top">&rsaquo;</td>
+        <td valign="top">&amp;#8250;</td>
+        <td valign="top">&#8250;</td>
+        <td valign="top">Single right-pointing angle quotation mark</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;oline;</td>
+        <td valign="top">&oline;</td>
+        <td valign="top">&amp;#8254;</td>
+        <td align="center" valign="top">&#8254;</td>
+        <td valign="top">Overline</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;frasl;</td>
+        <td valign="top">&frasl;</td>
+        <td valign="top">&amp;#8260;</td>
+        <td align="center" valign="top">&#8260;</td>
+        <td valign="top">Fraction slash</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Greek Characters</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="75"><b>Element</b></th>
+        <th valign="top" width="55"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="55"><b>Test</b></th>
+        <th valign="top" width="95"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;Alpha;</td>
+        <td valign="top">Α</td>
+        <td valign="top">&amp;#913;</td>
+        <td align="center" valign="top">Α</td>
+        <td valign="top">Greek&nbsp;capita letter alpha</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Beta;</td>
+        <td valign="top">Β</td>
+        <td valign="top">&amp;#914;</td>
+        <td align="center" valign="top">Β</td>
+        <td valign="top">Greek capital letter beta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Gamma;</td>
+        <td valign="top">Γ</td>
+        <td valign="top">&amp;#915;</td>
+        <td align="center" valign="top">Γ</td>
+        <td valign="top">Greek capital letter gamma</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Delta;</td>
+        <td valign="top">Δ</td>
+        <td valign="top">&amp;#916;</td>
+        <td align="center" valign="top">Δ</td>
+        <td valign="top">Greek capital letter delta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Epsilon;</td>
+        <td valign="top">Ε</td>
+        <td valign="top">&amp;#917;</td>
+        <td align="center" valign="top">Ε</td>
+        <td valign="top">Greek capital letter epsilon</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Zeta;</td>
+        <td valign="top">Ζ</td>
+        <td valign="top">&amp;#918;</td>
+        <td align="center" valign="top">Ζ</td>
+        <td valign="top">Greek capital letter zeta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Eta;</td>
+        <td valign="top">Η</td>
+        <td valign="top">&amp;#919;</td>
+        <td align="center" valign="top">Η</td>
+        <td valign="top">Greek capital letter eta</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Theta;</td>
+        <td valign="top">Θ</td>
+        <td valign="top">&amp;#920;</td>
+        <td align="center" valign="top">Θ</td>
+        <td valign="top">Greek capital letter theta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Iota;</td>
+        <td valign="top">Ι</td>
+        <td valign="top">&amp;#921;</td>
+        <td align="center" valign="top">Ι</td>
+        <td valign="top">Greek capital letter iota</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Kappa;</td>
+        <td valign="top">Κ</td>
+        <td valign="top">&amp;#922;</td>
+        <td align="center" valign="top">Κ</td>
+        <td valign="top">Greek capital letter kappa</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Lambda;</td>
+        <td valign="top">Λ</td>
+        <td valign="top">&amp;#923;</td>
+        <td align="center" valign="top">Λ</td>
+        <td valign="top">Greek capital letter lambda</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Mu;</td>
+        <td valign="top">Μ</td>
+        <td valign="top">&amp;#924;</td>
+        <td align="center" valign="top">Μ</td>
+        <td valign="top">Greek capital letter mu</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Nu;</td>
+        <td valign="top">Ν</td>
+        <td valign="top">&amp;#925;</td>
+        <td align="center" valign="top">Ν</td>
+        <td valign="top">Greek capital letter nu</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Xi;</td>
+        <td valign="top">Ξ</td>
+        <td valign="top">&amp;#926;</td>
+        <td align="center" valign="top">Ξ</td>
+        <td valign="top">Greek capital letter xi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Omicron;</td>
+        <td valign="top">Ο</td>
+        <td valign="top">&amp;#927;</td>
+        <td align="center" valign="top">Ο</td>
+        <td valign="top">Greek capital letter omicron</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Pi;</td>
+        <td valign="top">Π</td>
+        <td valign="top">&amp;#928;</td>
+        <td align="center" valign="top">Π</td>
+        <td valign="top">Greek capital letter pi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Rho;</td>
+        <td valign="top">Ρ</td>
+        <td valign="top">&amp;#929;</td>
+        <td align="center" valign="top">Ρ</td>
+        <td valign="top">Greek capital letter rho</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Sigma;</td>
+        <td valign="top">Σ</td>
+        <td valign="top">&amp;#931;</td>
+        <td align="center" valign="top">Σ</td>
+        <td valign="top">Greek capital letter sigma</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Tau;</td>
+        <td valign="top">Τ</td>
+        <td valign="top">&amp;#932;</td>
+        <td align="center" valign="top">Τ</td>
+        <td valign="top">Greek capital letter tau</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Upsilon;</td>
+        <td valign="top">Υ</td>
+        <td valign="top">&amp;#933;</td>
+        <td align="center" valign="top">Υ</td>
+        <td valign="top">Greek capital letter upsilon</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Phi;</td>
+        <td valign="top">Φ</td>
+        <td valign="top">&amp;#934;</td>
+        <td align="center" valign="top">Φ</td>
+        <td valign="top">Greek capital letter phi</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Chi;</td>
+        <td valign="top">Χ</td>
+        <td valign="top">&amp;#935;</td>
+        <td align="center" valign="top">Χ</td>
+        <td valign="top">Greek capital letter chi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;Psi;</td>
+        <td valign="top">Ψ</td>
+        <td valign="top">&amp;#936;</td>
+        <td align="center" valign="top">Ψ</td>
+        <td valign="top">Greek capital letter psi</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;Omega;</td>
+        <td valign="top">Ω</td>
+        <td valign="top">&amp;#937;</td>
+        <td align="center" valign="top">Ω</td>
+        <td valign="top">Greek capital letter omega</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;alpha;</td>
+        <td valign="top">α</td>
+        <td valign="top">&amp;#945;</td>
+        <td align="center" valign="top">α</td>
+        <td valign="top">Greek small letter alpha</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;beta;</td>
+        <td valign="top">β</td>
+        <td valign="top">&amp;#946;</td>
+        <td align="center" valign="top">β</td>
+        <td valign="top">Greek small letter beta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;gamma;</td>
+        <td valign="top">γ</td>
+        <td valign="top">&amp;#947;</td>
+        <td align="center" valign="top">γ</td>
+        <td valign="top">Greek small letter gamma</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;delta;</td>
+        <td valign="top">δ</td>
+
+        <td valign="top">&amp;#948;</td>
+        <td align="center" valign="top">δ</td>
+
+        <td valign="top">Greek small letter delta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;epsilon;</td>
+        <td valign="top">ε</td>
+        <td valign="top">&amp;#949;</td>
+        <td align="center" valign="top">ε</td>
+        <td valign="top">Greek small letter epsilon</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;zeta;</td>
+        <td valign="top">ζ</td>
+        <td valign="top">&amp;#950;</td>
+        <td align="center" valign="top">ζ</td>
+        <td valign="top">Greek small letter zeta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;eta;</td>
+        <td valign="top">η</td>
+        <td valign="top">&amp;#951;</td>
+        <td align="center" valign="top">η</td>
+        <td valign="top">Greek small letter eta</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;theta;</td>
+        <td valign="top">θ</td>
+        <td valign="top">&amp;#952;</td>
+        <td align="center" valign="top">θ</td>
+        <td valign="top">Greek small letter theta</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;iota;</td>
+        <td valign="top">ι</td>
+        <td valign="top">&amp;#953;</td>
+        <td align="center" valign="top">ι</td>
+        <td valign="top">Greek small letter iota</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;kappa;</td>
+        <td valign="top">κ</td>
+        <td valign="top">&amp;#954;</td>
+        <td align="center" valign="top">κ</td>
+        <td valign="top">Greek small letter kappa</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;lambda;</td>
+        <td valign="top">λ</td>
+        <td valign="top">&amp;#955;</td>
+        <td align="center" valign="top">λ</td>
+        <td valign="top">Greek small letter lambda</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;mu;</td>
+        <td valign="top">μ</td>
+        <td valign="top">&amp;#956;</td>
+        <td align="center" valign="top">μ</td>
+        <td valign="top">Greek small letter mu</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;nu;</td>
+        <td valign="top">ν</td>
+        <td valign="top">&amp;#957;</td>
+        <td align="center" valign="top">ν</td>
+        <td valign="top">Greek small letter nu</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;xi;</td>
+        <td valign="top">ξ</td>
+        <td valign="top">&amp;#958;</td>
+        <td align="center" valign="top">ξ</td>
+        <td valign="top">Greek small letter xi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;omicron;</td>
+        <td valign="top">ο</td>
+        <td valign="top">&amp;#959;</td>
+        <td align="center" valign="top">ο</td>
+        <td valign="top">Greek small letter omicron</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;pi;</td>
+        <td valign="top">π</td>
+        <td valign="top">&amp;#960;</td>
+        <td align="center" valign="top">π</td>
+        <td valign="top">Greek small letter pi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;rho;</td>
+        <td valign="top">ρ</td>
+        <td valign="top">&amp;#961;</td>
+        <td align="center" valign="top">ρ</td>
+        <td valign="top">Greek small letter rho</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;sigmaf;</td>
+        <td valign="top">ς</td>
+        <td valign="top">&amp;#962;</td>
+        <td align="center" valign="top">ς</td>
+        <td valign="top">Greek small letter final sigma</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;sigma;</td>
+        <td valign="top">σ</td>
+        <td valign="top">&amp;#963;</td>
+        <td align="center" valign="top">σ</td>
+        <td valign="top">Greek small letter sigma</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;tau;</td>
+        <td valign="top">τ</td>
+        <td valign="top">&amp;#964;</td>
+        <td align="center" valign="top">τ</td>
+        <td valign="top">Greek small letter tau</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;upsilon;</td>
+        <td valign="top">υ</td>
+        <td valign="top">&amp;#965;</td>
+        <td align="center" valign="top">υ</td>
+        <td valign="top">Greek small letter upsilon</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;phi;</td>
+        <td valign="top">φ</td>
+        <td valign="top">&amp;#966;</td>
+        <td align="center" valign="top">φ</td>
+        <td valign="top">Greek small letter phi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;chi;</td>
+        <td valign="top">χ</td>
+        <td valign="top">&amp;#967;</td>
+        <td align="center" valign="top">χ</td>
+        <td valign="top">Greek small letter chi</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;psi;</td>
+        <td valign="top">ψ</td>
+        <td valign="top">&amp;#968;</td>
+        <td align="center" valign="top">ψ</td>
+        <td valign="top">Greek small letter psi</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;omega;</td>
+        <td valign="top">ω</td>
+        <td valign="top">&amp;#969;</td>
+        <td align="center" valign="top">ω</td>
+        <td valign="top">Greek small letter omega</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;thetasym;</td>
+        <td valign="top">ϑ</td>
+        <td valign="top">&amp;#977;</td>
+        <td align="center" valign="top">ϑ</td>
+        <td valign="top">Greek small letter theta symbol</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;upsih;</td>
+        <td valign="top">ϒ</td>
+        <td valign="top">&amp;#978;</td>
+        <td align="center" valign="top">ϒ</td>
+        <td valign="top">Greek upsilon with hook symbol</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;piv;</td>
+        <td valign="top">ϖ</td>
+        <td valign="top">&amp;#982;</td>
+        <td align="center" valign="top">ϖ</td>
+        <td valign="top">Greek pi symbol</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Letterlike Symbols</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="80"><b>Element</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;weierp;</td>
+        <td valign="top">℘</td>
+        <td valign="top">&amp;#8472;</td>
+        <td align="center" valign="top">℘</td>
+        <td valign="top">script capital P, Weierstrass p</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;image;</td>
+        <td valign="top">ℑ</td>
+        <td valign="top">&amp;#8465;</td>
+        <td align="center" valign="top">ℑ</td>
+        <td valign="top">blackletter capital I, or imaginary part symbol</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;real;</td>
+        <td valign="top">ℜ</td>
+        <td valign="top">&amp;#8476;</td>
+        <td align="center" valign="top">ℜ</td>
+        <td valign="top">blackletter capital R, or real part symbol</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;trade;</td>
+        <td valign="top">™</td>
+        <td valign="top">&amp;#8482;</td>
+        <td align="center" valign="top">™</td>
+        <td valign="top">Trade mark sign</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;alefsym;</td>
+        <td valign="top">ℵ</td>
+        <td valign="top">&amp;#8501;</td>
+        <td align="center" valign="top">ℵ</td>
+        <td valign="top">Alef symbol, or first transfinite cardinal</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Arrows</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="80"><b>Element</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="90"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;larr;</td>
+        <td valign="top">←</td>
+        <td valign="top">&amp;#8592;</td>
+        <td align="center" valign="top">←</td>
+        <td valign="top">Leftwards arrow</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;uarr;</td>
+        <td valign="top">↑</td>
+        <td valign="top">&amp;#8593;</td>
+        <td align="center" valign="top">↑</td>
+        <td valign="top">Upwards arrow</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;rarr;</td>
+        <td valign="top">→</td>
+        <td valign="top">&amp;#8594;</td>
+        <td align="center" valign="top">→</td>
+        <td valign="top">Rightwards arrow</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;darr;</td>
+        <td valign="top">↓</td>
+        <td valign="top">&amp;#8595;</td>
+        <td align="center" valign="top">↓</td>
+        <td valign="top">Downwards arrow</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;harr;</td>
+        <td valign="top">↔</td>
+        <td valign="top">&amp;#8596;</td>
+        <td align="center" valign="top">↔</td>
+        <td valign="top">Left right arrow</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;crarr;</td>
+        <td valign="top">↵</td>
+        <td valign="top">&amp;#8629;</td>
+        <td align="center" valign="top">↵</td>
+        <td valign="top">Downwards arrow with corner leftwards</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;lArr;</td>
+        <td valign="top">⇐</td>
+        <td valign="top">&amp;#8656;</td>
+        <td align="center" valign="top">⇐</td>
+        <td valign="top">Leftwards double arrow</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;uArr;</td>
+        <td valign="top">⇑</td>
+        <td valign="top">&amp;#8657;</td>
+        <td align="center" valign="top">⇑</td>
+        <td valign="top">Upwards double arrow</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;rArr;</td>
+        <td valign="top">⇒</td>
+        <td valign="top">&amp;#8658;</td>
+        <td align="center" valign="top">⇒</td>
+        <td valign="top">Rightwards double arrow</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;dArr;</td>
+        <td valign="top">⇓</td>
+        <td valign="top">&amp;#8659;</td>
+        <td align="center" valign="top">⇓</td>
+        <td valign="top">Downwards double arrow</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;hArr;</td>
+        <td valign="top">⇔</td>
+        <td valign="top">&amp;#8660;</td>
+        <td align="center" valign="top">⇔</td>
+        <td valign="top">Left right double arrow</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Mathematical Operators</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="75"><b>Element</b></th>
+        <th valign="top" width="55"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="55"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;forall;</td>
+        <td align="center" valign="top">∀</td>
+        <td valign="top">&amp;#8704;</td>
+        <td align="center" valign="top">∀</td>
+        <td valign="top">For all</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;part;</td>
+        <td align="center" valign="top">∂</td>
+        <td valign="top">&amp;#8706;</td>
+        <td align="center" valign="top">∂</td>
+        <td valign="top">Partial differential</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;exist;</td>
+        <td align="center" valign="top">∃</td>
+        <td valign="top">&amp;#8707;</td>
+        <td align="center" valign="top">∃</td>
+        <td valign="top">There exists</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;empty;</td>
+        <td align="center" valign="top">∅</td>
+        <td valign="top">&amp;#8709;</td>
+        <td align="center" valign="top">∅</td>
+        <td valign="top">Empty set, null set, diameter</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;nabla;</td>
+        <td align="center" valign="top">∇</td>
+        <td valign="top">&amp;#8711;</td>
+        <td align="center" valign="top">∇</td>
+        <td valign="top">Nabla, or backward difference</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;isin;</td>
+        <td align="center" valign="top">∈</td>
+        <td valign="top">&amp;#8712;</td>
+        <td align="center" valign="top">∈</td>
+        <td valign="top">Element of</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;notin;</td>
+        <td align="center" valign="top">∉</td>
+        <td valign="top">&amp;#8713;</td>
+        <td align="center" valign="top">∉</td>
+        <td valign="top">Not an element of</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;ni;</td>
+        <td align="center" valign="top">∋</td>
+        <td valign="top">&amp;#8715;</td>
+        <td align="center" valign="top">∋</td>
+        <td valign="top">Contains as member</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;prod;</td>
+        <td align="center" valign="top">∏</td>
+        <td valign="top">&amp;#8719;</td>
+        <td align="center" valign="top">∏</td>
+        <td valign="top">N-ary product, or product sign</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;sum;</td>
+        <td align="center" valign="top">∑</td>
+        <td valign="top">&amp;#8721;</td>
+        <td align="center" valign="top">∑</td>
+        <td valign="top">N-ary summation</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;minus;</td>
+        <td align="center" valign="top">−</td>
+        <td valign="top">&amp;#8722;</td>
+        <td align="center" valign="top">−</td>
+        <td valign="top">Minus sign</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;lowast;</td>
+        <td align="center" valign="top">∗</td>
+        <td valign="top">&amp;#8727;</td>
+        <td align="center" valign="top">∗</td>
+        <td valign="top">Asterisk operator</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;radic;</td>
+        <td align="center" valign="top">√</td>
+        <td valign="top">&amp;#8730;</td>
+        <td align="center" valign="top">√</td>
+        <td valign="top">Square root, radical sign </td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;prop;</td>
+        <td align="center" valign="top">∝</td>
+        <td valign="top">&amp;#8733;</td>
+        <td align="center" valign="top">∝</td>
+        <td valign="top">Proportional to</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;infin;</td>
+        <td align="center" valign="top">∞</td>
+        <td valign="top">&amp;#8734;</td>
+        <td align="center" valign="top">∞</td>
+        <td valign="top">Infinity</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;ang;</td>
+        <td align="center" valign="top">∠</td>
+        <td valign="top">&amp;#8736;</td>
+        <td align="center" valign="top">∠</td>
+        <td valign="top">Angle</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;and;</td>
+        <td align="center" valign="top">∧</td>
+        <td valign="top">&amp;#8869;</td>
+        <td align="center" valign="top">⊥</td>
+        <td valign="top">Logical and</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;or;</td>
+        <td align="center" valign="top">∨</td>
+        <td valign="top">&amp;#8870;</td>
+        <td align="center" valign="top">⊦</td>
+        <td valign="top">Logical or</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;cap;</td>
+        <td align="center" valign="top">∩</td>
+        <td valign="top">&amp;#8745;</td>
+        <td align="center" valign="top">∩</td>
+        <td valign="top">Intersection, cap</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;cup;</td>
+        <td align="center" valign="top">∪</td>
+        <td valign="top">&amp;#8746;</td>
+        <td align="center" valign="top">∪</td>
+        <td valign="top">Union, cup</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;int;</td>
+        <td align="center" valign="top">∫</td>
+        <td valign="top">&amp;#8747;</td>
+        <td align="center" valign="top">∫</td>
+        <td valign="top">Integral</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;there4;</td>
+        <td align="center" valign="top">∴</td>
+        <td valign="top">&amp;#8756;</td>
+        <td align="center" valign="top">∴</td>
+        <td valign="top">Therefore</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;sim;</td>
+        <td align="center" valign="top">∼</td>
+        <td valign="top">&amp;#8764;</td>
+        <td align="center" valign="top">∼</td>
+        <td valign="top">Tilde operator, varies with, similar to</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;cong;</td>
+        <td align="center" valign="top">≅</td>
+        <td valign="top">&amp;#8773;</td>
+        <td align="center" valign="top">≅</td>
+        <td valign="top">Approximately equal to</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;asymp;</td>
+        <td align="center" valign="top">≈</td>
+        <td valign="top">&amp;#8776;</td>
+        <td align="center" valign="top">≈</td>
+        <td valign="top">Almost equal to, asymptotic to</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;ne;</td>
+        <td align="center" valign="top">≠</td>
+        <td valign="top">&amp;#8800;</td>
+        <td align="center" valign="top">≠</td>
+        <td valign="top">Not equal to</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;equiv;</td>
+        <td align="center" valign="top">≡</td>
+        <td valign="top">&amp;#8801;</td>
+        <td align="center" valign="top">≡</td>
+        <td valign="top">Identical to</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;le;</td>
+        <td align="center" valign="top">≤</td>
+        <td valign="top">&amp;#8804;</td>
+        <td align="center" valign="top">≤</td>
+        <td valign="top">Less-than or equal to</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;ge;</td>
+        <td align="center" valign="top">≥</td>
+        <td valign="top">&amp;#8805;</td>
+        <td align="center" valign="top">≥</td>
+        <td valign="top">Greater-than or equal to</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;sub;</td>
+        <td align="center" valign="top">⊂</td>
+        <td valign="top">&amp;#8834;</td>
+        <td align="center" valign="top">⊂</td>
+        <td valign="top">Subset of</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;sup;</td>
+        <td align="center" valign="top">⊃</td>
+        <td valign="top">&amp;#8835;</td>
+        <td align="center" valign="top">⊃</td>
+        <td valign="top">Superset of</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;nsub;</td>
+        <td align="center" valign="top">⊄</td>
+        <td valign="top">&amp;#8836;</td>
+        <td align="center" valign="top">⊄</td>
+        <td valign="top">Not a subset of</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;sube;</td>
+        <td align="center" valign="top">⊆</td>
+        <td valign="top">&amp;#8838;</td>
+        <td align="center" valign="top">⊆</td>
+        <td valign="top">Subset of or equal to</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;supe;</td>
+        <td align="center" valign="top">⊇</td>
+        <td valign="top">&amp;#8839;</td>
+        <td align="center" valign="top">⊇</td>
+        <td valign="top">Superset of or equal to</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;oplus;</td>
+        <td align="center" valign="top">⊕</td>
+        <td valign="top">&amp;#8853;</td>
+        <td align="center" valign="top">⊕</td>
+        <td valign="top">Circled plus, direct sum</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;otimes;</td>
+        <td align="center" valign="top">⊗</td>
+        <td valign="top">&amp;#8855;</td>
+        <td align="center" valign="top">⊗</td>
+        <td valign="top">circled times, vector product</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;perp;</td>
+        <td align="center" valign="top">⊥</td>
+        <td valign="top">&amp;#8869;</td>
+        <td align="center" valign="top">⊥</td>
+        <td valign="top">Up tack, orthogonal to, perpendicular</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;sdot;</td>
+        <td align="center" valign="top">⋅</td>
+        <td valign="top">&amp;#8901;</td>
+        <td align="center" valign="top">⋅</td>
+        <td valign="top">dot operator</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Miscellaneous Technical</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="80"><b>Element</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;lceil;</td>
+        <td valign="top">⌈</td>
+        <td valign="top">&amp;#8968;</td>
+        <td align="center" valign="top">⌈</td>
+        <td valign="top">Left&nbsp;ceiling, apl upstile</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;rceil;</td>
+        <td valign="top">⌉</td>
+        <td valign="top">&amp;#8969;</td>
+        <td align="center" valign="top">⌉</td>
+        <td valign="top">Right ceiling</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;lfloor;</td>
+        <td valign="top">⌊</td>
+        <td valign="top">&amp;#8970;</td>
+        <td align="center" valign="top">⌊</td>
+        <td valign="top">Left&nbsp;floor, apl&nbsp;downstile</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;rfloor;</td>
+        <td valign="top">⌋</td>
+        <td valign="top">&amp;#8971;</td>
+        <td align="center" valign="top">⌋</td>
+        <td valign="top">Right floor</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;lang;</td>
+        <td valign="top">⟨</td>
+        <td valign="top">&amp;#9001;</td>
+        <td align="center" valign="top">〈</td>
+        <td valign="top">
+          <nobr>Left-pointing</nobr> angle&nbsp;bracket
+        </td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;rang;</td>
+        <td valign="top">⟩</td>
+        <td valign="top">&amp;#9002;</td>
+        <td align="center" valign="top">〉</td>
+        <td valign="top">
+          <nobr>Right-pointing</nobr> angle bracket
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Miscellaneous Shapes</caption>
+    <tr>
+      <th valign="top" width="80"><b>Element</b></th>
+      <th valign="top" width="60"><b>Test</b></th>
+      <th valign="top" width="80"><b>Code</b></th>
+      <th valign="top" width="60"><b>Test</b></th>
+      <th valign="top" width="90"><b>Description</b></th>
+    </tr>
+    <tr>
+      <td valign="top">&amp;loz;</td>
+      <td valign="top">&loz;</td>
+      <td valign="top">&amp;#9674;</td>
+      <td align="center" valign="top">&#9674;</td>
+      <td valign="top">Lozenge</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>Miscellaneous Symbols</caption>
+    <thead>
+      <tr>
+        <th valign="top" width="80"><b>Element</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="80"><b>Code</b></th>
+        <th valign="top" width="60"><b>Test</b></th>
+        <th valign="top" width="100"><b>Description</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">&amp;spades;</td>
+        <td valign="top">&spades;</td>
+        <td valign="top">&amp;#9824;</td>
+        <td align="center" valign="top">&#9824;</td>
+        <td valign="top">Black spade suit</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;clubs;</td>
+        <td valign="top">&clubs;</td>
+        <td valign="top">&amp;#9827;</td>
+        <td align="center" valign="top">&#9827;</td>
+        <td valign="top">Black club suit</td>
+      </tr>
+      <tr>
+        <td valign="top">&amp;hearts;</td>
+        <td valign="top">&hearts;</td>
+        <td valign="top">&amp;#9829;</td>
+        <td align="center" valign="top">&#9829;</td>
+        <td valign="top">Black heart suit</td>
+      </tr>
+      <tr class="rowcolor">
+        <td valign="top">&amp;diams;</td>
+        <td valign="top">&diams;</td>
+        <td valign="top">&amp;#9830;</td>
+        <td align="center" valign="top">&#9830;</td>
+        <td valign="top">Black diamond suit</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

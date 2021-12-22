@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Explorer</title>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Main Script -->
+  <script src="request-explorer.js" type="module"></script>
+  <!-- YAML Support -->
+  <script src="yaml_dumper.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <header>
+    <h1>How do you feel about Async JS?</h1>
+  </header>
+  <form action="#" method="get" name="ratingForm">
+    <fieldset id="ajax-rating">
+      <em>Hate It - </em> [
+      <input type="radio" name="rating" value="1" id="ajax-rating-1" required />
+      <label for="ajax-rating-1">1</label>
+      <input type="radio" name="rating" value="2" id="ajax-rating-2" required />
+      <label for="ajax-rating-2">2</label>
+      <input type="radio" name="rating" value="3" id="ajax-rating-3" required />
+      <label for="ajax-rating-3">3</label>
+      <input type="radio" name="rating" value="4" id="ajax-rating-4" required />
+      <label for="ajax-rating-4">4</label>
+      <input type="radio" name="rating" value="5" id="ajax-rating-5" required />
+      <label for="ajax-rating-5">5</label>
+      ] <em> - Love It</em>
+    </fieldset>
+    <label for="contentType">Content-Type:
+      <select name="contentType" id="contentType">
+        <option>application/x-www-form-urlencoded</option>
+        <option>text/plain</option>
+        <option>text/xml</option>
+        <option>application/json</option>
+        <option>text/x-yaml</option>
+        <option>base64</option>
+      </select>
+    </label>
+    <label for="comment">Comments:
+      <textarea id="comment" name="comment" rows="5" cols="40"
+        required></textarea>
+    </label>
+    <input type="submit" value="vote" />
+  </form>
+  <p>Output:</p>
+  <output></output>
+</body>
+
+</html>

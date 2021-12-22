@@ -18,23 +18,26 @@
       width: 600px;
     }
 
+    time {
+      color: red;
+    }
+
     #loading {
       color: gray;
       font-size: 1.5rem;
-    }
-
-    #time {
-      color: red;
     }
   </style>
 </head>
 
 <body>
-  <p id="loading">Loading script...</p>
   <h1>Render Blocking Demo</h1>
+  <p>Some initial content paints...</p>
+  <p id="loading">Now load a blocking script</p>
+  <h2>Finished Loading Script</h2>
   <p>Once this page started to render, it took <time></time> seconds
     for the first contentful paint to occur since the loading of our heavy
     non-critical script was deferred</p>
+  <button onclick="window.reload()">Refresh</button>
   <script>
     document.getElementById('loading').setAttribute('hidden', 'true');
     document.querySelector('time').innerHTML = (new Date().getTime() - startTime) / 1000;

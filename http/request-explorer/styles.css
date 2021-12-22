@@ -1,0 +1,38 @@
+/* styles.css */
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+label[for="contentType"] {
+  display: block;
+  margin-bottom: 20px;
+}
+
+label[for="comment"] {
+  display: block;
+  margin-bottom: 5px;
+}
+
+output {
+  border: 1px solid rgb(118,118,118);
+  border-radius: 2px;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-top: -16px;
+  min-height: 20px;
+  padding: 5px 10px;
+  word-wrap: break-word;
+  width: 320px;
+}
+
+#ajax-rating {
+  margin-bottom: 20px;
+}
+
+#comment {
+  display: block;
+}

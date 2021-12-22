@@ -13,25 +13,28 @@
       font-family: sans-serif;
     }
 
-    #loading {
-      color: gray;
-      font-size: 1.5rem;
-    }
-
-    #time {
+    time {
       color: red;
     }
   </style>
 </head>
 
 <body>
-  <p id="loading">Loading script...</p>
-  <script src="https://httplayground.introweb.tech/delay/5"></script>
   <h1>Render Blocking Demo</h1>
-  <p>Once this page started to render, it took <time></time> seconds
-    for the first contentful paint to occur due to a render blocking script</p>
+  <p>Some initial content paints</p>
+  <p>Blocking script now loading...<img src="loading.gif" id="loading"
+      height="25" width="25" /></p>
+  <script src="https://httplayground.introweb.tech/delay/3"></script>
   <script>
-    document.getElementById('loading').setAttribute('hidden', 'true');
+    document.querySelector('#loading').hidden = true;
+  </script>
+  <h2>Finished Loading Script</h2>
+  <p>Once this page started to render, it took <time></time> seconds
+    for the first contentful paint to occur since the loading of our heavy
+    non-critical script was deferred</p>
+  <button
+    onclick="window.document.body.innerHTML = ''; window.location.reload()">Reload</button>
+  <script>
     document.querySelector('time').innerHTML = (new Date().getTime() - startTime) / 1000;
   </script>
 </body>

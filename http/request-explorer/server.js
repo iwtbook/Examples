@@ -12,7 +12,7 @@ app.use(express.raw({type: '*/*'}));
 // The POST request handler for the route /
 app.post('/', (req, res) => {
   // Set the appropriate headers to pass CORS restrictions
-  res.set('Access-Control-Allow-Origin', 'https://*.introweb.tech/*');
+  res.set('Access-Control-Allow-Origin', 'https://examples.introweb.tech');
   res.set('Access-Control-Allow-Headers', '*');
   // Grab the request body, content type, and encoding (if applicable)
   let body = req.body.toString('utf-8');
@@ -27,7 +27,7 @@ app.post('/', (req, res) => {
 // The OPTIONS request handler (pre-flight automatic request the browser makes
 // for POST requests). Retunrs the appropriate headers for our demos.
 app.options('/*', (req, res) => {
-  res.set('Access-Control-Allow-Origin', 'https://*.introweb.tech/*');
+  res.set('Access-Control-Allow-Origin', 'https://examples.introweb.tech');
   res.set('Access-Control-Allow-Headers', '*');
   res.status(204).send();
 });

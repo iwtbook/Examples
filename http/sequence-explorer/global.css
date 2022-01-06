@@ -1,0 +1,179 @@
+/* global.css */
+
+body {
+  font-family: Arial, Sans-serif;
+  font-size: 13px;
+  margin: 0px;
+  width: 400px;
+}
+
+header {
+  margin: 18px 0 5px 18px;
+}
+
+h1 {
+  text-align: left;
+  font-size: 30px;
+  padding: 0px;
+  margin: 0px;
+}
+
+h2 em {
+  font-size: smaller;
+}
+
+h3 {
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px 0px 3px 0px;
+  margin: 0px;
+}
+
+legend {
+  padding: 5px;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+  padding: 3px 5px;
+}
+
+tr.row {
+  background: #f3f3ef;
+  border-top: 10px solid #fff;
+  padding: 3px 5px;
+}
+
+tr.rowOn {
+  background: #e5e5dc;
+  border-top: 1px solid #fff;
+  padding: 3px 5px;
+}
+
+tr.rowAdd {
+  background: #fff;
+  padding: 3px 5px;
+}
+
+tr.footerRow {
+  background: #f3f3ef;
+}
+
+tr.footerRow h3 {
+  float: right;
+  padding-right: 20px
+}
+
+.content {
+  padding: 15px;
+}
+
+.data {
+  background-color: #f3f3ef;
+  padding: 5px;
+  font-family: Courier, serif;
+}
+
+.deleteButton {
+  background-color: transparent;
+  color: #990000;
+  font-weight: bold;
+  font-size: larger;
+  border-style: hidden;
+  margin-left: 5px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.match {
+  color: green;
+}
+
+.nomatch {
+  color: red;
+}
+
+.output {
+  background-color: #f3f3ef;
+  padding: 5px;
+  font-family: Courier, serif;
+}
+
+.response {
+  background-color: #e7e7df;
+  border-top: 2px solid #d0d0bf;
+  padding: 15px;
+}
+
+.results {
+  background-color: #e7e7df;
+  border-top: 2px solid #d0d0bf;
+  display: block;
+  padding: 15px;
+}
+
+.results strong {
+  margin: 20px 20px 20px 30px;
+}
+
+.row {
+  background: #f3f3ef;
+  border-top: 1px solid #fff;
+  padding: 3px 5px;
+}
+
+.rowOn {
+  background: #e5e5dc;
+  border-top: 1px solid #fff;
+  padding: 3px 5px;
+}
+
+.row td {
+  padding: 3px;
+}
+
+.status {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.unknown {
+  color: orange;
+}
+
+/* for the race condition examples */
+.value1 {
+  color: blue;
+  font-weight: bold;
+}
+
+.value2 {
+  color: green;
+  font-weight: bold;
+}
+
+#requestButton {
+  margin: 20px 0;
+}
+
+#response span {
+  padding-right: 50px;
+}
+
+#status {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+#statusTable {
+  margin-top: 20px;
+}

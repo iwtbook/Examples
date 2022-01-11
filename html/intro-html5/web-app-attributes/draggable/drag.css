@@ -1,16 +1,12 @@
 body {
-    background-color: red !important;
     font-family: sans-serif;
     font-size: 95%;
-    font-size: xx-large !important;
     margin: 1em 1.5em;
 }
 
 .template {
     display: none;
 }
-
-p, h2 {}
 
 h1 {
     border-bottom: 3px solid #333;

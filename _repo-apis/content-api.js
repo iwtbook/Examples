@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const express = require('express');
+const mime = require('mime-types');
 const app = express();
 const port = 3001;
 
@@ -70,7 +71,8 @@ app.get('/:repo/file/*', (req, res) => {
 });
 
 /**
- * Fetches the direct contents of the specified file from the specified repo
+ * Fetches the direct contents of the specified file from the specified repo.
+ * Has no MIME type so it can be read as plain text
  * @param {string} repo the repository to fetch the file from
  * @param {string} contents/* the file to grab the contents of
  * @return {object} the contents of the specified file and some other metadata
@@ -87,6 +89,25 @@ app.get('/:repo/contents/*', (req, res) => {
   res.send(fileContents);
 });
 
+/**
+ * Fetches the direct contents of the specified file from the specified repo;
+ * attaches the correct MIME type to the file so it gets rendered properly
+ * @param {string} repo the repository to fetch the file from
+ * @param {string} contents/* the file to grab the contents of
+ * @return {object} the contents of the specified file and some other metadata
+ *                  on the file
+ */
+app.get('/:repo/contents-mime/*', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) return;
+  // Everything after file/ must be the file path
+  const filePath = getCurrentRepo() + '/' + decodeURI(req.params['0']);
+  // Grab the contents of the file
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  // Send it back with the right mime type
+  res.set('Content-Type', mime.lookup(filePath.split('.').pop()));
+  res.send(fileContents);
+});
 
 /**
  * Begins the server, starts listening for incoming requests.

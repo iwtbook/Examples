@@ -102,11 +102,9 @@ app.get('/:repo/contents-mime/*', (req, res) => {
   if (!supportedRepos.includes(req.params.repo)) return;
   // Everything after file/ must be the file path
   const filePath = getCurrentRepo() + '/' + decodeURI(req.params['0']);
-  // Grab the contents of the file
-  const fileContents = fs.readFileSync(filePath, 'utf8');
   // Send it back with the right mime type
   res.set('Content-Type', mime.lookup(filePath.split('.').pop()));
-  res.send(fileContents);
+  res.sendFile(filePath);
 });
 
 /**

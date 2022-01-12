@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iframe element</title>
+    <style>
+      iframe {
+        border: 1px solid black;
+      }
+
+      iframe.internal {
+        height: 180px;
+        width: 440px;
+      }
+
+      iframe.external {
+        height: 360px;
+        width: 440px;
+      }
+
+      p {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Internal Resource: <code>(src="page1.html")</code></p>
+    <iframe src="page1.html" frameborder="0" class="internal">
+      Sorry, your browser doesn't support inline frames.
+    </iframe>
+
+    <p>External Resource: <code>(src="http://htmlref.com")</code></p>
+    <iframe src="http://htmlref.com" frameborder="0" class="external">
+      Sorry, your browser doesn't support inline frames.
+    </iframe>
+  </body>
+</html>

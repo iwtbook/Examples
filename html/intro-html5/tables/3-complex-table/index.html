@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex Table</title>
+    <style>
+      * {
+        color: #555;
+        font-family: sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+
+      body {
+        width: 425px;
+      }
+
+      table {
+        border-collapse: collapse;
+        float: left;
+        margin: 0 10px 0 0;
+      }
+
+      table,
+      td,
+      th {
+        border: 2px solid #555;
+        box-sizing: border-box;
+      }
+
+      tr:nth-child(2) td {
+        padding-right: 15px;
+        width: 165px;
+      }
+
+      th {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption align="bottom">
+        The Super Widget
+      </caption>
+      <tr>
+        <td rowspan="2">
+          <img src="widget.gif" width="134" height="138" alt="super widget" />
+        </td>
+        <th>Specifications</th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>Diameter: 10 cm</li>
+            <li>Composition: Kryptonite</li>
+            <li>Color: Green</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      Notice how the text of a paragraph can flow around a table just as it
+      would any other embedded object form. Notice how the text of a paragraph
+      can flow around a table just as it would any other embedded object form.
+      Notice how the text of a paragraph can flow around a table just as it
+      would any other embedded object form. Notice how the text of a paragraph
+      can flow around a table just as it would any other embedded object form.
+      Notice how the text of a paragraph can flow around a table just as it
+      would any other embedded object form. Notice how the text of a paragraph
+      can flow around a table just as it would any other embedded object form.
+      Notice how the text of a paragraph can flow around a table just as it
+      would any other embedded object form. Notice how the text of a paragraph
+      can flow around a table just as it would any other embedded object form.
+    </p>
+  </body>
+</html>

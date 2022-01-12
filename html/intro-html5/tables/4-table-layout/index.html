@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Layout</title>
+    <style>
+      h1 {
+        border-bottom: 1px solid #9a9a9a;
+        margin-bottom: 17px;
+        padding-bottom: 22px;
+        text-align: center;
+      }
+
+      td.buffer {
+        width: 50px;
+      }
+
+      td:not(.buffer) {
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="buffer">&nbsp;</td>
+        <td>
+          <h1>Layout is here!</h1>
+          <p>
+            This is a very simple layout that would have been nearly impossible
+            to do without tables. This is a very simple layout that would have
+            been nearly impossible to do without tables. This is a very simple
+            layout that would have been nearly impossible to do without tables.
+          </p>
+        </td>
+        <td class="buffer">&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>

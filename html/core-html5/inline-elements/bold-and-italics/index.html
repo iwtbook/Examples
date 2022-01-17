@@ -5,15 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bold and Italics</title>
   </head>
+  <style>
+    h1,
+    h2,
+    p {
+      font-family: sans-serif;
+    }
+
+    p {
+      text-indent: 30px;
+    }
+
+    h1,
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
   <body>
-    <p>
-      This text is <b>bold</b> for emphasis. This <code>&lt;b&gt;</code> tag has
-      no semantic use outside of drawing the reader's attention to its contents.
-      It should not be used to style text.
-    </p>
-    <p>
-      This text is <i>italicized</i> and represents text that is set off from
-      the normal text for some reason. This <code>&lt;b&gt;</code>
-    </p>
+    <header>
+      <h1>Urgent &amp; Emphasized Content</h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2>The <code>&lt;b&gt;</code> tag</h2>
+        </header>
+        <p>
+          This text is <b>bold</b> for emphasis. This <code>&lt;b&gt;</code> tag
+          has no semantic use outside of drawing the reader's attention to its
+          contents. It should not be used to style text.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h2>The <code>&lt;i&gt;</code> tag</h2>
+        </header>
+        <p>
+          This text is <i>italicized</i> and represents text that is set off
+          from the normal text for some reason. This <code>&lt;i&gt;</code> tag
+          has no semantic use.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h2>The <code>&lt;strong&gt;</code> tag</h2>
+        </header>
+        <p>
+          This text is also <strong>bold</strong>. It represents content that is
+          important or urgent, meaning that this <code>&lt;strong&gt;</code> tag
+          has semantic use (unlike its <code>&lt;b&gt;</code> counterpart).
+        </p>
+      </section>
+      <section>
+        <header>
+          <h2>The <code>&lt;em&gt;</code> tag</h2>
+        </header>
+        <p>
+          This text is also <em>italicized</em>. It represents content that is
+          to be stressed or emphasized, meaning that this
+          <code>&lt;em&gt;</code> tag has semantic use (unlike its
+          <code>&lt;i&gt;</code> counterpart).
+        </p>
+      </section>
+    </main>
   </body>
 </html>

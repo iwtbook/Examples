@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breaks</title>
+    <style>
+      h1,
+      h2,
+      p {
+        font-family: sans-serif;
+      }
+
+      address {
+        margin-left: 40px;
+      }
+
+      p {
+        margin-left: 30px;
+      }
+
+      h1,
+      section {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Break Elements</h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2><code>&lt;br /&gt;</code></h2>
+        </header>
+        <p>
+          <code>&lt;br /&gt;</code> is an empty element, which is why it's
+          written often as a self-closing tag using XHTML synax.
+        </p>
+        <p>
+          Previously, a lot of people used <code>&lt;br /&gt;</code> elements to
+          create spacing between elements or new paragraphs within a paragraph
+          tag
+          <br />
+          <br />
+          like this. These use cases have fallen out of favor for more semantic
+          uses, such as creating new lines in poetry or formatting an address.
+        </p>
+        <address>
+          2105 Garnet Ave<br />
+          San Diego, CA<br />
+          92109
+        </address>
+      </section>
+      <section>
+        <header>
+          <h2><code>&lt;hr /&gt;</code></h2>
+        </header>
+        <p>
+          <code>&lt;hr /&gt;</code> is an empty element as well, so it is
+          written with the self closing style.
+        </p>
+        <p>
+          The <code>&lt;hr /&gt;</code> element formerly stood for "Horizontal
+          Rule", but in an effort to give it a more semantic meaning and less
+          visual, it has since been renamed to the "Thematic Break" element.
+        </p>
+        <hr />
+        <p>
+          As you can see above, it usually renders as a thin horizontal line by
+          default.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

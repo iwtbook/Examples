@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bidirectional Content</title>
+    <style>
+      h1,
+      h2,
+      p {
+        font-family: sans-serif;
+      }
+
+      p {
+        margin-left: 20px;
+      }
+
+      h1,
+      section {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bidirectional Content</h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2><code>&lt;bdi&gt;</code> - bidirectional isolate</h2>
+        </header>
+        <p>
+          This element allows you to isolate the text within from the
+          bidirectional algorithm when it parses the surrounding text. Useful
+          for situations where you aren't sure about the directionality of the
+          content you are inserting.
+        </p>
+        <p>
+          This text is forewards.
+          <bdi
+            >גוּט טַק אִים בְּטַגְֿא שְ וַיר דִּיש מַחֲזוֹר אִין בֵּיתֿ
+            הַכְּנֶסֶתֿ טְרַגְֿא</bdi
+          >. This text is forewards again.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h2><code>&lt;bdo&gt;</code> - bidirectional text override</h2>
+        </header>
+        <p>
+          This element allows you to override the standard directionality of the
+          content you are adding to the page.
+        </p>
+        <p>
+          This text is forewards. <bdo dir="rtl">This text is backwards.</bdo>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

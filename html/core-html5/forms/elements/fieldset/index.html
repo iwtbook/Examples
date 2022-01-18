@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+
+      fieldset {
+        box-sizing: border-box;
+        column-gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        row-gap: 10px;
+        padding: 12px 15px;
+        width: 315px;
+      }
+
+      fieldset > label {
+        justify-self: flex-end;
+      }
+
+      fieldset > div:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Customer Identification</legend>
+      <!-- First Name -->
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" size="25" />
+      <!-- Last Name -->
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" size="25" />
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" size="25" />
+    </fieldset>
+  </body>
+</html>

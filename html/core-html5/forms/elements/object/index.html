@@ -10,7 +10,7 @@
       }
 
       body {
-        margin-left: 20px;
+        margin-left: 25px;
       }
 
       figcaption {
@@ -28,6 +28,12 @@
 
       object:is([type='application/pdf'], [type='text/html']) {
         border: 2px solid lightgray;
+      }
+
+      p.fallback {
+        background-color: lightgray;
+        margin: 0;
+        padding: 5px 8px;
       }
 
       #examples {
@@ -62,7 +68,9 @@
               title="A simple PDF sample"
               height="400"
               width="400"
-            ></object>
+            >
+              <p class="fallback">This content shouldn't be rendered</p>
+            </object>
           </figure>
           <figure>
             <figcaption>A nested browsing context:</figcaption>
@@ -84,6 +92,12 @@
               width="300"
               height="300"
             ></object>
+          </figure>
+          <figure>
+            <figcaption>A bad URL & MIME Type:</figcaption>
+            <object data="foo" type="bar">
+              <p class="fallback">This is fallback content</p>
+            </object>
           </figure>
         </div>
       </section>

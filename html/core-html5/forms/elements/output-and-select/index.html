@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Output Element</title>
+    <style>
+      input {
+        width: 50px;
+      }
+
+      output {
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: block;
+        height: 25px;
+        padding: 3px 5px;
+        width: 155px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The <code>&lt;output&gt;</code> Element</h1>
+    </header>
+    <main>
+      <form>
+        <p>Simple Calculator</p>
+        <input type="number" name="num1" id="num1" step="1" />
+        <select name="operation" id="operation">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">x</option>
+          <option value="divide">/</option>
+        </select>
+        <input type="number" name="num2" id="num2" step="1" />
+        <button type="submit">Calculate</button>
+        <p>Result:</p>
+        <output name="result" id="result" for="num1 num2"></output>
+      </form>
+    </main>
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const num1 = Number(formData.get('num1'));
+        const num2 = Number(formData.get('num2'));
+        const result = document.querySelector('#result');
+
+        switch (formData.get('operation')) {
+          case 'add':
+            result.innerHTML = num1 + num2;
+            break;
+          case 'subtract':
+            result.innerHTML = num1 - num2;
+            break;
+          case 'multiply':
+            result.innerHTML = num1 * num2;
+            break;
+          case 'divide':
+            result.innerHTML = num1 / num2;
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -30,6 +30,11 @@
         border: 2px solid lightgray;
       }
 
+      figure:last-of-type,
+      figure:last-of-type :is(figcaption, object) {
+        width: 200px;
+      }
+
       p.fallback {
         background-color: lightgray;
         margin: 0;
@@ -39,6 +44,8 @@
       #examples {
         column-gap: 25px;
         display: flex;
+        flex-wrap: wrap;
+        row-gap: 40px;
       }
     </style>
   </head>

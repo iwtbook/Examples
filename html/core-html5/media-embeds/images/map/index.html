@@ -52,7 +52,7 @@
     </main>
     <script>
       Array.from(document.querySelectorAll('area')).forEach((shape) => {
-        shape.addEventListener('click', (e) => {
+        shape.addEventListener('click', () => {
           alert(shape.title);
         });
       });

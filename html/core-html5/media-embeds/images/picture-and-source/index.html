@@ -13,6 +13,10 @@
       figcaption {
         margin-bottom: 10px;
       }
+
+      main {
+        margin-bottom: 30px;
+      }
     </style>
   </head>
   <body>
@@ -53,9 +57,12 @@
       <figure>
         <figcaption>Selecting an image based on format support</figcaption>
         <picture>
-          <source srcset="sample-image.avif" type="image/avif" />
-          <source srcset="sample-image.webp" type="image/webp" />
-          <img src="sample-image.jpg" alt="Snowy mountains and a bright sun" />
+          <source srcset="sample-image_avif.avif" type="image/avif" />
+          <source srcset="sample-image_webp.webp" type="image/webp" />
+          <img
+            src="sample-image_jpg.jpg"
+            alt="Snowy mountains and a bright sun"
+          />
         </picture>
       </figure>
     </main>

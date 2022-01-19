@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embed Element</title>
+  <style>
+    header, div {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The <code>&lt;embed&gt;</code> Element</h1>
+  </header>
+  <main>
+    <div>
+      <!-- embed without a close tag -->
+      <embed src="testmovie.mp4" height="300" width="533">
+      <noembed>
+      <img src="testgif.gif" height="300" width="533" alt="Test Image">
+      </noembed>
+    </div>
+
+    <div>
+      <!-- embed with a close tag -->
+      <embed src="testmovie.mp4" height="300" width="533">
+      <noembed>
+      <img src="testgif.gif" height="300" width="533" alt="Test Image">
+      </noembed>
+      </embed>
+    </div>
+  </main>
+</body>
+</html>

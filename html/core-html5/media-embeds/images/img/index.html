@@ -5,13 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Img Element</title>
+
+    <style>
+      figure {
+        margin-bottom: 40px;
+      }
+
+      figcaption {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      img.very-large {
+        height: auto;
+        width: 95%;
+      }
+
+      main {
+        margin-bottom: 50px;
+      }
+    </style>
   </head>
   <body>
     <header>
       <h1>The <code>&lt;img&gt;</code> Element</h1>
     </header>
     <main>
-      <!-- TODO -->
+      <figure>
+        <figcaption>
+          Basic <code>&lt;img&gt;</code> tag use. You must always include an
+          <code>alt</code> attribute.
+        </figcaption>
+        <img
+          src="sample-image_small.jpg"
+          alt="Baguette shop storefront in the winter, customers standing outside"
+        />
+      </figure>
+      <figure>
+        <figcaption>
+          Using the <code>srcset</code> and <code>sizes</code> attributes to
+          serve the right sized image
+        </figcaption>
+        <!-- This will serve the 800w image (800px wide image) unless the screen
+             is less than 900px wide, then it will serve the 400w image -->
+        <img
+          src="sample-image_small.jpg"
+          alt="Baguette shop storefront in the winter, customers standing outside"
+          srcset="sample-image_small.jpg 400w, sample-image.jpg 800w"
+          sizes="(max-width: 900px) 400px, 800px"
+        />
+      </figure>
+      <figure>
+        <figcaption>
+          Using the <code>height</code> and <code>width</code> attributes to
+          prevent cumulative layout shift (CLS)
+        </figcaption>
+        <img
+          src="sample-image.jpg"
+          alt="Baguette shop storefront in the winter, customers standing outside"
+          height="440"
+          width="600"
+        />
+      </figure>
+      <figure>
+        <figcaption>
+          Lazy Loading example - Won't start loading until it is about to scroll
+          into view (not supported in every browser)
+        </figcaption>
+        <img
+          src="sample-image_very-large.jpg"
+          class="very-large"
+          alt="Baguette shop storefront in the winter, customers standing outside"
+          height="294"
+          width="400"
+          loading="lazy"
+        />
+      </figure>
     </main>
   </body>
 </html>

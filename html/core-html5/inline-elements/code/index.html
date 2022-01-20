@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Element</title>
+    <style>
+      figure {
+        margin-left: 10px;
+      }
+
+      main {
+        width: 600px;
+      }
+
+      pre {
+        background-color: lightgray;
+        box-sizing: border-box;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The <code>&lt;code&gt;</code> Element</h1>
+    </header>
+    <main>
+      <p>
+        The <code>&lt;code&gt;</code> element is used to demonstrate that the
+        content inside is code. As such it's typically rendered in a mononspace
+        font, but that is a styling decision by the browser vendors and not the
+        semantic meaning.
+      </p>
+      <p>
+        It's often used along with the <code>&lt;pre&gt;</code> tag to preserve
+        whitespace as a formatting is usually important for the legibility of
+        code.
+      </p>
+      <figure>
+        <figcaption>Example:</figcaption>
+        <code>
+          <pre>
+  document.addEventListener('DOMContentLoaded', init);
+  
+  function init() {
+    alert('Finished loading the DOM content!');
+  }</pre
+          >
+        </code>
+      </figure>
+    </main>
+  </body>
+</html>

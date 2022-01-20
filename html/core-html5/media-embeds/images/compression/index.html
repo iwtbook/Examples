@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIF Compression Algorithm</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+
+      header,
+      p {
+        margin-left: 10px;
+        max-width: 600px;
+        width: 95%;
+      }
+
+      figure {
+        display: grid;
+        justify-items: center;
+        margin: 0;
+      }
+
+      figcaption {
+        margin-top: 5px;
+      }
+
+      .row {
+        column-gap: 15px;
+        display: flex;
+      }
+
+      #example-images {
+        display: grid;
+        margin: 30px 0 30px 20px;
+        row-gap: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GIF Compression Algorithm</h1>
+    </header>
+    <main>
+      <p>
+        GIF images use a compression scheme known as run-length encoding. This
+        scheme works extremely well at compressing large horizontal areas of
+        continuous color. You can see how the file size of these sample images
+        increases the further they stray from GIFs desired format.
+      </p>
+      <section id="example-images">
+        <div class="row">
+          <figure>
+            <img src="linesnone.gif" alt="Lines - none" />
+            <figcaption>956 bytes</figcaption>
+          </figure>
+          <figure>
+            <img src="linesbw.gif" alt="Lines - black and white" />
+            <figcaption>1054 bytes</figcaption>
+          </figure>
+        </div>
+        <div class="row">
+          <figure>
+            <img src="lineshoriz.gif" alt="Lines - horizontal" />
+            <figcaption>1050 bytes</figcaption>
+          </figure>
+          <figure>
+            <img src="linesvert.gif" alt="Lines - vertical" />
+            <figcaption>1158 bytes</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="lineshoriznoise.gif"
+              alt="Lines - horizontal with noise"
+            />
+            <figcaption>1588 bytes</figcaption>
+          </figure>
+          <figure>
+            <img src="linesvertnoise.gif" alt="Lines - vertical with noise" />
+            <figcaption>1780 bytes</figcaption>
+          </figure>
+        </div>
+        <div class="row">
+          <figure>
+            <img src="lglineshoriz.gif" alt="Large lines - horizontal" />
+            <figcaption>1029 bytes</figcaption>
+          </figure>
+          <figure>
+            <img src="lglinesvert.gif" alt="Large lines - vertical" />
+            <figcaption>1444 bytes</figcaption>
+          </figure>
+          <figure>
+            <img src="dots.gif" alt="Dots" />
+            <figcaption>4563 bytes</figcaption>
+          </figure>
+          <figure>
+            <img src="noise.gif" alt="Static noise" />
+            <figcaption>10977 bytes</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

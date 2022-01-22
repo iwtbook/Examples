@@ -4,13 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Element</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1>The <code>&lt;data&gt;</code> Element</h1>
     </header>
     <main>
-      <!-- TODO -->
+      <section>
+        <header>
+          <h2>Definition</h2>
+        </header>
+        <dl>
+          <dt><code>&lt;data&gt;</code></dt>
+          <dd>
+            provides a machine-readable version of the content inside of it via
+            the required <code>value</code> attribute.
+          </dd>
+        </dl>
+      </section>
+      <section>
+        <header>
+          <h2>Example</h2>
+        </header>
+        <figure>
+          <figcaption>
+            Here we show how one could use this element to add internal product
+            numbers to product titles to make them easier to parse
+          </figcaption>
+          <div class="content">
+            <!-- The value of the backpack here would be a product number, for example -->
+            <img src="backpack.jpg" alt="Backpack" width="400" height="400" />
+            <p>
+              <data value="20398">Navy Blue Backpack</data> -
+              <data value="8">Eight</data> left in stock
+            </p>
+          </div>
+        </figure>
+        <figure>
+          <figcaption>
+            It's even more helpful when using structured data like
+            <a
+              href="https://html.spec.whatwg.org/multipage/microdata.html#microdata"
+              >Microdata</a
+            >. Microdata adds keys to your tags, using the tag's contents as the
+            value. This allows search engine bots to more easily parse your
+            webpage, increase your SEO. You can use the
+            <code>&lt;data&gt;</code> element to substitute this value for a
+            machine readable one.
+          </figcaption>
+          <div class="content" itemscope>
+            <img src="earrings.jpeg" alt="Bracelet" width="400" height="400" />
+            <p>
+              <data value="20510" itemprop="name">Earrings</data> -
+              <data value="2" itemprop="product-qty">Two</data> left in stock
+            </p>
+          </div>
+        </figure>
+      </section>
     </main>
   </body>
 </html>

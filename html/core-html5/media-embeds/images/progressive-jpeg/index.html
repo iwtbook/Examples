@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progressive Enhancement</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>The <code>&lt;data&gt;</code> Element</h1>
+    </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>What is it?</h2>
+        </header>
+        <dl>
+          <dt>Progressive JPEG</dt>
+          <dd>
+            A type of JPEG that allows the browser to load the image
+            successively (from blurry to clear) instead of all at once from top
+            to bottom.
+          </dd>
+        </dl>
+      </section>
+      <section id="section-examples">
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <button>Play trad. and prog. at same time</button>
+        <div id="examples-wrapper">
+          <figure>
+            <figcaption>Traditional JPEG</figcaption>
+            <div class="content">
+              <video
+                src="videos/progressive.mp4"
+                class="progressive"
+                controls
+              ></video>
+            </div>
+          </figure>
+          <figure>
+            <figcaption>Progressive JPEG</figcaption>
+            <div class="content">
+              <video
+                src="videos/traditional.mp4"
+                class="tranditional"
+                controls
+              ></video>
+            </div>
+          </figure>
+          <figure>
+            <figcaption>Progressive JPEG - Zoomed in Close</figcaption>
+            <div class="content">
+              <video
+                src="videos/progressive-zoomed.mp4"
+                class="zoomed"
+                controls
+              ></video>
+            </div>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', () => {
+        const videos = Array.from(document.querySelectorAll('video'));
+        for (let i = 0; i < 2; i++) videos[i].play();
+      });
+    </script>
+  </body>
+</html>

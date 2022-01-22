@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Del and Ins Elements</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        The <code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code> Elements
+      </h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2>Definitions</h2>
+        </header>
+        <dl>
+          <dt><code>&lt;del&gt;</code></dt>
+          <dd>This element represents content that is to be deleted.</dd>
+        </dl>
+        <dl>
+          <dt><code>&lt;ins&gt;</code></dt>
+          <dd>Similarly, this element represents content that is to be inserted.</dd>
+        </dl>
+      </section>
+      <section>
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <figure>
+          <figcaption>
+            Using <code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code> to show
+            lines added / removed from code, like in a version control application
+          </figcaption>
+          <code class="example" data-footnum="1">
+            <span class="line">function init() {</span>
+            <del class="line">// TODO</del>
+            <ins class="line">console.log('Hello, world!');</ins></div>
+            <span class="line">}</span>
+          </code>
+        </figure>
+        <figure>
+          <figcaption>
+            Using <code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code> to show
+            sections of text added / removed from text copy. Useful, for example, when using version control in a <abbr title="Content Management System">CMS</abbr>
+          </figcaption>
+          <p class="example">I think <del>I'mma head out</del> <ins>I'm going to head home</ins>, thanks for this <del>really cool thing</del> <ins>lovely gift</ins> Jake, you're the <del>realest</del> <ins>best</ins>. Do you think you could <del>gimme a lift</del> <ins>give me a ride</ins> tomorrow? That'd be phenomenal.</p>
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>

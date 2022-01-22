@@ -68,6 +68,10 @@ figcaption {
   padding-bottom: 20px;
 }
 
+main {
+  margin-bottom: 50px;
+}
+
 section {
   box-sizing: border-box;
   display: block;

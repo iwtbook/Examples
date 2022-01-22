@@ -2,32 +2,83 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Formats</title>
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-      }
-
-      img {
-        height: 100%;
-        width: auto;
-      }
-
-      @media (orientation: vertical) {
-        img {
-          height: auto;
-          width: 100%;
-        }
-      }
-    </style>
+    <title>Progressive Enhancement</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img src="images/cat-original--prog-2.jpg" alt="Cozy cat in blanket" />
+    <header>
+      <h1>The <code>&lt;data&gt;</code> Element</h1>
+    </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>What is it?</h2>
+        </header>
+        <dl>
+          <dt>Progressive JPEG</dt>
+          <dd>
+            A type of JPEG that allows the browser to load the image
+            successively (from blurry to clear) instead of all at once from top
+            to bottom.
+          </dd>
+        </dl>
+      </section>
+      <section id="section-examples">
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <div id="examples-wrapper">
+          <figure>
+            <figcaption>PNG - 2.3 MB</figcaption>
+            <div class="content">
+              <img
+                src="images/cat-small.png"
+                alt="Cat sitting cozy in blanket"
+              />
+            </div>
+          </figure>
+          <figure>
+            <figcaption>JPEG - 1.1 MB</figcaption>
+            <div class="content">
+              <img
+                src="images/cat-small.jpg"
+                alt="Cat sitting cozy in blanket"
+              />
+            </div>
+          </figure>
+          <figure>
+            <figcaption>GIF - 838 KB</figcaption>
+            <div class="content">
+              <img
+                src="images/cat-small.gif"
+                alt="Cat sitting cozy in blanket"
+              />
+            </div>
+          </figure>
+          <figure>
+            <figcaption>WebP - 627 KB</figcaption>
+            <div class="content">
+              <img
+                src="images/cat-small.webp"
+                alt="Cat sitting cozy in blanket"
+              />
+            </div>
+          </figure>
+          <figure>
+            <figcaption>AVIF - 34 KB</figcaption>
+            <div
+              class="content"
+              role="img"
+              aria-label="Cat sitting cozy in blanket"
+            >
+              <div class="avif">
+                <p>Your browser does not support AVIF images</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

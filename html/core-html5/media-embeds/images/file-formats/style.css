@@ -25,8 +25,39 @@ dd, dt {
   margin-left: 15px;
 }
 
-div.avif {
+div img {
+  margin-bottom: 10px;
+  width: calc(100% - 60px);
+}
+
+div.content {
+  height: 560px;
+  width: 400px;
+}
+
+div.content.avif {
+  align-items: center;
+  display: grid;
+  grid-template-areas: 'center';
+  padding-bottom: 25px;
+}
+
+div.content.avif p {
+  grid-area: center;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+div.fallback[role="img"] {
+  background-color: transparent;
   background-image: url('images/cat-small.avif');
+  background-size: cover;
+  grid-area: center;
+  height: 100%;
+  position: relative;
+  width: calc(100% - 60px);
+  z-index: 2;
 }
 
 dt {
@@ -58,11 +89,6 @@ figure>div.content {
 
 figure>*:not(figcaption) {
   background-color: white;
-}
-
-div img {
-  margin-bottom: 10px;
-  width: calc(100% - 60px);
 }
 
 figcaption {

@@ -96,10 +96,10 @@ function imgSelect() {
   const imgSelect = document.querySelector('#image-select').value;
   // Allow SVGs to be selected if on the IWT logo
   if (imgSelect == 'iwt-logo') {
-    document.querySelector('option[value="svg"]').removeAttribute('hidden');
+    document.querySelector('option[value="svg"]').removeAttribute('disabled');
     // Remove SVG as an option as well as select PNG as a default
   } else {
-    document.querySelector('option[value="svg"]').setAttribute('hidden', '');
+    document.querySelector('option[value="svg"]').setAttribute('disabled', '');
     if (imgFormat == 'svg') {
       document.querySelector('option[value="png"]').selected = 'selected';
       imgFormat = document.querySelector('#image-format').value;

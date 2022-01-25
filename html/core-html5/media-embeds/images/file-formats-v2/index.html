@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Formats</title>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Main Script -->
+    <script src="script.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Image Formats - Take 2</h1>
+    </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>How does each compare?</h2>
+        </header>
+        <p>
+          For this demo, we've included several different types of images and
+          image file types, showing their file size along with each. Note the
+          content of the images and how that affects the image file size. Also
+          note the strengths and weaknesses of each file type.
+        </p>
+      </section>
+      <section id="section-examples">
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <form>
+          <div>
+            <label for="image-format">Image Format:</label>
+            <select name="image-format" id="image-format">
+              <option value="" disabled selected>---</option>
+              <option value="png">PNG</option>
+              <option value="gif">GIF</option>
+              <option value="jpg">JPEG</option>
+              <option value="webp">WebP</option>
+              <option value="avif">AVIF</option>
+              <option value="svg" hidden>SVG</option>
+            </select>
+          </div>
+          <div>
+            <label for="image-select">Image Select:</label>
+            <select name="image-select" id="image-select">
+              <option value="" disabled selected>---</option>
+              <option value="glitter">Glitter</option>
+              <option value="home-interior">Home Interior</option>
+              <option value="japanese-lamps">Japanese Lamps</option>
+              <option value="mountain">Mountain</option>
+              <option value="iwt-logo">IWT Logo</option>
+            </select>
+          </div>
+        </form>
+        <div id="examples-wrapper">
+          <figure>
+            <figcaption>&nbsp;</figcaption>
+            <div class="content">
+              <img src="" alt="" hidden />
+              <p class="image-msg select">No image selected</p>
+              <p class="image-msg loading" hidden>Loading...</p>
+              <p class="image-msg no-support" hidden>
+                Filetype not supported in this browser
+              </p>
+            </div>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

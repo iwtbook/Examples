@@ -1,0 +1,128 @@
+/* styles.css */
+
+*:not(code, .line) {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+body>header {
+  margin-left: 10px;
+}
+
+button {
+  margin-bottom: 20px;
+}
+
+dd {
+  margin: 10px 0 0 10px;
+}
+
+dd, dt {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+div.content img {
+  margin-bottom: 10px;
+  width: calc(100% - 60px);
+}
+
+div.content {
+  align-items: center;
+  display: grid;
+  grid-template-areas: 'center';
+  height: 600px;
+  padding-bottom: 25px;
+  width: 600px;
+}
+
+div.content img {
+  height: auto;
+  max-height: 550px;
+  max-width: 550px;
+  position: relative;
+  width: auto;
+  z-index: 2;
+}
+
+div.content p.image-msg {
+  font-size: 1.2rem;
+  grid-area: center;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+dt {
+  background-color: rgb(250, 250, 194);
+  padding: 5px;
+}
+
+dt::after {
+  content: ':';
+  margin-left: 7px;
+  position: absolute;
+}
+
+form div {
+  margin-top: 20px;
+}
+
+figure {
+  background-color: rgb(222, 220, 220);
+  border-radius: 4px;
+  margin: 20px 0 0 0;
+  padding: 15px;
+}
+
+figure>div.content {
+  align-items: center;
+  box-sizing: border-box;
+  display: grid;
+  justify-items: center;
+  padding: 25px 0 15px 0;
+}
+
+figure>*:not(figcaption) {
+  background-color: white;
+}
+
+figure :is(img, p.image-msg) {
+  grid-area: center;
+}
+
+figcaption {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.4;
+  padding-bottom: 20px;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+section {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 40px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+#examples-wrapper {
+  box-sizing: border-box;
+  column-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  width: calc(100% - 32px);
+}
+
+#section-description {
+  max-width: 1000px;
+  width: 100%;
+}

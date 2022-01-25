@@ -4,10 +4,120 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invisible Pixel</title>
+
+    <!-- Main Stylsheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .border {
+        border: 1px solid red;
+      }
+
+      .pixel {
+        box-sizing: border-box;
+        float: left;
+      }
+
+      #pixel-1 {
+        height: 225px;
+        width: 80px;
+      }
+
+      #pixel-2 {
+        height: 62px;
+        width: 80px;
+      }
+    </style>
   </head>
   <body>
     <header>
       <h1>Invisible Pixel Layout</h1>
     </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>What's the point of a 1-pixel gif?</h2>
+        </header>
+        <p>
+          Before CSS was wide spread and had as many features as it does today,
+          many developers had to use 1-pixel gifs to push text and divs around
+          to properly lay them out. It's a technique you might see on older
+          websites today.
+        </p>
+        <p>
+          The 1-pixel gif was chosen as you needed a block-level
+          <code>&lt;img&gt;</code> tag to be able to size and push around
+          content, but you also needed the server to respond with something so
+          the tag would render properly. The gif format supported transparency
+          and was one of the smallest file sizes to use for this purpose.
+        </p>
+      </section>
+      <section id="section-examples">
+        <figure>
+          <figcaption>
+            Using 1-pixel gifs for layout - with border (for demo)
+          </figcaption>
+          <div class="content">
+            <img
+              id="pixel-1"
+              class="pixel border"
+              src="one-pixel.gif"
+              alt="One pixel gif"
+            />
+            <img
+              id="pixel-2"
+              class="pixel border"
+              src="one-pixel.gif"
+              alt="One pixel gif"
+            />
+            <p class="lorem">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
+              maxime sed doloremque quia, quae nesciunt commodi ipsum,
+              laboriosam iste ea exercitationem natus! Omnis, molestias
+              accusantium sapiente aspernatur ab eaque eum. Lorem ipsum dolor
+              sit amet consectetur, adipisicing elit. Eum maxime sed doloremque
+              quia, quae nesciunt commodi ipsum, laboriosam iste ea
+              exercitationem natus! Omnis, molestias accusantium sapiente
+              aspernatur ab eaque eum. Lorem ipsum dolor sit amet consectetur,
+              adipisicing elit. Eum maxime sed doloremque quia, quae nesciunt
+              commodi ipsum, laboriosam iste ea exercitationem natus! Omnis,
+              molestias accusantium sapiente aspernatur ab eaque eum.
+            </p>
+          </div>
+        </figure>
+        <figure>
+          <figcaption>
+            Using 1-pixel gifs for layout - without border
+          </figcaption>
+          <div class="content">
+            <img
+              id="pixel-1"
+              class="pixel"
+              src="one-pixel.gif"
+              alt="One pixel gif"
+            />
+            <img
+              id="pixel-2"
+              class="pixel"
+              src="one-pixel.gif"
+              alt="One pixel gif"
+            />
+            <p class="lorem">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
+              maxime sed doloremque quia, quae nesciunt commodi ipsum,
+              laboriosam iste ea exercitationem natus! Omnis, molestias
+              accusantium sapiente aspernatur ab eaque eum. Lorem ipsum dolor
+              sit amet consectetur, adipisicing elit. Eum maxime sed doloremque
+              quia, quae nesciunt commodi ipsum, laboriosam iste ea
+              exercitationem natus! Omnis, molestias accusantium sapiente
+              aspernatur ab eaque eum. Lorem ipsum dolor sit amet consectetur,
+              adipisicing elit. Eum maxime sed doloremque quia, quae nesciunt
+              commodi ipsum, laboriosam iste ea exercitationem natus! Omnis,
+              molestias accusantium sapiente aspernatur ab eaque eum.
+            </p>
+          </div>
+        </figure>
+      </section>
+    </main>
   </body>
 </html>

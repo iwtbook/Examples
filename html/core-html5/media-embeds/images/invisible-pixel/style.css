@@ -1,0 +1,48 @@
+/* styles.css */
+
+*:not(code, .line) {
+  font-family: sans-serif;
+  line-height: 1.3;
+}
+
+body {
+  margin: 0;
+}
+
+body>header {
+  margin-left: 10px;
+}
+
+code {
+  font-size: 1rem;
+}
+
+figcaption {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+figure {
+  margin: 0 0 50px 0;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+section {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 40px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.lorem {
+  width: 600px;
+}
+
+#section-description {
+  max-width: 700px;
+  width: 100%;
+}

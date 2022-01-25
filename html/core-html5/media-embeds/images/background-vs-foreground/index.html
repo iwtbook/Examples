@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background vs. Foreground</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      div[role='img'] {
+        background-color: white;
+        background-image: url('castle.webp');
+        background-size: calc(100% - 40px);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Background vs. Foreground Images</h1>
+    </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>Why does it matter?</h2>
+        </header>
+        <p>
+          Visually they both render the same, but they are used for two
+          completely different purposes.
+        </p>
+        <p>
+          Background images are implemented with CSS, and as such serve purely
+          aesthetic purposes. Functionally they could be removed without
+          affecting the content on the page as they were decorative.
+        </p>
+        <p>
+          Foreground images on the other hand are implemented with HTML using
+          your typical multimedia elements. They represent content, and without
+          them the page would lose some of its meaning.
+        </p>
+        <p>
+          Sometimes you might see online people abusing background images with
+          products on web shops as most browsers don't allow you to easily save
+          background images by right clicking.
+        </p>
+      </section>
+      <section id="section-examples">
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <div id="examples-wrapper">
+          <figure>
+            <figcaption>Background Image</figcaption>
+            <div
+              class="content"
+              role="img"
+              aria-label="A castle atop a hill crest surrounded by trees"
+            ></div>
+          </figure>
+          <figure>
+            <figcaption>Foreground Image</figcaption>
+            <div class="content">
+              <img src="leaves.webp" alt="Autumn leaves on the ground" />
+            </div>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

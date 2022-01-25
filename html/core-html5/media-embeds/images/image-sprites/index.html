@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Sprites</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      div[aria-label='Cat ready to pounce'] {
+        background: url('sprite-sheet.jpg');
+        background-position: 0 10px;
+        background-size: 395px;
+      }
+
+      div[aria-label='Loving cat'] {
+        background: url('sprite-sheet.jpg');
+        background-position: 186px -20px;
+        background-size: 395px;
+      }
+
+      div[aria-label='Angry cat'] {
+        background: url('sprite-sheet.jpg');
+        background-position: -13px 200px;
+        background-size: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Image Sprites</h1>
+    </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>What are Image Sprites</h2>
+        </header>
+        <p>
+          Image Sprites are small sections of a larger image. Often times it is
+          beneficial to load one medium sized images than 100 tiny icon sized
+          images, so to do this all of the smaller images are combined into one
+          image, and then that image is loaded once and cropped for each time it
+          is needed. It is useful to imagine a sliding window on top of the
+          larger sprite sheet.
+        </p>
+      </section>
+      <section id="section-examples">
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <div id="examples-wrapper">
+          <figure>
+            <figcaption>Cat ready to pounce</figcaption>
+            <div
+              class="content"
+              role="img"
+              aria-label="Cat ready to pounce"
+            ></div>
+          </figure>
+          <figure>
+            <figcaption>Loving cat</figcaption>
+            <div class="content" role="img" aria-label="Loving cat"></div>
+          </figure>
+          <figure>
+            <figcaption>Angry cat</figcaption>
+            <div class="content" role="img" aria-label="Angry cat"></div>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

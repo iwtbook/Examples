@@ -73,10 +73,28 @@ section {
 #examples-wrapper {
   box-sizing: border-box;
   column-gap: 20px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-areas:
+    'pounce love angry'
+    'full full full';
   row-gap: 20px;
-  width: calc(100% - 32px);
+  width: 730px;
+}
+
+#full-sheet {
+  grid-area: full;
+  width: 472px;
+}
+
+#full-sheet div.content {
+  height: 600px;
+  padding: 0;
+  width: 472px;
+}
+
+#full-sheet img {
+  height: 600px;
+  width: auto;
 }
 
 #section-description {

@@ -6,6 +6,7 @@
     <title>Image Sprites</title>
     <link rel="stylesheet" href="style.css" />
     <style>
+      /* Cat Drawings */
       div[aria-label='Cat ready to pounce'] {
         background: url('sprite-sheet.jpg');
         background-position: 0 10px;
@@ -22,6 +23,38 @@
         background: url('sprite-sheet.jpg');
         background-position: -13px 200px;
         background-size: 250px;
+      }
+
+      /* Stick person running */
+      div[aria-label='Stick person running'] {
+        animation-name: sprite;
+        animation-duration: 0.75s;
+        animation-timing-function: steps(1);
+        animation-iteration-count: infinite;
+        background: url('stick-running.svg');
+        background-repeat: no-repeat;
+        background-size: 2400px;
+      }
+
+      @keyframes sprite {
+        0% {
+          background-position: 50px 0;
+        }
+        20% {
+          background-position: -380px 0;
+        }
+        40% {
+          background-position: -810px 0;
+        }
+        60% {
+          background-position: -1240px 0;
+        }
+        80% {
+          background-position: -1670px 0;
+        }
+        100% {
+          background-position: -2100px 0;
+        }
       }
     </style>
   </head>
@@ -43,11 +76,11 @@
           larger sprite sheet.
         </p>
       </section>
-      <section id="section-examples">
+      <section class="examples cat">
         <header>
-          <h2>Examples</h2>
+          <h2>Example 1</h2>
         </header>
-        <div id="examples-wrapper">
+        <div class="examples-wrapper">
           <figure>
             <figcaption>Cat ready to pounce</figcaption>
             <div
@@ -64,10 +97,35 @@
             <figcaption>Angry cat</figcaption>
             <div class="content" role="img" aria-label="Angry cat"></div>
           </figure>
-          <figure id="full-sheet">
+          <figure id="full-sheet-cat">
             <figcaption>Full sprite sheet</figcaption>
             <div class="content">
               <img src="sprite-sheet.jpg" alt="Full cat sprite sheet" />
+            </div>
+          </figure>
+        </div>
+      </section>
+      <section class="examples running">
+        <header>
+          <h2>Example 2</h2>
+        </header>
+        <div class="examples-wrapper">
+          <figure>
+            <figcaption>Stick Person Running</figcaption>
+            <div
+              class="content"
+              role="img"
+              aria-label="Stick person running"
+            ></div>
+          </figure>
+          <figure>
+            <figcaption>Stick Person Running Keyframes</figcaption>
+            <div class="content">
+              <img
+                src="stick-running.svg"
+                alt="Full stick person running keyframes"
+                id="full-sheet-running"
+              />
             </div>
           </figure>
         </div>

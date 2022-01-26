@@ -27,8 +27,34 @@ div img {
 }
 
 div.content {
+  background-color: black;
+  background-image: url('images/leaves.webp');
   height: 400px;
-  width: 400px;
+  width: 600px;
+}
+
+div.content button {
+  background: none;
+  border: none;
+  height: 80px;
+  transition: 0.2s ease all;
+  width: 80px;
+}
+
+div.content button img {
+  height: 100%;
+  width: 100%;
+}
+
+div.content button img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.18s ease all;
+}
+
+div.content button img:active {
+  transform: scale(1.06);
+  transition: none;
 }
 
 figure {
@@ -36,7 +62,7 @@ figure {
   border-radius: 4px;
   margin: 0;
   padding: 15px;
-  width: 400px;
+  width: 600px;
 }
 
 figure>div.content {
@@ -77,6 +103,15 @@ section {
   flex-wrap: wrap;
   row-gap: 20px;
   width: calc(100% - 32px);
+}
+
+#figure-bg #btn-wrapper {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 70%;
 }
 
 #section-description {

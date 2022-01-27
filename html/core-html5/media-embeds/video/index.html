@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 video example</title>
+    <style>
+      video {
+        display: block;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML5 video example</title>
-  <style>
-    video {
-      display: block;
-    }
-  </style>
-</head>
+  <body>
+    <header>
+      <h1>Simple Video Examples</h1>
+    </header>
 
-<body>
-  <header>
-    <h1>Simple Video Examples</h1>
-  </header>
+    <video src="city-timelapse.mp4" width="640" height="360" controls>
+      <strong>HTML5 video element not supported</strong>
+    </video>
 
-  <video src="http://htmlref.com/ch2/html_5.mp4" width="640" height="360" controls>
-    <strong>HTML5 video element not supported</strong>
-  </video>
-
-  <video width="640" height="360" controls poster="loading.png">
-    <source src="http://htmlref.com/ch2/html_5.mp4" type="video/mp4">
-    <source src="http://htmlref.com/ch2/html_5.ogv" type="video/ogg">
-    <strong>HTML5 video element not supported</strong>
-  </video>
-</body>
-
+    <video width="640" height="360" controls poster="loading.png">
+      <source src="city-timelapse.mp4" type="video/mp4" />
+      <source src="city-timelapse.ogv" type="video/ogg" />
+      <source src="city-timelapse.webm" type="video/webm" />
+      <strong>HTML5 video element not supported</strong>
+    </video>
+  </body>
 </html>

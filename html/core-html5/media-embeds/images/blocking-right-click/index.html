@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blocking Right Click</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Background Image Styles -->
+    <style>
+      #background-image {
+        background-color: white;
+        background-image: url('images/nft.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: calc(100% - 40px);
+        height: 400px;
+        width: 400px;
+      }
+    </style>
+
+    <!-- Main Script -->
+    <script src="script.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Blocking Right Click</h1>
+    </header>
+    <main>
+      <section id="section-description">
+        <header>
+          <h2>A fool's errand</h2>
+        </header>
+        <p>For as long as there</p>
+      </section>
+      <section id="section-examples">
+        <header>
+          <h2>Examples</h2>
+        </header>
+        <div id="examples-wrapper">
+          <figure id="figure-bg">
+            <figcaption>Background Image</figcaption>
+            <div class="content">
+              <div
+                id="background-image"
+                role="img"
+                aria-label="Bored Ape with 3D glasses on"
+              ></div>
+            </div>
+          </figure>
+          <figure id="figure-transparent">
+            <figcaption>Transparent Image on Top</figcaption>
+            <div class="content">
+              <img src="images/nft.png" alt="Bored Ape with 3D glasses on" />
+              <img src="images/transparent.gif" alt="Invisible Image" />
+            </div>
+          </figure>
+          <figure id="figure-tiles">
+            <figcaption>Tiled images</figcaption>
+            <div class="content tiled">
+              <img
+                src="images/nft-tiles/row-1-column-1.png"
+                alt="Bored Ape with 3D glasses on - Tile 1"
+              />
+              <img
+                src="images/nft-tiles/row-1-column-2.png"
+                alt="Bored Ape with 3D glasses on - Tile 2"
+              />
+              <img
+                src="images/nft-tiles/row-1-column-3.png"
+                alt="Bored Ape with 3D glasses on - Tile 3"
+              />
+              <img
+                src="images/nft-tiles/row-1-column-4.png"
+                alt="Bored Ape with 3D glasses on - Tile 4"
+              />
+              <img
+                src="images/nft-tiles/row-1-column-5.png"
+                alt="Bored Ape with 3D glasses on - Tile 5"
+              />
+              <img
+                src="images/nft-tiles/row-2-column-1.png"
+                alt="Bored Ape with 3D glasses on - Tile 6"
+              />
+              <img
+                src="images/nft-tiles/row-2-column-2.png"
+                alt="Bored Ape with 3D glasses on - Tile 7"
+              />
+              <img
+                src="images/nft-tiles/row-2-column-3.png"
+                alt="Bored Ape with 3D glasses on - Tile 8"
+              />
+              <img
+                src="images/nft-tiles/row-2-column-4.png"
+                alt="Bored Ape with 3D glasses on - Tile 9"
+              />
+              <img
+                src="images/nft-tiles/row-2-column-5.png"
+                alt="Bored Ape with 3D glasses on - Tile 10"
+              />
+              <img
+                src="images/nft-tiles/row-3-column-1.png"
+                alt="Bored Ape with 3D glasses on - Tile 11"
+              />
+              <img
+                src="images/nft-tiles/row-3-column-2.png"
+                alt="Bored Ape with 3D glasses on - Tile 12"
+              />
+              <img
+                src="images/nft-tiles/row-3-column-3.png"
+                alt="Bored Ape with 3D glasses on - Tile 13"
+              />
+              <img
+                src="images/nft-tiles/row-3-column-4.png"
+                alt="Bored Ape with 3D glasses on - Tile 14"
+              />
+              <img
+                src="images/nft-tiles/row-3-column-5.png"
+                alt="Bored Ape with 3D glasses on - Tile 15"
+              />
+              <img
+                src="images/nft-tiles/row-4-column-1.png"
+                alt="Bored Ape with 3D glasses on - Tile 16"
+              />
+              <img
+                src="images/nft-tiles/row-4-column-2.png"
+                alt="Bored Ape with 3D glasses on - Tile 17"
+              />
+              <img
+                src="images/nft-tiles/row-4-column-3.png"
+                alt="Bored Ape with 3D glasses on - Tile 18"
+              />
+              <img
+                src="images/nft-tiles/row-4-column-4.png"
+                alt="Bored Ape with 3D glasses on - Tile 19"
+              />
+              <img
+                src="images/nft-tiles/row-4-column-5.png"
+                alt="Bored Ape with 3D glasses on - Tile 20"
+              />
+              <img
+                src="images/nft-tiles/row-5-column-1.png"
+                alt="Bored Ape with 3D glasses on - Tile 21"
+              />
+              <img
+                src="images/nft-tiles/row-5-column-2.png"
+                alt="Bored Ape with 3D glasses on - Tile 22"
+              />
+              <img
+                src="images/nft-tiles/row-5-column-3.png"
+                alt="Bored Ape with 3D glasses on - Tile 23"
+              />
+              <img
+                src="images/nft-tiles/row-5-column-4.png"
+                alt="Bored Ape with 3D glasses on - Tile 24"
+              />
+              <img
+                src="images/nft-tiles/row-5-column-5.png"
+                alt="Bored Ape with 3D glasses on - Tile 25"
+              />
+            </div>
+          </figure>
+          <figure id="figure-js">
+            <figcaption>Using JavaScript</figcaption>
+            <div class="content">
+              <img src="images/nft.png" alt="Bored Ape with 3D glasses on" />
+            </div>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

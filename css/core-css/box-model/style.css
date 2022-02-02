@@ -1,0 +1,159 @@
+/* style.css */
+
+* {
+  font-family: sans-serif;
+}
+
+body>header, main {
+  margin-left: 20px;
+}
+
+code, code>* {
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+
+div[id|="box"] {
+  border: 2px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0 46px 46px;
+}
+
+div[id|="box"] {
+  font-size: 1.2rem;
+}
+
+fieldset {
+  border: none;
+  border-top: 1px solid rgb(181, 181, 181);
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 10px;
+  margin-top: 20px;
+  width: 450px;
+}
+
+fieldset label {
+  justify-self: flex-end;
+}
+
+fieldset p {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 100px;
+  width: 900px;
+}
+
+form>fieldset:nth-child(odd) {
+  border-right: 1px solid gray;
+}
+
+form>fieldset>p:first-child {
+  height: 18px;
+  padding: 8px 0 5px 8px;
+}
+
+form>fieldset:nth-child(1)>p:first-child,
+.title.content {
+  background-color: #b4dfe9;
+}
+
+form>fieldset:nth-child(2)>p:first-child,
+.title.padding {
+  background-color: #c5de95;
+}
+
+form>fieldset:nth-child(3)>p:first-child,
+.title.border {
+  background-color: #fdf29b;
+}
+
+form>fieldset:nth-child(4)>p:first-child,
+.title.margin {
+  background-color: #f2b87b
+}
+
+main {
+  column-gap: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 60px;
+}
+
+.answer {
+  padding-left: 20px;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.answer, .question {
+  margin-left: 10px;
+}
+
+.question {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+#code pre {
+  background-color: rgb(233, 233, 233);
+  display: inline-block;
+  padding-right: 30px;
+}
+
+#content-wrapper {
+  align-items: center;
+  display: flex;
+  justify-items: center;
+}
+
+.modified {
+  background-color: yellow;
+  transition: none;
+}
+
+#box-border {
+  background-color: #fddd9b;
+}
+
+#box-content {
+  background-color: #8cb6c0;
+  border-style: dashed;
+  padding: 23px 46px;
+}
+
+#box-margin {
+  background-color: #f9cc9d;
+  width: 600px;
+}
+
+#box-padding {
+  background-color: #c3d08b;
+  border-style: dashed;
+}
+
+#code pre span {
+  transition: 0.2s ease all;
+}
+
+#demo-box {
+  background-color: #99e3f5;
+  border-color: #17282d;
+  border-style: solid;
+  border-width: 10px 10px 10px 10px;
+  display: inline-block;
+  height: 18px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}

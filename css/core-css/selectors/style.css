@@ -1,0 +1,211 @@
+/* style.css */
+
+/**************************/
+/***** Core Selectors *****/
+/**************************/
+
+/* Universal Selector - Selects EVERY element */
+* {
+  font-family: sans-serif;
+}
+
+/* Element Selector - This selector selects EVERY <section> elememt */
+section {
+  margin-top: 50px;
+  padding-left: 15px;
+}
+
+/* Class Selector - This selector selects EVERY element with the class
+   underline (must be in a space separated list on the class attribute) */
+.underline {
+  text-decoration: underline;
+}
+
+/* ID Selector - This selector selects every element in the document
+   that has an ID that is exactly "second-section" (there should be only one,
+   but it will select all of them if there are multiple) */
+#second-section {
+  border: 1px solid green;
+  width: 200px;
+}
+
+/*******************************/
+/***** Attribute Selectors *****/
+/*******************************/
+
+/***** Attribute Presence & Value Selectors *****/
+
+/* Attribute is present */
+[data-foo] {
+  /* TODO */
+}
+
+/* Attribute equals this exact value */
+[data-foo="dog"] {
+  /* TODO */
+}
+
+/* Attribute contains this word (The CSS parser will create a list
+   for the value, using the SPACES as the delimiter for the list, and
+   check to see if this word is in that list. For example, for the selector
+   data-foo~="dog" the value "hot dog" would match but the following wouldn't:
+   "hot-dog", "hotdog", and "hot dogs") */
+[data-foo~="dog"] {
+  /* TODO */
+}
+
+/* Attribute either equals this exact word, or starts with this word and 
+   is followed by a hyphen. This was created with the intention of language
+   values in mind (like "en-us" and "en-uk"), but can be used for anything.
+   For example, for the selector lang|="en" the values "en", "en-us",and 
+   "en-uk" would match, but the following wouldn't: "us-en", "-en", "en us",
+   and "english" */
+[data-foo|="hot"] {
+  /* TODO */
+}
+
+/***** Attribute Substring Matching *****/
+
+/* Attribute starts with this substring. No tokenization happens. For example,
+   for the selector data-foo^="hot" the values "hot", "hot dog", "hot-dog", and
+   "hotdog" would match, but the following wouldn't: " hot", "dog hot", "cold dog"
+   and "ht dog" */
+[data-foo^="hot"] {
+  /* TODO */
+}
+
+/* Attribute contains this substring anywhere inside it. No tokenization
+   happens. For example, for the selector data-foo*="dog" the values "dog",
+   "hotdog", "hot-dog", "hot dog", and "hot dogs" would match but the following
+   wouldn't: "do", "dgs", and "sample" */
+[data-foo*="dog"] {
+  /* TODO */
+}
+
+
+/* Attribute ends with this substring. No tokenization happens. For example,
+   for the selector data-foo$="dog" the values "dog", "hot dog", "hot-dog",
+   and "hotdog" would match, but the following wouldn't: "dog ", "dog hot",
+   "hot dogs", and "hot dg" */
+[data-foo$="dog"] {
+  /* TODO */
+}
+
+/***** Case Sensitivity *****/
+
+/* Adding the "i" flag to the end inside the bracket */
+/* Forces the browser to be case INSENSITIVE (ignore it). For example,
+   for the selector [data-foo="doG"i] the values "dog", "Dog", "dOg", "doG",
+   "DOg", "dOG", and "DOG" would all match */
+[data-foo="doG"i] {
+  /* TODO */
+}
+
+/* Adding the "s" flag to the end inside the bracket */
+/* Forces the browser to be case SENSITIVE (match the exact case you use).
+   For example, for the selector [data-foo="doG"s] ONLY the value "doG" will
+   match, the values "dog", "Dog", "dOg", "DOg", "dOG", and "DOG" will all
+   be ignored. */
+[data-foo="doG"s] {
+  /* TODO */
+}
+
+/******************************************/
+/***** Grouping / Combining Selectors *****/
+/******************************************/
+
+/* Selector List - Separate multiple different selectors with commas to apply
+   the same CSS rules to multiple selectors. In this example it doesn't matter
+   how the <h1>, <h2>, and <h3> tags are related to each other, they will all
+   have a normal font-weight */
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+/* Adding class selectors to elements - Select elements that have specific classes
+   by simply chaining them together like so: element.class - You can add as many
+   classes as you like by simply chaining them on the end. The selector
+   section.foo.bar will select all <section> tags that contain BOTH (but not
+   limited to) the "foo" and the "bar" classes. */
+section.foo.bar {
+  /* TODO */
+}
+
+/* Adding an ID selector to elements - While an ID on its own is usually enough to
+   select a specific element, some cases you want to be very sure that you select
+   an ID so long as it's on a specific element. Just like with classes, you can
+   chain the ID to the end of an element. The selector section#second-section
+   will select a <section> element ONLY if it has the id="second-section" */
+section#second-section {
+  /* TODO */
+}
+
+/* Adding attribute selectors to elements - In a similar fashion to classes and
+   IDs, you simply chain attributes directly to the end of the element. The selector
+   section[data-foo="bar"] will only select <section> elements that have the attribute
+   data-foo and that attribute has exactly the value "bar" */
+section[data-foo="bar"] {
+  /* TODO */
+}
+
+/**** Many different combinations to make ****/
+/* NOTE 1: Elements must meet all of the requirements specified when chaining
+   these together to be selected, not just one */
+/* NOTE 2: So long as the element is first, it doesn't matter what order the
+   classes, IDs, and attributes that follow it are in. e.g. 
+   element.class#id[attribute] is the same as element[attribute]#id.class
+   (that is, if the element is present, which is not required) */
+
+/* Selects all <section> elements that contain the class "foo" AND have an id
+   of exactly "bar" */
+section.foo#bar {
+  /* TODO */
+}
+
+/* Selects all of the <section> elements that contain both the class "foo" and "bar"
+   AND have an id of exactly "baz" */
+section.foo.bar#baz {
+  /* TODO */
+}
+
+/* Selects all of the <section> elements that contain both the class "foo" and "bar"
+   AND have the attribute data-hot with the exact value of "dog" */
+section.foo.bar[data-hot="dog"] {
+  /* TODO */
+}
+
+/* Selects all of the <section> elements that contain both the class "foo" and "bar",
+   have an id of exactly "baz", AND have the attribute data-hot with the exact
+   value of "dog" */
+section.foo.bar#baz[data-hot="dog"] {
+  /* TODO */
+}
+
+/* Selects every element the contains the class "foo", has an id of "baz", AND have 
+   the attribute data-hog with an exact value of "dog" */
+.foo#baz[data-hot="dog"] {
+  /* TODO */
+}
+
+/* Selects every element that has the attribute data-hot with an exact value of "dog"
+   AND has an ID of exactly "baz" */
+[data-hot="dog"]#baz {
+  /* TODO */
+}
+
+/* Selects every element that has both the class "foo" AND "bar" */
+.foo.bar {
+  /* TODO */
+}
+
+/* Selects every <section> element that has the class "foo" and the id of "bar", and also
+   (unrelated) selects every element with the attribute data-hot with an exact value of "dog"
+   and an id of exactly "baz" */
+section.foo#bar,
+[data-hot="dog"]#baz {
+  /* TODO */
+}
+
+/***************************************************/
+/***** Selecting based on surrounding elements *****/
+/***************************************************/

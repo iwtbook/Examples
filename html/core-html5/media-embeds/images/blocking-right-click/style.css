@@ -26,49 +26,47 @@ div img {
   width: calc(100% - 40px);
 }
 
-div.content {
-  height: 400px;
-  width: 600px;
-}
-
-div.content button {
-  background: none;
-  border: none;
-  height: 80px;
-  transition: 0.2s ease all;
-  width: 80px;
-}
-
-div.content button img {
-  height: 100%;
-  width: 100%;
-}
-
-div.content button img:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  transition: 0.18s ease all;
-}
-
-div.content button img:active {
-  transform: scale(1.06);
-  transition: none;
-}
-
 figure {
   background-color: rgb(222, 220, 220);
   border-radius: 4px;
   margin: 0;
   padding: 15px;
-  width: 600px;
+  width: 400px;
 }
 
-figure>div.content {
+div.content {
   align-items: center;
   box-sizing: border-box;
   display: grid;
+  height: 400px;
   justify-items: center;
-  padding: 20px 0 10px 0;
+  padding: 0 0 10px 0;
+  width: 400px;
+}
+
+div.content.tiled {
+  column-gap: 0;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 0;
+  padding: 20px;
+  height: 400px;
+  width: 400px;
+}
+
+div.content img {
+  box-sizing: border-box;
+  grid-area: center;
+  margin: 20px;
+  height: 360px;
+  width: 360px;
+}
+
+div.content.tiled img {
+  grid-area: auto;
+  height: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 figure>*:not(figcaption) {

@@ -133,7 +133,8 @@ main {
 
 #box-margin {
   background-color: #f9cc9d;
-  width: 600px;
+  margin-bottom: 40px;
+  width: 700px;
 }
 
 #box-padding {

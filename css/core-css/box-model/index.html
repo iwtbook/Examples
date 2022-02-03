@@ -26,68 +26,23 @@
             <strong>border</strong>, and <strong>margin</strong>.
           </p>
         </header>
-        <p class="question">
-          What is the <span class="title content">content</span>?
-        </p>
-        <p class="answer">
-          Content is the inner-most part of an element, it is (usually) the
-          smallest possible box that that can be wrapped around the content
-          written in by the developer. For text elements, this is the smallest
-          possible box you can wrap around whatever font is being used (Note - a
-          lot of fonts give their letters hard coded spacing, so it's not always
-          to the exact edge of each letter). For images, this is usually just
-          the smallest box that fits around the image.
-        </p>
-        <p class="answer">
-          By default, the <strong>width</strong> and
-          <strong>height</strong> attributes control <em>JUST this box</em> -
-          meaning that padding, border, and margin sizes are added on to the
-          specified width or height.
-        </p>
-        <p class="question">
-          What is the <span class="title padding">padding</span>?
-        </p>
-        <p class="answer">
-          Padding is what separates the content from its borders. It serves to
-          make an element larger without having to actually modify the size of
-          its content. Most of the time the padding will be the same background
-          color as the content, which is why you cannot set a specific
-          background-color for padding - it is an extension of the element.
-        </p>
-        <p class="question">
-          What is the <span class="title border">border</span>?
-        </p>
-        <p class="answer">
-          A border is what denotes the edge of an element, and separates the
-          element from the margin. Unlike padding, a border can be styled in a
-          many ways; border style (solid, dashed, dotted, etc), border color,
-          and border width are all properties which can be modified.
-        </p>
-        <p class="question">
-          What is the <span class="title margin">margin</span>?
-        </p>
-        <p class="answer">
-          The margin is the outermost part of the box model, it serves to give
-          an element personal space from the elements around it. Visually it is
-          separated from the element and helps to make up the bulk of the "white
-          space" of most documents, but know that all margins are wrapped around
-          an element somewhere.
-        </p>
       </section>
       <section>
         <header>
           <h2>Box Model Diagram</h2>
         </header>
-        <div id="box-margin">
-          <p>Margin</p>
+        <div id="wrapper-box">
+          <div id="box-margin">
+            <p>Margin</p>
+          </div>
           <div id="box-border">
             <p>Border</p>
-            <div id="box-padding">
-              <p>Padding</p>
-              <div id="box-content">
-                <p>Content</p>
-              </div>
-            </div>
+          </div>
+          <div id="box-padding">
+            <p>Padding</p>
+          </div>
+          <div id="box-content">
+            <p>Content</p>
           </div>
         </div>
         <img

@@ -15,13 +15,19 @@ code, code>* {
 
 div[id|="box"] {
   border: 2px solid black;
-  box-sizing: border-box;
-  text-align: center;
-  padding: 0 46px 46px;
+  font-size: 1.2rem;
+  padding: 0;
+  text-align: left;
 }
 
-div[id|="box"] {
-  font-size: 1.2rem;
+div[id|="box"]>p {
+  margin: 12px 0 0 12px;
+  padding: 0;
+}
+
+div[id|="overlay"] {
+  background-color: white;
+  opacity: 0.4;
 }
 
 fieldset {
@@ -81,11 +87,17 @@ form>fieldset:nth-child(4)>p:first-child,
   background-color: #f2b87b
 }
 
-main {
-  column-gap: 4%;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 60px;
+section {
+  margin-top: 50px;
+}
+
+/* Box Model Diagram */
+section:nth-child(2) img {
+  margin-top: 40px;
+}
+
+section:last-child {
+  margin-top: 60px;
 }
 
 .answer {
@@ -98,10 +110,141 @@ main {
   margin-left: 10px;
 }
 
+.modified {
+  background-color: yellow;
+  transition: none;
+}
+
 .question {
   font-style: italic;
   font-weight: bold;
   margin-top: 40px;
+}
+
+#box-border {
+  background-color: hsl(40, 96%, 80%);
+  height: 310px;
+  width: 604px;
+}
+
+#box-border:hover {
+  background-color: hsl(40, 96%, 80%) !important;
+}
+
+#box-border:hover::before {
+  background-color: white;
+  border: 2px solid gray;
+  content: 'A border is what denotes the edge of an element, and separates the element from the margin. Unlike padding, a border can be styled in a many ways; border style (solid, dashed, dotted, etc), border color, and border width are all properties which can be modified.';
+  display: block;
+  line-height: 1.3;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  margin-top: -134px;
+  margin-left: 421px;
+  width: 400px;
+}
+
+#box-content {
+  background-color: hsl(192, 29%, 65%);
+  border-style: dashed;
+  height: 118px;
+  width: 412px;
+}
+
+#box-content:hover {
+  background-color: hsl(192, 29%, 65%) !important;
+}
+
+#box-content:hover::before {
+  background-color: white;
+  border: 2px solid gray;
+  content: 'Content is the inner-most part of an element, it is (usually) the smallest possible box that that can be wrapped around the content written in by the developer. For text elements, this is the smallest possible box you can wrap around whatever font is being used (Note - a lot of fonts give their letters hard coded spacing, so it\'s not always to the exact edge of each letter). For images, this is usually just the smallest box that fits around the image.';
+  display: block;
+  line-height: 1.3;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  margin-top: -164px;
+  margin-left: 325px;
+  width: 400px;
+}
+
+#box-margin {
+  background-color: hsl(31, 85%, 75%);
+  height: 406px;
+  width: 700px;
+}
+
+#box-margin:hover {
+  background-color: hsl(31, 85%, 75%) !important;
+}
+
+#box-margin:hover::before {
+  background-color: white;
+  border: 2px solid gray;
+  content: 'The margin is the outermost part of the box model, it serves to give an element personal space from the elements around it. Visually it is separated from the element and helps to make up the bulk of the "white space" of most documents, but know that all margins are wrapped around an element somewhere.';
+  display: block;
+  line-height: 1.3;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  margin-top: -160px;
+  margin-left: 469px;
+  width: 400px;
+}
+
+#box-padding {
+  background-color: hsl(71, 42%, 68%);
+  border-style: dashed;
+  height: 214px;
+  width: 508px;
+}
+
+#box-padding:hover {
+  background-color: hsl(71, 42%, 68%) !important;
+}
+
+#box-padding:hover::before {
+  background-color: white;
+  border: 2px solid gray;
+  content: 'Padding is what separates the content from its borders. It serves to make an element larger without having to actually modify the size of its content. Most of the time the padding will be the same background color as the content, which is why you cannot set a specific background-color for padding - it is an extension of the element.';
+  display: block;
+  line-height: 1.3;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  margin-top: -183px;
+  margin-left: 373px;
+  width: 400px;
+}
+
+#wrapper-box {
+  align-items: center;
+  display: inline-grid;
+  grid-template-areas: 'center';
+  justify-items: center;
+}
+
+#wrapper-box:hover #box-border {
+  background-color: hsl(40, 96%, 90%);
+}
+
+#wrapper-box:hover #box-content {
+  background-color: hsl(192, 29%, 90%);
+}
+
+#wrapper-box:hover #box-margin {
+  background-color: hsl(31, 88%, 90%);
+}
+
+#wrapper-box:hover #box-padding {
+  background-color: hsl(71, 42%, 90%);
+}
+
+#wrapper-box>* {
+  box-sizing: border-box;
+  grid-area: center;
 }
 
 #code pre {
@@ -114,32 +257,6 @@ main {
   align-items: center;
   display: flex;
   justify-items: center;
-}
-
-.modified {
-  background-color: yellow;
-  transition: none;
-}
-
-#box-border {
-  background-color: #fddd9b;
-}
-
-#box-content {
-  background-color: #8cb6c0;
-  border-style: dashed;
-  padding: 23px 46px;
-}
-
-#box-margin {
-  background-color: #f9cc9d;
-  margin-bottom: 40px;
-  width: 700px;
-}
-
-#box-padding {
-  background-color: #c3d08b;
-  border-style: dashed;
 }
 
 #code pre span {

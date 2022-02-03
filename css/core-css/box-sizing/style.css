@@ -1,0 +1,133 @@
+/* style.css */
+
+*:not(code) {
+  font-family: sans-serif;
+}
+
+body, html {
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+dialog[open] {
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  opacity: 0.9;
+  position: absolute;
+  z-index: 2;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+figure>figcaption {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#code-demos code {
+  font-size: 1.2rem;
+}
+
+figure img {
+  background-color: lightblue;
+  border: 10px solid rgb(0, 0, 92);
+  padding: 40px;
+  position: relative;
+  width: 400px;
+  z-index: 1;
+}
+
+main {
+  margin-bottom: 80px;
+}
+
+section:not(:first-of-type) {
+  margin-top: 60px;
+}
+
+section:first-of-type {
+  font-size: 1.2rem;
+  margin-top: 40px;
+}
+
+section:first-of-type>p {
+  line-height: 1.3;
+  max-width: 900px;
+  text-align: justify;
+}
+
+section:first-of-type code {
+  background-color: rgb(255, 244, 165);
+  border-radius: 3px;
+  font-size: 1.3rem;
+  padding: 2px 5px;
+}
+
+#border-box {
+  box-sizing: border-box;
+}
+
+#border-dialog {
+  background-image: url('images/box-sizing-overlay-sm.svg');
+  height: 319px;
+  margin-left: 540px;
+  width: 400px;
+}
+
+#code-demos {
+  align-items: center;
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 500px 400px;
+  justify-items: center;
+  margin: 30px 0;
+  row-gap: 20px;
+  width: 900px;
+}
+
+#code-demos>pre {
+  background-color: rgb(227, 227, 227);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 20px 0;
+  width: 100%;
+}
+
+#code-demos code {
+  background-color: rgb(240, 240, 240);
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 12px 15px;
+}
+
+#code-demos>:first-child {
+  grid-column-start: span 2;
+}
+
+#content-box {
+  box-sizing: content-box;
+}
+
+#content-dialog {
+  background-image: url('images/box-sizing-overlay-lg.svg');
+  height: 392px;
+  margin: 0 0 0 20px;
+  width: 500px;
+}
+
+#figure-wrapper {
+  column-gap: 20px;
+  display: flex;
+}

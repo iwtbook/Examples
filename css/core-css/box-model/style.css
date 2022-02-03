@@ -13,6 +13,10 @@ code, code>* {
   font-size: 1.5rem;
 }
 
+dialog {
+  margin-left: 280px;
+}
+
 div[id|="box"] {
   border: 2px solid black;
   font-size: 1.2rem;

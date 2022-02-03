@@ -23,8 +23,17 @@
             The box model is a box consisting of 3 layers that wraps around the
             <strong>content</strong> of every HTML element. The three layers are
             (starting at the inner-most layer): <strong>padding</strong>,
-            <strong>border</strong>, and <strong>margin</strong>.
+            <strong>border</strong>, and <strong>margin</strong>. A good way to
+            conceptualize this is to think about a painting on a wall.
+            <a href="javascript:toggleDialog()">Explaining metaphor</a>
           </p>
+          <dialog>
+            <img
+              src="photograph-box-model-demo.jpg"
+              alt="Box model diagram with person holding up picture frame"
+              width="700"
+            />
+          </dialog>
         </header>
       </section>
       <section>
@@ -45,11 +54,6 @@
             <p>Content</p>
           </div>
         </div>
-        <img
-          src="photograph-box-model-demo.jpg"
-          alt="Box model diagram with person holding up picture frame"
-          width="700"
-        />
       </section>
       <section>
         <header>
@@ -253,5 +257,10 @@
         </form>
       </section>
     </main>
+    <script>
+      function toggleDialog() {
+        document.querySelector('dialog').toggleAttribute('open');
+      }
+    </script>
   </body>
 </html>

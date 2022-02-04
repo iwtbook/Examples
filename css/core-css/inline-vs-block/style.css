@@ -29,7 +29,7 @@ code.marginBottom {
 }
 
 code.marginTop {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 code.width {
@@ -46,10 +46,18 @@ div.block.third-width {
   width: 33%;
 }
 
+:is(#inline, #inline-block) p {
+  line-height: 2;
+}
+
 section {
   margin-top: 50px;
 }
 
 #inline-block :is(em, code) {
   display: inline-block;
+}
+
+#inline-block p {
+  margin: 0;
 }

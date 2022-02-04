@@ -4,6 +4,13 @@
   font-family: sans-serif;
 }
 
+div.block {
+  background-color: lightblue;
+  border: 3px solid black;
+  margin: 5px 0;
+  padding: 0px 10px;
+}
+
 p.answer {
   padding-left: 20px;
 }

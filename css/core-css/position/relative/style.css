@@ -1,0 +1,45 @@
+/* style.css */
+
+*:not(code) {
+  font-family: sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body>header, main {
+  margin-left: 10px;
+}
+
+code {
+  font-size: 1.1rem;
+}
+
+div.some-content {
+  background-color: lightblue;
+  border: 2px solid black;
+  display: grid;
+  height: 150px;
+  padding: 15px;
+  position: relative;
+  width: 150px;
+}
+
+div.some-content:nth-child(2) {
+  right: 100px;
+  top: 50px;
+}
+
+div.some-content p {
+  margin: 0;
+}
+
+main {
+  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}

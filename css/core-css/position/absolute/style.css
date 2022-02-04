@@ -1,0 +1,77 @@
+/* style.css */
+
+* {
+  font-family: sans-serif;
+}
+
+[id|="bar"] {
+  align-items: center;
+  background-color: lightblue;
+  border: 3px solid black;
+  display: grid;
+  font-size: 1.2rem;
+  justify-items: center;
+  position: absolute;
+  text-align: center;
+}
+
+[id|="bar"] p {
+  padding: 5px;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body>header {
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  display: grid;
+  justify-items: center;
+  left: 50%;
+  margin: -5% 0 0 -10%;
+  position: absolute;
+  top: 50%;
+  height: 10%;
+  width: 20%;
+}
+
+section :is(h2, p) {
+  margin-left: 5%;
+  text-align: justify;
+  width: 90%;
+}
+
+#bar-top {
+  top: 0;
+}
+
+#bar-top,
+#bar-bottom {
+  height: 10%;
+  margin-left: 15%;
+  width: 70%;
+}
+
+#bar-right {
+  right: 0;
+}
+
+#bar-right,
+#bar-left {
+  top: 15%;
+  height: 70%;
+  width: 10%;
+}
+
+#bar-bottom {
+  bottom: 0;
+}
+
+#bar-left {
+  left: 0;
+}

@@ -4,32 +4,52 @@
   font-family: sans-serif;
 }
 
-div.block {
+a:hover {
+  text-decoration: none;
+}
+
+abbr,
+code,
+div.block,
+em,
+span,
+strong,
+time {
   background-color: lightblue;
   border: 3px solid black;
+  padding: 2px 4px;
+}
+
+code.height {
+  height: 40px;
+}
+
+code.marginBottom {
+  margin-bottom: 40px;
+}
+
+code.marginTop {
+  margin-top: 40px;
+}
+
+code.width {
+  width: 60px;
+}
+
+div.block {
   margin: 5px 0;
   padding: 0px 10px;
 }
 
-p.answer {
-  padding-left: 20px;
+div.block.third-width {
+  margin-right: 0;
+  width: 33%;
 }
 
-p.answer,
-p.question {
-  font-size: 1.2rem;
-  max-width: 700px;
+section {
+  margin-top: 50px;
 }
 
-p.question {
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-p.answer span {
+#inline-block :is(em, code) {
   display: inline-block;
-  background-color: yellow;
-  padding: 11px;
-  border: 2px solid green;
 }

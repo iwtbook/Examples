@@ -15,63 +15,57 @@
     <main>
       <section>
         <header>
-          <h2>About element display types</h2>
+          <h2>Block Elements</h2>
         </header>
-        <p class="question">What is a block level element?</p>
-        <p class="answer">
-          Block level elements have two main characteristics: They (by default)
-          will fill up the entire width of their container, and they will insert
-          a return, causing the following element to be displayed on the next
-          line.
-        </p>
-        <p class="question">What is an inline level element?</p>
-        <p class="answer">
-          Inline level elements are almost the opposite of block level elements.
-          They take up just as much width as their contents need, and they do
-          not cause anything to return to a new line.
-        </p>
-        <p class="answer">
-          Additionally, they ignore four CSS rules: width, height, margin-top,
-          and margin-bottom (even if included in a shorthand margin rule).
-        </p>
-        <p class="question">There's inline-block??</p>
-        <p class="answer">
-          Inline-block level elements are the same as inline elements, except
-          they notably allow you to modify the width, height, and all four
-          margins.
-        </p>
-        <p class="answer">
-          There are
-          <a href="https://www.w3.org/TR/css-display-3/">at least a dozen</a>
-          other display types as well that we'll get to in other demos.
-        </p>
+        <div class="block">
+          <p>These are block level elements</p>
+        </div>
+        <div class="block">
+          <p>
+            You'll notice that they default to filling up the entire width of
+            their container
+          </p>
+        </div>
+        <div class="block third-width">
+          <p>But even when they don't fill in the whole width...</p>
+        </div>
+        <div class="block third-width">
+          <p>They still create a new line</p>
+        </div>
       </section>
       <section>
         <header>
-          <h2>Block &amp; Inline in Action</h2>
+          <h2>Inline Elements</h2>
         </header>
-        <div class="block">
-          <p>These are block level elements</p>
-        </div>
-        <div class="block">
-          <p>These are block level elements</p>
-        </div>
-        <div class="block">
-          <p>These are block level elements</p>
-        </div>
         <p>
-          This paragraph has <em>a lot</em> of inline
-          <span class="elem">elements</span>. As you can see,
-          <strong>these</strong> elements don't break the flow of the paragraph.
+          This paragraph has <em>a lot</em> of inline <span>elements</span>. As
+          you can see, <strong>these</strong> elements don't break the flow of
+          the paragraph.
         </p>
         <p>
-          The time of me writing this demo is
-          <time datetime="13:35">1:35pm</time>. I have used some resources when
-          making it, most notably the
-          <cite
-            ><abbr title="World Wide Web Consortium">W3C</abbr>'s CSS
-            Specification</cite
-          >.
+          The size of <span>inline elements</span> is instead defined by their
+          contents. Unlike block elements, you cannot set the
+          <code>width</code>, <code>height</code>, <code>margin-top</code>, or
+          <code>margin-bottom</code> of inline elements.
+        </p>
+      </section>
+      <section id="inline-block">
+        <header>
+          <h2>Inline-Block Elements?</h2>
+        </header>
+        <p>
+          Inline block elements are <em>very</em> similar to regular
+          <span>inline elements</span>, except they respect<br />
+          <code class="width">width</code>, <code class="height">height</code>,
+          <code class="marginTop">margin-top</code>, and
+          <code class="marginBottom">margin-bottom</code>.
+        </p>
+        <p>
+          There are
+          <a href="https://www.w3.org/TR/css-display-3/" target="_blank"
+            >at least a dozen</a
+          >
+          other display types as well that we'll get to in other demos.
         </p>
       </section>
     </main>

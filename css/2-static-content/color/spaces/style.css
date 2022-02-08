@@ -5,23 +5,76 @@
 }
 
 code {
-  cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 fieldset {
+  align-items: center;
+  display: grid;
+  grid-template-areas:
+    'input'
+    'output';
+  grid-template-rows: auto auto;
+  height: 240px;
   margin-top: 30px;
+  width: 550px;
 }
 
-fieldset:first-child {
+fieldset div.input {
+  grid-area: input;
+  margin-top: 10px;
+}
+
+fieldset div.input:not(.hex) {
+  column-gap: 0px;
+  display: grid;
+  grid-template-columns: 80px 50px auto 50px;
+  row-gap: 15px;
+}
+
+fieldset div.input:not(.hex) label[class$="-label"] {
+  grid-column: 1 / 1;
+  text-align: right;
+}
+
+fieldset label.min {
+  justify-self: flex-end;
+  text-align: right;
+  margin-right: 5px;
+  width: 40px;
+}
+
+fieldset div.input:not(.hex) input+label {
+  margin-left: 5px;
+}
+
+fieldset output {
+  align-self: flex-end;
+  align-items: center;
+  background-color: rgb(232, 232, 232);
+  border-radius: 4px;
+  column-gap: 20px;
+  display: flex;
+  grid-area: output;
+  margin: 20px 0 20px 0;
+  padding: 0 20px;
+}
+
+fieldset:first-child div.input {
   align-items: center;
   display: flex;
 }
 
 form {
-  column-gap: 20px;
+  column-gap: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-left: 125px;
+}
+
+header {
+  text-align: center;
+  width: 1300px;
 }
 
 input[type="text"] {
@@ -35,7 +88,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
-  max-width: 725px;
+  max-width: 1325px;
   width: 100%;
 }
 
@@ -46,9 +99,13 @@ select {
 }
 
 .color-block {
-  border-top: 2px dashed lightgray;
-  display: inline-block;
-  padding-bottom: 20px;
+  display: grid;
+  margin: 0 0 -20px 0;
+  padding: 0;
+  justify-items: center;
+  grid-template-rows: 1fr;
+  height: 65px;
+  width: 1300px;
 }
 
 .color-label {
@@ -57,6 +114,27 @@ select {
 
 .named .color-swatch {
   background-color: darkseagreen;
-  height: 60px;
-  width: 100%;
+  height: 1410px;
+  left: 15px;
+  position: absolute;
+  top: 162px;
+  width: 100px;
+}
+
+@media only screen and (max-width: 1350px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    width: 750px;
+  }
+
+  .color-block {
+    width: 750px;
+  }
+
+  .named .color-swatch {
+    height: 2860px;
+  }
 }

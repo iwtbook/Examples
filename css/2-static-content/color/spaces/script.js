@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   addNamedColors();
   bindListeners();
+  document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
 }
 
 function addNamedColors() {
@@ -27,15 +30,17 @@ function bindListeners() {
   const ranges = Array.from(document.querySelectorAll('input[type="range"]'));
   const colorInput = document.querySelector('input[type="color"]');
   const colorBox = document.querySelector('div.color-swatch');
+  const hexInput = document.querySelector('#hex-input');
 
   select.addEventListener('input', () => {
     colorBox.style.backgroundColor = select.value;
-    const colors = getColors(select.value);
+    const colors = getColors(select.value, 'name');
     // Update hex field
     document.querySelector('#hex-input').value = colors.hex.toUpperCase();
     colorInput.value = colors.hex;
     // Update other fields
     updateColorFields(colors);
+    updateOutputs(colors);
   });
 
   ranges.forEach((range) => {
@@ -48,78 +53,99 @@ function bindListeners() {
       );
       const comp = [];
       colorInputs.forEach((input) => {
-        comp.push(input.value);
+        comp.push(Number(input.value));
       });
 
-      let newColor = '';
       switch (space) {
-        case 'rgb':
-          newColor = `${space}(${comp[0]},${comp[1]},${comp[2]})`;
-          break;
-        case 'rgba':
-          newColor = `${space}(${comp[0]},${comp[1]},${comp[2]},${comp[3]})`;
-          break;
         case 'hsl':
-          newColor = `${space}(${comp[0]}, ${comp[1]}%, ${comp[2]}%)`;
+          comp[1] /= 100;
+          comp[2] /= 100;
           break;
         case 'hsla':
-          newColor = `${space}(${comp[0]}, ${comp[1]}%, ${comp[2]}% / ${comp[3]})`;
+          comp[1] /= 100;
+          comp[2] /= 100;
           break;
         case 'hwb':
-          newColor = `${space}(${comp[0]} ${comp[1]}% ${comp[2]}% / ${comp[3]})`;
+          comp[1] /= 100;
+          comp[2] /= 100;
           break;
         case 'lab':
-          newColor = `${space}(${comp[0]} ${comp[1]}% ${comp[2]}% / ${comp[3]})`;
+          comp[0] /= 100;
           break;
         case 'lch':
-          newColor = `${space}(${comp[0]}% ${comp[1]} ${comp[2]} / ${comp[3]})`;
+          comp[0] /= 100;
           break;
         case 'oklab':
-          newColor = `${space}(${comp[0]}% ${comp[1]} ${comp[2]} / ${comp[3]})`;
+          comp[0] /= 100;
           break;
         case 'oklch':
-          newColor = `${space}(${comp[0]}% ${comp[1]} ${comp[2]} / ${comp[3]})`;
+          comp[0] /= 100;
           break;
       }
 
-      colorBox.style.backgroundColor = newColor;
-      const colors = getColors(newColor);
-      colorInput.value = colors.hex;
+      const colors = getColors(comp, space);
+      colorBox.style.backgroundColor = colors.hex;
       // Update hex field
-      document.querySelector('#hex-input').value = colors.hex.toUpperCase();
+      hexInput.value = colors.hex.toUpperCase();
       // Update other fields
-      updateColorFields(colors);
+      updateColorFields(colors, space);
+      updateOutputs(colors);
+      if (colors.hex.length == 9) colors.hex = colors.hex.slice(0, -2);
+      colorInput.value = colors.hex;
     });
+  });
+
+  hexInput.addEventListener('input', () => {
+    const regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}|[A-Fa-f0-9]{8})$/;
+    if (!regex.test(hexInput.value)) return;
+    hexInput.value = hexInput.value.toUpperCase();
+    colorBox.style.backgroundColor = hexInput.value;
+    const colors = getColors([hexInput.value], 'hex');
+    updateColorFields(colors, 'hex');
+    updateOutputs(colors);
   });
 
   colorInput.addEventListener('input', () => {
     colorBox.style.backgroundColor = colorInput.value;
-    const colors = getColors(colorInput.value);
-    document.querySelector('#hex-input').value = colors.hex.toUpperCase();
-    updateColorFields(colors);
+    const colors = getColors([colorInput.value], 'hex');
+    hexInput.value = colors.hex.toUpperCase();
+    updateColorFields(colors, 'hex');
+    updateOutputs(colors);
   });
 }
 
-function getColors(inputColor) {
-  if (inputColor.startsWith('hwb')) {
-    inputColor = hwbToHsv(inputColor);
+function getColors(inputColor, space) {
+  let newChroma, hwb;
+  if (space == 'name') {
+    newChroma = chroma(inputColor);
+  } else if (space == 'rgba') {
+    newChroma = chroma(...inputColor, 'rgb');
+  } else if (space == 'hsla') {
+    newChroma = chroma(...inputColor, 'hsl');
+  } else if (space == 'hwb') {
+    newChroma = chroma(...convertHwbToRgb(inputColor), 'rgb');
+    hwb = inputColor;
+  } else if (space == 'lab' || space == 'lch') {
+    inputColor[0] *= 100;
+    newChroma = chroma(...inputColor, space);
+  } else {
+    newChroma = chroma(...inputColor, space);
   }
 
   const colors = {};
-  const hsv = chroma(inputColor).hsv();
-  const alpha = chroma(inputColor).rgba()[3];
-  const hwb = [hsv[0], (1 - hsv[1]) * hsv[2], 1 - hsv[2], alpha];
+  const alpha = newChroma.rgba()[3];
+  if (!hwb) hwb = rgb2hwb(...newChroma.rgb());
 
-  colors.hex = chroma(inputColor).hex();
-  colors.rgb = chroma(inputColor).rgb();
-  colors.rgba = chroma(inputColor).rgba();
-  colors.hsl = chroma(inputColor).hsl().slice(0, -1);
-  colors.hsla = chroma(inputColor).hsl();
+  colors.hex = newChroma.hex();
+  colors.rgb = newChroma.rgb();
+  colors.rgba = newChroma.rgba();
+  colors.hsl = newChroma.hsl().slice(0, -1);
+  colors.hsla = newChroma.hsl();
   colors.hwb = hwb;
-  colors.lab = chroma(inputColor).lab();
-  colors.lch = chroma(inputColor).lch();
-  colors.oklab = chroma(inputColor).oklab();
-  colors.oklch = chroma(inputColor).oklch();
+  colors.lab = newChroma.lab();
+  colors.lch = newChroma.lch();
+  colors.oklab = newChroma.oklab();
+  colors.oklch = newChroma.oklch();
 
   // Adding alpha to colors that support= it
   colors.lab[3] = alpha;
@@ -137,18 +163,98 @@ function getColors(inputColor) {
   colors.oklab[0] *= 100;
   colors.oklch[0] *= 100;
 
+  // Fixing NaN issues
+  if (isNaN(colors.hsl[0])) colors.hsl[0] = 0;
+  if (isNaN(colors.hsla[0])) colors.hsla[0] = 0;
+  if (isNaN(colors.hwb[0])) colors.hwb[0] = 0;
+  if (isNaN(colors.hwb[1])) colors.hwb[1] = 100;
+  if (isNaN(colors.hwb[2])) colors.hwb[2] = 0;
+  if (isNaN(colors.lch[2])) colors.lch[2] = 0;
+  if (isNaN(colors.oklch[2])) colors.oklch[2] = 0;
+
   return colors;
 }
 
-function updateColorFields(colors) {
+function updateColorFields(colors, fromSpace) {
   const fields = getFormFields();
   for (const space in fields) {
+    if (space == fromSpace) continue;
     fields[space][0].value = colors[space][0];
     fields[space][1].value = colors[space][1];
     fields[space][2].value = colors[space][2];
     if (space != 'rgb' && space != 'hsl') {
       fields[space][3].value = colors[space][3];
     }
+  }
+}
+
+function updateOutputs(colors) {
+  const outputs = getOutputFields();
+  for (const space in outputs) {
+    let outputStr = 'color: ';
+    if (!['hex', 'rgb', 'rgba'].includes(space)) {
+      for (const num in colors[space]) {
+        colors[space][num] = Number(colors[space][num]).toFixed(2);
+      }
+    }
+    switch (space) {
+      case 'hex':
+        outputStr += colors[space];
+        break;
+      case 'rgb':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}, ${colors[space][1]}, ${colors[space][2]}`;
+        outputStr += ')';
+        break;
+      case 'rgba':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}, ${colors[space][1]}, ${colors[space][2]}`;
+        outputStr += `, ${colors[space][3]}`;
+        outputStr += ')';
+        break;
+      case 'hsl':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}deg ${colors[space][1]}% ${colors[space][2]}%`;
+        outputStr += ')';
+        break;
+      case 'hsla':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}deg ${colors[space][1]}% ${colors[space][2]}%`;
+        outputStr += ` / ${colors['rgba'][3]}`;
+        outputStr += ')';
+        break;
+      case 'hwb':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}deg ${colors[space][1]}% ${colors[space][2]}%`;
+        outputStr += ` / ${colors['rgba'][3]}`;
+        outputStr += ')';
+        break;
+      case 'lab':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}% ${colors[space][1]} ${colors[space][2]}`;
+        outputStr += ` / ${colors['rgba'][3]}`;
+        outputStr += ')';
+        break;
+      case 'lch':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}% ${colors[space][1]} ${colors[space][2]}`;
+        outputStr += ` / ${colors['rgba'][3]}`;
+        outputStr += ')';
+        break;
+      case 'oklab':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}% ${colors[space][1]} ${colors[space][2]}`;
+        outputStr += ` / ${colors['rgba'][3]}`;
+        outputStr += ')';
+        break;
+      case 'oklch':
+        outputStr += `${space}(`;
+        outputStr += `${colors[space][0]}% ${colors[space][1]} ${colors[space][2]}`;
+        outputStr += ` / ${colors['rgba'][3]}`;
+        outputStr += ')';
+        break;
+    }
+    outputs[space].innerHTML = outputStr;
   }
 }
 
@@ -166,12 +272,109 @@ function getFormFields() {
   };
 }
 
-// function hwbToHsv(hwb) {
-//   hwb = hwb.slice(4).split(')')[0].split(' ');
-//   hwb.splice(3, 1);
-//   hwb[1] = hwb[1].replace('%', '');
-//   hwb[2] = hwb[2].replace('%', '');
-//   hwb[1]
-//   hwb = [hwb[0], 1 - hwb[1] / (1 - hwb[2]), 1 - hwb[2], hwb[3]];
-//   return `hsv(${hwb[0]}, ${hwb[1]}, ${hwb[2]})`;
-// }
+function getOutputFields() {
+  return {
+    hex: document.querySelector('output.hex code'),
+    rgb: document.querySelector('output.rgb code'),
+    rgba: document.querySelector('output.rgba code'),
+    hsl: document.querySelector('output.hsl code'),
+    hsla: document.querySelector('output.hsla code'),
+    hwb: document.querySelector('output.hwb code'),
+    lab: document.querySelector('output.lab code'),
+    lch: document.querySelector('output.lch code'),
+    oklab: document.querySelector('output.oklab code'),
+    oklch: document.querySelector('output.oklch code'),
+  };
+}
+
+// Converting function borrowed from:
+// https://jsfiddle.net/seamusleahy/12eL2qse/
+function convertHwbToRgb(hwb) {
+  var h = hwb[0] / 360;
+  var wh = hwb[1];
+  var bl = hwb[2];
+  var ratio = wh + bl;
+  var i;
+  var v;
+  var f;
+  var n;
+
+  // wh + bl cant be > 1
+  if (ratio > 1) {
+    wh /= ratio;
+    bl /= ratio;
+  }
+
+  i = Math.floor(6 * h);
+  v = 1 - bl;
+  f = 6 * h - i;
+
+  if ((i & 0x01) !== 0) {
+    f = 1 - f;
+  }
+
+  n = wh + f * (v - wh); // linear interpolation
+
+  var r;
+  var g;
+  var b;
+  switch (i) {
+    default:
+    case 6:
+    case 0:
+      r = v;
+      g = n;
+      b = wh;
+      break;
+    case 1:
+      r = n;
+      g = v;
+      b = wh;
+      break;
+    case 2:
+      r = wh;
+      g = v;
+      b = n;
+      break;
+    case 3:
+      r = wh;
+      g = n;
+      b = v;
+      break;
+    case 4:
+      r = n;
+      g = wh;
+      b = v;
+      break;
+    case 5:
+      r = v;
+      g = wh;
+      b = n;
+      break;
+  }
+
+  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
+// Converting function borrowed from:
+// https://stackoverflow.com/questions/29461757/how-to-display-hwb-hsb-cmyk-channels-using-rgb-or-hsl
+function rgb2hwb(r, g, b) {
+  r /= 255;
+  g /= 255;
+  b /= 255;
+
+  var f,
+    i,
+    w = Math.min(r, g, b);
+  var v = Math.max(r, g, b);
+  var black = 1 - v;
+
+  if (v === w) return { h: 0, w: w, b: black };
+  f = r === w ? g - b : g === w ? b - r : r - g;
+  i = r === w ? 3 : g === w ? 5 : 1;
+
+  let hue = (i - f / (v - w)) / 6;
+  hue *= 360;
+
+  return [hue, w, black];
+}

@@ -1,0 +1,61 @@
+/* style.css */
+
+*:not(code) {
+  font-family: sans-serif;
+}
+
+code {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+fieldset {
+  margin-top: 30px;
+}
+
+fieldset:first-child {
+  align-items: center;
+  display: flex;
+}
+
+form {
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+input[type="text"] {
+  font-size: 1.2rem;
+  height: 50%;
+  margin-right: 10px;
+  width: 80%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 725px;
+}
+
+select {
+  border-radius: 3px;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.color-block {
+  border-top: 2px dashed lightgray;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.color-label {
+  color: gray;
+}
+
+.named .color-swatch {
+  background-color: darkseagreen;
+  height: 60px;
+  width: 100%;
+}

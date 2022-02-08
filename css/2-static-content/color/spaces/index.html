@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Space</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Scripts -->
+    <script src="chroma.min.js"></script>
+    <script src="script.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Color Spaces</h1>
+    </header>
+    <main>
+      <div class="named color-block">
+        <p>
+          Named Color:
+          <select name="color-named" id="color-named">
+            <option value="custom">custom</option>
+          </select>
+        </p>
+        <div class="color-swatch"></div>
+      </div>
+      <form>
+        <fieldset>
+          <legend>Hex</legend>
+          <input type="text" name="hex-input" id="hex-input" value="#8FBC8F" />
+          <input type="color" name="hex-color" id="hex-color" value="#8FBC8F" />
+        </fieldset>
+        <fieldset>
+          <legend>RGB</legend>
+          <label for="rgb-red-label" class="color-label">Red:</label>
+          <label for="rgb-red">0</label>
+          <input
+            type="range"
+            name="rgb-red"
+            id="rgb-red"
+            min="0"
+            max="255"
+            value="143"
+          />
+          <label for="rgb-red">255</label>
+          <br />
+          <label for="rgb-blue-label" class="color-label">Blue:</label>
+          <label for="rgb-blue">0</label>
+          <input
+            type="range"
+            name="rgb-blue"
+            id="rgb-blue"
+            min="0"
+            max="255"
+            value="188"
+          />
+          <label for="rgb-blue">255</label>
+          <br />
+          <label for="rgb-green-label" class="color-label">Green:</label>
+          <label for="rgb-green">0</label>
+          <input
+            type="range"
+            name="rgb-green"
+            id="rgb-green"
+            min="0"
+            max="255"
+            value="143"
+          />
+          <label for="rgb-green">255</label>
+        </fieldset>
+        <fieldset>
+          <legend>RGBA</legend>
+          <label for="rgba-red-label" class="color-label">Red:</label>
+          <label for="rgba-red">0</label>
+          <input
+            type="range"
+            name="rgba-red"
+            id="rgba-red"
+            min="0"
+            max="255"
+            value="143"
+          />
+          <label for="rgba-red">255</label>
+          <br />
+          <label for="rgba-blue-label" class="color-label">Blue:</label>
+          <label for="rgba-blue">0</label>
+          <input
+            type="range"
+            name="rgba-blue"
+            id="rgba-blue"
+            min="0"
+            max="255"
+            value="188"
+          />
+          <label for="rgba-blue">255</label>
+          <br />
+          <label for="rgba-green-label" class="color-label">Green:</label>
+          <label for="rgba-green">0</label>
+          <input
+            type="range"
+            name="rgba-green"
+            id="rgba-green"
+            min="0"
+            max="255"
+            value="143"
+          />
+          <label for="rgba-green">255</label>
+          <br />
+          <label for="rgba-alpha-label" class="color-label">Alpha:</label>
+          <label for="rgba-alpha">0</label>
+          <input
+            type="range"
+            name="rgba-alpha"
+            id="rgba-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="rgba-alpha">1</label>
+        </fieldset>
+        <fieldset>
+          <legend>HSL</legend>
+          <label for="hsl-hue-label" class="color-label">Hue:</label>
+          <label for="hsl-hue">0</label>
+          <input
+            type="range"
+            name="hsl-hue"
+            id="hsl-hue"
+            min="0"
+            max="359"
+            value="120"
+          />
+          <label for="hsl-hue">359</label>
+          <br />
+          <label for="hsl-saturation-label" class="color-label"
+            >Saturation:</label
+          >
+          <label for="hsl-saturation">0</label>
+          <input
+            type="range"
+            name="hsl-saturation"
+            id="hsl-saturation"
+            min="0"
+            max="100"
+            value="25.14"
+          />
+          <label for="hsl-saturation">100</label>
+          <br />
+          <label for="hsl-lightness-label" class="color-label"
+            >Lightness:</label
+          >
+          <label for="hsl-lightness">0</label>
+          <input
+            type="range"
+            name="hsl-lightness"
+            id="hsl-lightness"
+            min="0"
+            max="100"
+            value="64.90"
+          />
+          <label for="hsl-lightness">100</label>
+        </fieldset>
+        <fieldset>
+          <legend>HSLA</legend>
+          <label for="hsla-hue-label" class="color-label">Hue:</label>
+          <label for="hsla-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="hsla-hue"
+            id="hsla-hue"
+            min="0"
+            max="359"
+            value="120"
+          />
+          <label for="hsla-hue">359</label>
+          <br />
+          <label for="hsla-saturation-label" class="color-label"
+            >Saturation:</label
+          >
+          <label for="hsla-saturation">0</label>
+          <input
+            disabled
+            type="range"
+            name="hsla-saturation"
+            id="hsla-saturation"
+            min="0"
+            max="100"
+            value="25.14"
+          />
+          <label for="hsla-saturation">100</label>
+          <br />
+          <label for="hsla-lightness-label" class="color-label"
+            >Lightness:</label
+          >
+          <label for="hsla-lightness">0</label>
+          <input
+            disabled
+            type="range"
+            name="hsla-lightness"
+            id="hsla-lightness"
+            min="0"
+            max="100"
+            value="64.90"
+          />
+          <label for="hsla-lightness">100</label>
+          <br />
+          <label for="hsla-alpha-label" class="color-label">Alpha:</label>
+          <label for="hsla-alpha">0</label>
+          <input
+            disabled
+            type="range"
+            name="hsla-alpha"
+            id="hsla-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="hsla-alpha">1</label>
+        </fieldset>
+        <fieldset>
+          <legend>HWB</legend>
+          <label for="hwb-hue-label" class="color-label">Hue:</label>
+          <label for="hwb-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="hwb-hue"
+            id="hwb-hue"
+            min="0"
+            max="359"
+            value="120"
+          />
+          <label for="hwb-hue">359</label>
+          <br />
+          <label for="hwb-whiteness-label" class="color-label"
+            >Whiteness:</label
+          >
+          <label for="hwb-whiteness">0</label>
+          <input
+            disabled
+            type="range"
+            name="hwb-whiteness"
+            id="hwb-whiteness"
+            min="0"
+            max="100"
+            value="56.08"
+          />
+          <label for="hwb-whiteness">100</label>
+          <br />
+          <label for="hwb-blackness-label" class="color-label"
+            >Blackness:</label
+          >
+          <label for="hwb-blackness">0</label>
+          <input
+            disabled
+            type="range"
+            name="hwb-blackness"
+            id="hwb-blackness"
+            min="0"
+            max="100"
+            value="26.27"
+          />
+          <label for="hwb-blackness">100</label>
+          <br />
+          <label for="hwb-alpha-label" class="color-label">Alpha:</label>
+          <label for="hwb-alpha">0</label>
+          <input
+            disabled
+            type="range"
+            name="hwb-alpha"
+            id="hwb-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="lab-alpha">1</label>
+        </fieldset>
+        <fieldset>
+          <legend>Lab</legend>
+          <label for="lab-hue-label" class="color-label">Lightness:</label>
+          <label for="lab-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="lab-hue"
+            id="lab-hue"
+            min="0"
+            max="100"
+            value="72.09"
+          />
+          <label for="lab-hue">100</label>
+          <br />
+          <label for="lab-a-label" class="color-label">A:</label>
+          <label for="lab-a">-160</label>
+          <input
+            disabled
+            type="range"
+            name="lab-a"
+            id="lab-a"
+            min="-160"
+            max="160"
+            value="-23.82"
+          />
+          <label for="lab-a">160</label>
+          <br />
+          <label for="lab-b-label" class="color-label">B:</label>
+          <label for="lab-b">-160</label>
+          <input
+            disabled
+            type="range"
+            name="lab-b"
+            id="lab-b"
+            min="-160"
+            max="160"
+            value="18.04"
+          />
+          <label for="lab-b">160</label>
+          <br />
+          <label for="lab-alpha-label" class="color-label">Alpha:</label>
+          <label for="lab-alpha">0</label>
+          <input
+            disabled
+            type="range"
+            name="lab-alpha"
+            id="lab-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="lab-alpha">1</label>
+        </fieldset>
+        <fieldset>
+          <legend>LCH</legend>
+          <label for="lch-hue-label" class="color-label">Lightness:</label>
+          <label for="lch-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="lch-hue"
+            id="lch-hue"
+            min="0"
+            max="100"
+            value="72.09"
+          />
+          <label for="lch-hue">100</label>
+          <br />
+          <label for="lch-chroma-label" class="color-label">Chroma:</label>
+          <label for="lch-chroma">0</label>
+          <input
+            disabled
+            type="range"
+            name="lch-chroma"
+            id="lch-chroma"
+            min="0"
+            max="230"
+            value="29.88"
+          />
+          <label for="lch-chroma">230</label>
+          <br />
+          <label for="lch-hue-label" class="color-label">Hue:</label>
+          <label for="lch-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="lch-hue"
+            id="lch-hue"
+            min="0"
+            max="359"
+            value="142.86"
+          />
+          <label for="lch-hue">359</label>
+          <br />
+          <label for="lch-alpha-label" class="color-label">Alpha:</label>
+          <label for="lch-alpha">0</label>
+          <input
+            disabled
+            type="range"
+            name="lch-alpha"
+            id="lch-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="lch-alpha">1</label>
+        </fieldset>
+        <fieldset>
+          <legend>OKLab</legend>
+          <label for="oklab-hue-label" class="color-label">Lightness:</label>
+          <label for="oklab-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="oklab-hue"
+            id="oklab-hue"
+            min="0"
+            max="100"
+            value="76.09"
+          />
+          <label for="oklab-hue">100</label>
+          <br />
+          <label for="oklab-a-label" class="color-label">A:</label>
+          <label for="oklab-a">-0.5</label>
+          <input
+            disabled
+            type="range"
+            name="oklab-a"
+            id="oklab-a"
+            min="-0.5"
+            max="0.5"
+            step="0.0001"
+            value="-0.0651"
+          />
+          <label for="oklab-a">0.5</label>
+          <br />
+          <label for="oklab-b-label" class="color-label">B:</label>
+          <label for="oklab-b">-0.5</label>
+          <input
+            disabled
+            type="range"
+            name="oklab-b"
+            id="oklab-b"
+            min="-0.5"
+            max="0.5"
+            step="0.0001"
+            value="0.0460"
+          />
+          <label for="oklab-b">0.5</label>
+          <br />
+          <label for="oklab-alpha-label" class="color-label">Alpha:</label>
+          <label for="oklab-alpha">0</label>
+          <input
+            disabled
+            type="range"
+            name="oklab-alpha"
+            id="oklab-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="oklab-alpha">1</label>
+        </fieldset>
+        <fieldset>
+          <legend>OKLCH</legend>
+          <label for="oklch-hue-label" class="color-label">Lightness:</label>
+          <label for="oklch-hue">0</label>
+          <input
+            disabled
+            type="range"
+            name="oklch-hue"
+            id="oklch-hue"
+            min="0"
+            max="100"
+            value="76.0865"
+          />
+          <label for="oklch-hue">100</label>
+          <br />
+          <label for="oklch-chroma-label" class="color-label">Chroma:</label>
+          <label for="oklch-chroma">-0.5</label>
+          <input
+            disabled
+            type="range"
+            name="oklch-chroma"
+            id="oklch-chroma"
+            min="-0.5"
+            max="0.5"
+            step="0.0001"
+            value="0.07971"
+          />
+          <label for="oklch-chroma">0</label>
+          <br />
+          <label for="oklch-hue-label" class="color-label">Hue:</label>
+          <label for="oklch-hue">359</label>
+          <input
+            disabled
+            type="range"
+            name="oklch-hue"
+            id="oklch-hue"
+            min="0"
+            max="359"
+            value="144.7300"
+          />
+          <label for="oklch-hue">0.5</label>
+          <br />
+          <label for="oklch-alpha-label" class="color-label">Alpha:</label>
+          <label for="oklch-alpha">0</label>
+          <input
+            disabled
+            type="range"
+            name="oklch-alpha"
+            id="oklch-alpha"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <label for="oklch-alpha">1</label>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

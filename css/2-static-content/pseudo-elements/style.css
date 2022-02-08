@@ -1,0 +1,60 @@
+/* style.css */
+
+*:not(code) {
+  font-family: sans-serif;
+}
+
+h2 code {
+  font-size: 1.5rem;
+}
+
+header, h2 {
+  margin: 0;
+}
+
+p.copy-text {
+  font-size: 1.2rem;
+  text-align: justify;
+  max-width: 70ch;
+  width: 100%;
+}
+
+p.copy-text::first-letter {
+  font-size: 2rem;
+}
+
+p.copy-text::first-line {
+  background-color: rgb(202, 255, 176);
+}
+
+p.hover-me {
+  background-color: rgb(255, 255, 155);
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+p.hover-me:hover {
+  cursor: pointer;
+}
+
+p.hover-me:hover::after {
+  display: block;
+}
+
+p.hover-me::after {
+  background-color: lightblue;
+  border: 2px solid black;
+  content: 'A custom tooltip';
+  display: none;
+  margin: -35px 0 0 115px;
+  padding: 5px 10px;
+  position: absolute;
+}
+
+section {
+  margin-top: 20px;
+}
+
+section:first-of-type {
+  margin-top: 40px;
+}

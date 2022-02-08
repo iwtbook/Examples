@@ -123,7 +123,7 @@ function getColors(inputColor, space) {
   } else if (space == 'hsla') {
     newChroma = chroma(...inputColor, 'hsl');
   } else if (space == 'hwb') {
-    newChroma = chroma(...convertHwbToRgb(inputColor), 'rgb');
+    newChroma = chroma(...convertHwbToRgba(inputColor), 'rgb');
     hwb = inputColor;
   } else if (space == 'lab' || space == 'lch') {
     inputColor[0] *= 100;
@@ -134,7 +134,7 @@ function getColors(inputColor, space) {
 
   const colors = {};
   const alpha = newChroma.rgba()[3];
-  if (!hwb) hwb = rgb2hwb(...newChroma.rgb());
+  if (!hwb) hwb = rgba2hwb(...newChroma.rgba());
 
   colors.hex = newChroma.hex();
   colors.rgb = newChroma.rgb();
@@ -289,7 +289,7 @@ function getOutputFields() {
 
 // Converting function borrowed from:
 // https://jsfiddle.net/seamusleahy/12eL2qse/
-function convertHwbToRgb(hwb) {
+function convertHwbToRgba(hwb) {
   var h = hwb[0] / 360;
   var wh = hwb[1];
   var bl = hwb[2];
@@ -353,12 +353,17 @@ function convertHwbToRgb(hwb) {
       break;
   }
 
-  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  return [
+    Math.round(r * 255),
+    Math.round(g * 255),
+    Math.round(b * 255),
+    hwb[3],
+  ];
 }
 
 // Converting function borrowed from:
 // https://stackoverflow.com/questions/29461757/how-to-display-hwb-hsb-cmyk-channels-using-rgb-or-hsl
-function rgb2hwb(r, g, b) {
+function rgba2hwb(r, g, b, a) {
   r /= 255;
   g /= 255;
   b /= 255;
@@ -376,5 +381,5 @@ function rgb2hwb(r, g, b) {
   let hue = (i - f / (v - w)) / 6;
   hue *= 360;
 
-  return [hue, w, black];
+  return [hue, w, black, a];
 }

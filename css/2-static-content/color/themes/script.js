@@ -19,6 +19,7 @@ function bindListeners() {
 }
 
 function cycleTheme(btn, txt, body) {
+  // Get the current theme
   let currTheme = Array.from(body.classList)[0];
   const index = themes.indexOf(currTheme);
   const nextIndex = (index + 1) % themes.length;

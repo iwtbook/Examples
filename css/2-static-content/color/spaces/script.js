@@ -167,8 +167,26 @@ function getColors(inputColor, space) {
   if (isNaN(colors.hsl[0])) colors.hsl[0] = 0;
   if (isNaN(colors.hsla[0])) colors.hsla[0] = 0;
   if (isNaN(colors.hwb[0])) colors.hwb[0] = 0;
-  if (isNaN(colors.hwb[1])) colors.hwb[1] = 100;
-  if (isNaN(colors.hwb[2])) colors.hwb[2] = 0;
+  if (
+    (isNaN(colors.hwb[1]) || isNaN(colors.hwb[2])) &&
+    colors.rgb[0] == 255 &&
+    colors.rgb[1] == 255 &&
+    colors.rgb[2] == 255
+  ) {
+    colors.hwb[1] = 100;
+    colors.hwb[2] = 0;
+    colors.hwb[3] = 1;
+  }
+  if (
+    (isNaN(colors.hwb[1]) || isNaN(colors.hwb[2])) &&
+    colors.rgb[0] == 0 &&
+    colors.rgb[1] == 0 &&
+    colors.rgb[2] == 0
+  ) {
+    colors.hwb[1] = 0;
+    colors.hwb[2] = 100;
+    colors.hwb[3] = 1;
+  }
   if (isNaN(colors.lch[2])) colors.lch[2] = 0;
   if (isNaN(colors.oklch[2])) colors.oklch[2] = 0;
 

@@ -57,6 +57,12 @@ p {
   font-size: 1.5rem;
 }
 
+select {
+  font-size: 1.3rem;
+  padding: 5px;
+  width: 200px;
+}
+
 span::first-letter {
   text-transform: capitalize;
 }

@@ -10,21 +10,27 @@ function init() {
 
 function bindListeners() {
   const btn = document.querySelector('button img');
-  const txt = document.querySelector('p.current span');
+  const sel = document.querySelector('select');
   const body = document.body;
 
   btn.addEventListener('click', () => {
-    cycleTheme(btn, txt, body);
+    sel.value = getNextTheme(body);
+    setTheme(sel.value, body);
+  });
+
+  sel.addEventListener('input', () => {
+    setTheme(sel.value, body);
   });
 }
 
-function cycleTheme(btn, txt, body) {
-  // Get the current theme
-  let currTheme = Array.from(body.classList)[0];
-  const index = themes.indexOf(currTheme);
-  const nextIndex = (index + 1) % themes.length;
+function getNextTheme(body) {
+  const currTheme = body.classList[0];
+  const nextThemeIndex = (themes.indexOf(currTheme) + 1) % 5;
+  return themes[nextThemeIndex];
+}
+
+function setTheme(theme, body) {
+  let currTheme = body.classList[0];
   body.classList.remove(currTheme);
-  body.classList.add(themes[nextIndex]);
-  txt.innerHTML = themes[nextIndex].charAt(0).toUpperCase();
-  txt.innerHTML += themes[nextIndex].slice(1);
+  body.classList.add(theme);
 }

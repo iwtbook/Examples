@@ -34,8 +34,9 @@ input[type="text"] {
 main {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin-bottom: 100px;
   max-width: 725px;
+  width: 100%;
 }
 
 select {

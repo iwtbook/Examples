@@ -1,0 +1,114 @@
+* {
+  font-family: sans-serif;
+}
+
+/* Default Styles & Theme - Light */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  transition: 0.2s ease background-color;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button:active img {
+  transition: none !important;
+  transform: scale(1.03) !important;
+}
+
+button:hover img {
+  transition: 0.1s ease transform;
+  transform: scale(1.08);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h1, p {
+  margin: 0;
+}
+
+img {
+  cursor: pointer;
+  height: 120px;
+  transition: 0.1s ease transform;
+}
+
+main {
+  display: grid;
+  row-gap: 30px;
+  place-items: center;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+span::first-letter {
+  text-transform: capitalize;
+}
+
+/* Dark Theme */
+
+body.dark {
+  background-color: rgb(50, 50, 60);
+  transition: 0.2s ease background-color;
+}
+
+body.dark :is(h1, p) {
+  color: rgb(255, 255, 255);
+}
+
+body.dark img {
+  filter: invert(100%);
+}
+
+/* Forest Theme */
+
+body.forest {
+  background-color: rgb(48, 65, 40);
+  transition: 0.2s ease background-color;
+}
+
+body.forest :is(h1, p) {
+  color: rgb(255, 255, 255);
+}
+
+body.forest img {
+  filter: invert(100%);
+}
+
+/* Light Blue Theme */
+
+body.lightblue {
+  background-color: rgb(156, 211, 215);
+  transition: 0.2s ease background-color;
+}
+
+/* Maroon Theme */
+
+body.maroon {
+  background-color: rgb(96, 22, 22);
+  transition: 0.2s ease background-color;
+}
+
+body.maroon :is(h1, p) {
+  color: rgb(255, 255, 255);
+}
+
+body.maroon img {
+  filter: invert(100%);
+}

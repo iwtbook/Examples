@@ -1,5 +1,53 @@
 /* style.css */
 
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.flex-parent {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.flex-child {
+  border: 1px solid black;
+  height: 200px;
+}
+
+.flex-grow .flex-child {
+  flex-grow: 1;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+:is(.flex-wrap, .justify-content) .flex-child {
+  width: 300px;
+}
+
+.justify-content {
+  justify-content: space-around;
+}
+
+
+/* Children formatting with grid - not relevant to demo */
+
 * {
   font-family: sans-serif;
+}
+
+.flex-child {
+  background-color: rgb(211, 237, 247);
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+header, main {
+  margin: 0 20px;
 }

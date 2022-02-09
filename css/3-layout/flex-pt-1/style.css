@@ -1,5 +1,7 @@
 /* style.css */
 
+/* Flex Styles */
+
 body, html {
   height: 100%;
   margin: 0;
@@ -14,7 +16,6 @@ body, html {
 }
 
 .flex-child {
-  border: 1px solid black;
   height: 200px;
 }
 
@@ -43,6 +44,8 @@ body, html {
 
 .flex-child {
   background-color: rgb(211, 237, 247);
+  border: 2px solid black;
+  box-sizing: border-box;
   font-size: 2rem;
   display: grid;
   place-items: center;

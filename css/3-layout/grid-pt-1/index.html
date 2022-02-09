@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid - Basics</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Grid - Basics</h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2>Basic 2 x 2 centered grid</h2>
+        </header>
+        <div class="g-parent top-level">
+          <div class="g-child g-parent">
+            <p class="g-child">1</p>
+          </div>
+          <div class="g-child g-parent">
+            <p class="g-child">2</p>
+          </div>
+          <div class="g-child g-parent">
+            <p class="g-child">3</p>
+          </div>
+          <div class="g-child g-parent">
+            <p class="g-child">4</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <header>
+          <h2>Stretching across columns</h2>
+        </header>
+        <div class="g-parent top-level">
+          <div class="g-child g-parent">
+            <p class="g-child">1</p>
+          </div>
+          <div class="g-child g-parent">
+            <p class="g-child">2</p>
+          </div>
+          <div class="g-child g-parent wide">
+            <p class="g-child">3</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <header>
+          <h2>Stretching across rows</h2>
+        </header>
+        <div class="g-parent top-level">
+          <div class="g-child g-parent tall">
+            <p class="g-child">1</p>
+          </div>
+          <div class="g-child g-parent">
+            <p class="g-child">2</p>
+          </div>
+          <div class="g-child g-parent">
+            <p class="g-child">3</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

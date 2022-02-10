@@ -1,0 +1,87 @@
+/* main.css */
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: lightblue;
+  display: grid;
+  place-items: center;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+button {
+  background-color: rgb(56, 127, 203);
+  border-radius: 3px;
+  color: white;
+  border: none;
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  padding: 8px 30px;
+  transition: 0.1s ease background-color;
+}
+
+button:hover {
+  background-color: rgb(12, 95, 184);
+  cursor: pointer;
+  transition: 0.1s ease background-color;
+}
+
+button:disabled {
+  background-color: rgb(196, 196, 196);
+  transition: 0.1s ease background-color;
+}
+
+main {
+  background-color: white;
+  border-radius: 3px;
+  display: grid;
+  height: 400px;
+  place-items: center;
+  grid-template-rows: 1fr auto 1fr;
+  width: 300px;
+}
+
+main img {
+  align-self: flex-start;
+  width: calc(300px * 0.7);
+}
+
+p {
+  background-color: rgb(255, 176, 80);
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1.25s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.76, 0.01, 0.18, 1);
+  display: inline-block;
+}
+
+#img-wrapper {
+  display: grid;
+  height: calc(300px * 0.7725);
+  place-items: center;
+  width: calc(300px * 0.7);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1080deg);
+  }
+}

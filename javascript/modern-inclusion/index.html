@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Inclusion</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <!-- MODULES SCRIPTS -->
+    <!-- inline module -->
+    <script type="module">
+      // Can't use document.write() with module scripts
+      const div = document.createElement('div');
+      div.style.color = 'purple';
+      div.innerHTML = 'Module inline script loaded!';
+      document.body.append(div);
+    </script>
+    <!-- linked module -->
+    <script src="scripts/module.js" type="module"></script>
+    <!-- linked module w/ async -->
+    <script src="scripts/module-async.js" type="module" async></script>
+  </head>
+  <body>
+    <!-- CLASSIC SCRIPTS -->
+    <!-- inline script -->
+    <script>
+      document.write(
+        '<div style="color:blue">Classic inline script loaded!</div>'
+      );
+    </script>
+    <!-- linked script -->
+    <script src="scripts/classic.js"></script>
+    <!-- linked script w/ defer -->
+    <script src="scripts/classic-defer.js" defer></script>
+    <!-- linked script w/ async -->
+    <script src="scripts/classic-async.js" async></script>
+
+    <header>
+      <h1>Modern Script Inclusion</h1>
+    </header>
+    <main>
+      <header>
+        <h2>Inclusion order in this document:</h2>
+        <p class="highlight">
+          Notice: The render order does not match the inclusion order
+        </p>
+      </header>
+      <ul>
+        <li>
+          Module Inline Script:
+          <code>&lt;script type="module"&gt;...&lt;/script&gt;</code>
+        </li>
+        <li>
+          Module Linked Script:
+          <code>&lt;script src="module.js" type="module"&gt;</code>
+        </li>
+        <li>
+          Module Linked Script w/ Async:
+          <code>&lt;script src="module.js" type="module" async&gt;</code>
+        </li>
+        <li>
+          Classic Inline Script:
+          <code>&lt;script&gt;...&lt;/script&gt;</code>
+        </li>
+        <li>
+          Classic Linked Script:
+          <code>&lt;script src="classic.js"&gt;</code>
+        </li>
+        <li>
+          Classic Linked Script w/ Defer:
+          <code>&lt;script src="classic-defer.js" defer&gt;</code>
+        </li>
+        <li>
+          Classic Linked Script w/ Async:
+          <code>&lt;script src="classic-async.js" async&gt;</code>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

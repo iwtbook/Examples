@@ -1,23 +1,45 @@
+<script>
+  document.write("Where's my head???");
+</script>
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, JS World!</title>
+    <style>
+      button {
+        display: block;
+        margin-bottom: 20px;
+      }
+    </style>
+    <script>
+      document.write('<meta name="foo" content="bare" />');
+    </script>
+    <script>
+      // Writing to console
+      console.log('Hello, JavaScript World!');
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello, JS World!</title>
+  <body>
+    <h1>Hello, JavaScript World!</h1>
+    <button>Click me!</button>
 
-  <!-- Main Script - Linked File for internal or enternal script files -->
-  <script src="main.js" type="module"></script>
-</head>
+    <script>
+      // Writing to the document
+      // document.write(
+      //    `<div>This JavaScript was run on
+      //       <span>${new Date().toLocaleTimeString()} run on ${
+      //     navigator.userAgent
+      //   }!</div>`
+      // );
 
-<body>
-  <h1>Hello, JavaScript World!</h1>
-  <button>Say Hi</button>
-
-  <!-- Script Block for inline JavaScript -->
-  <script>
-    document.write('<span style="color: green">This line was written with JavaScript!</span>');
-  </script>
-</body>
-
+      // Alerting to the user on button click
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', function () {
+        alert('Howdy, JavaScript friend!');
+      });
+    </script>
+  </body>
 </html>

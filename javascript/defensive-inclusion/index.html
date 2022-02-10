@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Defensive Inclusion</h1>
+    </header>
+    <main>
+      <canvas id="confetti-canvas"></canvas>
+      <script type="module" src="confetti.min.js"></script>
+      <script type="module">
+        const confettiSettings = { target: 'confetti-canvas' };
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+        const el = document.createElement('p');
+        const main = document.querySelector('main');
+        el.innerHTML = 'Your browser supports modules!';
+        main.insertAdjacentElement('afterbegin', el);
+      </script>
+      <script nomodule>
+        var nomodule = {};
+        nomodule.el = document.createElement('p');
+        nomodule.main = document.querySelector('main');
+        nomodule.el.innerHTML =
+          'Your browser does not support modules, but JavaScript is enabled!';
+        nomodule.main.append(nomodule.el);
+      </script>
+      <noscript>
+        <p>Your browser has JavaScript disabled</p>
+        <div id="sad-clown-wrapper">
+          <img src="word-cloud.png" alt="Word cloud" />
+          <img src="sad-clown.svg" alt="Sad clown" />
+        </div>
+      </noscript>
+    </main>
+  </body>
+</html>

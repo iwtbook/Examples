@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <main>
+      <h1>DOM Preview</h1>
+      <div id="img-wrapper">
+        <img src="fidget-spinner.svg" alt="Spin me!" />
+      </div>
+      <button>spin</button>
+    </main>
+    <script>
+      const img = document.querySelector('#img-wrapper');
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', () => {
+        img.classList.add('spin');
+        btn.setAttribute('disabled', 'disabled');
+        setTimeout(() => {
+          img.classList.remove('spin');
+          btn.removeAttribute('disabled');
+        }, 1250);
+      });
+    </script>
+  </body>
+</html>

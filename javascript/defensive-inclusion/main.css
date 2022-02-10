@@ -1,0 +1,48 @@
+/* main.css */
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  overflow: hidden;
+}
+
+header {
+  margin: 20px 0;
+}
+
+header, main {
+  margin-left: 20px;
+}
+
+img:nth-child(1) {
+  width: 100%;
+}
+
+img:nth-child(2) {
+  margin-top: -25px;
+  width: 70%;
+}
+
+p {
+  border-radius: 3px;
+  display: inline;
+  background-color: rgb(255, 232, 158);
+  padding: 5px 10px;
+}
+
+#sad-clown-wrapper {
+  display: grid;
+  height: 400px;
+  margin-top: 30px;
+  place-items: center;
+  width: 400px;
+}
+
+#sad-clown-wrapper>* {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}

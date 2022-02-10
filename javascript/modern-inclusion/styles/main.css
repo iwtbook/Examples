@@ -1,0 +1,44 @@
+/* style.css */
+
+*:not(code) {
+  font-family: sans-serif;
+}
+
+code {
+  background-color: rgb(255, 214, 179);
+  border-radius: 3px;
+  font-size: 1.1rem;
+  padding: 3px 6px;
+}
+
+div {
+  margin: 10px 0;
+}
+
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+body>header {
+  margin: 30px 0 0 0;
+}
+
+main header {
+  margin-bottom: 40px;
+}
+
+main {
+  margin-bottom: 40px;
+}
+
+li {
+  margin: 20px 0;
+}
+
+.highlight {
+  background-color: rgb(255, 234, 71);
+  border-radius: 2px;
+  display: inline-block;
+  padding: 4px 8px;
+}

@@ -34,6 +34,11 @@ p {
   padding: 5px 10px;
 }
 
+#confetti-canvas {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
 #confetti-canvas.hide {
   display: none !important;
 }

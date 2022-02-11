@@ -14,9 +14,11 @@
       <h1>Defensive Inclusion</h1>
     </header>
     <main>
-      <canvas id="confetti-canvas"></canvas>
+      <canvas id="confetti-canvas" class="hide"></canvas>
       <script type="module" src="confetti.min.js"></script>
       <script type="module">
+        const canvas = document.querySelector('#confetti-canvas');
+        canvas.classList.remove('hide');
         const confettiSettings = { target: 'confetti-canvas' };
         const confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();

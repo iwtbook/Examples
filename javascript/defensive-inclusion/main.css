@@ -34,6 +34,10 @@ p {
   padding: 5px 10px;
 }
 
+#confetti-canvas.hide {
+  display: none !important;
+}
+
 #sad-clown-wrapper {
   display: grid;
   height: 400px;

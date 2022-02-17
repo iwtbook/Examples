@@ -1,0 +1,19 @@
+{
+  "files": [
+    {
+      "name": "index.html",
+      "show": "15-20",
+      "highlight": ""
+    },
+    {
+      "name": "styles.css",
+      "show": "3-5",
+      "highlight": ""
+    },
+    {
+      "name": "script.js",
+      "show": "3-7",
+      "highlight": ""
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modules</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Modules</h1>
+    </header>
+    <form>
+      <button id="btnMyLib">Say Hi! - My Library</button>
+      <button id="btnYourLib">Say Hi! - Your Library</button>
+    </form>
+
+    <script>
+      document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+      });
+    </script>
+
+    <!-- Libraries -->
+    <script src="myLib.js" type="module"></script>
+    <script src="yourLib.js" type="module"></script>
+  </body>
+</html>

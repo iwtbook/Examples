@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scoping</title>
+    <style>
+      *:not(code) {
+        font-family: sans-serif;
+      }
+
+      pre {
+        background-color: rgb(232, 232, 232);
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 30px;
+        padding: 10px 12px;
+      }
+
+      table {
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      td {
+        border-right: 1px solid rgb(191, 191, 191);
+        border-top: 1px solid rgb(191, 191, 191);
+      }
+
+      td:first-child {
+        padding: 5px 30px 5px 0;
+      }
+
+      td:nth-child(2) {
+        background-color: rgb(254, 209, 209);
+        padding: 5px 0 5px 5px;
+      }
+
+      td.yes:nth-child(2) {
+        background-color: rgb(209, 254, 209);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Scoping - IIFE</h1>
+    </header>
+    <pre><code>(function (professor) {
+
+  var name = 'Powell';
+
+  professor.favColor = 'Green';
+  professor.sayHi = function () {
+    console.log(`Prof ${name} says hi everybody!`);
+  };
+
+})(window.professor = window.professor || {});</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Accessible Outside IIFE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>window.professor</code></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><code>window.professor.favColor</code></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><code>window.professor.sayHi()</code></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><code>window.name</code></td>
+          <td>Only through <code>sayHi()</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

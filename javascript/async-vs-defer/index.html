@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async vs. Defer</title>
+    <link rel="stylesheet" href="main.css" />
+
+    <script src="async.js" async></script>
+    <script src="defer.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', init);
+
+      function init() {
+        const startedParsing = document.querySelector('#startedParsing');
+        const p = document.createElement('p');
+        p.innerText = 'Page finished parsing!';
+        startedParsing.insertAdjacentElement('afterend', p);
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Async vs. Defer</h1>
+    </header>
+    <main>
+      <p id="startedParsing">Page started parsing...</p>
+      <section>
+        <header>
+          <h2>Can you trust the load order?</h2>
+        </header>
+        <div id="img-wrapper">
+          <figure>
+            <figcaption>Refresh #1</figcaption>
+            <img
+              src="images/browser-variations-1.webp"
+              alt="The big four browsers all showing different loading orderds for the scripts"
+            />
+          </figure>
+          <figure>
+            <figcaption>Refresh #2</figcaption>
+            <img
+              src="images/browser-variations-2.webp"
+              alt="The big four browsers all showing different loading orderds for the scripts"
+            />
+          </figure>
+          <figure>
+            <figcaption>Refresh #3</figcaption>
+            <img
+              src="images/browser-variations-3.webp"
+              alt="The big four browsers all showing different loading orderds for the scripts"
+            />
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -12,10 +12,9 @@ const exclude = ['README.md', 'node_modules'];
 const supportedRepos = ['examples'];
 
 app.use((req, res, next) => {
-  res.set('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+  res.set('Access-Control-Allow-Origin', '*');
   next();
 });
-
 
 /********************************/
 /***          ROUTES          ***/
@@ -37,13 +36,13 @@ app.get('/:repo', (req, res) => {
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude, []);
   // Format the files so that they are easily parsable
-  files = files.map(file => {
+  files = files.map((file) => {
     let urlSafeRoute = encodeURI(file);
     file = file.replaceAll(repoDir + '/', '');
     return {
       path: file,
       type: 'blob',
-      url: `http://localhost:${port}/${req.params.repo}/file${urlSafeRoute}`
+      url: `http://localhost:${port}/${req.params.repo}/file${urlSafeRoute}`,
     };
   });
   // Send the files back
@@ -65,13 +64,14 @@ app.get('/:repo/file/*', (req, res) => {
   // Grab the contents of the file
   let fileContentsPath = filePath;
   let currRepoPath = getCurrentRepo();
-  if (!filePath.includes(currRepoPath)) fileContentsPath = currRepoPath + filePath;
+  if (!filePath.includes(currRepoPath))
+    fileContentsPath = currRepoPath + filePath;
   const fileContents = fs.readFileSync(fileContentsPath, 'utf8');
   // Format everything and send it back
   res.json({
     path: filePath,
     content: Buffer.from(fileContents).toString('base64'),
-    encoding: 'base64'
+    encoding: 'base64',
   });
 });
 
@@ -120,7 +120,6 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-
 /******************************************/
 /***          HELPER FUNCTIONS          ***/
 /******************************************/
@@ -136,7 +135,7 @@ function getCurrentRepo() {
 }
 
 /**
- * 
+ *
  * @param {string} dir the directory with which to search for files
  * @param {array<string>} exclude A list of files / directories to exclude in
  *                                file search
@@ -147,14 +146,14 @@ function recursiveFileSearch(dir, exclude) {
   // Get everything in the directory first
   entitiesInDir = fs.readdirSync(dir);
   // Filter out everything that's not allowed
-  entitiesInDir = entitiesInDir.filter(entity => {
+  entitiesInDir = entitiesInDir.filter((entity) => {
     if (exclude.includes(entity)) return false;
     if (entity.charAt(0) == '.' || entity.charAt(0) == '_') return false;
     return true;
   });
   // Separate the directories and files
   filesInDir = [];
-  dirsInDir = entitiesInDir.filter(entity => {
+  dirsInDir = entitiesInDir.filter((entity) => {
     // if it's a directory keep it so it can be stored in dirsInDir
     if (fs.lstatSync(`${dir}/${entity}`).isDirectory()) return true;
     // otherwise add it to our list of files
@@ -163,7 +162,7 @@ function recursiveFileSearch(dir, exclude) {
     return false;
   });
   // Add all of the files in the directories we found in our main files array
-  dirsInDir.forEach(subDir => {
+  dirsInDir.forEach((subDir) => {
     filesInDir = filesInDir.concat(recursiveFileSearch(`${dir}/${subDir}`, []));
   });
   // Return our main files array

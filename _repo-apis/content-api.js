@@ -11,6 +11,11 @@ const exclude = ['README.md', 'node_modules'];
 // List of supported repos, currently only this repo is supported
 const supportedRepos = ['examples'];
 
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+  next();
+});
+
 
 /********************************/
 /***          ROUTES          ***/

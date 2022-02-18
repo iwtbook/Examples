@@ -2,8 +2,8 @@
   "files": [
     {
       "name": "index.html",
-      "show": "15-20",
-      "highlight": "2,4-6"
+      "show": [15,20],
+      "highlight": [2,[4,6]]
     },
     {
       "name": "styles.css",

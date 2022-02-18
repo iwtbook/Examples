@@ -6,11 +6,11 @@
     },
     "styles.css": {
       "show": [3,5],
-      "highlight": ""
+      "highlight": []
     },
     "script.js": {
       "show": [3,7],
-      "highlight": ""
+      "highlight": []
     }
   }
 }

@@ -1,7 +1,7 @@
 // script.js
 
-document.addEventListener('DOMContentLoaded', init);
+console.log('Hello! This is a script');
 
-function init() {
-  console.log('Simple test!');
-}
+const p = document.createElement('p');
+p.innerText = 'This was added with a script';
+document.body.append(p);

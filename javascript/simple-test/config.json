@@ -1,19 +1,16 @@
 {
-  "files": [
-    {
-      "name": "index.html",
+  "files": {
+    "index.html": {
       "show": [15,20],
       "highlight": [2,[4,6]]
     },
-    {
-      "name": "styles.css",
+    "styles.css": {
       "show": [3,5],
       "highlight": ""
     },
-    {
-      "name": "script.js",
+    "script.js": {
       "show": [3,7],
       "highlight": ""
     }
-  ]
+  }
 }

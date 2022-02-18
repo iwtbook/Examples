@@ -7,12 +7,12 @@
     },
     {
       "name": "styles.css",
-      "show": "3-5",
+      "show": [3,5],
       "highlight": ""
     },
     {
       "name": "script.js",
-      "show": "3-7",
+      "show": [3,7],
       "highlight": ""
     }
   ]

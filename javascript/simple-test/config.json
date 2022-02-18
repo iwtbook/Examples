@@ -3,7 +3,7 @@
     {
       "name": "index.html",
       "show": "15-20",
-      "highlight": ""
+      "highlight": "2,4-6"
     },
     {
       "name": "styles.css",

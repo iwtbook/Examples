@@ -45,6 +45,10 @@ app.get('/:repo', (req, res) => {
       url: `http://localhost:${port}/${req.params.repo}/file${urlSafeRoute}`,
     };
   });
+  // If directory specified, filter out files not in that directory
+  if (req.query.dir) {
+    files = files.filter((file) => file.path.startsWith(req.query.dir));
+  }
   // Send the files back
   res.json({ tree: files });
 });

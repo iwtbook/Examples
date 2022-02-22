@@ -10,7 +10,7 @@ And now we try out a new heading
 
 Eu duis sint ut nostrud nisi adipisicing exercitation incididunt excepteur excepteur nostrud proident est.
 
-```js
+```javascript
 console.log('Simple demo');
 ```
 

@@ -12,5 +12,8 @@
       "show": [3,7],
       "highlight": []
     }
+  },
+  "settings": {
+    "module": false
   }
 }

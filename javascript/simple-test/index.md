@@ -37,6 +37,7 @@ function init(param) {
 
 ```css
 /* some comment */
+/* some comment */
 *,
 div,
 div:empty,
@@ -45,16 +46,20 @@ div::after,
 #someID,
 [attr="some-class"],
 [attr*="test"] {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   background-color: #fff;
   color: red;
   font-family: sans-serif;
   display: grid;
   grid-template-areas:
-  'one two'
-  'three four';
+    'one two'
+    'three four';
   grid-template-columns: repeat(2, 3fr);
   transition: 2s ease all;
+}
+
+@media only screen and (max-width: 500px / 10%) {
+  /* TODO */
 }
 ```
 

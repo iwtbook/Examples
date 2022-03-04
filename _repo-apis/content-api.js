@@ -46,8 +46,6 @@ app.get('/:repo', (req, res) => {
       path: file,
       type: 'blob',
       url: `http://localhost:${port}/${req.params.repo}/file${urlSafeRoute}`,
-      currNum: 1,
-      totalNum: 93,
     };
   });
   // If directory specified, filter out files not in that directory

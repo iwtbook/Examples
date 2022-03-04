@@ -13,6 +13,10 @@
       "highlight": []
     }
   },
+  "metadata": {
+    "title": "Simple Test",
+    "category": "JavaScript"
+  },
   "settings": {
     "module": false
   }

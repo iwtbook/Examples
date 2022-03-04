@@ -30,7 +30,10 @@ app.use((req, res, next) => {
  */
 app.get('/:repo', (req, res) => {
   // Right now only the examples repo is supported
-  if (!supportedRepos.includes(req.params.repo)) return;
+  if (!supportedRepos.includes(req.params.repo)) {
+    res.status(400).send('Repo not supported');
+    return;
+  }
   // The string path to the current repo we are in
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
@@ -43,6 +46,8 @@ app.get('/:repo', (req, res) => {
       path: file,
       type: 'blob',
       url: `http://localhost:${port}/${req.params.repo}/file${urlSafeRoute}`,
+      currNum: 1,
+      totalNum: 93,
     };
   });
   // If directory specified, filter out files not in that directory

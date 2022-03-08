@@ -1,0 +1,19 @@
+{
+  "files": {
+    "index.html": {
+      "show": [17, 67],
+      "highlight": []
+    },
+    "styles.css": {
+      "show": [3, 85],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Class Sillyness",
+    "category": "HTML"
+  },
+  "settings": {
+    "module": false
+  }
+}

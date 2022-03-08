@@ -1,11 +1,15 @@
 {
   "files": {
     "index.html": {
-      "show": [17, 67],
+      "show": [],
       "highlight": []
     },
     "styles.css": {
-      "show": [3, 85],
+      "show": [],
+      "highlight": []
+    },
+    "tailwind.min.css": {
+      "show": [],
       "highlight": []
     }
   },

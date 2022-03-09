@@ -52,12 +52,13 @@ app.get('/', async (req, res, next) => {
   // fs.mkdirSync(`temp-${timestamp}`);
 
   // Write each of the files to disk
-  files.forEach(file => {
+  files.forEach((file) => {
+    if (file.name == 'config.json' || file.name == 'index.md') return;
     fs.outputFileSync(`temp-${timestamp}/${file.name}`, file.data);
   });
 
   // Update the data for each of the files
-  files.map(file => {
+  files.map((file) => {
     file.type = 'file';
     file.data = `temp-${timestamp}/${file.name}`;
     return file;
@@ -66,23 +67,29 @@ app.get('/', async (req, res, next) => {
   // Compress all of the files to a zip file
   await archive(files, {
     format: 'zip',
-    output: `temp-${timestamp}/${zipFileName}.zip`
+    output: `temp-${timestamp}/${zipFileName}.zip`,
   });
 
   // Send back the zip file to download
-  res.download(`${__dirname}/temp-${timestamp}/${zipFileName}.zip`, `${zipFileName}.zip`, (err) => {
-    if (err) {
-      next(err);
-    } else {
-      // Remove the directory once complete
-      fs.rmSync(`temp-${timestamp}`, {
-        recursive: true,
-        force: true
-      });
-      // Lof that it was downloaded
-      console.log(`Downloaded: ${__dirname}/temp-${timestamp}/${zipFileName}.zip`);
+  res.download(
+    `${__dirname}/temp-${timestamp}/${zipFileName}.zip`,
+    `${zipFileName}.zip`,
+    (err) => {
+      if (err) {
+        next(err);
+      } else {
+        // Remove the directory once complete
+        fs.rmSync(`temp-${timestamp}`, {
+          recursive: true,
+          force: true,
+        });
+        // Lof that it was downloaded
+        console.log(
+          `Downloaded: ${__dirname}/temp-${timestamp}/${zipFileName}.zip`
+        );
+      }
     }
-  });
+  );
 });
 
 /**
@@ -109,7 +116,6 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-
 /****************************/
 /***** HELPER FUNCTIONS *****/
 /****************************/
@@ -126,25 +132,25 @@ app.listen(port, () => {
 async function fetchRepoData(repo, dir) {
   return new Promise((resolve, reject) => {
     fetch(`http://localhost:${contentApiPort}/${repo}`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         // Make sure the files are in the correct directory and are not a
         // directory themselves. blob --> binary large object, meaning file
-        let files = data.tree.filter(obj => {
+        let files = data.tree.filter((obj) => {
           return obj.path.startsWith(dir) && obj.type == 'blob';
         });
         // Format files so the filename and URL are easily accessible
-        files = files.map(file => {
+        files = files.map((file) => {
           let fileName = file.path.slice(dir.length + 1);
           return {
             fileName: fileName,
-            url: file.url
+            url: file.url,
           };
         });
         // Resolve the finished file
         resolve(files);
       })
-      .catch(err => {
+      .catch((err) => {
         // Log to the console & reject the promise
         console.error(`Error Fetching Repository: ${err}`);
         reject(`Error Fetching Repository: ${err}`);
@@ -162,21 +168,21 @@ async function fetchRepoData(repo, dir) {
 async function fetchFiles(files) {
   return new Promise((resolve, reject) => {
     const downloaded = []; // Where the downloaded files will be stored
-    files.forEach(file => {
+    files.forEach((file) => {
       fetch(file.url)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           // Push the newly downloaded content into the array
           downloaded.push({
             name: file.fileName,
             type: 'string',
             // The buffer converts the content from base64 encoding
-            data: Buffer.from(data.content, 'base64').toString('utf-8')
+            data: Buffer.from(data.content, 'base64').toString('utf-8'),
           });
           // Resolve if that was the final file to be added to the array
           if (downloaded.length == files.length) resolve(downloaded);
         })
-        .catch(err => {
+        .catch((err) => {
           // Log to the console & reject the promise
           console.error(`Error while fetching a file: ${err}`);
           reject(`Error while fetching a file: ${err}`);

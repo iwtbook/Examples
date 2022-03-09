@@ -67,4 +67,4 @@ An additional side affect of this is that something as simple as changing the bo
 
 ### 3. Semantics
 
-Lastly we get to the semantics: What are classes designed for? The intent of a class is to describe the purpose of an element, not to describe how the element looks. Class names should remain logical despite what the element looks like. [**NEEDS SOURCE** - or at least a better one than MDN [https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class)]
+Lastly we get to the semantics: What are classes designed for? [The intent of a class is to describe the purpose of the element](https://html.spec.whatwg.org/multipage/dom.html#global-attributes:classes-2), not to describe how the element looks. Class names should remain logical despite what the element looks like.

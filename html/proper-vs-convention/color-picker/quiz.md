@@ -15,10 +15,10 @@ To test your understanding of this material, complete the following questions:
   - {} 3rd party tech is usually more reliable than native tech
 
 - Which of the following are real input types?
-  - () * file
-  - () * tel
-  - () * search
-  - () * url
-  - () username
-  - () currency
-  - () dropdown
+  - {} * file
+  - {} * tel
+  - {} * search
+  - {} * url
+  - {} username
+  - {} currency
+  - {} dropdown

@@ -1,14 +1,14 @@
 {
   "files": {
-    "jscolor.min.js": {
-      "show": [],
-      "highlight": []
-    },
     "index.html": {
       "show": [],
       "highlight": []
     },
     "main.css": {
+      "show": [],
+      "highlight": []
+    },
+    "jscolor.min.js": {
       "show": [],
       "highlight": []
     }

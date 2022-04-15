@@ -1,0 +1,19 @@
+{
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    },
+    "jscolor.min.js": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Color Picker",
+    "category": "HTML"
+  },
+  "settings": {
+    "module": false
+  }
+}

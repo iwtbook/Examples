@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Picker</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Color Picker</title>
+    <!-- Main Stylsheet -->
+    <link rel="stylesheet" href="main.css" />
 
-  <style>
-    label {
-      display: block;
-      margin-top: 20px;
-    }
+    <!-- Color Picker Library - jscolor.js -->
+    <script src="jscolor.min.js"></script>
+  </head>
 
-    #native-size {
-      color: green;
-    }
-
-    #lib-size {
-      color: red;
-    }
-  </style>
-
-  <!-- Color Picker Library - jscolor.js -->
-  <script src="jscolor.min.js"></script>
-</head>
-
-<body>
-  <header>
-    <h1>Native vs. Library</h1>
-  </header>
-  <label for="native-picker">Native Color Picker <span id="native-size">(0 bytes):</span>
-    <input type="color" value="#000000" name="native-picker" />
-  </label>
-  <label for="library-picker">Library Color Picker <span id="lib-size">(62 KB):</span>
-    <input data-jscolor="{}" name="library-picker" value="#000000" />
-  </label>
-</body>
-
+  <body>
+    <header>
+      <h1>Native vs. Library</h1>
+    </header>
+    <label for="native-picker"
+      >Native Color Picker <span id="native-size">(0 bytes):</span>
+      <input type="color" value="#000000" name="native-picker" />
+    </label>
+    <label for="library-picker"
+      >Library Color Picker <span id="lib-size">(62 KB):</span>
+      <input data-jscolor="{}" name="library-picker" value="#000000" />
+    </label>
+  </body>
 </html>

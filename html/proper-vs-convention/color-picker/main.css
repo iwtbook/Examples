@@ -1,0 +1,12 @@
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+#native-size {
+  color: green;
+}
+
+#lib-size {
+  color: red;
+}

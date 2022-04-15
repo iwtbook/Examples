@@ -1,4 +1,4 @@
-# Test Yourself
+# Quiz Yourself
 
 To test your understanding of this material, complete the following questions:
 

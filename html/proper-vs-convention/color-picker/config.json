@@ -15,7 +15,8 @@
   },
   "metadata": {
     "title": "Color Picker",
-    "category": "HTML"
+    "category": "HTML",
+    "forum": "https://forum.introweb.tech/topic/3/html-proper-vs-convention-color-picker"
   },
   "settings": {
     "module": false

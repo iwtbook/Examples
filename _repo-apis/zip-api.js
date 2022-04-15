@@ -52,7 +52,7 @@ app.get('/', async (req, res, next) => {
   // fs.mkdirSync(`temp-${timestamp}`);
 
   // Write each of the files to disk
-  let excludedFiles = ['config.json', 'index.md', 'resources.md', 'testing.md'];
+  let excludedFiles = ['config.json', 'learn.md', 'resources.md', 'quiz.md'];
   files.forEach((file) => {
     if (excludedFiles.includes(file.name)) return;
     fs.outputFileSync(`temp-${timestamp}/${file.name}`, file.data);

@@ -22,4 +22,3 @@ To test your understanding of this material, complete the following questions:
   - {} username
   - {} currency
   - {} dropdown
-  - {} test

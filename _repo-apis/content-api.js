@@ -57,9 +57,35 @@ app.get('/:repo', (req, res) => {
 });
 
 /**
+ * Fetches a list of all of the demos in a given repo
+ * @param {string} repo the repository to fetch the demos from
+ * @return {array<string>} an array of all of the demos in alphabetical order
+ */
+app.get('/:repo/demos', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) {
+    res.status(400).send('Repo not supported');
+    return;
+  }
+  // The string path to the current repo we are in
+  const repoDir = getCurrentRepo();
+  // All of the desired files in our current repo
+  let files = recursiveFileSearch(repoDir, exclude, []);
+  // Filter out anything that isn't an index.html path
+  files = files.filter((file) => !file.path.endsWith('index.html'));
+  // Remove the repoDir and index.html from the file paths
+  files = files.map((file) => {
+    file = file.replaceAll(repoDir + '/', '');
+    return file.replace('/index.html', '');
+  });
+
+  res.json(files);
+});
+
+/**
  * Fetches the contents and metadata of the specified file from the specified repo
  * @param {string} repo the repository to fetch the file from
- * @param {string} file/* the file to grab the data of
+ * @param {string} file the file to grab the data of
  * @return {object} the contents of the specified file and some other metadata
  *                  on the file
  */

@@ -9,7 +9,7 @@
       "highlight": []
     }
   },
-  "ignore": ["more-javascript.jpeg"],
+  "ignore": ["coffee.mp4", "lego.gif", "more-javascript.jpeg"],
   "metadata": {
     "title": "Markup in JS",
     "category": "HTML",

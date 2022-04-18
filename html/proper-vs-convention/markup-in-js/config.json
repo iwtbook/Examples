@@ -9,6 +9,7 @@
       "highlight": []
     }
   },
+  "ignore": ["more-javascript.jpeg"],
   "metadata": {
     "title": "Markup in JS",
     "category": "HTML",

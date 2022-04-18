@@ -5,40 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Semantic vs. Generic</title>
-  <style>
-    a,
-    a:visited,
-    span.a {
-      color: #0645AD;
-    }
-
-    div.h2 {
-      font-size: x-large;
-      font-weight: bold;
-      margin: 19.92px 0;
-    }
-
-    div.section,
-    section {
-      margin-top: 60px;
-    }
-
-    div.p {
-      margin: 16px 0;
-    }
-
-    span.a {
-      text-decoration: underline;
-    }
-
-    span.a:hover {
-      cursor: pointer;
-    }
-
-    span.strong {
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
@@ -50,7 +17,10 @@
       <header>
         <h2>Semantic</h2>
         <nav>
-          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics">Semantic HTML meaning</a>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics"
+            >Semantic HTML meaning</a
+          >
         </nav>
       </header>
       <p>Semantic HTML has <strong>many benefits</strong>.</p>
@@ -59,12 +29,17 @@
       <div class="header">
         <div class="h2">Generic</div>
         <div class="nav">
-          <span class="a" onclick="window.location='https://developer.mozilla.org/en-US/docs/Glossary/Semantics'">
+          <span
+            class="a"
+            onclick="window.location='https://developer.mozilla.org/en-US/docs/Glossary/Semantics'"
+          >
             Semantic HTML meaning
           </span>
         </div>
       </div>
-      <div class="p">Semantic HTML has <span class="strong">many benefits</span>.</div>
+      <div class="p">
+        Semantic HTML has <span class="strong">many benefits</span>.
+      </div>
     </div>
   </main>
 </body>

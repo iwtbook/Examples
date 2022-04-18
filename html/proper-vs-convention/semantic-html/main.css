@@ -1,0 +1,32 @@
+a,
+a:visited,
+span.a {
+  color: #0645AD;
+}
+
+div.h2 {
+  font-size: x-large;
+  font-weight: bold;
+  margin: 19.92px 0;
+}
+
+div.section,
+section {
+  margin-top: 60px;
+}
+
+div.p {
+  margin: 16px 0;
+}
+
+span.a {
+  text-decoration: underline;
+}
+
+span.a:hover {
+  cursor: pointer;
+}
+
+span.strong {
+  font-weight: bold;
+}

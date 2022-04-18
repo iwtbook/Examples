@@ -1,0 +1,21 @@
+{
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    },
+    "main.css": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "ignore": [],
+  "metadata": {
+    "title": "Markup in JS",
+    "category": "HTML",
+    "forum": "https://forum.introweb.tech/topic/3/html-proper-vs-convention-color-picker"
+  },
+  "settings": {
+    "module": false
+  }
+}

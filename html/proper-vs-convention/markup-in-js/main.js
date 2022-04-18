@@ -1,4 +1,6 @@
 function render(app) {
+  app.style.fontFamily = 'sans-serif';
+
   const helloWorld = document.createElement('h1');
   helloWorld.innerHTML = 'Hello, App World!';
   app.append(helloWorld);

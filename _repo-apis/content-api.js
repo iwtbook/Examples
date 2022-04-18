@@ -73,15 +73,15 @@ app.get('/:repo/demos', (req, res) => {
   let files = recursiveFileSearch(repoDir, exclude, []);
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('index.html'));
-  if (req.query.dir) {
-    console.log(req.query.dir);
-    files = files.filter((file) => file.startsWith(req.query.dir));
-  }
   // Remove the repoDir and index.html from the file paths
   files = files.map((file) => {
     file = file.replaceAll(repoDir + '/', '');
     return file.replace('/index.html', '');
   });
+  // Filter down anything that isn't in the specified dir
+  if (req.query.dir) {
+    files = files.filter((file) => file.startsWith(req.query.dir));
+  }
 
   res.json(files);
 });

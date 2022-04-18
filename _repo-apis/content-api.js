@@ -72,7 +72,7 @@ app.get('/:repo/demos', (req, res) => {
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude, []);
   // Filter out anything that isn't an index.html path
-  files = files.filter((file) => !file.endsWith('index.html'));
+  files = files.filter((file) => file.endsWith('index.html'));
   // Remove the repoDir and index.html from the file paths
   files = files.map((file) => {
     file = file.replaceAll(repoDir + '/', '');

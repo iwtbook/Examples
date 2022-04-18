@@ -1,7 +1,3 @@
-window.addEventListener('DOMContentLoaded', () => {
-  render(document.getElementById('app'));
-});
-
 function render(app) {
   const helloWorld = document.createElement('h1');
   helloWorld.innerHTML = 'Hello, App World!';
@@ -30,3 +26,5 @@ function render(app) {
   }
   app.append(list);
 }
+
+render(document.getElementById('app'));

@@ -61,7 +61,24 @@ function init() {
   configFiles.forEach((file) => {
     FS.ensureFileSync(file);
     let data = FS.readFileSync(file, { encoding: 'utf8' });
-    if (data == '') {
+    if (
+      data ==
+      `{
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Temporary Title",
+    "forum": ""
+  },
+  "settings": {
+    "module": false
+  }
+}`
+    ) {
       FS.writeFileSync(
         file,
         `{

@@ -1,6 +1,7 @@
 // temp-build.js
 
 const FS = require('fs-extra');
+const EXCLUDE = ['_repo-apis', '.vscode', '.gitignore', 'README.md', 'temp.js'];
 
 /**
  * Finds and returns the absolute path to the examples directory, should be one

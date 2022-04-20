@@ -54,51 +54,14 @@ function init() {
   let examplesDir = getExamplesDirectory();
   // Search for every file, excluding these directories
   let allFiles = recursiveFileSearch(examplesDir, EXCLUDE);
-  let indexFiles = allFiles.filter((file) => file.endsWith('index.html'));
-  let configFiles = indexFiles.map((file) => {
-    return file.replace('index.html', 'config.json');
-  });
-  configFiles.forEach((file) => {
-    FS.ensureFileSync(file);
-    let data = FS.readFileSync(file, { encoding: 'utf8' });
-    if (
-      data ==
-      `{
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Temporary Title",
-    "forum": ""
-  },
-  "settings": {
-    "module": false
-  }
-}`
-    ) {
-      FS.writeFileSync(
-        file,
-        `{
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Title Needed",
-    "forum": ""
-  },
-  "settings": {
-    "module": false
-  }
-}`
-      );
+  let indexFiles = allFiles.filter((file) => file.endsWith('/index.html'));
+  indexFiles.forEach((file) => {
+    file = file.replace('/index.html', '/dir-config.json');
+    if (FS.existsSync(file)) {
+      FS.rmSync(file);
     }
   });
 }
 
+// console.log(__dirname.replace('/examples/_repo-apis', ''));
 init();

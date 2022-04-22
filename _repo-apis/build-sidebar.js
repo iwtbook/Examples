@@ -88,10 +88,10 @@ function recursiveFileSearch(dir, exclude) {
 }
 
 /**
- *
- * @param {*} indexFiles
- * @param {*} examplesDir
- * @returns
+ * Grabs the category list from the current list of all demos
+ * @param {array<string>} indexFiles absolute path of all index.html files in demos
+ * @param {string} examplesDir absolute path of the examples directory
+ * @returns {array<string>} list of all of the demo categories
  */
 function getCategories(indexFiles, examplesDir) {
   let categories = new Set();
@@ -103,11 +103,12 @@ function getCategories(indexFiles, examplesDir) {
 }
 
 /**
- *
- * @param {*} category
- * @param {*} examplesDir
- * @param {*} indexFiles
- * @param {*} currDirLength
+ * Generates the sidebar markup for each category.
+ * Outputs to /{category}/sidebar.hmtml
+ * @param {string} category The current category to generate
+ * @param {string} examplesDir The absolute path of the examples directory
+ * @param {array<string>} indexFiles A list of all index.html files from demos
+ * @param {number} currDirLength Depth of the examples directory
  */
 function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
   let categoryFiles = indexFiles.filter((file) =>
@@ -213,10 +214,16 @@ function init() {
   let examplesDir = getExamplesDirectory();
   // Search for every file, excluding these directories
   let allFiles = recursiveFileSearch(examplesDir, EXCLUDE);
+  // Limit the files to just the index.html files
   let indexFiles = allFiles.filter((file) => file.endsWith('/index.html'));
+  // Grab the categories of those index files
   let categories = getCategories(indexFiles, examplesDir);
+  // Grab the length of the current directory, makes things easier when
+  // generating markup
   let currDirLength = examplesDir.split('/').length;
 
+  // Create the sidebar markup for each of the categories.
+  // Outputs to /{category}/sidebar.html
   categories.forEach((category) => {
     generateMarkup(category, examplesDir, indexFiles, currDirLength);
   });

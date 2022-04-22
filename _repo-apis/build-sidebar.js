@@ -29,9 +29,9 @@ const PRETTIER = require('prettier');
 
 // JSDOM Constants
 const { JSDOM } = jsdom;
-const DOM = new JSDOM(`<!DOCTYPE html><ol id="list"></ol>`);
+const DOM = new JSDOM(`<!DOCTYPE html><ol id="hamburger-list"></ol>`);
 const DOCUMENT = DOM.window.document;
-const LIST = DOCUMENT.querySelector('#list');
+const LIST = DOCUMENT.querySelector('#hamburger-list');
 
 // Paths excluded from searching
 const EXCLUDE = ['_repo-apis', '.vscode', '.gitignore', 'README.md'];
@@ -196,7 +196,7 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
 
   FS.writeFileSync(
     `${examplesDir}/${category}/sidebar.html`,
-    PRETTIER.format(LIST.innerHTML, {
+    PRETTIER.format(LIST.outerHTML, {
       filepath: `${examplesDir}/${category}/sidebar.html`,
     })
   );

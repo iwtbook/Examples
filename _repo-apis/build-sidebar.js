@@ -200,6 +200,8 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
       filepath: `${examplesDir}/${category}/sidebar.html`,
     })
   );
+
+  LIST.innerHTML = '';
 }
 
 /***************************/

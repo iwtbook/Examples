@@ -29,9 +29,9 @@ const PRETTIER = require('prettier');
 
 // JSDOM Constants
 const { JSDOM } = jsdom;
-const DOM = new JSDOM(`<!DOCTYPE html><ol id="hamburger-list"></ol>`);
+const DOM = new JSDOM(`<!DOCTYPE html><div></div>`);
 const DOCUMENT = DOM.window.document;
-const LIST = DOCUMENT.querySelector('#hamburger-list');
+const CONTENT = DOCUMENT.querySelector('div');
 
 // Paths excluded from searching
 const EXCLUDE = ['_repo-apis', '.vscode', '.gitignore', 'README.md'];
@@ -124,24 +124,22 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
       let id = 'sidebar--' + path.replace(examplesDir + '/', '');
       id = id.replaceAll('/', '_');
       let level = i - currDirLength;
-      if (level > 3) level = 3;
+      if (level > 4) level = 4;
       let name;
 
       // It's a directory
       if (FS.existsSync(path + '/dir-config.json')) {
         let dirConfig = FS.readJsonSync(path + '/dir-config.json');
         name = dirConfig.name;
-        // It's a top level H3
+        // It's a top level H2
         if (level == 0 && !DOCUMENT.querySelector(`#${id}`)) {
-          let listItem = DOCUMENT.createElement('li');
           let orderedList = DOCUMENT.createElement('ol');
-          let title = DOCUMENT.createElement('h3');
+          let title = DOCUMENT.createElement('header');
 
-          listItem.setAttribute('id', id);
-          title.innerHTML = name;
-
-          listItem.append(title, orderedList);
-          LIST.append(listItem);
+          title.innerHTML = `<h2 id="hamburger-category">${name}</h2>`;
+          
+          CONTENT.setAttribute('id', id);
+          CONTENT.append(title, orderedList);
           // It's a lower H level
         } else if (level > 0 && !DOCUMENT.querySelector(`#${id}`)) {
           let idToFind = id.split('_');
@@ -151,7 +149,7 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
 
           let listItem = DOCUMENT.createElement('li');
           let orderedList = DOCUMENT.createElement('ol');
-          let title = DOCUMENT.createElement(`h${3 + level}`);
+          let title = DOCUMENT.createElement(`h${2 + level}`);
 
           listItem.setAttribute('id', id);
           title.innerHTML = name;
@@ -196,12 +194,12 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
 
   FS.writeFileSync(
     `${examplesDir}/${category}/sidebar.html`,
-    PRETTIER.format(LIST.outerHTML, {
+    PRETTIER.format(CONTENT.innerHTML, {
       filepath: `${examplesDir}/${category}/sidebar.html`,
     })
   );
 
-  LIST.innerHTML = '';
+  CONTENT.innerHTML = '';
 }
 
 /***************************/

@@ -1,15 +1,45 @@
-// temp-build.js
+/**
+ * filename: build-sidebar.js
+ * author: Camdyn Rasque
+ * organization: PINT, Inc
+ * project: Intro to Web Technology
+ * created: Tuesday, April 19th 2022
+ * description: Generates the static markup used for the sidebar for each demo
+ */
 
+/*************************/
+/*                       */
+/*  Table of Contents:   */
+/*  -------------------  */
+/*                       */
+/*  1. Constants         */
+/*  2. Helper Functions  */
+/*  3. Main Program      */
+/*                       */
+/*************************/
+
+/*************************/
+/***   1. Constants    ***/
+/*************************/
+
+// Includes
 const FS = require('fs-extra');
 const jsdom = require('jsdom');
 const PRETTIER = require('prettier');
-const { JSDOM } = jsdom;
-const EXCLUDE = ['_repo-apis', '.vscode', '.gitignore', 'README.md', 'temp.js'];
 
+// JSDOM Constants
+const { JSDOM } = jsdom;
 const DOM = new JSDOM(`<!DOCTYPE html><div id="wrapper"><ol></ol></div>`);
 const DOCUMENT = DOM.window.document;
 const WRAPPER = DOCUMENT.querySelector('#wrapper');
 const LIST = DOCUMENT.querySelector('#wrapper>ol');
+
+// Paths excluded from searching
+const EXCLUDE = ['_repo-apis', '.vscode', '.gitignore', 'README.md'];
+
+/***************************/
+/*** 2. Helper Functions ***/
+/***************************/
 
 /**
  * Finds and returns the absolute path to the examples directory, should be one
@@ -57,15 +87,36 @@ function recursiveFileSearch(dir, exclude) {
   return filesInDir;
 }
 
-function init() {
-  // Grab the absolute path to the examples dir
-  let examplesDir = getExamplesDirectory();
-  // Search for every file, excluding these directories
-  let allFiles = recursiveFileSearch(examplesDir, EXCLUDE);
-  let indexFiles = allFiles.filter((file) => file.endsWith('/index.html'));
-  let currDirLength = examplesDir.split('/').length;
-
+/**
+ *
+ * @param {*} indexFiles
+ * @param {*} examplesDir
+ * @returns
+ */
+function getCategories(indexFiles, examplesDir) {
+  let categories = new Set();
   indexFiles.forEach((file) => {
+    file = file.replace(examplesDir + '/', '');
+    categories.add(file.split('/')[0]);
+  });
+  return Array.from(categories);
+}
+
+/**
+ *
+ * @param {*} category
+ * @param {*} examplesDir
+ * @param {*} indexFiles
+ * @param {*} currDirLength
+ */
+function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
+  let categoryFiles = indexFiles.filter((file) =>
+    file.startsWith(`${examplesDir}/${category}`)
+  );
+
+  let numDemos = 0;
+
+  categoryFiles.forEach((file) => {
     file = file.replace('/index.html', '');
     let dirs = file.split('/');
     for (let i = currDirLength; i < dirs.length; i++) {
@@ -114,6 +165,8 @@ function init() {
         FS.existsSync(path + '/config.json') &&
         FS.existsSync(path + '/index.html')
       ) {
+        numDemos += 1;
+
         let demoConfig = FS.readJsonSync(path + '/config.json');
         name = demoConfig.metadata.title;
 
@@ -121,6 +174,9 @@ function init() {
         idToFind.pop();
         idToFind = idToFind.join('_');
         let newList = DOCUMENT.querySelector(`#${idToFind} ol`);
+        if (!newList.classList.contains('demo-links')) {
+          newList.setAttribute('start', numDemos);
+        }
         newList.classList.add('demo-links');
 
         let listItem = DOCUMENT.createElement('li');
@@ -139,11 +195,29 @@ function init() {
   });
 
   FS.writeFileSync(
-    examplesDir + '/examples.html',
+    `${examplesDir}/${category}/sidebar.html`,
     PRETTIER.format(WRAPPER.innerHTML, {
-      filepath: examplesDir + '/examples.html',
+      filepath: `${examplesDir}/${category}/sidebar.html`,
     })
   );
+}
+
+/***************************/
+/***   3. Main Program   ***/
+/***************************/
+
+function init() {
+  // Grab the absolute path to the examples dir
+  let examplesDir = getExamplesDirectory();
+  // Search for every file, excluding these directories
+  let allFiles = recursiveFileSearch(examplesDir, EXCLUDE);
+  let indexFiles = allFiles.filter((file) => file.endsWith('/index.html'));
+  let categories = getCategories(indexFiles, examplesDir);
+  let currDirLength = examplesDir.split('/').length;
+
+  categories.forEach((category) => {
+    generateMarkup(category, examplesDir, indexFiles, currDirLength);
+  });
 }
 
 init();

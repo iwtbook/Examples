@@ -117,4 +117,3 @@ function init() {
 }
 
 init();
-// test 2

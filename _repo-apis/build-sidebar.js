@@ -137,7 +137,7 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
           let title = DOCUMENT.createElement('header');
 
           title.innerHTML = `<h2 id="hamburger-category">${name}</h2>`;
-          
+
           CONTENT.setAttribute('id', id);
           CONTENT.append(title, orderedList);
           // It's a lower H level
@@ -180,6 +180,7 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
         let listItem = DOCUMENT.createElement('li');
         let anchor = DOCUMENT.createElement('a');
         let demoPath = path.replace(examplesDir + '/', '');
+        anchor.setAttribute('target', '_top');
         anchor.setAttribute(
           'href',
           `https://examples.introweb.tech/learn?demo=${demoPath}`

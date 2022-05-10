@@ -231,7 +231,7 @@ app.get('/:repo/route-configs', (req, res) => {
       items = currRouteConf?.items;
     }
 
-    if (order.length != currRouteConf.length) return;
+    if (order.length != items.length) return;
 
     // Sort the route config
     let sortedItems = [];

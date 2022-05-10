@@ -166,16 +166,22 @@ app.get('/:repo/route-configs', (req, res) => {
     return file.replace('/index.html', '');
   });
 
+  // The final routeConfig to return
   const routeConfigs = [];
   demoList.forEach((file) => {
+    // Get an array of all of the directories in the path
     let directory = file.split('/');
     let currItems = routeConfigs;
     let currDir = '';
+    // Loop over all of the individual directories
     for (let i = 0; i < directory.length; i++) {
+      // Keep track of where we are to read the file later
       currDir += `/${directory[i]}`;
+      // Grab the current directory if it exists in our object
       let currConf = currItems.filter((conf) => {
         return conf.currTitle == directory[i];
       });
+      // If it doesn't exist and it's a directory, add it
       if (currConf.length == 0 && i < directory.length - 1) {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
@@ -185,6 +191,7 @@ app.get('/:repo/route-configs', (req, res) => {
           newTitle: config?.name,
           items: [],
         });
+        // If it doesn't exist and it's a demo, add it
       } else if (currConf.length == 0 && i == directory.length - 1) {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/config.json`, 'utf8')
@@ -194,6 +201,7 @@ app.get('/:repo/route-configs', (req, res) => {
           newTitle: config?.metadata?.title,
         });
       }
+      // Update the current config marker
       currConf = currItems.filter((conf) => {
         return conf.currTitle == directory[i];
       })[0];
@@ -201,6 +209,7 @@ app.get('/:repo/route-configs', (req, res) => {
     }
   });
 
+  // Send back the route config object
   res.json(routeConfigs);
 });
 

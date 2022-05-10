@@ -157,27 +157,28 @@ app.get('/:repo/contents-mime/*', (req, res) => {
 app.get('/:repo/route-configs', (req, res) => {
   let currentRepo = getCurrentRepo();
 
-  const routeConfigs = {};
   // Get every single file in all of the demos
   let allFiles = recursiveFileSearch(currentRepo, exclude, []);
   // Get just the list of demos we care about
   let demoList = allFiles.filter((file) => file.endsWith('index.html'));
-  demoList = demoList.map((file) => file.replace(currentRepo + '/', ''));
-  demoList = demoList.map((file) => file.replace('/index.html', ''));
+  demoList = demoList.map((file) => {
+    file = file.replace(currentRepo + '/', '');
+    return file.replace('/index.html', '');
+  });
 
+  const routeConfigs = {};
   demoList.forEach((file) => {
     let directory = file.split('/');
+    let currConfig = routeConfigs;
     let currDir = '';
-    let routeConfigsStr = 'routeConfigs';
     for (let i = 0; i < directory.length - 1; i++) {
-      routeConfigsStr += `?.['${directory[i]}']`;
-      console.log(directory);
-      if (!eval(routeConfigsStr)) {
-        currDir += `/${directory[i]}`;
+      currConfig = currConfig[directory[i]];
+      currDir += `/${directory[i]}`;
+      if (!currConfig) {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
         );
-        eval(routeConfigsStr) = config?.name;
+        currConfig[directory[i]] = config?.name;
       }
     }
   });

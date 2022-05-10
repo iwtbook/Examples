@@ -163,6 +163,8 @@ app.get('/:repo/route-configs', (req, res) => {
   // Get just the list of demos we care about
   let demoList = allFiles.filter((file) => file.endsWith('index.html'));
   demoList = demoList.map((file) => file.replace(__dirname + '/', ''));
+  console.log(demoList);
+  console.log(__dirname);
   demoList = demoList.map((file) => file.replace('/index.html', ''));
 
   demoList.forEach((file) => {

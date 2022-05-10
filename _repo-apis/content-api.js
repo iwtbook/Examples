@@ -224,6 +224,7 @@ app.get('/:repo/route-configs', (req, res) => {
     // Grab the route config to sort
     file = file.replace(currentRepo + '/', '');
     let dirs = file.split('/');
+    console.log(dirs);
     let currRouteConf, items;
     for (let i = 0; i < dirs.length; i++) {
       currRouteConf = routeConfigs.filter((conf) => {

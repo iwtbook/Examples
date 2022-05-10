@@ -222,6 +222,7 @@ app.get('/:repo/route-configs', (req, res) => {
     let order = JSON.parse(fs.readFileSync(file, 'utf8'))?.order;
 
     // Grab the route config to sort
+    file = file.replace(currentRepo + '/', '');
     let dirs = file.split('/');
     let currRouteConf, items;
     for (let i = 0; i < dirs.length; i++) {

@@ -188,7 +188,7 @@ app.get('/:repo/route-configs', (req, res) => {
       }
       currConf = currItems.filter((conf) => {
         return conf.currTitle == directory[i];
-      });
+      })[0];
       currItems = currConf?.items;
     }
   });

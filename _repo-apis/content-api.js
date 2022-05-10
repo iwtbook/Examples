@@ -171,12 +171,12 @@ app.get('/:repo/route-configs', (req, res) => {
     let directory = file.split('/');
     let currItems = routeConfigs;
     let currDir = '';
-    for (let i = 0; i < directory.length - 1; i++) {
+    for (let i = 0; i < directory.length; i++) {
       currDir += `/${directory[i]}`;
       let currConf = currItems.filter((conf) => {
         return conf.currTitle == directory[i];
       });
-      if (currConf.length == 0) {
+      if (currConf.length == 0 && i < directory.length - 1) {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
         );
@@ -184,6 +184,14 @@ app.get('/:repo/route-configs', (req, res) => {
           currTitle: directory[i],
           newTitle: config?.name,
           items: [],
+        });
+      } else if (currConf.length == 0 && i == directory.length - 1) {
+        let config = JSON.parse(
+          fs.readFileSync(`${currentRepo}${currDir}/config.json`, 'utf8')
+        );
+        currItems.push({
+          currTitle: directory[i],
+          newTitle: config?.metadata?.title,
         });
       }
       currConf = currItems.filter((conf) => {

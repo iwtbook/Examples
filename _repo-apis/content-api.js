@@ -159,7 +159,7 @@ app.get('/:repo/route-configs', (req, res) => {
 
   const routeConfigs = {};
   // Get every single file in all of the demos
-  let allFiles = recursiveFileSearch(repoDir, exclude, []);
+  let allFiles = recursiveFileSearch(currentRepo, exclude, []);
   // Get just the list of demos we care about
   let demoList = allFiles.filter((file) => file.endsWith('index.html'));
   demoList = allFiles.map((file) => file.replace('/index.html', ''));

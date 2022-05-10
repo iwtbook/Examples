@@ -170,7 +170,7 @@ app.get('/:repo/route-configs', (req, res) => {
     let currDir = '';
     let routeConfigsStr = 'routeConfigs';
     for (let i = 0; i < directory.length - 1; i++) {
-      routeConfigsStr += `?.[${directory[i]}]`;
+      routeConfigsStr += `?.['${directory[i]}']`;
       console.log(directory);
       if (!eval(routeConfigsStr)) {
         currDir += `/${directory[i]}`;

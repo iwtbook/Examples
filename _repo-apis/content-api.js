@@ -167,7 +167,7 @@ app.get('/:repo/route-configs', (req, res) => {
   });
 
   // The final routeConfig to return
-  const routeConfigs = [];
+  let routeConfigs = [];
   demoList.forEach((file) => {
     // Get an array of all of the directories in the path
     let directory = file.split('/');
@@ -243,6 +243,22 @@ app.get('/:repo/route-configs', (req, res) => {
     }
     currRouteConf.items = sortedItems;
   });
+
+  // Sort root config
+  let rootConfig = allFiles.filter((file) =>
+    file.endsWith('/root-dir-config.json')
+  )[0];
+  let rootOrder = JSON.parse(fs.readFileSync(file, 'utf8'))?.order;
+  // Sort the route config
+  let rootSortedItems = [];
+  for (let i = 0; i < rootOrder.length; i++) {
+    rootSortedItems.push(
+      rootConfig.filter((route) => {
+        return route.currTitle == rootOrder[i];
+      })[0]
+    );
+  }
+  routeConfigs = rootSortedItems;
 
   // Send back the route config object
   res.json(routeConfigs);

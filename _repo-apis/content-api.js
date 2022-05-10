@@ -245,15 +245,15 @@ app.get('/:repo/route-configs', (req, res) => {
   });
 
   // Sort root config
-  let rootConfig = allFiles.filter((file) =>
+  let rootConfigFile = allFiles.filter((file) =>
     file.endsWith('/root-dir-config.json')
   )[0];
-  let rootOrder = JSON.parse(fs.readFileSync(rootConfig, 'utf8'))?.order;
+  let rootOrder = JSON.parse(fs.readFileSync(rootConfigFile, 'utf8'))?.order;
   // Sort the route config
   let rootSortedItems = [];
   for (let i = 0; i < rootOrder.length; i++) {
     rootSortedItems.push(
-      rootConfig.filter((route) => {
+      rootConfigs.filter((route) => {
         return route.currTitle == rootOrder[i];
       })[0]
     );

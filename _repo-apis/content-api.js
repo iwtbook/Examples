@@ -242,7 +242,7 @@ app.get('/:repo/route-configs', (req, res) => {
         })[0]
       );
     }
-    currRouteConf = sortedItems;
+    currRouteConf.items = sortedItems;
   });
 
   // Send back the route config object

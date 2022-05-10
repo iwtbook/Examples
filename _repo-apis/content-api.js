@@ -211,10 +211,6 @@ app.get('/:repo/route-configs', (req, res) => {
 
   // Get just the list of dir configs we care about
   let dirConfigs = allFiles.filter((file) => file.endsWith('/dir-config.json'));
-  demoList = demoList.map((file) => {
-    file = file.replace(currentRepo + '/', '');
-    return file.replace('/dir-config.json', '');
-  });
 
   // Sort routeConfigs in the proper order
   dirConfigs.forEach((file) => {
@@ -223,10 +219,11 @@ app.get('/:repo/route-configs', (req, res) => {
 
     // Grab the route config to sort
     file = file.replace(currentRepo + '/', '');
+    file = file.replace('/dir-config.json', '');
     let dirs = file.split('/');
     let items;
     let currRouteConf = routeConfigs;
-    for (let i = 0; i < dirs.length - 1; i++) {
+    for (let i = 0; i < dirs.length; i++) {
       currRouteConf = currRouteConf.filter((conf) => {
         return conf.currTitle == dirs[i];
       })[0];

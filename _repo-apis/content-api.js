@@ -150,6 +150,40 @@ app.get('/:repo/contents-mime/*', (req, res) => {
 });
 
 /**
+ * Fetches just the config.json and dir-config.json files from the repo and converts them
+ * to an easy to use format
+ * @return {object}
+ */
+app.get('/:repo/route-configs', (req, res) => {
+  let currentRepo = getCurrentRepo();
+
+  const routeConfigs = {};
+  // Get every single file in all of the demos
+  let allFiles = recursiveFileSearch(repoDir, exclude, []);
+  // Get just the list of demos we care about
+  let demoList = allFiles.filter((file) => file.endsWith('index.html'));
+  demoList = allFiles.map((file) => file.replace('/index.html', ''));
+
+  demoList.forEach((file) => {
+    let directory = file.split('/');
+    let currDir = '';
+    let routeConfigsStr = 'routeConfigs';
+    for (let i = 0; i < directory.length - 1; i++) {
+      routeConfigsStr += `?.[${directory[i]}]`;
+      if (!eval(routeConfigsStr)) {
+        currDir += `/${directory[i]}`;
+        let config = JSON.parse(
+          fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
+        );
+        eval(routeConfigsStr) = config?.name;
+      }
+    }
+  });
+
+  res.json(routeConfigs);
+});
+
+/**
  * Begins the server, starts listening for incoming requests.
  * Not technically a route.
  */

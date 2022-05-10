@@ -49,7 +49,6 @@ app.get('/', async (req, res, next) => {
   // Grab the filename for the zip and make a directory for it
   let zipFileName = dir;
   zipFileName = zipFileName.split('/').pop();
-  // fs.mkdirSync(`temp-${timestamp}`);
 
   // Write each of the files to disk
   let excludedFiles = ['config.json', 'learn.md', 'resources.md', 'quiz.md'];

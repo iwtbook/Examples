@@ -219,9 +219,7 @@ app.get('/:repo/route-configs', (req, res) => {
   // Sort routeConfigs in the proper order
   dirConfigs.forEach((file) => {
     // Grab the directory order
-    let order = JSON.parse(
-      fs.readFileSync(`${currentRepo}/${file}`, 'utf8')
-    )?.order;
+    let order = JSON.parse(fs.readFileSync(file, 'utf8'))?.order;
 
     // Grab the route config to sort
     let dirs = file.split('/');

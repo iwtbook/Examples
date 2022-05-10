@@ -166,20 +166,30 @@ app.get('/:repo/route-configs', (req, res) => {
     return file.replace('/index.html', '');
   });
 
-  const routeConfigs = {};
+  const routeConfigs = [];
   demoList.forEach((file) => {
     let directory = file.split('/');
-    let currConfig = routeConfigs;
+    let currItems = routeConfigs;
     let currDir = '';
     for (let i = 0; i < directory.length - 1; i++) {
-      currConfig = currConfig[directory[i]];
       currDir += `/${directory[i]}`;
-      if (!currConfig) {
+      let currConf = currItems.filter((conf) => {
+        return conf.currTitle == directory[i];
+      });
+      if (currConf.length == 0) {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
         );
-        currConfig = config?.name;
+        currItems.push({
+          currTitle: directory[i],
+          newTitle: config?.name,
+          items: [],
+        });
       }
+      currConf = currItems.filter((conf) => {
+        return conf.currTitle == directory[i];
+      });
+      currItems = currConf?.items;
     }
   });
 

@@ -178,7 +178,7 @@ app.get('/:repo/route-configs', (req, res) => {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
         );
-        currConfig[directory[i]] = config?.name;
+        currConfig = config?.name;
       }
     }
   });

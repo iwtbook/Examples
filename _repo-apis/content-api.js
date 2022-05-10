@@ -166,6 +166,7 @@ app.get('/:repo/route-configs', (req, res) => {
 
   demoList.forEach((file) => {
     let directory = file.split('/');
+    if (directory[0] == '') directory.pop();
     let currDir = '';
     let routeConfigsStr = 'routeConfigs';
     for (let i = 0; i < directory.length - 1; i++) {

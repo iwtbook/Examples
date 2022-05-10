@@ -221,13 +221,12 @@ app.get('/:repo/route-configs', (req, res) => {
     file = file.replace(currentRepo + '/', '');
     file = file.replace('/dir-config.json', '');
     let dirs = file.split('/');
-    let items;
-    let currRouteConf = routeConfigs;
+    let currRouteConf;
+    let items = routeConfigs;
     for (let i = 0; i < dirs.length; i++) {
-      currRouteConf = currRouteConf.filter((conf) => {
+      currRouteConf = items.filter((conf) => {
         return conf.currTitle == dirs[i];
       })[0];
-      console.log(currRouteConf);
       items = currRouteConf?.items;
     }
 

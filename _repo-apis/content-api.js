@@ -248,7 +248,7 @@ app.get('/:repo/route-configs', (req, res) => {
   let rootConfig = allFiles.filter((file) =>
     file.endsWith('/root-dir-config.json')
   )[0];
-  let rootOrder = JSON.parse(fs.readFileSync(file, 'utf8'))?.order;
+  let rootOrder = JSON.parse(fs.readFileSync(rootConfig, 'utf8'))?.order;
   // Sort the route config
   let rootSortedItems = [];
   for (let i = 0; i < rootOrder.length; i++) {

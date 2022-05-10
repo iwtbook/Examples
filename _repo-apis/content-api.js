@@ -227,6 +227,7 @@ app.get('/:repo/route-configs', (req, res) => {
       currRouteConf = currRouteConf.filter((conf) => {
         return conf.currTitle == dirs[i];
       })[0];
+      console.log(currRouteConf);
       items = currRouteConf?.items;
     }
 

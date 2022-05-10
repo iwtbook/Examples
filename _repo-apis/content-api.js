@@ -225,12 +225,12 @@ app.get('/:repo/route-configs', (req, res) => {
 
     // Grab the route config to sort
     let dirs = file.split('/');
-    let currRouteConf;
+    let currRouteConf, items;
     for (let i = 0; i < dirs.length; i++) {
       currRouteConf = routeConfigs.filter((conf) => {
         return conf.currTitle == dirs[i];
       })[0];
-      currRouteConf = currRouteConf?.items;
+      items = currRouteConf?.items;
     }
 
     if (order.length != currRouteConf.length) return;
@@ -239,7 +239,7 @@ app.get('/:repo/route-configs', (req, res) => {
     let sortedItems = [];
     for (let i = 0; i < order.length; i++) {
       sortedItems.push(
-        currRouteConf.filter((route) => {
+        items.filter((route) => {
           return route.currTitle == order[i];
         })[0]
       );

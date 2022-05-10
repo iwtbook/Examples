@@ -209,6 +209,44 @@ app.get('/:repo/route-configs', (req, res) => {
     }
   });
 
+  // Get just the list of dir configs we care about
+  let dirConfigs = allFiles.filter((file) => file.endsWith('/dir-config.json'));
+  demoList = demoList.map((file) => {
+    file = file.replace(currentRepo + '/', '');
+    return file.replace('/dir-config.json', '');
+  });
+
+  // Sort routeConfigs in the proper order
+  dirConfigs.forEach((file) => {
+    // Grab the directory order
+    let order = JSON.parse(
+      fs.readFileSync(`${currentRepo}/${file}`, 'utf8')
+    )?.order;
+
+    // Grab the route config to sort
+    let dirs = file.split('/');
+    let currRouteConf;
+    for (let i = 0; i < dirs.length; i++) {
+      currRouteConf = routeConfigs.filter((conf) => {
+        return conf.currTitle == dirs[i];
+      })[0];
+      currRouteConf = currRouteConf?.items;
+    }
+
+    if (order.length != currRouteConf.length) return;
+
+    // Sort the route config
+    let sortedItems = [];
+    for (let i = 0; i < order.length; i++) {
+      sortedItems.push(
+        currRouteConf.filter((route) => {
+          return route.currTitle == order[i];
+        })[0]
+      );
+    }
+    currRouteConf = sortedItems;
+  });
+
   // Send back the route config object
   res.json(routeConfigs);
 });

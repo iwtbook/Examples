@@ -1,4 +1,4 @@
 {
   "name": "Proper vs. Convention",
-  "order": []
+  "order": ["semantic-html", "markup-in-js", "color-picker", "class-sillyness"]
 }

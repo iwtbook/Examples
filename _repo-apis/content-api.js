@@ -253,7 +253,7 @@ app.get('/:repo/route-configs', (req, res) => {
   let rootSortedItems = [];
   for (let i = 0; i < rootOrder.length; i++) {
     rootSortedItems.push(
-      rootConfigs.filter((route) => {
+      routeConfigs.filter((route) => {
         return route.currTitle == rootOrder[i];
       })[0]
     );

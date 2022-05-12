@@ -104,11 +104,11 @@ app.get('/:repo/demo-frames', (req, res) => {
   let files = recursiveFileSearch(repoDir, exclude);
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('index.html'));
-  console.log(files);
   files = files.map((file) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');
     // Read the config for each file
+    console.log(files);
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
     file = file.replaceAll(repoDir + '/', '');

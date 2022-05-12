@@ -15,6 +15,11 @@
     "forum": "https://forum.introweb.tech/topic/4/html-proper-vs-convention-semantic-html"
   },
   "settings": {
-    "module": false
+    "module": false,
+    "frames": [
+      "markdown",
+      "editor",
+      "view"
+    ]
   }
 }

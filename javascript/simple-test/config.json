@@ -1,15 +1,30 @@
 {
   "files": {
     "index.html": {
-      "show": [15,20],
-      "highlight": [2,[4,6]]
+      "show": [
+        15,
+        20
+      ],
+      "highlight": [
+        2,
+        [
+          4,
+          6
+        ]
+      ]
     },
     "styles.css": {
-      "show": [3,5],
+      "show": [
+        3,
+        5
+      ],
       "highlight": []
     },
     "script.js": {
-      "show": [3,7],
+      "show": [
+        3,
+        7
+      ],
       "highlight": []
     }
   },
@@ -18,6 +33,11 @@
     "category": "JavaScript"
   },
   "settings": {
-    "module": false
+    "module": false,
+    "frames": [
+      "markdown",
+      "editor",
+      "view"
+    ]
   }
 }

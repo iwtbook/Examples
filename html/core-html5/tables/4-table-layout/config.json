@@ -10,6 +10,11 @@
     "forum": ""
   },
   "settings": {
-    "module": false
+    "module": false,
+    "frames": [
+      "markdown",
+      "editor",
+      "view"
+    ]
   }
 }

@@ -18,6 +18,11 @@
     "forum": "https://forum.introweb.tech/topic/2/html-proper-vs-convention-class-sillyness"
   },
   "settings": {
-    "module": false
+    "module": false,
+    "frames": [
+      "markdown",
+      "editor",
+      "view"
+    ]
   }
 }

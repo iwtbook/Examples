@@ -183,7 +183,7 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
         anchor.setAttribute('target', '_top');
         anchor.setAttribute(
           'href',
-          `https://examples.introweb.tech/learn?demo=${demoPath}`
+          `https://introweb.tech/examples/learn?demo=${demoPath}`
         );
         anchor.innerHTML = name;
 

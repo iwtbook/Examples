@@ -70,7 +70,7 @@ app.get('/:repo/demos', (req, res) => {
   // The string path to the current repo we are in
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
-  let files = recursiveFileSearch(repoDir, exclude, []);
+  let files = recursiveFileSearch(repoDir, exclude);
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('index.html'));
   // Remove the repoDir and index.html from the file paths
@@ -101,9 +101,10 @@ app.get('/:repo/demo-frames', (req, res) => {
   // The string path to the current repo we are in
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
-  let files = recursiveFileSearch(repoDir, exclude, []);
+  let files = recursiveFileSearch(repoDir, exclude);
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('index.html'));
+  console.log(files);
   files = files.map((file) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');

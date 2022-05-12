@@ -108,7 +108,6 @@ app.get('/:repo/demo-frames', (req, res) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');
     // Read the config for each file
-    console.log(file);
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
     file = file.replaceAll(repoDir + '/', '');
@@ -116,7 +115,7 @@ app.get('/:repo/demo-frames', (req, res) => {
     // Grab the frames and return the new formatted object
     return {
       path: file,
-      frames: config.frames,
+      frames: config.settings?.frames,
     };
   });
   // Send the files back

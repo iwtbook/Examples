@@ -87,6 +87,42 @@ app.get('/:repo/demos', (req, res) => {
 });
 
 /**
+ * Fetches a list of all of the demos and which frames they use
+ * @param {string} repo the repository to fetch the demos from
+ * @return {array<string>} an array of all of the demos in alphabetical order
+ *                         with the frames they use
+ */
+app.get('/:repo/demo-frames', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) {
+    res.status(400).send('Repo not supported');
+    return;
+  }
+  // The string path to the current repo we are in
+  const repoDir = getCurrentRepo();
+  // All of the desired files in our current repo
+  let files = recursiveFileSearch(repoDir, exclude, []);
+  // Filter out anything that isn't an index.html path
+  files = files.filter((file) => file.endsWith('index.html'));
+  files = files.map((file) => {
+    // Swap index.html to config.json
+    file = file.replace('/index.html', '/config.json');
+    // Read the config for each file
+    let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
+    // Format the file name to something cleaner
+    file = file.replaceAll(repoDir + '/', '');
+    file = file.replace('/config.json', '');
+    // Grab the frames and return the new formatted object
+    return {
+      path: file,
+      frames: config.frames,
+    };
+  });
+  // Send the files back
+  res.json(files);
+});
+
+/**
  * Fetches the contents and metadata of the specified file from the specified repo
  * @param {string} repo the repository to fetch the file from
  * @param {string} file the file to grab the data of

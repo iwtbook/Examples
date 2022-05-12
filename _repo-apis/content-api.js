@@ -72,7 +72,7 @@ app.get('/:repo/demos', (req, res) => {
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude);
   // Filter out anything that isn't an index.html path
-  files = files.filter((file) => file.endsWith('index.html'));
+  files = files.filter((file) => file.endsWith('/index.html'));
   // Remove the repoDir and index.html from the file paths
   files = files.map((file) => {
     file = file.replaceAll(repoDir + '/', '');
@@ -103,12 +103,12 @@ app.get('/:repo/demo-frames', (req, res) => {
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude);
   // Filter out anything that isn't an index.html path
-  files = files.filter((file) => file.endsWith('index.html'));
+  files = files.filter((file) => file.endsWith('/index.html'));
   files = files.map((file) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');
     // Read the config for each file
-    console.log(files);
+    console.log(file);
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
     file = file.replaceAll(repoDir + '/', '');

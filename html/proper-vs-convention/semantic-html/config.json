@@ -16,10 +16,6 @@
   },
   "settings": {
     "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
+    "frames": ["markdown", "editor"]
   }
 }

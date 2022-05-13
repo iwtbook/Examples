@@ -51,7 +51,13 @@ app.get('/', async (req, res, next) => {
   zipFileName = zipFileName.split('/').pop();
 
   // Write each of the files to disk
-  let excludedFiles = ['config.json', 'learn.md', 'resources.md', 'quiz.md'];
+  let excludedFiles = [
+    'config.json',
+    'learn.md',
+    'resources.md',
+    'quiz.md',
+    'media',
+  ];
   files.forEach((file) => {
     if (excludedFiles.includes(file.name)) return;
     fs.outputFileSync(`temp-${timestamp}/${file.name}`, file.data);

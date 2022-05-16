@@ -104,6 +104,7 @@ app.get('/:repo/demo-frames', (req, res) => {
   let files = recursiveFileSearch(repoDir, exclude);
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('/index.html'));
+  mediaConfig = files.filter((file) => file.endsWith('/media-config.json'));
   files = files.map((file) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');
@@ -112,11 +113,14 @@ app.get('/:repo/demo-frames', (req, res) => {
     // Format the file name to something cleaner
     file = file.replaceAll(repoDir + '/', '');
     file = file.replace('/config.json', '');
-    // Grab the frames and return the new formatted object
-    return {
+    // Grab the frames and make a new formatted object
+    let demoFrame = {
       path: file,
       frames: config.settings?.frames,
     };
+    // Check for media config and add it if needed
+    if (mediaConfig.length > 0) demoFrame.media = mediaConfig[0];
+    return demoFrame;
   });
   // Send the files back
   res.json(files);

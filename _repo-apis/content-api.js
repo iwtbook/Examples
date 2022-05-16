@@ -137,13 +137,14 @@ app.get('/:repo/file/*', (req, res) => {
   // Grab the contents of the file
   let fileContentsPath = filePath;
   let currRepoPath = getCurrentRepo();
-  if (!filePath.includes(currRepoPath))
+  if (!filePath.includes(currRepoPath)) {
     fileContentsPath = currRepoPath + filePath;
-  const fileContents = fs.readFileSync(fileContentsPath, 'utf8');
+  }
+  const fileContents = fs.readFileSync(fileContentsPath);
   // Format everything and send it back
   res.json({
     path: filePath,
-    content: Buffer.from(fileContents).toString('base64'),
+    content: fileContents.toString('base64'),
     encoding: 'base64',
   });
 });

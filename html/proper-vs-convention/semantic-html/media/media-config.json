@@ -1,6 +1,7 @@
 [
   {
     "filename": "cow-cat.jpeg",
-    "alt": "Cat peaking out from behind monitor"
+    "alt": "Cat peaking out from behind monitor",
+    "type": "image"
   }
 ]

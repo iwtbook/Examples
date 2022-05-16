@@ -105,6 +105,7 @@ app.get('/:repo/demo-frames', (req, res) => {
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('/index.html'));
   mediaConfig = files.filter((file) => file.endsWith('/media-config.json'));
+  console.log(mediaConfig);
   files = files.map((file) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');

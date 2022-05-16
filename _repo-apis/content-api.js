@@ -104,7 +104,6 @@ app.get('/:repo/demo-frames', (req, res) => {
   let files = recursiveFileSearch(repoDir, exclude);
   // Find the media file if there is one
   mediaConfig = files.filter((file) => file.endsWith('/media-config.json'));
-  console.log(mediaConfig);
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('/index.html'));
   files = files.map((file) => {
@@ -121,7 +120,11 @@ app.get('/:repo/demo-frames', (req, res) => {
       frames: config.settings?.frames,
     };
     // Check for media config and add it if needed
-    if (mediaConfig.length > 0) demoFrame.media = mediaConfig[0];
+    if (mediaConfig.length > 0) {
+      let options = { encoding: 'utf8' };
+      let mediaConfigObj = JSON.parse(fs.readFileSync(mediaConfig[0], options));
+      demoFrame.media = mediaConfigObj;
+    }
     return demoFrame;
   });
   // Send the files back

@@ -102,10 +102,11 @@ app.get('/:repo/demo-frames', (req, res) => {
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude);
-  // Filter out anything that isn't an index.html path
-  files = files.filter((file) => file.endsWith('/index.html'));
+  // Find the media file if there is one
   mediaConfig = files.filter((file) => file.endsWith('/media-config.json'));
   console.log(mediaConfig);
+  // Filter out anything that isn't an index.html path
+  files = files.filter((file) => file.endsWith('/index.html'));
   files = files.map((file) => {
     // Swap index.html to config.json
     file = file.replace('/index.html', '/config.json');

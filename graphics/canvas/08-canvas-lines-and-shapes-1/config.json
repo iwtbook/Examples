@@ -6,15 +6,11 @@
     }
   },
   "metadata": {
-    "title": "Title Needed",
+    "title": "Lines &amp; Shapes - pt I",
     "forum": ""
   },
   "settings": {
     "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
+    "frames": ["markdown", "editor", "view"]
   }
 }

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Part VIIa",
+    "forum": ""
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown", "editor", "view"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Part I",
+    "forum": ""
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown", "editor", "view"]
+  }
+}

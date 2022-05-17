@@ -6,15 +6,11 @@
     }
   },
   "metadata": {
-    "title": "Title Needed",
+    "title": "PWA (Progressive Web App)",
     "forum": ""
   },
   "settings": {
     "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
+    "frames": ["markdown", "editor", "view"]
   }
 }

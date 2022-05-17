@@ -6,15 +6,11 @@
     }
   },
   "metadata": {
-    "title": "Title Needed",
+    "title": "JavaScript - Take 1",
     "forum": ""
   },
   "settings": {
     "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
+    "frames": ["markdown", "editor", "view"]
   }
 }

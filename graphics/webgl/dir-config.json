@@ -1,4 +1,4 @@
 {
-  "name": "Name Needed",
-  "order": []
+  "name": "WebGL",
+  "order": ["webgl-basic", "webgl-2d-content", "webgl-2d-color"]
 }

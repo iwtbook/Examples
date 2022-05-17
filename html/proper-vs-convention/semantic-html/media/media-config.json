@@ -7,7 +7,6 @@
   {
     "path": "ghibli.webp",
     "alt": "A gif from a studio Ghibli movie",
-    "mime": "video/webm",
-    "type": "video"
+    "type": "image"
   }
 ]

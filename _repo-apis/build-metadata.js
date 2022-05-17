@@ -44,10 +44,10 @@ function getExamplesDirectory() {
 
 /**
  *
- * @param {string} dir the directory with which to search for files
- * @param {array<string>} exclude A list of files / directories to exclude in
+ * @param {String} dir the directory with which to search for files
+ * @param {Array<string>} exclude A list of files / directories to exclude in
  *                                file search
- * @returns {array<string>} an array of all of the paths of the found files
+ * @returns {Array<string>} an array of all of the paths of the found files
  */
 function recursiveFileSearch(dir, exclude) {
   let entitiesInDir, dirsInDir, filesInDir;
@@ -79,8 +79,8 @@ function recursiveFileSearch(dir, exclude) {
 
 /**
  * Grab all of the proper titles from the config files of each demo
- * @param {array<string>} allFiles A list of absolute paths of every file in each demo
- * @returns {object} A key value pair of each relative path to a demo and
+ * @param {Array<string>} allFiles A list of absolute paths of every file in each demo
+ * @returns {Object} A key value pair of each relative path to a demo and
  *                   it's corresponding proper title
  */
 function getDemoTitles(allFiles, examplesDir) {
@@ -90,7 +90,7 @@ function getDemoTitles(allFiles, examplesDir) {
   // Create a key value pair of the actual title with it's relative path
   let titles = {};
   configs.forEach((config) => {
-    let configData = JSON.parse(FS.readFileSync(config));
+    let configData = JSON.parse(FS.readFileSync(config, { encoding: 'utf8' }));
     let demoPath = config.replace(examplesDir + '/', '');
     demoPath = demoPath.replace('/config.json', '');
     titles[demoPath] = configData.metadata.title;

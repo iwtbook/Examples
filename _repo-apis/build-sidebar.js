@@ -7,6 +7,8 @@
  * description: Generates the static markup used for the sidebar for each demo
  */
 
+// @ts-nocheck
+
 /*************************/
 /*                       */
 /*  Table of Contents:   */
@@ -54,9 +56,9 @@ function getExamplesDirectory() {
 /**
  *
  * @param {string} dir the directory with which to search for files
- * @param {array<string>} exclude A list of files / directories to exclude in
+ * @param {Array<string>} exclude A list of files / directories to exclude in
  *                                file search
- * @returns {array<string>} an array of all of the paths of the found files
+ * @returns {Array<string>} an array of all of the paths of the found files
  */
 function recursiveFileSearch(dir, exclude) {
   let entitiesInDir, dirsInDir, filesInDir;
@@ -88,9 +90,9 @@ function recursiveFileSearch(dir, exclude) {
 
 /**
  * Grabs the category list from the current list of all demos
- * @param {array<string>} indexFiles absolute path of all index.html files in demos
- * @param {string} examplesDir absolute path of the examples directory
- * @returns {array<string>} list of all of the demo categories
+ * @param {Array<string>} indexFiles absolute path of all index.html files in demos
+ * @param {String} examplesDir absolute path of the examples directory
+ * @returns {Array<string>} list of all of the demo categories
  */
 function getCategories(indexFiles, examplesDir) {
   let categories = new Set();
@@ -104,10 +106,10 @@ function getCategories(indexFiles, examplesDir) {
 /**
  * Generates the sidebar markup for each category.
  * Outputs to /{category}/sidebar.hmtml
- * @param {string} category The current category to generate
- * @param {string} examplesDir The absolute path of the examples directory
- * @param {array<string>} indexFiles A list of all index.html files from demos
- * @param {number} currDirLength Depth of the examples directory
+ * @param {String} category The current category to generate
+ * @param {String} examplesDir The absolute path of the examples directory
+ * @param {Array<string>} indexFiles A list of all index.html files from demos
+ * @param {Number} currDirLength Depth of the examples directory
  */
 function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
   let categoryFiles = indexFiles.filter((file) =>

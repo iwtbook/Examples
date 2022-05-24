@@ -235,6 +235,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.name,
+          currDir: currDir,
           items: [],
         });
         // If it doesn't exist and it's a demo, add it
@@ -245,6 +246,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.metadata?.title,
+          currDir: currDir,
         });
       }
       // Update the current config marker
@@ -365,4 +367,17 @@ function recursiveFileSearch(dir, exclude) {
   });
   // Return our main files array
   return filesInDir;
+}
+
+/**
+ * Takes the route config object and flattens it for use in the sidebar
+ * @param {Array<Object>} config the nested route config object in order
+ * @returns {Array<String>} the flattened route config object
+ */
+function flattenRouteConfigs(config) {
+  let currStr = '';
+  let flattened = [];
+  for (let i = 0; i < config.length; i++) {
+    
+  }
 }

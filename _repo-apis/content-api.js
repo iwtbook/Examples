@@ -235,7 +235,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.name,
-          currDir: currDir,
+          currDir: currDir.slice(1),
           items: [],
         });
         // If it doesn't exist and it's a demo, add it
@@ -246,7 +246,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.metadata?.title,
-          currDir: currDir,
+          currDir: currDir.slice(1),
         });
       }
       // Update the current config marker

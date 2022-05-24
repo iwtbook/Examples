@@ -235,7 +235,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.name,
-          currPath: currDir,
+          currPath: currDir.slice(1),
           items: [],
         });
         // If it doesn't exist and it's a demo, add it
@@ -246,7 +246,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.metadata?.title,
-          currPath: currDir,
+          currPath: currDir.slice(1),
         });
       }
       // Update the current config marker
@@ -308,8 +308,8 @@ app.get('/:repo/route-configs', (req, res) => {
   }
   routeConfigs = rootSortedItems;
 
-  console.log(req.query);
   if (req.query.dir) {
+    if (req.query.dir == '/') req.query.dir = '';
     routeConfigs = flattenRouteConfigs(routeConfigs);
     routeConfigs = routeConfigs.filter((route) => {
       if (route.startsWith(req.query.dir)) return route;

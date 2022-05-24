@@ -235,7 +235,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.name,
-          currPath: currDir.slice(1),
+          currPath: currDir,
           items: [],
         });
         // If it doesn't exist and it's a demo, add it
@@ -246,7 +246,7 @@ app.get('/:repo/route-configs', (req, res) => {
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.metadata?.title,
-          currPath: currDir.slice(1),
+          currPath: currDir,
         });
       }
       // Update the current config marker
@@ -307,6 +307,13 @@ app.get('/:repo/route-configs', (req, res) => {
     );
   }
   routeConfigs = rootSortedItems;
+
+  if (params.dir) {
+    routeConfigs = flattenRouteConfigs(routeConfigs);
+    routeConfigs = routeConfigs.filter((route) => {
+      if (route.startsWith(params.dir)) return route;
+    });
+  }
 
   // Send back the route config object
   res.json(routeConfigs);
@@ -379,12 +386,12 @@ function flattenRouteConfigs(config) {
   for (let i = 0; i < config.length; i++) {
     // is a directory
     if (config[i].items) {
-      flattenRouteConfigs(config[i].items);
+      flattened = flattened.concat(flattenRouteConfigs(config[i].items));
     }
     // is a demo
     else {
       flattened.push(config[i].currPath);
     }
   }
-  return config;
+  return flattened;
 }

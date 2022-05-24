@@ -219,6 +219,7 @@ app.get('/:repo/route-configs', (req, res) => {
     let directory = file.split('/');
     let currItems = routeConfigs;
     let currDir = '';
+    let currTitleDir = '';
     // Loop over all of the individual directories
     for (let i = 0; i < directory.length; i++) {
       // Keep track of where we are to read the file later
@@ -232,10 +233,12 @@ app.get('/:repo/route-configs', (req, res) => {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/dir-config.json`, 'utf8')
         );
+        currTitleDir += `/${config?.name}`;
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.name,
           currPath: currDir.slice(1),
+          currTitlePath: currTitleDir.slice(1),
           items: [],
         });
         // If it doesn't exist and it's a demo, add it
@@ -243,10 +246,12 @@ app.get('/:repo/route-configs', (req, res) => {
         let config = JSON.parse(
           fs.readFileSync(`${currentRepo}${currDir}/config.json`, 'utf8')
         );
+        currTitleDir += `/${config?.metadata?.title}`;
         currItems.push({
           currTitle: directory[i],
           newTitle: config?.metadata?.title,
           currPath: currDir.slice(1),
+          currTitlePath: currTitleDir.slice(1),
         });
       }
       // Update the current config marker
@@ -375,9 +380,15 @@ function recursiveFileSearch(dir, exclude) {
  * @returns {Array<String>} the flattened route config object
  */
 function flattenRouteConfigs(config) {
-  let currStr = '';
   let flattened = [];
   for (let i = 0; i < config.length; i++) {
-    
+    // is a directory
+    if (config[i].items) {
+
+    }
+    // is a demo
+    else {
+
+    }
   }
 }

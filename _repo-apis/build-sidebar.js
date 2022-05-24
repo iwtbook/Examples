@@ -28,6 +28,7 @@
 const FS = require('fs-extra');
 const jsdom = require('jsdom');
 const PRETTIER = require('prettier');
+const FETCH = require('fetch');
 
 // JSDOM Constants
 const { JSDOM } = jsdom;
@@ -54,51 +55,14 @@ function getExamplesDirectory() {
 }
 
 /**
- *
- * @param {string} dir the directory with which to search for files
- * @param {Array<string>} exclude A list of files / directories to exclude in
- *                                file search
- * @returns {Array<string>} an array of all of the paths of the found files
- */
-function recursiveFileSearch(dir, exclude) {
-  let entitiesInDir, dirsInDir, filesInDir;
-  // Get everything in the directory first
-  entitiesInDir = FS.readdirSync(dir);
-  // Filter out everything that's not allowed
-  entitiesInDir = entitiesInDir.filter((entity) => {
-    if (exclude.includes(entity)) return false;
-    if (entity.charAt(0) == '.' || entity.charAt(0) == '_') return false;
-    return true;
-  });
-  // Separate the directories and files
-  filesInDir = [];
-  dirsInDir = entitiesInDir.filter((entity) => {
-    // if it's a directory keep it so it can be stored in dirsInDir
-    if (FS.lstatSync(`${dir}/${entity}`).isDirectory()) return true;
-    // otherwise add it to our list of files
-    filesInDir.push(`${dir}/${entity}`);
-    // and filter it out by returning false
-    return false;
-  });
-  // Add all of the files in the directories we found in our main files array
-  dirsInDir.forEach((subDir) => {
-    filesInDir = filesInDir.concat(recursiveFileSearch(`${dir}/${subDir}`, []));
-  });
-  // Return our main files array
-  return filesInDir;
-}
-
-/**
  * Grabs the category list from the current list of all demos
- * @param {Array<string>} indexFiles absolute path of all index.html files in demos
- * @param {String} examplesDir absolute path of the examples directory
+ * @param {Array<string>} demoList relative path of all demos
  * @returns {Array<string>} list of all of the demo categories
  */
-function getCategories(indexFiles, examplesDir) {
+function getCategories(demoList) {
   let categories = new Set();
-  indexFiles.forEach((file) => {
-    file = file.replace(examplesDir + '/', '');
-    categories.add(file.split('/')[0]);
+  demoList.forEach((demo) => {
+    categories.add(demo.split('/')[0]);
   });
   return Array.from(categories);
 }
@@ -108,19 +72,21 @@ function getCategories(indexFiles, examplesDir) {
  * Outputs to /{category}/sidebar.hmtml
  * @param {String} category The current category to generate
  * @param {String} examplesDir The absolute path of the examples directory
- * @param {Array<string>} indexFiles A list of all index.html files from demos
+ * @param {Array<String>} demoList A list of all demos
  * @param {Number} currDirLength Depth of the examples directory
  */
-function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
-  let categoryFiles = indexFiles.filter((file) =>
-    file.startsWith(`${examplesDir}/${category}`)
-  );
+function generateMarkup(category, examplesDir, demoList, currDirLength) {
+  let categoryDemos = demoList.filter((demo) => {
+    return demo.startsWith(category);
+  });
+  categoryDemos = categoryDemos.map((demo) => {
+    return `${examplesDir}/${demo}`;
+  });
 
   let numDemos = 0;
 
-  categoryFiles.forEach((file) => {
-    file = file.replace('/index.html', '');
-    let dirs = file.split('/');
+  categoryDemos.forEach((demo) => {
+    let dirs = demo.split('/');
     for (let i = currDirLength; i < dirs.length; i++) {
       let path = dirs.slice(0, i + 1).join('/');
       let id = 'sidebar--' + path.replace(examplesDir + '/', '');
@@ -209,15 +175,14 @@ function generateMarkup(category, examplesDir, indexFiles, currDirLength) {
 /***   3. Main Program   ***/
 /***************************/
 
-function init() {
+async function init() {
   // Grab the absolute path to the examples dir
   let examplesDir = getExamplesDirectory();
-  // Search for every file, excluding these directories
-  let allFiles = recursiveFileSearch(examplesDir, EXCLUDE);
-  // Limit the files to just the index.html files
-  let indexFiles = allFiles.filter((file) => file.endsWith('/index.html'));
+  // Fetch all of the demos
+  let demosList = await fetch('http://localhost:3001/examples/route-configs?dir=/');
+  demosList = await demosList.json();
   // Grab the categories of those index files
-  let categories = getCategories(indexFiles, examplesDir);
+  let categories = getCategories(demosList);
   // Grab the length of the current directory, makes things easier when
   // generating markup
   let currDirLength = examplesDir.split('/').length;
@@ -225,7 +190,7 @@ function init() {
   // Create the sidebar markup for each of the categories.
   // Outputs to /{category}/sidebar.html
   categories.forEach((category) => {
-    generateMarkup(category, examplesDir, indexFiles, currDirLength);
+    generateMarkup(category, examplesDir, demosList, currDirLength);
   });
 }
 

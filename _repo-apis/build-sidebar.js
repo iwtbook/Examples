@@ -28,7 +28,7 @@
 const FS = require('fs-extra');
 const jsdom = require('jsdom');
 const PRETTIER = require('prettier');
-const FETCH = require('fetch');
+const FETCH = require('node-fetch');
 
 // JSDOM Constants
 const { JSDOM } = jsdom;
@@ -179,7 +179,7 @@ async function init() {
   // Grab the absolute path to the examples dir
   let examplesDir = getExamplesDirectory();
   // Fetch all of the demos
-  let demosList = await fetch('http://localhost:3001/examples/route-configs?dir=/');
+  let demosList = await FETCH('http://localhost:3001/examples/route-configs?dir=/');
   demosList = await demosList.json();
   // Grab the categories of those index files
   let categories = getCategories(demosList);

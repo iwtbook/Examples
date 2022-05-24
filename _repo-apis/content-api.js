@@ -308,6 +308,7 @@ app.get('/:repo/route-configs', (req, res) => {
   }
   routeConfigs = rootSortedItems;
 
+  console.log(req.query);
   if (req.query.dir) {
     routeConfigs = flattenRouteConfigs(routeConfigs);
     routeConfigs = routeConfigs.filter((route) => {

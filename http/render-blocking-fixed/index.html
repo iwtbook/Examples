@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Render Blocking</title>
-  <script type="module">
-    const startTime = new Date().getTime();
+  <script>
+    let startTime = new Date().getTime();
   </script>
   <script src="https://httplayground.introweb.tech/delay/5" defer></script>
   <style>
@@ -38,7 +38,7 @@
     for the first contentful paint to occur since the loading of our heavy
     non-critical script was deferred</p>
   <button onclick="location.reload()">Refresh</button>
-  <script type="module">
+  <script>
     document.getElementById('loading').setAttribute('hidden', 'true');
     document.querySelector('time').innerHTML = (new Date().getTime() - startTime) / 1000;
   </script>

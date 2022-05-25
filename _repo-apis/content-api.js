@@ -118,6 +118,7 @@ app.get('/:repo/demo-frames', (req, res) => {
     let demoFrame = {
       path: file,
       frames: config.settings?.frames,
+      title: config.metadata?.title
     };
     // Check for media config and add it if needed
     if (mediaConfig.length > 0) {

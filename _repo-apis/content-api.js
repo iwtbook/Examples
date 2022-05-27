@@ -308,12 +308,20 @@ app.get('/:repo/route-configs', (req, res) => {
   routeConfigs = rootSortedItems;
 
   if (req.query.dir) {
-    routeConfigs = flattenRouteConfigs(routeConfigs);
+    let dirCategory = req.query.dir.split('/')[0];
+    // Grab the demos array
+    routeConfigs = {
+      demos: flattenRouteConfigs(routeConfigs)
+    }
     if (req.query.dir != '/') {
-      routeConfigs = routeConfigs.filter((route) => {
+      routeConfigs.demos = routeConfigs.demos.filter((route) => {
         if (route.startsWith(req.query.dir)) return route;
       });
     }
+    // grab the section name
+    let categoryDemo = `${currentRepo}/${dirCategory}/dir-config.json`;
+    routeConfigs.name = JSON.parse(fs.readFileSync(categoryDemo, { encoding: 'utf8' }));
+    routeConfigs.name = routeConfigs.name.name;
   }
 
   // Send back the route config object

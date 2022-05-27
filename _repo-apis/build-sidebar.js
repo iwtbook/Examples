@@ -128,8 +128,7 @@ function generateMarkup(category, examplesDir, demoList, currDirLength) {
 
         // It's a demo
       } else if (
-        FS.existsSync(path + '/demo-config.json') &&
-        FS.existsSync(path + '/index.html')
+        FS.existsSync(path + '/demo-config.json')
       ) {
         numDemos += 1;
 

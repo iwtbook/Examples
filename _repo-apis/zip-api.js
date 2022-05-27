@@ -52,7 +52,7 @@ app.get('/', async (req, res, next) => {
 
   // Write each of the files to disk
   let excludedFiles = [
-    'config.json',
+    'demo-config.json',
     'learn.md',
     'resources.md',
     'quiz.md',

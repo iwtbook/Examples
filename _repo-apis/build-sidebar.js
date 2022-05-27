@@ -128,12 +128,12 @@ function generateMarkup(category, examplesDir, demoList, currDirLength) {
 
         // It's a demo
       } else if (
-        FS.existsSync(path + '/config.json') &&
+        FS.existsSync(path + '/demo-config.json') &&
         FS.existsSync(path + '/index.html')
       ) {
         numDemos += 1;
 
-        let demoConfig = FS.readJsonSync(path + '/config.json');
+        let demoConfig = FS.readJsonSync(path + '/demo-config.json');
         name = demoConfig.metadata.title;
 
         let idToFind = id.split('_');

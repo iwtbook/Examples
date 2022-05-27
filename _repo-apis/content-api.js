@@ -107,13 +107,13 @@ app.get('/:repo/demo-frames', (req, res) => {
   // Filter out anything that isn't an index.html path
   files = files.filter((file) => file.endsWith('/index.html'));
   files = files.map((file) => {
-    // Swap index.html to config.json
-    file = file.replace('/index.html', '/config.json');
+    // Swap index.html to demo-config.json
+    file = file.replace('/index.html', '/demo-config.json');
     // Read the config for each file
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
     file = file.replaceAll(repoDir + '/', '');
-    file = file.replace('/config.json', '');
+    file = file.replace('/demo-config.json', '');
     // Grab the frames and make a new formatted object
     let demoFrame = {
       path: file,
@@ -197,7 +197,7 @@ app.get('/:repo/contents-mime/*', (req, res) => {
 });
 
 /**
- * Fetches just the config.json and dir-config.json files from the repo and converts them
+ * Fetches just the demo-config.json and dir-config.json files from the repo and converts them
  * to an easy to use format
  * @return {object}
  */
@@ -242,7 +242,7 @@ app.get('/:repo/route-configs', (req, res) => {
         // If it doesn't exist and it's a demo, add it
       } else if (currConf.length == 0 && i == directory.length - 1) {
         let config = JSON.parse(
-          fs.readFileSync(`${currentRepo}${currDir}/config.json`, 'utf8')
+          fs.readFileSync(`${currentRepo}${currDir}/demo-config.json`, 'utf8')
         );
         currItems.push({
           currTitle: directory[i],

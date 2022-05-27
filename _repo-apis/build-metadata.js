@@ -86,13 +86,13 @@ function recursiveFileSearch(dir, exclude) {
 function getDemoTitles(allFiles, examplesDir) {
   // Find the config.json files for each demo
   let configs = allFiles.filter((file) => file.endsWith('index.html'));
-  configs = configs.map((file) => file.replace('index.html', 'config.json'));
+  configs = configs.map((file) => file.replace('/index.html', '/demo-config.json'));
   // Create a key value pair of the actual title with it's relative path
   let titles = {};
   configs.forEach((config) => {
     let configData = JSON.parse(FS.readFileSync(config, { encoding: 'utf8' }));
     let demoPath = config.replace(examplesDir + '/', '');
-    demoPath = demoPath.replace('/config.json', '');
+    demoPath = demoPath.replace('/demo-config.json', '');
     titles[demoPath] = configData.metadata.title;
   });
   return titles;

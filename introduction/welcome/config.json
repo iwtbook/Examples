@@ -1,5 +1,10 @@
 {
-  "files": {},
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    }
+  },
   "metadata": {
     "title": "Welcome to IWT",
     "forum": ""

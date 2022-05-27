@@ -71,12 +71,12 @@ app.get('/:repo/demos', (req, res) => {
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude);
-  // Filter out anything that isn't an index.html path
-  files = files.filter((file) => file.endsWith('/index.html'));
-  // Remove the repoDir and index.html from the file paths
+  // Filter out anything that isn't an demo-config.json path
+  files = files.filter((file) => file.endsWith('/demo-config.json'));
+  // Remove the repoDir and demo-config.json from the file paths
   files = files.map((file) => {
     file = file.replaceAll(repoDir + '/', '');
-    return file.replace('/index.html', '');
+    return file.replace('/demo-config.json', '');
   });
   // Filter down anything that isn't in the specified dir
   if (req.query.dir) {
@@ -104,11 +104,9 @@ app.get('/:repo/demo-frames', (req, res) => {
   let files = recursiveFileSearch(repoDir, exclude);
   // Find the media file if there is one
   mediaConfig = files.filter((file) => file.endsWith('/media-config.json'));
-  // Filter out anything that isn't an index.html path
-  files = files.filter((file) => file.endsWith('/index.html'));
+  // Filter out anything that isn't an demo-config.json path
+  files = files.filter((file) => file.endsWith('/demo-config.json'));
   files = files.map((file) => {
-    // Swap index.html to demo-config.json
-    file = file.replace('/index.html', '/demo-config.json');
     // Read the config for each file
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
@@ -207,10 +205,10 @@ app.get('/:repo/route-configs', (req, res) => {
   // Get every single file in all of the demos
   let allFiles = recursiveFileSearch(currentRepo, exclude, []);
   // Get just the list of demos we care about
-  let demoList = allFiles.filter((file) => file.endsWith('/index.html'));
+  let demoList = allFiles.filter((file) => file.endsWith('/demo-config.json'));
   demoList = demoList.map((file) => {
     file = file.replace(currentRepo + '/', '');
-    return file.replace('/index.html', '');
+    return file.replace('/demo-config.json', '');
   });
 
   // The final routeConfig to return

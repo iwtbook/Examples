@@ -85,8 +85,7 @@ function recursiveFileSearch(dir, exclude) {
  */
 function getDemoTitles(allFiles, examplesDir) {
   // Find the config.json files for each demo
-  let configs = allFiles.filter((file) => file.endsWith('index.html'));
-  configs = configs.map((file) => file.replace('/index.html', '/demo-config.json'));
+  let configs = allFiles.filter((file) => file.endsWith('demo-config.json'));
   // Create a key value pair of the actual title with it's relative path
   let titles = {};
   configs.forEach((config) => {

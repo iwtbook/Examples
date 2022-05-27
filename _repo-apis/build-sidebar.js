@@ -180,6 +180,7 @@ async function init() {
   // Fetch all of the demos
   let demosList = await FETCH('http://localhost:3001/examples/route-configs?dir=/');
   demosList = await demosList.json();
+  demosList = demosList.demos;
   // Grab the categories of those index files
   let categories = getCategories(demosList);
   // Grab the length of the current directory, makes things easier when

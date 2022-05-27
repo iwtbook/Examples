@@ -317,11 +317,11 @@ app.get('/:repo/route-configs', (req, res) => {
       routeConfigs.demos = routeConfigs.demos.filter((route) => {
         if (route.startsWith(req.query.dir)) return route;
       });
+      // grab the section name
+      let categoryDemo = `${currentRepo}/${dirCategory}/dir-config.json`;
+      routeConfigs.name = JSON.parse(fs.readFileSync(categoryDemo, { encoding: 'utf8' }));
+      routeConfigs.name = routeConfigs.name.name;
     }
-    // grab the section name
-    let categoryDemo = `${currentRepo}/${dirCategory}/dir-config.json`;
-    routeConfigs.name = JSON.parse(fs.readFileSync(categoryDemo, { encoding: 'utf8' }));
-    routeConfigs.name = routeConfigs.name.name;
   }
 
   // Send back the route config object

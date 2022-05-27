@@ -1,0 +1,20 @@
+{
+  "files": {
+    "index.html": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Title Needed",
+    "forum": ""
+  },
+  "settings": {
+    "module": false,
+    "frames": [
+      "markdown",
+      "editor",
+      "view"
+    ]
+  }
+}

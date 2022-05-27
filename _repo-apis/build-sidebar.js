@@ -177,7 +177,7 @@ function generateMarkup(category, examplesDir, demoList, currDirLength) {
 async function init() {
   // Grab the absolute path to the examples dir
   let examplesDir = getExamplesDirectory();
-  // Fetch all of the demos
+  // Fetch all of the demos from /route-configs
   let demosList = await FETCH('http://localhost:3001/examples/route-configs?dir=/');
   demosList = await demosList.json();
   demosList = demosList.demos;

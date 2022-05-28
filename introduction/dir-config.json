@@ -1,4 +1,7 @@
 {
   "name": "Introduction",
-  "order": []
+  "order": [
+    "welcome",
+    "browsers"
+  ]
 }

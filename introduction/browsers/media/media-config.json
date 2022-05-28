@@ -1,0 +1,12 @@
+[
+  {
+    "path": "DevTools.webp",
+    "alt": "Browser Developer Tools showing HTML, CSS, and JS",
+    "type": "image"
+  },
+  {
+    "path": "BoxModel.webp",
+    "alt": "Browser Developer Tools showing the Box Model of an element",
+    "type": "image"
+  }
+]

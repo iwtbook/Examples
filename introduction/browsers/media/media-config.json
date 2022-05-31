@@ -9,6 +9,6 @@
     "path": "BoxModel.webp",
     "alt": "Browser Developer Tools showing the Box Model of an element",
     "type": "figure",
-    "caption": "Developer tools showing the box model of an element"
+    "caption": "Developer tools showing the internal representation of an element"
   }
 ]

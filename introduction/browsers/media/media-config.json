@@ -2,7 +2,8 @@
   {
     "path": "DevTools.webp",
     "alt": "Browser Developer Tools showing HTML, CSS, and JS",
-    "type": "image"
+    "type": "figure",
+    "caption": "Developer tools showing the website's code"
   },
   {
     "path": "BoxModel.webp",

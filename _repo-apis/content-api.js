@@ -118,7 +118,6 @@ app.get('/:repo/demo-frames', (req, res) => {
     };
     // Check for media config and add it if needed
     let mediaConfigPath = `${repoDir}/${path}/media/media-config.json`;
-    console.log(mediaConfigPath);
     if (fs.existsSync(mediaConfigPath)) {
       let options = { encoding: 'utf8' };
       let mediaConfig = JSON.parse(fs.readFileSync(mediaConfigPath, options));

@@ -109,7 +109,7 @@ app.get('/:repo/demo-frames', (req, res) => {
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
     let path = file.replaceAll(repoDir + '/', '');
-    path = file.replace('/demo-config.json', '');
+    path = path.replace('/demo-config.json', '');
     // Grab the frames and make a new formatted object
     let demoFrame = {
       path: path,

@@ -102,27 +102,26 @@ app.get('/:repo/demo-frames', (req, res) => {
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude);
-  // Find the media file if there is one
-  mediaConfig = files.filter((file) => file.endsWith('/media-config.json'));
   // Filter out anything that isn't an demo-config.json path
   files = files.filter((file) => file.endsWith('/demo-config.json'));
   files = files.map((file) => {
     // Read the config for each file
     let config = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
     // Format the file name to something cleaner
-    file = file.replaceAll(repoDir + '/', '');
-    file = file.replace('/demo-config.json', '');
+    let path = file.replaceAll(repoDir + '/', '');
+    path = file.replace('/demo-config.json', '');
     // Grab the frames and make a new formatted object
     let demoFrame = {
-      path: file,
+      path: path,
       frames: config.settings?.frames,
       title: config.metadata?.title
     };
     // Check for media config and add it if needed
-    if (mediaConfig.length > 0) {
+    let mediaConfigPath = `${repoDir}/${path}/media/media-config.json`;
+    if (fs.existsSync(mediaConfigPath)) {
       let options = { encoding: 'utf8' };
-      let mediaConfigObj = JSON.parse(fs.readFileSync(mediaConfig[0], options));
-      demoFrame.media = mediaConfigObj;
+      let mediaConfig = JSON.parse(fs.readFileSync(mediaConfigPath, options));
+      demoFrame.media = mediaConfig;
     }
     return demoFrame;
   });

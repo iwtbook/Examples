@@ -7,6 +7,6 @@
   },
   "settings": {
     "module": false,
-    "frames": ["markdown"]
+    "frames": ["markdown", "media"]
   }
 }

@@ -12,5 +12,11 @@
     "type": "inline-figure",
     "caption": "Developer tools showing the internal representation of an element",
     "tag": "internal-rep"
+  },
+  {
+    "path": "BoxModel.webp",
+    "alt": "Browser developer tools showing the the internal representation of an element",
+    "type": "external-figure",
+    "caption": "Developer tools showing the internal representation of an element"
   }
 ]

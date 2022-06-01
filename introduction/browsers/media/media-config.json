@@ -2,13 +2,15 @@
   {
     "path": "DevTools.webp",
     "alt": "Browser Developer Tools showing HTML, CSS, and JS",
-    "type": "figure",
-    "caption": "Developer tools showing the website's code"
+    "type": "inline-figure",
+    "caption": "Developer tools showing the website's code",
+    "tag": "showing-code"
   },
   {
     "path": "BoxModel.webp",
-    "alt": "Browser Developer Tools showing the Box Model of an element",
-    "type": "figure",
-    "caption": "Developer tools showing the internal representation of an element"
+    "alt": "Browser developer tools showing the the internal representation of an element",
+    "type": "inline-figure",
+    "caption": "Developer tools showing the internal representation of an element",
+    "tag": "internal-rep"
   }
 ]

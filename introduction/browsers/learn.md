@@ -12,12 +12,16 @@ It would follow then that if we had a deep understanding of plain HTML, CSS, and
 
 That is why in this course we are not going to be covering 3rd party tools in any depth. We are going to create a solid foundation of web knowledge so that you may branch off after this course in whatever direction interests you.
 
-## Figure 1
+## Developer tools showing the website's code
+
+{{showing-code}}
 
 Since the browser needs all of the website's code to render everything properly on the page, it stores this code locally. We can use the Developer Tools to take a look at this code.
 
 On the right in the first figure we have a browser window showing the developer tools open on the left side. Here we have opened up the Elements tab, the Styles tab, and a JavaScript file in the Sources tab to show that the web page displayed is made up of just HTML, CSS, and JavaScript - and that we have access to all of this code.
 
-## Figure 2
+## Developer tools showing the internal representation of an element
+
+{{internal-rep}}
 
 Underneath the surface of a website, browsers create a lot of hidden internal representations for each bit of text and every block or section. With the developer tools you can take a peak at these internal representations to help with your development when you're tweaking and modifying things. Later on in this course we'll go over these internal representations to learn what all of it means and why it's there.

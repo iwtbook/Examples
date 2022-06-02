@@ -10,6 +10,8 @@ The repo for [introweb.tech/examples](https://introweb.tech/examples) (same as t
 
 1. [How to Read this Repo](#how-to-read-this-repo)
    1. [`_repo-apis`](#repo-apis)
+      1. [Content API](#content-api)
+      2. [Zip API](#zip-api)
    2. [Main Category Directories](#main-category-directories)
    3. [`root-dir-config.json`](#root-dir-configjson)
    4. [General Repo Files](#general-repo-files)
@@ -44,6 +46,9 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
 </dl>
 
 ### Content API
+
+*Note: Everything for the Content API is pre-prended with `/repos` so `/:repo/demos` becomes `https://introweb.tech/repos/examples/demos` in practice*
+
 <table>
   <thead>
     <tr>
@@ -70,7 +75,7 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
       <td><code>dir</code> (Optional - the desired subdirectory. Defaults to every subdirectory.)</td>
       <td>Array&lt;String&gt;</td>
       <td>A list of every demo in the specified repo. In no particular order.</td>
-      <td><code>GET /examples/demos?dir=html</code></td>
+      <td><code>GET /examples/demos?=html</code></td>
     </tr>
     <tr>
       <td><code>GET</code></td>
@@ -107,10 +112,37 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
     <tr>
       <td><code>GET</code></td>
       <td><code>/:repo/route-configs</code></td>
-      <td><code>dir</code> (Optional - )</td>
+      <td><code>dir</code> (Optional - the desired subdirectory. Defaults to every subdirectory.)</td>
       <td>Object</td>
       <td>Reads all of the <code>demo-config.json</code> and <code>dir-config.json</code> files and makes returns them in a structured object in order according to the configs. If <code>dir</code> is specified, just that subdirectory is returned and all of the demos are flattened (proper order is retained).</td>
       <td><code>GET /examples/route-configs</code></td>
+    </tr>
+  </tbody>
+</table>
+
+### Zip API
+
+*Note: Everything for the Zip API is pre-prended with `/zip` so `/` becomes `https://introweb.tech/zip` in practice (the trailing slash having been omitted here)*
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Route</th>
+      <th>Query Params</th>
+      <th>Returns</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/</code></td>
+      <td><code>repo</code> & <code>dir</code> (Both required - the desired demo to zip and the repo it's from)</td>
+      <td>.zip File</td>
+      <td>Creates a .zip file of all of the relevant files to the specified demo (ignoring files like <code>quiz.md</code> which aren't meant to be seen raw by users).</td>
+      <td>GET https://introweb.tech/zip?repo=examples&dir=http/bundle-size</td>
     </tr>
   </tbody>
 </table>

@@ -2,14 +2,18 @@
 
 The repo of examples that the introweb.tech website pulls from.
 
-Live at [https://introweb.tech/examples](https://introweb.tech/examples)
+Live at [https://introweb.tech/examples](https://introweb.tech/examples).
+
+The repo for introweb.tech/examples (same as the examples.introweb.tech site/repo) can be found [here](https://github.com/iwtbook/examples.introweb.tech).
 
 
 ## How this repo is Continuously Deploying (CD)
 
-![Diagram explaining the Continuous Deployment process for this repo](examples-repo.webp)
+![Diagram explaining the Continuous Deployment process for this repo](continuous-deployment.webp)
 
-Test
+The above diagram illustrates the continuous deployment process of this repository. The process starts on your local machine.
+
+1. `TODO`
 
 
 ## How to read this repo
@@ -45,4 +49,4 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
 
 ## Contributing
 
-f
+`TODO`

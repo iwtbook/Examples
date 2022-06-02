@@ -57,12 +57,12 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
   </thead>
   <tbody>
     <tr>
-      <td>`GET`</td>
+      <td><code>GET</code></td>
       <td>/:repo</td>
-      <td>`dir` (optional - the desired subdirectory)</td>
+      <td><code>dir</code> (optional - the desired subdirectory)</td>
       <td>Array&lt;String&gt;</td>
       <td>Fetches all of the file paths for every file (and a URL to reach the file contents at) in a given repository.</td>
-      <td>`GET /examples?dir=html`</td>
+      <td><code>GET /examples?dir=html</code></td>
     </tr>
   </tbody>
 </table>

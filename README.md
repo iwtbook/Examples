@@ -43,8 +43,8 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
   <dd>All of the sidebars for each main category (asynchronous, communications, etc) are pre-generated on build and placed in the top level of each main category in a file called `sidebar.html`. This script creates and updates those files.</dd>
 </dl>
 
+### Content API
 <table>
-  <caption>Content API</caption>
   <thead>
     <tr>
       <th>Method</th>
@@ -58,11 +58,35 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
   <tbody>
     <tr>
       <td><code>GET</code></td>
-      <td>/:repo</td>
-      <td><code>dir</code> (optional - the desired subdirectory)</td>
-      <td>Array&lt;String&gt;</td>
-      <td>Fetches all of the file paths for every file (and a URL to reach the file contents at) in a given repository.</td>
+      <td><code>/:repo</code></td>
+      <td><code>dir</code> (optional - the desired subdirectory. Defaults to every subdirectory.)</td>
+      <td>Object&lt;Array&gt;</td>
+      <td>All of the file paths for every file (and a URL to reach the file contents at) in the specified repo. In no particular order.</td>
       <td><code>GET /examples?dir=html</code></td>
+    </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/demos</code></td>
+      <td><code>dir</code> (optional - the desired subdirectory. Defaults to every subdirectory.)</td>
+      <td>Array&lt;String&gt;</td>
+      <td>A list of every demo in the specified repo. In no particular order.</td>
+      <td><code>GET /examples/demos?dir=html</code></td>
+    </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/demo-frames</code></td>
+      <td>none</td>
+      <td>Array&lt;String&gt;</td>
+      <td>A list of every demo and what frames they use (e.g. markdown, editor, etc). In no particular order.</td>
+      <td><code>GET /examples/demo-frames</code></td>
+    </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/file/*</code></td>
+      <td>none</td>
+      <td>Object</td>
+      <td>The contents and metadata of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
+      <td><code>GET /examples/file/form/spa/index.html</code></td>
     </tr>
   </tbody>
 </table>

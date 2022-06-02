@@ -7,13 +7,23 @@ Live at [https://introweb.tech/examples](https://introweb.tech/examples).
 The repo for introweb.tech/examples (same as the examples.introweb.tech site/repo) can be found [here](https://github.com/iwtbook/examples.introweb.tech).
 
 
-## How this repo is Continuously Deploying (CD)
+## Continuously Deployment (CD)
 
 ![Diagram explaining the Continuous Deployment process for this repo](continuous-deployment.webp)
 
 The above diagram illustrates the continuous deployment process of this repository. The process starts on your local machine.
 
-1. `TODO`
+1. On your local machine changes are made to either the [Examples](https://github.com/iwtbook/examples) repo (by adding / modifying a demo) or the [examples.introweb.tech](https://github.com/iwtbook/examples.introweb.tech) repo
+2. The git origin is then set to the corresponding bare repository on the DigitalOcean droplet
+   * `git@introweb.tech:/var/repos/bare/examples.git`
+   * `git@introweb.tech:/var/repos/bare/examples.introweb.tech.git`
+3. The changes are pushed to the remote machine
+4. Both repos have a `post-receive` hook that then pushes those changes to GitHub and triggers the build process after changes are pushed
+   1. The hook first pushes the changes to GitHub
+   2. Then, if the changes came from the [Examples](https://github.com/iwtbook/examples) repo, the hook first runs `build-sidebar.js` to generate all of the `sidebar.html` pages
+   3. Then the hook removes the old `/dist` folder from the `examples.introweb.tech` repo
+   4. Finally, the hook initiates the build process for `examples.introweb.tech` which creates a new `/dist` folder
+5. The `examples.introweb.tech` DocumentRoot has been set up to live at `/var/www/examples.introweb.tech` within Apache on the remote server. The actual file at `/var/www/examples.introweb.tech` is a symbolic link to `/var/repos/examples.introweb.tech/dist` so creating the new `/dist` folder automatically deploys the updates live. (This is the dashed green arrow in the diagram)
 
 
 ## How to read this repo

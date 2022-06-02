@@ -86,7 +86,7 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
       <td>none</td>
       <td>Object</td>
       <td>The contents and metadata of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
-      <td><code>GET /examples/file/form/spa/index.html</code></td>
+      <td><code>GET /examples/file/form/<br>spa/index.html</code></td>
     </tr>
     <tr>
       <td><code>GET</code></td>
@@ -94,7 +94,7 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
       <td>none</td>
       <td>String</td>
       <td>The direct contents (with the MIME type `text/plain`) of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
-      <td><code>GET /examples/contents/form/spa/index.html</code></td>
+      <td><code>GET /examples/contents/<br>form/spa/index.html</code></td>
     </tr>
     <tr>
       <td><code>GET</code></td>
@@ -102,7 +102,7 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
       <td>none</td>
       <td>String</td>
       <td>The direct contents (with the corresponding MIME type) of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
-      <td><code>GET /examples/contents-mime/form/spa/index.html</code></td>
+      <td><code>GET /examples/contents-<br>mime/form/spa/index.html</code></td>
     </tr>
     <tr>
       <td><code>GET</code></td>

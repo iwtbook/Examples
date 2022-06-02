@@ -59,7 +59,7 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
     <tr>
       <td><code>GET</code></td>
       <td><code>/:repo</code></td>
-      <td><code>dir</code> (optional - the desired subdirectory. Defaults to every subdirectory.)</td>
+      <td><code>dir</code> (Optional - the desired subdirectory. Defaults to every subdirectory.)</td>
       <td>Object&lt;Array&gt;</td>
       <td>All of the file paths for every file (and a URL to reach the file contents at) in the specified repo. In no particular order.</td>
       <td><code>GET /examples?dir=html</code></td>
@@ -67,7 +67,7 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
     <tr>
       <td><code>GET</code></td>
       <td><code>/:repo/demos</code></td>
-      <td><code>dir</code> (optional - the desired subdirectory. Defaults to every subdirectory.)</td>
+      <td><code>dir</code> (Optional - the desired subdirectory. Defaults to every subdirectory.)</td>
       <td>Array&lt;String&gt;</td>
       <td>A list of every demo in the specified repo. In no particular order.</td>
       <td><code>GET /examples/demos?dir=html</code></td>
@@ -87,6 +87,30 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
       <td>Object</td>
       <td>The contents and metadata of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
       <td><code>GET /examples/file/form/spa/index.html</code></td>
+    </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/contents/*</code></td>
+      <td>none</td>
+      <td>String</td>
+      <td>The direct contents (with the MIME type `text/plain`) of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
+      <td><code>GET /examples/contents/form/spa/index.html</code></td>
+    </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/contents-mime/*</code></td>
+      <td>none</td>
+      <td>String</td>
+      <td>The direct contents (with the corresponding MIME type) of the specified file from the specified repo. Must be a relative route to a file (e.g. `form/spa/index.html`)</td>
+      <td><code>GET /examples/contents-mime/form/spa/index.html</code></td>
+    </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/route-configs</code></td>
+      <td><code>dir</code> (Optional - )</td>
+      <td>Object</td>
+      <td>Reads all of the <code>demo-config.json</code> and <code>dir-config.json</code> files and makes returns them in a structured object in order according to the configs. If <code>dir</code> is specified, just that subdirectory is returned and all of the demos are flattened (proper order is retained).</td>
+      <td><code>GET /examples/route-configs</code></td>
     </tr>
   </tbody>
 </table>

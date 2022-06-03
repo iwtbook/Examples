@@ -1,0 +1,55 @@
+The file this goes into must be titled demo-config.json.
+Options available:
+
+To specify what files you want to show in the editor frame, add them
+to the "files" object as seen below. Leave the object empty (but do not delete it)
+if you are not using the editor frame. The "show" array specifies what lines
+to show from that file. For example - "show": [2,15] will only show lines 2 through 15.
+The "highlight" array similarly specifies which lines from that file to highlight.
+Unlike "show", "highlight" can be a series of ranges instead of one range, so you can have
+"highlight": [2,[4,10],12] which will highlight lines 2, 4, 5, 6, 7, 8, 9, 10, and 12.
+
+For the Metadata object, you must specify the "title" with a string. This is the title that
+will be used everywhere for your demo in place of the demo's folder name. If you want to
+include a discussion forum for your demo, create one over on https://forum.introweb.tech and
+add the link in "forum", otherwise delete that property.
+
+For the Settings object, "module" will always be false (for now). The "frames" array
+specifies which frames you need for your demo. The allowed combinations are (and the frame
+order DOES matter):
+
+["markdown"]
+["editor"]
+["editor", "view"]
+["markdown", "editor"]
+["markdown", "media"]
+["markdown", "editor", "view"]
+
+{
+  "files": {
+    "index.html": {
+      "show": [3,16],
+      "highlight": [4,[8,10]]
+    },
+    "styles.css": {
+      "show": [],
+      "highlight": []
+    },
+    "script.js": {
+      "show": [],
+      "highlight": []
+    }
+  },
+  "metadata": {
+    "title": "Class Sillyness",
+    "forum": "https://forum.introweb.tech/topic/1/some-topic"
+  },
+  "settings": {
+    "module": false,
+    "frames": [
+      "markdown",
+      "editor",
+      "view"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+The file this goes into must be titled dir-config.json.
+
+The "name" property is the title that will be used for this folder
+everywhere in place of its folder name. The "order" array determines
+the order of all of the demos in this folder.
+
+You must have either nothing in the "order" array or every demo in
+this folder.
+
+You must use the actual folder names for the "order" array not the
+names you specified in the config files
+
+{
+  "name": "HTML",
+  "order": [
+    "html-vs-xhtml",
+    "core-HTML5",
+    "proper-vs-convention",
+    "urls"
+  ]
+}

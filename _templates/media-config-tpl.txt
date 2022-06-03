@@ -1,0 +1,65 @@
+The file this goes into must be titled media-config.json.
+
+There are 4 "types" of media you can use:
+
+Type 1 - "inline-figure"
+This is when you want to include media inline in your learn.md file. These take
+4 properties: "path", "alt", "type", and "tag".
+The "type" will always be "inline-figure".
+The "path" is the relative path (relative to the media directory) to your image.
+The "alt" is the alternative text for the image, and
+the "tag" is a unique key that you will use to mark where you want the inline
+image to go. Below I have the "tag" as "first-image", so to use it in my learn.md
+I would place {{first-image}} with the double braces like handlebar notation
+where I want the image to go.
+
+Every other type below will need the media frame. If you just have inline-figures you
+technically don't need the media frame.
+
+Type 2 - "external-figure"
+This will place the image in the media frame. The order of the images in the media
+frame is the same order that you use in this config file. These take 4 properties:
+The "path" is the relative path (relative to the media directory) to your image.
+The "alt" is the alternative text for your image.
+The "type" will always be "external-figure", and
+the "caption" is the <figcaption> you want displayed above this image in the
+media frame (this is required).
+
+Type 3 - "video"
+This is place the video in the media frame in the same order that you specify.
+These take 3 properties: "path", "type", and "mime".
+The "path" is the relative path (relative to the media directory) to your video.
+The "type" will always be "video", and
+the "mime" is the MIME type of your video, for example .mp4 is "video/mp4".
+
+Type 4 - Any other type of media file
+Anything that's not one of the above is defaulted to an <object> tag. This is
+useful for things like PDFs and such. These take 3 properties:
+The "path" is the relative path (relative to the media directory) to your video.
+The "alt" is the alternative text for your File, and
+the "type" is anything that isn't "internal-figure", "external-figure", or "video".
+
+[
+  {
+    "path": "image1.webp",
+    "alt": "The first image",
+    "type": "inline-figure",
+    "tag": "first-image"
+  },
+  {
+    "path": "image2.webp",
+    "alt": "The second image",
+    "type": "external-figure",
+    "caption": "This is the second image"
+  },
+  {
+    "path": "video.mp4",
+    "type": "video",
+    "mime": "video/mp4"
+  },
+  {
+    "path": "file.pdf",
+    "type": "pdf",
+    "alt": "This is a PDF",
+  }
+]

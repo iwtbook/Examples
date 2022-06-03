@@ -25,7 +25,7 @@ Upon first glance there are a few different things you'll notice in this repo:
 - A directory that starts with an underscore (_repo-apis)
 - A bunch of category directories (asynchronous, communications, etc)
 - A file called `root-dir-config.json`
-- The basic `.gitignore` and `README.md` files
+- The basic `.gitignore`, `README.md`, and `continuous-deployment.webp` files
 
 We'll start with `_repo-apis`
 
@@ -149,20 +149,47 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
 
 ### Main Category Directories
 
-`TODO`
+Outside of `_repo-apis`, every other folder in the top level of this repo is a "Main Category Directory". If you look over at [https://introweb.tech/examples](https://introweb.tech/examples), the main categories are the sections that say "**Part I - Introduction**", "**Part II - HTTP**", etc. Everything is built and generated dynamically from this repo, so if a new folder is added, that /examples page will update in the build process.
 
 ### `root-dir-config.json`
 
-`TODO`
+We'll talk about `dir-config.json` files later on, but this `root-dir-config.json` file is a special file that specifies which order the main category directories should appear in as it defaults to alphabetical.
 
 ### General Repo Files
 
-`TODO`
+- `.gitignore` has some basics files and direcotries to ignore to keep this repo clean
+- `README.md` and `continuous-deployment.webp` both make up this current README that you are reading right now.
 
 
 ## How to Contribute
 
-`TODO`
+### Adding a demo
+
+Adding a demo in an existing category / subcategory is pretty straightforward. All of the templates for 
+these files along with the available options for each template will be inside [`_templates`](_templates). Follow these
+steps:
+
+1. Create a new folder next to the other demo(s) in the existing category / subcategory
+2. (Optional) If you want this demo to be in a specific order with the other demos it's near, you can specify that
+   inside the [`dir-config.json`](_templates/dir-config-tpl.txt) that should be in the same directory as where you just created the new folder.
+3. Inside this new folder, create a file named [`demo-config.json`](_templates/demo-config-tpl.txt).
+4. (Optional) If you want to include markdown to explain your demo, create a file named [`learn.md`](_templates/learn-tpl.md) to store it all.
+5. (Optional) If you want to include a quiz for users to take after going through your demo, create a file named [`quiz.md`](_templates/quiz-tpl.md).
+6. (Optional) If you want to include a tab to store links to resources for users, create a file named [`resources.md`](_templates/resources-tpl.md).
+7. (Optional) If your demo has media:
+   i. Create a folder inside your demo named `media` where your media will live.
+   ii. Inside that `media` folder, create a file named [`media-config.json`](_templates/media-config-tpl.txt).
+   iii. Specify whether you want to use that media inline in the markdown panel or external in its own media panel
+        inside the media config.
+
+### Adding a new category / subcategory
+
+Adding a new category / subcategory is also pretty straightforward. All of the templates for 
+these files along with the available options for each template will be inside [`_templates`](_templates). Follow these steps:
+
+1. Create a new folder where you want your new category / subcategory to be.
+2. Inside that folder, create a file named [`dir-config.json`](_templates/dir-config-tpl.txt).
+3. If this demo is a main category demo, add its folder's name to the order array in [`root-dir-config.json`](root-dir-config.json).
 
 
 ## Continuous Deployment (CD)

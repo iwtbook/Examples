@@ -1,3 +1,5 @@
-# DevTools - Part 1
+# DevTools - The Network Tab
 
-This is a test.
+For the next few examples we'll be using the [democompany.com](https://democompany.com/) website.
+
+{{network-tab}}

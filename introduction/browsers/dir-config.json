@@ -1,6 +1,4 @@
 {
   "name": "How do Browsers Work?",
-  "order": [
-    "the-basics"
-  ]
+  "order": ["the-basics", "devtools-pt1"]
 }

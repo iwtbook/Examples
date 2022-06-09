@@ -1,0 +1,13 @@
+{
+  "files": {},
+  "ignore": [],
+  "metadata": {
+    "title": "DevTools - pt 10",
+    "forum": "https://forum.introweb.tech/topic/16/introduction-browsers-developer-tools-pt-X"
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown", "website"]
+  },
+  "website": "https://democompany.com/resources-404.html"
+}

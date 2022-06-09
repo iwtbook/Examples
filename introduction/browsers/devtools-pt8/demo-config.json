@@ -1,0 +1,13 @@
+{
+  "files": {},
+  "ignore": [],
+  "metadata": {
+    "title": "DevTools - pt 8",
+    "forum": "https://forum.introweb.tech/topic/14/introduction-browsers-developer-tools-pt-viii"
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown", "website"]
+  },
+  "website": "https://democompany.com/resources-slow.html"
+}

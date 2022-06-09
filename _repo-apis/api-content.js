@@ -114,8 +114,12 @@ app.get('/:repo/demo-frames', (req, res) => {
     let demoFrame = {
       path: path,
       frames: config.settings?.frames,
-      title: config.metadata?.title
+      title: config.metadata?.title,
     };
+    // Check for website and add if needed
+    if (config.website) {
+      demoFrame.website = config.website;
+    }
     // Check for media config and add it if needed
     let mediaConfigPath = `${repoDir}/${path}/media/media-config.json`;
     if (fs.existsSync(mediaConfigPath)) {
@@ -310,15 +314,17 @@ app.get('/:repo/route-configs', (req, res) => {
     let dirCategory = req.query.dir.split('/')[0];
     // Grab the demos array
     routeConfigs = {
-      demos: flattenRouteConfigs(routeConfigs)
-    }
+      demos: flattenRouteConfigs(routeConfigs),
+    };
     if (req.query.dir != '/') {
       routeConfigs.demos = routeConfigs.demos.filter((route) => {
         if (route.startsWith(req.query.dir)) return route;
       });
       // grab the section name
       let categoryDemo = `${currentRepo}/${dirCategory}/dir-config.json`;
-      routeConfigs.name = JSON.parse(fs.readFileSync(categoryDemo, { encoding: 'utf8' }));
+      routeConfigs.name = JSON.parse(
+        fs.readFileSync(categoryDemo, { encoding: 'utf8' })
+      );
       routeConfigs.name = routeConfigs.name.name;
     }
   }

@@ -30,6 +30,14 @@ an element and then selecting "Edit HTML" lets you edit the entire element.
 
 {{editing-attributes}}
 
+## Adding an Element
+
+Adding a new element is just like editing the attributes of an element.Right click on an element that is
+adjacent to where you want to place your new element, select "Edit HTML", place your cursor before or after
+the element and add in your new element.
+
+{{adding-elements}}
+
 ## Deleting an Element
 
 You can also remove elements entirely by right clicking them and selecting "Delete Element".

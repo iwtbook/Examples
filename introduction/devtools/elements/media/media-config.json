@@ -2,13 +2,13 @@
   {
     "path": "opening-closing-elements.mov",
     "alt": "Showing and hiding HTML element children in the developer tools",
-    "type": "inline-figure",
+    "type": "inline-video",
     "tag": "opening-closing-elements"
   },
   {
     "path": "editing-text.mov",
     "alt": "Editing the text content inside of an element in the developer tools",
-    "type": "inline-figure",
+    "type": "inline-video",
     "tag": "editing-text"
   }
 ]

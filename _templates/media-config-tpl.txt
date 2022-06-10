@@ -1,6 +1,6 @@
 The file this goes into must be titled media-config.json.
 
-There are 4 "types" of media you can use:
+There are 5 "types" of media you can use:
 
 Type 1 - "inline-figure"
 This is when you want to include media inline in your learn.md file. These take
@@ -13,10 +13,19 @@ image to go. Below I have the "tag" as "first-image", so to use it in my learn.m
 I would place {{first-image}} with the double braces like handlebar notation
 where I want the image to go.
 
+Type 2 - "inline-video"
+This is when you want to include videos inline in your learn.md file. These take
+4 properties: "path", "type", "mime", and "tag".
+The "path" is the relative path (relative to the media directory) to your image.
+The "type" will always be "inline-figure".
+the "mime" is the MIME type of your video, for example .mp4 is "video/mp4", and
+the "tag" is a unique key that you will use to mark where you want the inline
+video to go.
+
 Every other type below will need the media frame. If you just have inline-figures you
 technically don't need the media frame.
 
-Type 2 - "external-figure"
+Type 3 - "external-figure"
 This will place the image in the media frame. The order of the images in the media
 frame is the same order that you use in this config file. These take 4 properties:
 The "path" is the relative path (relative to the media directory) to your image.
@@ -25,14 +34,14 @@ The "type" will always be "external-figure", and
 the "caption" is the <figcaption> you want displayed above this image in the
 media frame (this is required).
 
-Type 3 - "video"
+Type 4 - "video"
 This is place the video in the media frame in the same order that you specify.
 These take 3 properties: "path", "type", and "mime".
 The "path" is the relative path (relative to the media directory) to your video.
 The "type" will always be "video", and
 the "mime" is the MIME type of your video, for example .mp4 is "video/mp4".
 
-Type 4 - Any other type of media file
+Type 5 - Any other type of media file
 Anything that's not one of the above is defaulted to an <object> tag. This is
 useful for things like PDFs and such. These take 3 properties:
 The "path" is the relative path (relative to the media directory) to your video.
@@ -44,6 +53,12 @@ the "type" is anything that isn't "internal-figure", "external-figure", or "vide
     "path": "image1.webp",
     "alt": "The first image",
     "type": "inline-figure",
+    "tag": "first-image"
+  },
+  {
+    "path": "image1.webp",
+    "type": "inline-video",
+    "mime": "video/mp4"
     "tag": "first-image"
   },
   {

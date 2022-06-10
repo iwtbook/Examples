@@ -10,5 +10,17 @@
     "alt": "Editing the text content inside of an element in the developer tools",
     "type": "inline-video",
     "tag": "editing-text"
+  },
+  {
+    "path": "editing-attributes.mov",
+    "alt": "Editing the attributes of an element in the developer tools",
+    "type": "inline-video",
+    "tag": "editing-attributes"
+  },
+  {
+    "path": "deleting-elements.mov",
+    "alt": "Deleting elements in the developer tools",
+    "type": "inline-video",
+    "tag": "deleting-elements"
   }
 ]

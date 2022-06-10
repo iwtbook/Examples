@@ -1,0 +1,11 @@
+{
+  "name": "Developer Tools",
+  "order": [
+    "elements",
+    "console",
+    "network",
+    "sources",
+    "application",
+    "lighthouse"
+  ]
+}

@@ -1,7 +1,4 @@
 {
   "name": "Introduction",
-  "order": [
-    "welcome",
-    "browsers"
-  ]
+  "order": ["welcome", "browsers", "devtools"]
 }

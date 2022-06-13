@@ -1,31 +1,31 @@
 [
   {
     "path": "opening-closing-elements.mov",
-    "alt": "Showing and hiding HTML element children in the developer tools",
+    "mime": "video/quicktime",
     "type": "inline-video",
     "tag": "opening-closing-elements"
   },
   {
     "path": "editing-text.mov",
-    "alt": "Editing the text content inside of an element in the developer tools",
+    "mime": "video/quicktime",
     "type": "inline-video",
     "tag": "editing-text"
   },
   {
     "path": "editing-attributes.mov",
-    "alt": "Editing the attributes of an element in the developer tools",
+    "mime": "video/quicktime",
     "type": "inline-video",
     "tag": "editing-attributes"
   },
   {
     "path": "deleting-elements.mov",
-    "alt": "Deleting elements in the developer tools",
+    "mime": "video/quicktime",
     "type": "inline-video",
     "tag": "deleting-elements"
   },
   {
     "path": "adding-elements.mov",
-    "alt": "Adding elements in the developer tools",
+    "mime": "video/quicktime",
     "type": "inline-video",
     "tag": "adding-elements"
   }

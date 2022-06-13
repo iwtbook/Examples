@@ -1,4 +1,4 @@
-# Elements
+# Elements - HTML
 
 First we need to open our developer tools panel, you can do so a few ways (in most browsers).
 
@@ -44,8 +44,12 @@ You can also remove elements entirely by right clicking them and selecting "Dele
 
 {{deleting-elements}}
 
-## Element Breakpoints
+## CSS
 
-## Viewing & Editing CSS
+### Viewing & Editing CSS
 
-## Emulating Mobile Devices
+By default the CSS is usually next to the markup in the panel
+
+### Emulating Mobile Devices
+
+### Element Breakpoints

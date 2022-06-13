@@ -1,0 +1,32 @@
+[
+  {
+    "path": "html-and-css.png",
+    "alt": "DevTools panel showing HTML and CSS",
+    "type": "inline-figure",
+    "tag": "html-and-css"
+  },
+  {
+    "path": "editing-rules.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "editing-rules"
+  },
+  {
+    "path": "adding-new-selector.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "new-selector"
+  },
+  {
+    "path": "forcing-states.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "forcing-states"
+  },
+  {
+    "path": "adding-classes.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "adding-classes"
+  }
+]

@@ -1,11 +1,4 @@
 {
   "name": "Developer Tools",
-  "order": [
-    "elements",
-    "console",
-    "network",
-    "sources",
-    "application",
-    "lighthouse"
-  ]
+  "order": ["elements-html", "elements-css"]
 }

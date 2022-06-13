@@ -34,4 +34,12 @@ To add classes to selected elements from the CSS panel, use the `.cls` menu
 
 ## Emulating Mobile Devices
 
+To emulate the size of mobile devices, select the phone / tablet icon near the element selection icon. NOTE: This only mimics the size of certain devices, this does not emulate the hardware or browser support of those devices, so it is not a replacement for QA on actual devices.
+
+{{emulating-devices}}
+
 ## Element Breakpoints
+
+We will discuss breakpoints later at length, but for now just know that you can pause the execution of code when certain actions (attributes are modified, elements are deleted, etc) happen to elements you specify.
+
+{{element-breakpoints}}

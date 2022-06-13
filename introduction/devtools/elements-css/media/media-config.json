@@ -28,5 +28,17 @@
     "mime": "video/quicktime",
     "type": "inline-video",
     "tag": "adding-classes"
+  },
+  {
+    "path": "emulating-devices.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "emulating-devices"
+  },
+  {
+    "path": "element-breakpoints.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "element-breakpoints"
   }
 ]

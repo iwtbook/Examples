@@ -1,0 +1,11 @@
+{
+  "files": {},
+  "metadata": {
+    "title": "Console Tab",
+    "forum": "https://forum.introweb.tech/topic/20/introduction-devtools-console"
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown"]
+  }
+}

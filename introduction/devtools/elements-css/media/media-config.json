@@ -3,42 +3,49 @@
     "path": "html-and-css.png",
     "alt": "DevTools panel showing HTML and CSS",
     "type": "inline-figure",
-    "tag": "html-and-css"
+    "tag": "html-and-css",
+    "hide": true
   },
   {
     "path": "editing-rules.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "editing-rules"
+    "tag": "editing-rules",
+    "hide": true
   },
   {
     "path": "adding-new-selector.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "new-selector"
+    "tag": "new-selector",
+    "hide": true
   },
   {
     "path": "forcing-states.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "forcing-states"
+    "tag": "forcing-states",
+    "hide": true
   },
   {
     "path": "adding-classes.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "adding-classes"
+    "tag": "adding-classes",
+    "hide": true
   },
   {
     "path": "emulating-devices.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "emulating-devices"
+    "tag": "emulating-devices",
+    "hide": true
   },
   {
     "path": "element-breakpoints.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "element-breakpoints"
+    "tag": "element-breakpoints",
+    "hide": true
   }
 ]

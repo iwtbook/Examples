@@ -3,36 +3,42 @@
     "path": "inspecting-console-logs.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "inspecting-console-logs"
+    "tag": "inspecting-console-logs",
+    "hide": true
   },
   {
     "path": "inspecting-errors.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "inspecting-errors"
+    "tag": "inspecting-errors",
+    "hide": true
   },
   {
     "path": "inspecting-404s.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "inspecting-404s"
+    "tag": "inspecting-404s",
+    "hide": true
   },
   {
     "path": "simple-js.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "simple-js"
+    "tag": "simple-js",
+    "hide": true
   },
   {
     "path": "inspecting-objects.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "inspecting-objects"
+    "tag": "inspecting-objects",
+    "hide": true
   },
   {
     "path": "interacting-with-elements.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "interacting-with-elements"
+    "tag": "interacting-with-elements",
+    "hide": true
   }
 ]

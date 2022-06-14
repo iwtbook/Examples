@@ -1,14 +1,38 @@
 [
   {
-    "path": "",
-    "alt": "",
-    "type": "inline-figure",
-    "tag": ""
-  },
-  {
-    "path": "",
+    "path": "inspecting-console-logs.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": ""
+    "tag": "inspecting-console-logs"
+  },
+  {
+    "path": "inspecting-errors.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "inspecting-errors"
+  },
+  {
+    "path": "inspecting-404s.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "inspecting-404s"
+  },
+  {
+    "path": "simple-js.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "simple-js"
+  },
+  {
+    "path": "inspecting-objects.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "inspecting-objects"
+  },
+  {
+    "path": "interacting-with-elements.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "interacting-with-elements"
   }
 ]

@@ -25,7 +25,7 @@ Similar to console logs, error messages will always have the name of the file th
 
 Some HTTP response codes will also trigger a console error (but not all, so it's usually best to check the `network` tab to ensure that all of your HTTP requests have gone through successfully).
 
-One of the most common to trigger a console error is a `404` response code for when a requested resource cannot be found on the server. Following the
+One of the most common to trigger a console error is a `404` response code for when a requested resource cannot be found on the server. Following the link will either bring you to the element in the markup or the code that created the request.
 
 {{inspecting-404s}}
 

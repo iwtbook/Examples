@@ -30,7 +30,7 @@
     "path": "02-request-line-meta-pt2.webp",
     "alt": "A crop of just the request line (and some metadata) for a single network request showcasing the request URL, request method, status code, remote address, and referrer policy with each path highlighted a unique color.",
     "type": "inline-figure",
-    "tag": "request-line-meta-pt1",
+    "tag": "request-line-meta-pt2",
     "hide": true
   },
   {

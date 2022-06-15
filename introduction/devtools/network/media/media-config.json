@@ -1,0 +1,92 @@
+[
+  {
+    "path": "00-at-a-glance.png",
+    "alt": "Network tab showing all assets transferred over the network and metadata about them",
+    "type": "inline-figure",
+    "tag": "at-a-glance"
+  },
+  {
+    "path": "01-selecting-one-pt1.png",
+    "alt": "A selected network request showing request line, response headers,and request headers",
+    "type": "inline-figure",
+    "tag": "selecting-one-pt1",
+    "hide": true
+  },
+  {
+    "path": "01-selecting-one-pt2.webp",
+    "alt": "A selected network request showing request line, response headers,and request headers with each section highlighted a unique color",
+    "type": "inline-figure",
+    "tag": "selecting-one-pt2",
+    "hide": true
+  },
+  {
+    "path": "02-request-line-meta-pt1.png",
+    "alt": "A crop of just the request line (and some metadata) for a single network request showcasing the request URL, request method, status code, remote address, and referrer policy.",
+    "type": "inline-figure",
+    "tag": "request-line-meta-pt1",
+    "hide": true
+  },
+  {
+    "path": "02-request-line-meta-pt2.webp",
+    "alt": "A crop of just the request line (and some metadata) for a single network request showcasing the request URL, request method, status code, remote address, and referrer policy with each path highlighted a unique color.",
+    "type": "inline-figure",
+    "tag": "request-line-meta-pt1",
+    "hide": true
+  },
+  {
+    "path": "03-response-headers-pt1.png",
+    "alt": "A crop of just the response headers for a single network request.",
+    "type": "inline-figure",
+    "tag": "response-headers-pt1",
+    "hide": true
+  },
+  {
+    "path": "03-response-headers-pt2.webp",
+    "alt": "A crop of just the response headers for a single network request with the Content-Encoding, Content-Length, Content-Type, Date, Last-Modified, and Server headers highlighted.",
+    "type": "inline-figure",
+    "tag": "response-headers-pt2",
+    "hide": true
+  },
+  {
+    "path": "04-request-headers-pt1.png",
+    "alt": "A crop of just the request headers for a single network request.",
+    "type": "inline-figure",
+    "tag": "request-headers-pt1",
+    "hide": true
+  },
+  {
+    "path": "04-request-headers-pt2.webp",
+    "alt": "A crop of just the request headers for a single network request with the Accept, Accept-Encoding, Cache-Control, Host, and User-Agent headers highlighted.",
+    "type": "inline-figure",
+    "tag": "request-headers-pt2",
+    "hide": true
+  },
+  {
+    "path": "05-request-404.png",
+    "alt": "The network tab of the developer tools showing a resource that has returned a 404 not found status code.",
+    "type": "inline-figure",
+    "tag": "request-404",
+    "hide": true
+  },
+  {
+    "path": "06-request-options.png",
+    "alt": "The right click menu for a network request in the network tab. In the menu are some options such as Open in sources panel or new tab, clear browser cache or cookies, and block request URL or domain.",
+    "type": "inline-figure",
+    "tag": "request-options",
+    "hide": true
+  },
+  {
+    "path": "07-throttling-and-cache.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "throttling-and-cache",
+    "hide": true
+  },
+  {
+    "path": "08-network-totals.png",
+    "alt": "The bottom of the network tab showing statistics about the current page's network requests such as the total number, the amount of data transferred over the network, the size of that transferred data uncompressed, how long before the DOM was constructed, and how long it took until the page had finished loading everything.",
+    "type": "inline-figure",
+    "tag": "network-totals",
+    "hide": true
+  }
+]

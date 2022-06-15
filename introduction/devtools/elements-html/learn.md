@@ -43,13 +43,3 @@ the element and add in your new element.
 You can also remove elements entirely by right clicking them and selecting "Delete Element".
 
 {{deleting-elements}}
-
-## CSS
-
-### Viewing & Editing CSS
-
-By default the CSS is usually next to the markup in the panel
-
-### Emulating Mobile Devices
-
-### Element Breakpoints

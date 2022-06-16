@@ -24,6 +24,15 @@ The general section of each request first shows some data that comes from each o
 
 ## Response Headers
 
+The response headers show metadata about the HTTP response that came back from the web server. In the annotated figure below some of the more important headers have been highlighted for demonstration.
+
+<ul>
+  <li>The <span style="background-color:#b6f0b2;display:inline-block;padding:2px 5px;">Green</span> headers describe the content in the body of the response (here it is the compression encoding method, the size, and the format).</li>
+  <li>The <span style="background-color:#f8b6fc;display:inline-block;padding:2px 5px;">Pink</span> header is a timestamp of when the response was sent back</li>
+  <li>The <span style="background-color:#ffb2b2;display:inline-block;padding:2px 5px;">Red</span> header is a timestamp of when the resource was last updated on the server (used to determine if your local cached version is old)</li>
+  <li>The <span style="background-color:#b2c5ef;display:inline-block;padding:2px 5px;">Blue</span> header is describing the software that the web server is running</li>
+</ul>
+
 {{response-headers-pt1}}
 {{response-headers-pt2}}
 

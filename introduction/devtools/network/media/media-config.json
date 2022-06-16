@@ -18,7 +18,7 @@
     "type": "inline-figure",
     "tag": "selecting-one-pt2",
     "hide": true,
-    "Summary": "View Figure with Annotations"
+    "summary": "View Figure with Annotations"
   },
   {
     "path": "02-request-line-meta-pt1.png",
@@ -33,7 +33,7 @@
     "type": "inline-figure",
     "tag": "request-line-meta-pt2",
     "hide": true,
-    "Summary": "View Figure with Annotations"
+    "summary": "View Figure with Annotations"
   },
   {
     "path": "03-response-headers-pt1.png",
@@ -48,7 +48,7 @@
     "type": "inline-figure",
     "tag": "response-headers-pt2",
     "hide": true,
-    "Summary": "View Figure with Annotations"
+    "summary": "View Figure with Annotations"
   },
   {
     "path": "04-request-headers-pt1.png",
@@ -63,7 +63,7 @@
     "type": "inline-figure",
     "tag": "request-headers-pt2",
     "hide": true,
-    "Summary": "View Figure with Annotations"
+    "summary": "View Figure with Annotations"
   },
   {
     "path": "05-request-404.png",

@@ -4,27 +4,33 @@ There are 5 "types" of media you can use:
 
 Type 1 - "inline-figure"
 This is when you want to include media inline in your learn.md file. These take
-5 properties: "path", "alt", "type", "tag", and "hide"
+6 properties: "path", "alt", "type", "tag", "hide", and "summary"
 The "type" will always be "inline-figure".
 The "path" is the relative path (relative to the media directory) to your image.
 The "alt" is the alternative text for the image,
 the "tag" is a unique key that you will use to mark where you want the inline
-image to go, and
+image to go,
 the "hide" is a boolean property that determines whether the figure is hidden
-initially inside a summary element or not. Below I have the "tag" as "first-image",
+initially inside a summary element or not, and
+the "summary" property is optional and can only be used if "hide" is true. This 
+property specifies what the "summary" text is for the hidden figure. The default is
+"View Figure". Below I have the "tag" as "first-image",
 so to use it in my learn.md I would place {{first-image}} with the double braces
 like handlebar notation where I want the image to go.
 
 Type 2 - "inline-video"
 This is when you want to include videos inline in your learn.md file. These take
-4 properties: "path", "type", "mime", and "tag",
+4 properties: "path", "type", "mime", "tag", and "summary"
 The "path" is the relative path (relative to the media directory) to your image.
 The "type" will always be "inline-figure".
 the "mime" is the MIME type of your video, for example .mp4 is "video/mp4",
 the "tag" is a unique key that you will use to mark where you want the inline
-video to go, and
+video to go,
 the "hide" is a boolean property that determines whether the video is hidden
-initially inside a summary element or not.
+initially inside a summary element or not, and
+the "summary" property is optional and can only be used if "hide" is true. This 
+property specifies what the "summary" text is for the hidden video. The default is
+"View Demo Clip". 
 
 Every other type below will need the media frame. If you just have inline-figures you
 technically don't need the media frame.

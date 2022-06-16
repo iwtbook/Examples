@@ -17,7 +17,8 @@
     "alt": "A selected network request showing request line, response headers,and request headers with each section highlighted a unique color",
     "type": "inline-figure",
     "tag": "selecting-one-pt2",
-    "hide": true
+    "hide": true,
+    "Summary": "View Figure with Annotations"
   },
   {
     "path": "02-request-line-meta-pt1.png",
@@ -31,7 +32,8 @@
     "alt": "A crop of just the request line (and some metadata) for a single network request showcasing the request URL, request method, status code, remote address, and referrer policy with each path highlighted a unique color.",
     "type": "inline-figure",
     "tag": "request-line-meta-pt2",
-    "hide": true
+    "hide": true,
+    "Summary": "View Figure with Annotations"
   },
   {
     "path": "03-response-headers-pt1.png",
@@ -45,7 +47,8 @@
     "alt": "A crop of just the response headers for a single network request with the Content-Encoding, Content-Length, Content-Type, Date, Last-Modified, and Server headers highlighted.",
     "type": "inline-figure",
     "tag": "response-headers-pt2",
-    "hide": true
+    "hide": true,
+    "Summary": "View Figure with Annotations"
   },
   {
     "path": "04-request-headers-pt1.png",
@@ -59,7 +62,8 @@
     "alt": "A crop of just the request headers for a single network request with the Accept, Accept-Encoding, Cache-Control, Host, and User-Agent headers highlighted.",
     "type": "inline-figure",
     "tag": "request-headers-pt2",
-    "hide": true
+    "hide": true,
+    "Summary": "View Figure with Annotations"
   },
   {
     "path": "05-request-404.png",

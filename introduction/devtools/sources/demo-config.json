@@ -1,0 +1,11 @@
+{
+  "files": {},
+  "metadata": {
+    "title": "Sources Tab",
+    "forum": "https://forum.introweb.tech/topic/22/introduction-devtools-sources"
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown"]
+  }
+}

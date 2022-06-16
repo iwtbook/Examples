@@ -1,0 +1,30 @@
+[
+  {
+    "path": "01-viewing-files.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "viewing-files",
+    "hide": true
+  },
+  {
+    "path": "02-pretty-printing.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "pretty-printing",
+    "hide": true
+  },
+  {
+    "path": "03-breakpoints.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "breakpoints",
+    "hide": true
+  },
+  {
+    "path": "04-the-call-stack.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "callstack",
+    "hide": true
+  }
+]

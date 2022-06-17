@@ -1,0 +1,23 @@
+[
+  {
+    "path": "01-storage.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "storage",
+    "hide": true
+  },
+  {
+    "path": "02-cookies.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "cookies",
+    "hide": true
+  },
+  {
+    "path": "03-sw-and-cache.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "sw-and-cache",
+    "hide": true
+  }
+]

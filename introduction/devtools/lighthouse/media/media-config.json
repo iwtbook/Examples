@@ -31,16 +31,16 @@
     "tag": "accessibility"
   },
   {
-    "path": "05-best-practices-SEO.png",
+    "path": "05-best-practices.png",
     "alt": "Best Practices section of the lighthouse report - A score of 100% is shown at the top, and under Passed Audits there are items such as 'Uses HTTPS', 'Avoids requesting the geolocation permission on page load', 'Page has the HTML doctype', among other things.",
     "type": "inline-figure",
-    "tag": "best-practices-SEO"
+    "tag": "best-practices"
   },
   {
-    "path": "05-best-practices-SEO.png",
+    "path": "06-SEO.png",
     "alt": "SEO section of the lighthouse report - This part has an 83%, for Content Best Practices it says that Document does not have a meta description, and some image elements do not have alt attributes.",
     "type": "inline-figure",
-    "tag": "best-practices-SEO"
+    "tag": "SEO"
   },
   {
     "path": "07-PWA.png",

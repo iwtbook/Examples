@@ -6,6 +6,7 @@
     "console",
     "network",
     "sources",
-    "application"
+    "application",
+    "lighthouse"
   ]
 }

@@ -16,6 +16,6 @@ Cookies are stored in a similar manner, except there is a nice table showing the
 
 ## ServiceWorkers and the Browser Cache
 
-ServiceWorkers and browser cache tools comes in handy when you are creating Progressive Web Apps. The browser cache displays all of the files that have been caches by a ServiceWorker along with the HTTP request data for that file. The ServiceWorker settings up top allow you to pass mesasges to and from your ServiceWorkers, manually update or unregister them, view how many you have registered, and modify the network to simulate offline modes (a feature also available in the network tab)
-.
+ServiceWorkers and browser cache tools comes in handy when you are creating Progressive Web Apps. The browser cache displays all of the files that have been caches by a ServiceWorker along with the HTTP request data for that file. The ServiceWorker settings up top allow you to pass mesasges to and from your ServiceWorkers, manually update or unregister them, view how many you have registered, and modify the network to simulate offline modes (a feature also available in the network tab).
+
 {{sw-and-cache}}

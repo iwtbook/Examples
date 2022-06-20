@@ -1,0 +1,51 @@
+[
+  {
+    "path": "01-generating-lighthouse.mp4",
+    "mime": "video/mp4",
+    "type": "inline-video",
+    "tag": "generating-lighthouse",
+    "hide": true
+  },
+  {
+    "path": "02-lighthouse-scores.png",
+    "alt": "Lighthouse scores showing 5 percentage charts (The higher the percentage the better). In order from left to right: Performance 78%, Accessibility 73%, Best Practices 100%, SEO 83%, PWA (not applicable)",
+    "type": "inline-figure",
+    "tag": "lighthouse-scores"
+  },
+  {
+    "path": "03-a-performance.png",
+    "alt": "Performance section of lighthouse report - Shows performance being 78% score which is so-so. The main opportunities it suggests fixing are serving images in next-gen formats, eliminating render-blocking resources, and efficiently encoding images. It also points out that the largest contentful pain is a slow 5.7s.",
+    "type": "inline-figure",
+    "tag": "performance-a"
+  },
+  {
+    "path": "03-b-performance.png",
+    "alt": "Performance section of lighthouse report continued. The diagnostics section states that the image elements not having explicit width and height attributes, and serving static assets without efficient cache policies in place are of concern.",
+    "type": "inline-figure",
+    "tag": "performance-b"
+  },
+  {
+    "path": "04-accessibility.png",
+    "alt": "Accessibility section of lighthouse report - Shows accessibility being a 73%. Under the Names and Labels section it states that some image elements do not have alt attributes. Under the Contrast section it states that background and foreground colors do not have a sufficient contrast ratio. And under the navigation section it shows that heading elements are not in a sequentially-descending order.",
+    "type": "inline-figure",
+    "tag": "accessibility"
+  },
+  {
+    "path": "05-best-practices-SEO.png",
+    "alt": "Best Practices section of the lighthouse report - A score of 100% is shown at the top, and under Passed Audits there are items such as 'Uses HTTPS', 'Avoids requesting the geolocation permission on page load', 'Page has the HTML doctype', among other things.",
+    "type": "inline-figure",
+    "tag": "best-practices-SEO"
+  },
+  {
+    "path": "05-best-practices-SEO.png",
+    "alt": "SEO section of the lighthouse report - This part has an 83%, for Content Best Practices it says that Document does not have a meta description, and some image elements do not have alt attributes.",
+    "type": "inline-figure",
+    "tag": "best-practices-SEO"
+  },
+  {
+    "path": "07-PWA.png",
+    "alt": "PWA section of the lighthouse report - Since the lighthouse report detected this website is not a PWA it did not give a PWA score. This section states that the website is either missing or has an incorrectly configured web app manifest / service worker since it doesn't meet the installability requirements.",
+    "type": "inline-figure",
+    "tag": "PWA"
+  }
+]

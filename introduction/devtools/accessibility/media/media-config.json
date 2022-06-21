@@ -1,0 +1,45 @@
+[
+  {
+    "path": "01-report.png",
+    "alt": "Lighthouse report settings page showing just accessibility is checked",
+    "type": "inline-figure",
+    "tag": "report"
+  },
+  {
+    "path": "02-score.png",
+    "alt": "Lighthouse report results showing just accessibility was score and it received a 100%",
+    "type": "inline-figure",
+    "tag": "score"
+  },
+  {
+    "path": "03-manually-check.png",
+    "alt": "Accessibility lighthouse report results showing additional items to manually check, including things like 'The page has a logical tab order', 'Interactive controls are keyboard focusable', and 'Interactive elements indicate their purpose and state'.",
+    "type": "inline-figure",
+    "tag": "manually-check"
+  },
+  {
+    "path": "04-passed-audits.png",
+    "alt": "Accessibility lighthouse report results showing all of the passed audits, which include audits such as 'aria attributes match their roles', 'aria attributes are valid and not misspelled', and 'background and foreground colors have a sufficient contrast ratio'.",
+    "type": "inline-figure",
+    "tag": "passed-audits"
+  },
+  {
+    "path": "05-not-applicable.png",
+    "alt": "Accessibility lighthouse report results showing audits that weren't applicable to the current document, which included audits such as 'accesskey values are unique', 'button, link, and menuitem elements have accessible names', and 'roles have all required aria attributes'.",
+    "type": "inline-figure",
+    "tag": "not-applicable"
+  },
+  {
+    "path": "06-hover.png",
+    "alt": "Element picker tooltip that shows when you are selecting an element in the document. Notably, this tooltip shows an accessibility section which computes the color contrast ratio, shows the name in the accessibility tree, shows the aria role, and shows whether the element is keyboard focusable or not.",
+    "type": "inline-figure",
+    "tag": "hover"
+  },
+  {
+    "path": "07-a11y-tree.mov",
+    "mime": "video/quicktime",
+    "type": "inline-video",
+    "tag": "a11y-tree",
+    "hide": true
+  }
+]

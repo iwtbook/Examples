@@ -1,0 +1,26 @@
+[
+  {
+    "path": "01-opening-palette.png",
+    "alt": "An open empty command palette in a browser's developer tools. Suggestions for the search box include 'Show Application', 'Show CSS Overview', and 'Show Console', among other things.",
+    "type": "inline-figure",
+    "tag": "opening-palette"
+  },
+  {
+    "path": "02a-disable-javascript.png",
+    "alt": "The DevTools command palette showing the text 'disable javascript' in the search box, and the top suggestion being 'Disable JavaScript' with the 'Debugger' tag next to it.",
+    "type": "inline-figure",
+    "tag": "disable-js"
+  },
+  {
+    "path": "02b-enable-javascript.png",
+    "alt": "The DevTools command palette showing the text 'enable javascript' in the search box, and the top suggestion being 'Enable JavaScript' with the 'Debugger'",
+    "type": "inline-figure",
+    "tag": "enable-js"
+  },
+  {
+    "path": "03-changing-settings.webp",
+    "alt": "The DevTools settings menu showing settings for Appearance, Sources, Elements, Network, Performance, Console, Extension, Persistence, Debugger, Global, and Sync",
+    "type": "inline-figure",
+    "tag": "changing-settings"
+  }
+]

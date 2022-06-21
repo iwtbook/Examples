@@ -1,0 +1,11 @@
+{
+  "files": {},
+  "metadata": {
+    "title": "Command Palette",
+    "forum": "https://forum.introweb.tech/topic/26/introduction-devtools-command-palette"
+  },
+  "settings": {
+    "module": false,
+    "frames": ["markdown"]
+  }
+}

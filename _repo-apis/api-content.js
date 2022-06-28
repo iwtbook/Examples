@@ -358,8 +358,11 @@ app.get('/:repo/demo-files', (req, res) => {
   });
   // Find all of the files for each demo
   allDemoFiles = allDemoFiles.map((demo) => {
-    let demoFiles = files.filter((file) => file.startsWith(demo));
     let demoTitle = demo.replaceAll(repoDir + '/', '');
+    let demoFiles = files.filter((file) => file.startsWith(demo));
+    demoFiles = demoFiles.map((file) => {
+      return file.replace(demoTitle, '');
+    });
     return {
       title: demoTitle,
       files: demoFiles,

@@ -117,6 +117,14 @@ This directory is where all of the APIs and build scripts live. The APIs are pre
       <td>Reads all of the <code>demo-config.json</code> and <code>dir-config.json</code> files and makes returns them in a structured object in order according to the configs. If <code>dir</code> is specified, just that subdirectory is returned and all of the demos are flattened (proper order is retained).</td>
       <td><code>GET /examples/route-configs</code></td>
     </tr>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/:repo/demo-files</code></td>
+      <td>none</td>
+      <td>Object&lt;Object&gt;</td>
+      <td>Returns an object of every demo containing an array of all of their files.</td>
+      <td><code>GET /examples/demo-files</code></td>
+    </tr>
   </tbody>
 </table>
 

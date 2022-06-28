@@ -334,6 +334,38 @@ app.get('/:repo/route-configs', (req, res) => {
 });
 
 /**
+ * Returns a list of all of the demos and what files are in each demo
+ */
+app.get('/:repo/demo-files', (req, res) => {
+  // Right now only the examples repo is supported
+  if (!supportedRepos.includes(req.params.repo)) {
+    res.status(400).send('Repo not supported');
+    return;
+  }
+  // The string path to the current repo we are in
+  const repoDir = getCurrentRepo();
+  // All of the desired files in our current repo
+  let files = recursiveFileSearch(repoDir, exclude);
+  // Filter out anything that isn't an demo-config.json path
+  let allDemoFiles = files.filter((file) => file.endsWith('/demo-config.json'));
+  // Remove the repoDir and demo-config.json from the file paths
+  allDemoFiles = allDemoFiles.map((file) => {
+    return file.replace('/demo-config.json', '');
+  });
+  // Find all of the files for each demo
+  allDemoFiles.map((demo) => {
+    let demoFiles = files.filter((file) => file.startsWith(demo));
+    let demoTitle = demo.replaceAll(repoDir + '/', '');
+    return {
+      title: demoTitle,
+      files: demoFiles,
+    };
+  });
+
+  res.json(allDemoFiles);
+});
+
+/**
  * Begins the server, starts listening for incoming requests.
  * Not technically a route.
  */

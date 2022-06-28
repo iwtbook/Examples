@@ -3,35 +3,30 @@
     "path": "opening-closing-elements.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "opening-closing-elements",
-    "hide": true
+    "tag": "opening-closing-elements"
   },
   {
     "path": "editing-text.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "editing-text",
-    "hide": true
+    "tag": "editing-text"
   },
   {
     "path": "editing-attributes.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "editing-attributes",
-    "hide": true
+    "tag": "editing-attributes"
   },
   {
     "path": "deleting-elements.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "deleting-elements",
-    "hide": true
+    "tag": "deleting-elements"
   },
   {
     "path": "adding-elements.mov",
     "mime": "video/quicktime",
     "type": "inline-video",
-    "tag": "adding-elements",
-    "hide": true
+    "tag": "adding-elements"
   }
 ]

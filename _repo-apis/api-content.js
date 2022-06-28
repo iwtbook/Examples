@@ -351,16 +351,13 @@ app.get('/:repo/demo-files', (req, res) => {
   });
   // Filter out anything that isn't an demo-config.json path
   let allDemoFiles = files.filter((file) => file.endsWith('/demo-config.json'));
-  // Remove the repoDir and demo-config.json from the file paths
-  allDemoFiles = allDemoFiles.map((file) => {
-    file = file.replaceAll(repoDir + '/', '');
-    return file.replace('/demo-config.json', '');
-  });
   // Find all of the files for each demo
   allDemoFiles = allDemoFiles.map((demo) => {
     let demoTitle = demo.replaceAll(repoDir + '/', '');
+    demoTitle = demoTitle.replaceAll('/demo-config.json', '');
     let demoFiles = files.filter((file) => file.startsWith(demo));
     demoFiles = demoFiles.map((file) => {
+      file = file.replaceAll('/demo-config.json', '');
       return file.replace(demoTitle + '/', '');
     });
     return {

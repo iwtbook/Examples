@@ -365,8 +365,13 @@ app.get('/:repo/demo-files', (req, res) => {
       files: demoFiles,
     };
   });
+  // Convert to an easier to use format
+  let formattedFiles = {};
+  allDemoFiles.forEach((demo) => {
+    formattedFiles[demo.title] = demo.files;
+  });
 
-  res.json(allDemoFiles);
+  res.json(formattedFiles);
 });
 
 /**

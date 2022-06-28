@@ -346,10 +346,14 @@ app.get('/:repo/demo-files', (req, res) => {
   const repoDir = getCurrentRepo();
   // All of the desired files in our current repo
   let files = recursiveFileSearch(repoDir, exclude);
+  files = files.map((file) => {
+    return file.replaceAll(repoDir + '/', '');
+  });
   // Filter out anything that isn't an demo-config.json path
   let allDemoFiles = files.filter((file) => file.endsWith('/demo-config.json'));
   // Remove the repoDir and demo-config.json from the file paths
   allDemoFiles = allDemoFiles.map((file) => {
+    file = file.replaceAll(repoDir + '/', '');
     return file.replace('/demo-config.json', '');
   });
   // Find all of the files for each demo

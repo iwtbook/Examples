@@ -361,7 +361,7 @@ app.get('/:repo/demo-files', (req, res) => {
     let demoTitle = demo.replaceAll(repoDir + '/', '');
     let demoFiles = files.filter((file) => file.startsWith(demo));
     demoFiles = demoFiles.map((file) => {
-      return file.replace(demoTitle, '');
+      return file.replace(demoTitle + '/', '');
     });
     return {
       title: demoTitle,

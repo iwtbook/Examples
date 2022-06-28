@@ -353,7 +353,7 @@ app.get('/:repo/demo-files', (req, res) => {
     return file.replace('/demo-config.json', '');
   });
   // Find all of the files for each demo
-  allDemoFiles.map((demo) => {
+  allDemoFiles = allDemoFiles.map((demo) => {
     let demoFiles = files.filter((file) => file.startsWith(demo));
     let demoTitle = demo.replaceAll(repoDir + '/', '');
     return {

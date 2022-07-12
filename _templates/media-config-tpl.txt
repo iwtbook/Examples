@@ -55,7 +55,7 @@ Type 5 - Any other type of media file
 Anything that's not one of the above is defaulted to an <object> tag. This is
 useful for things like PDFs and such. These take 3 properties:
 The "path" is the relative path (relative to the media directory) to your video.
-The "alt" is the alternative text for your File, and
+The "mime" is the MIME type of your File, and
 the "type" is anything that isn't "internal-figure", "external-figure", or "video".
 
 [

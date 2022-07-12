@@ -1,0 +1,20 @@
+[
+	{
+		"path": "coffee.mp4",
+		"mime": "video/mp4",
+		"type": "inline-video",
+		"tag": "coffee"
+	},
+	{
+		"path": "lego.gif",
+		"alt": "Lego blocks moving",
+		"type": "inline-figure",
+		"tag": "lego"
+	},
+	{
+		"path": "more-javascript.jpeg",
+		"alt": "More JavaScript comic",
+		"type": "inline-figure",
+		"tag": "javascript"
+	}
+]

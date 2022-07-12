@@ -20,7 +20,7 @@ like handlebar notation where I want the image to go.
 
 Type 2 - "inline-video"
 This is when you want to include videos inline in your learn.md file. These take
-4 properties: "path", "type", "mime", "tag", and "summary"
+5 properties: "path", "type", "mime", "tag", and "summary"
 The "path" is the relative path (relative to the media directory) to your image.
 The "type" will always be "inline-figure".
 the "mime" is the MIME type of your video, for example .mp4 is "video/mp4",

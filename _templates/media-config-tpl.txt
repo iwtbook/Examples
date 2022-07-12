@@ -44,7 +44,7 @@ The "type" will always be "external-figure", and
 the "caption" is the <figcaption> you want displayed above this image in the
 media frame (this is required).
 
-Type 4 - "video"
+Type 4 - "external-video"
 This is place the video in the media frame in the same order that you specify.
 These take 3 properties: "path", "type", and "mime".
 The "path" is the relative path (relative to the media directory) to your video.

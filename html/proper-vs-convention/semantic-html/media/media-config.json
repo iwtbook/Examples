@@ -1,12 +1,14 @@
 [
-  {
-    "path": "cow-cat.jpeg",
-    "alt": "Cat peaking out from behind monitor",
-    "type": "image"
-  },
-  {
-    "path": "ghibli.webp",
-    "alt": "A gif from a studio Ghibli movie",
-    "type": "image"
-  }
+	{
+		"path": "cow-cat.jpeg",
+		"alt": "Cat peaking out from behind monitor",
+		"type": "external-figure",
+		"caption": "Cow-Cat"
+	},
+	{
+		"path": "ghibli.webp",
+		"alt": "A gif from a studio Ghibli movie",
+		"type": "external-figure",
+		"caption": "Ghibli"
+	}
 ]

@@ -1,4 +1,11 @@
 {
-  "name": "CSS",
-  "order": []
+	"name": "CSS",
+	"order": [
+		"hello-css",
+		"static-content",
+		"layout",
+		"media",
+		"conditional-responses",
+		"animations-and-movement"
+	]
 }

@@ -145,7 +145,6 @@ function generateMarkup(category, examplesDir, demoList, currDirLength) {
 				let listItem = DOCUMENT.createElement('li');
 				let anchor = DOCUMENT.createElement('a');
 				let demoPath = path.replace(examplesDir + '/', '');
-				anchor.setAttribute('target', '_top');
 				anchor.setAttribute('href', `https://introweb.tech/learn#${demoPath}`);
 				anchor.innerHTML = name;
 

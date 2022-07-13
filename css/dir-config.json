@@ -2,6 +2,7 @@
 	"name": "CSS",
 	"order": [
 		"hello-css",
+		"cascade",
 		"static-content",
 		"layout",
 		"media",

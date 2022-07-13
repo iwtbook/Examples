@@ -15,7 +15,8 @@
 				background-image: url('media/nft.png');
 				background-position: center;
 				background-repeat: no-repeat;
-				background-size: calc(100% - 40px);
+				background-size: 100%;
+				box-sizing: border-box;
 				height: 400px;
 				width: 400px;
 			}
@@ -53,8 +54,18 @@
 					<figure id="figure-transparent">
 						<figcaption>Transparent Image on Top</figcaption>
 						<div class="content">
-							<img src="media/nft.png" alt="Bored Ape with 3D glasses on" />
-							<img src="media/transparent.gif" alt="Invisible Image" />
+							<img
+								src="media/nft.png"
+								alt="Bored Ape with 3D glasses on"
+								height="400"
+								width="400"
+							/>
+							<img
+								src="media/transparent.gif"
+								alt="Invisible Image"
+								height="400"
+								width="400"
+							/>
 						</div>
 					</figure>
 					<figure id="figure-tiles">

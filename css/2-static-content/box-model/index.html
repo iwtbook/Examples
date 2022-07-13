@@ -1,68 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Box Model</title>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Script -->
-    <script src="script.js" type="module"></script>
-  </head>
-  <body>
-    <header>
-      <h1>The Box Model</h1>
-    </header>
-    <main>
-      <section>
-        <header>
-          <h2>What is the box model?</h2>
-          <p class="answer">
-            The box model is a box consisting of 3 layers that wraps around the
-            <strong>content</strong> of every HTML element. The three layers are
-            (starting at the inner-most layer): <strong>padding</strong>,
-            <strong>border</strong>, and <strong>margin</strong>. A good way to
-            conceptualize this is to think about a painting on a wall.
-            <a href="javascript:toggleDialog()">Explaining metaphor</a>
-          </p>
-          <dialog>
-            <img
-              src="photograph-box-model-demo.jpg"
-              alt="Box model diagram with person holding up picture frame"
-              width="700"
-            />
-          </dialog>
-        </header>
-      </section>
-      <section>
-        <header>
-          <h2>Box Model Diagram</h2>
-        </header>
-        <div id="wrapper-box">
-          <div id="box-margin">
-            <p>Margin</p>
-          </div>
-          <div id="box-border">
-            <p>Border</p>
-          </div>
-          <div id="box-padding">
-            <p>Padding</p>
-          </div>
-          <div id="box-content">
-            <p>Content</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <header>
-          <h2>Box Model in Action</h2>
-        </header>
-        <div id="content-wrapper">
-          <div id="demo-box">This is content</div>
-          <output id="code">
-            <pre><code>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Box Model</title>
+	</head>
+	<body>
+		<header>
+			<h1>The Box Model</h1>
+		</header>
+		<main>
+			<section>
+				<header>
+					<h2>Box Model in Action</h2>
+				</header>
+				<div id="content-wrapper">
+					<div id="demo-box">This is content</div>
+					<output id="code">
+						<pre><code>
     #demo-box {
         background-color: <span class="bg-color">#8cb6c0</span>;
         <span class="title border">border-color:</span> <span class="border-color">#17282d</span>;
@@ -76,191 +31,191 @@
         <span class="title content">width:</span> <span class="w">500</span>px;
     }
             </code></pre>
-          </output>
-        </div>
-        <form>
-          <fieldset>
-            <p>Content:</p>
-            <label for="bg-color">Background Color:</label>
-            <input type="color" name="bg-color" id="bg-color" value="#99e3f5" />
-            <label for="sync-content">Sync Content:</label>
-            <input
-              type="checkbox"
-              name="sync-content"
-              id="sync-content"
-              checked
-            />
-            <label for="size-height">Height:</label>
-            <input
-              type="range"
-              name="height"
-              id="size-height"
-              value="18"
-              min="0"
-              max="36"
-            />
-            <label for="size-width">Width:</label>
-            <input
-              type="range"
-              name="width"
-              id="size-width"
-              value="200"
-              min="0"
-              max="400"
-            />
-          </fieldset>
-          <fieldset>
-            <p>Padding:</p>
-            <label for="sync-content">Sync Padding:</label>
-            <input
-              type="checkbox"
-              name="sync-padding"
-              id="sync-padding"
-              checked
-            />
-            <label for="size-padding-top">Top:</label>
-            <input
-              type="range"
-              name="padding-top"
-              id="size-padding-top"
-              value="20"
-              min="0"
-              max="50"
-            />
-            <label for="size-padding-right">Right:</label>
-            <input
-              type="range"
-              name="padding-right"
-              id="size-padding-right"
-              value="20"
-              min="0"
-              max="50"
-            />
-            <label for="size-padding-bottom">Bottom:</label>
-            <input
-              type="range"
-              name="padding-bottom"
-              id="size-padding-bottom"
-              value="20"
-              min="0"
-              max="50"
-            />
-            <label for="size-padding-left">Left:</label>
-            <input
-              type="range"
-              name="padding-left"
-              id="size-padding-left"
-              value="20"
-              min="0"
-              max="50"
-            />
-          </fieldset>
-          <fieldset>
-            <p>Border:</p>
-            <label for="border-color">Border Color:</label>
-            <input
-              type="color"
-              name="border-color"
-              id="border-color"
-              value="#17282d"
-            />
-            <label for="sync-content">Sync Border:</label>
-            <input
-              type="checkbox"
-              name="sync-border"
-              id="sync-border"
-              checked
-            />
-            <label for="size-border-top">Top:</label>
-            <input
-              type="range"
-              name="border-top"
-              id="size-border-top"
-              value="10"
-              min="0"
-              max="20"
-            />
-            <label for="size-border-right">Right:</label>
-            <input
-              type="range"
-              name="border-right"
-              id="size-border-right"
-              value="10"
-              min="0"
-              max="20"
-            />
-            <label for="size-border-bottom">Bottom:</label>
-            <input
-              type="range"
-              name="border-bottom"
-              id="size-border-bottom"
-              value="10"
-              min="0"
-              max="20"
-            />
-            <label for="size-border-left">Left:</label>
-            <input
-              type="range"
-              name="border-left"
-              id="size-border-left"
-              value="10"
-              min="0"
-              max="20"
-            />
-          </fieldset>
-          <fieldset>
-            <p>Margin:</p>
-            <label for="sync-content">Sync Margin:</label>
-            <input
-              type="checkbox"
-              name="sync-margin"
-              id="sync-margin"
-              checked
-            />
-            <label for="size-margin-top">Top:</label>
-            <input
-              type="range"
-              name="margin-top"
-              id="size-margin-top"
-              value="20"
-              min="0"
-              max="50"
-            />
-            <label for="size-margin-right">Right:</label>
-            <input
-              type="range"
-              name="margin-right"
-              id="size-margin-right"
-              value="20"
-              min="0"
-              max="50"
-            />
-            <label for="size-margin-bottom">Bottom:</label>
-            <input
-              type="range"
-              name="margin-bottom"
-              id="size-margin-bottom"
-              value="20"
-              min="0"
-              max="50"
-            />
-            <label for="size-margin-left">Left:</label>
-            <input
-              type="range"
-              name="margin-left"
-              id="size-margin-left"
-              value="20"
-              min="0"
-              max="50"
-            />
-          </fieldset>
-        </form>
-      </section>
-    </main>
-    <script>
-      function toggleDialog() {
-        document.querySelector('dialog').toggleAttribute('open');
-      }
-    </script>
-  </body>
+					</output>
+				</div>
+				<form>
+					<fieldset>
+						<p>Content:</p>
+						<label for="bg-color">Background Color:</label>
+						<input type="color" name="bg-color" id="bg-color" value="#99e3f5" />
+						<label for="sync-content">Sync Content:</label>
+						<input
+							type="checkbox"
+							name="sync-content"
+							id="sync-content"
+							checked
+						/>
+						<label for="size-height">Height:</label>
+						<input
+							type="range"
+							name="height"
+							id="size-height"
+							value="18"
+							min="0"
+							max="36"
+						/>
+						<label for="size-width">Width:</label>
+						<input
+							type="range"
+							name="width"
+							id="size-width"
+							value="200"
+							min="0"
+							max="400"
+						/>
+					</fieldset>
+					<fieldset>
+						<p>Padding:</p>
+						<label for="sync-content">Sync Padding:</label>
+						<input
+							type="checkbox"
+							name="sync-padding"
+							id="sync-padding"
+							checked
+						/>
+						<label for="size-padding-top">Top:</label>
+						<input
+							type="range"
+							name="padding-top"
+							id="size-padding-top"
+							value="20"
+							min="0"
+							max="50"
+						/>
+						<label for="size-padding-right">Right:</label>
+						<input
+							type="range"
+							name="padding-right"
+							id="size-padding-right"
+							value="20"
+							min="0"
+							max="50"
+						/>
+						<label for="size-padding-bottom">Bottom:</label>
+						<input
+							type="range"
+							name="padding-bottom"
+							id="size-padding-bottom"
+							value="20"
+							min="0"
+							max="50"
+						/>
+						<label for="size-padding-left">Left:</label>
+						<input
+							type="range"
+							name="padding-left"
+							id="size-padding-left"
+							value="20"
+							min="0"
+							max="50"
+						/>
+					</fieldset>
+					<fieldset>
+						<p>Border:</p>
+						<label for="border-color">Border Color:</label>
+						<input
+							type="color"
+							name="border-color"
+							id="border-color"
+							value="#17282d"
+						/>
+						<label for="sync-content">Sync Border:</label>
+						<input
+							type="checkbox"
+							name="sync-border"
+							id="sync-border"
+							checked
+						/>
+						<label for="size-border-top">Top:</label>
+						<input
+							type="range"
+							name="border-top"
+							id="size-border-top"
+							value="10"
+							min="0"
+							max="20"
+						/>
+						<label for="size-border-right">Right:</label>
+						<input
+							type="range"
+							name="border-right"
+							id="size-border-right"
+							value="10"
+							min="0"
+							max="20"
+						/>
+						<label for="size-border-bottom">Bottom:</label>
+						<input
+							type="range"
+							name="border-bottom"
+							id="size-border-bottom"
+							value="10"
+							min="0"
+							max="20"
+						/>
+						<label for="size-border-left">Left:</label>
+						<input
+							type="range"
+							name="border-left"
+							id="size-border-left"
+							value="10"
+							min="0"
+							max="20"
+						/>
+					</fieldset>
+					<fieldset>
+						<p>Margin:</p>
+						<label for="sync-content">Sync Margin:</label>
+						<input
+							type="checkbox"
+							name="sync-margin"
+							id="sync-margin"
+							checked
+						/>
+						<label for="size-margin-top">Top:</label>
+						<input
+							type="range"
+							name="margin-top"
+							id="size-margin-top"
+							value="20"
+							min="0"
+							max="50"
+						/>
+						<label for="size-margin-right">Right:</label>
+						<input
+							type="range"
+							name="margin-right"
+							id="size-margin-right"
+							value="20"
+							min="0"
+							max="50"
+						/>
+						<label for="size-margin-bottom">Bottom:</label>
+						<input
+							type="range"
+							name="margin-bottom"
+							id="size-margin-bottom"
+							value="20"
+							min="0"
+							max="50"
+						/>
+						<label for="size-margin-left">Left:</label>
+						<input
+							type="range"
+							name="margin-left"
+							id="size-margin-left"
+							value="20"
+							min="0"
+							max="50"
+						/>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<script>
+			function toggleDialog() {
+				document.querySelector('dialog').toggleAttribute('open');
+			}
+		</script>
+	</body>
 </html>

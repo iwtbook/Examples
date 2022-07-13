@@ -1,0 +1,9 @@
+[
+	{
+		"path": "photograph-box-model-demo.jpg",
+		"alt": "Woman adjusting picture frame with box model next to it, showing margin, padding, border, and content all within one another.",
+		"type": "inline-figure",
+		"tag": "box-model",
+		"hide": true
+	}
+]

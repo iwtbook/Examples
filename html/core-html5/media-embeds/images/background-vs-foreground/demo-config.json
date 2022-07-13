@@ -3,6 +3,10 @@
 		"index.html": {
 			"show": [],
 			"highlight": []
+		},
+		"style.css": {
+			"show": [],
+			"highlight": []
 		}
 	},
 	"metadata": {

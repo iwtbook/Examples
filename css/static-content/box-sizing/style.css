@@ -47,6 +47,10 @@ figure img {
   z-index: 1;
 }
 
+header {
+  margin-top: 30px;
+}
+
 main {
   margin-bottom: 80px;
 }
@@ -78,7 +82,7 @@ section:first-of-type code {
 }
 
 #border-dialog {
-  background-image: url('media/box-sizing-overlay-sm.svg');
+  background-image: url('assets/box-sizing-overlay-sm.svg');
   height: 319px;
   margin-left: 540px;
   width: 400px;

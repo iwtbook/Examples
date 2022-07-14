@@ -2,16 +2,6 @@
 
 import { namedColors } from './named-colors.js';
 
-init();
-
-function init() {
-	addNamedColors();
-	bindListeners();
-	document.querySelector('form').addEventListener('submit', (e) => {
-		e.preventDefault();
-	});
-}
-
 function addNamedColors() {
 	const select = document.querySelector('select[name^="color"]');
 	for (const color in namedColors) {
@@ -401,3 +391,13 @@ function rgba2hwb(r, g, b, a) {
 
 	return [hue, w, black, a];
 }
+
+function init() {
+	addNamedColors();
+	bindListeners();
+	document.querySelector('form').addEventListener('submit', (e) => {
+		e.preventDefault();
+	});
+}
+
+init();

@@ -78,7 +78,7 @@ section:first-of-type code {
 }
 
 #border-dialog {
-  background-image: url('images/box-sizing-overlay-sm.svg');
+  background-image: url('media/box-sizing-overlay-sm.svg');
   height: 319px;
   margin-left: 540px;
   width: 400px;
@@ -121,7 +121,7 @@ section:first-of-type code {
 }
 
 #content-dialog {
-  background-image: url('images/box-sizing-overlay-lg.svg');
+  background-image: url('media/box-sizing-overlay-lg.svg');
   height: 392px;
   margin: 0 0 0 20px;
   width: 500px;

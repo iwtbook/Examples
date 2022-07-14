@@ -1,20 +1,31 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Color Spaces",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"style.css": {
+			"show": [],
+			"highlight": []
+		},
+		"script.js": {
+			"show": [],
+			"highlight": []
+		},
+		"named-colors.js": {
+			"show": [],
+			"highlight": []
+		},
+		"chroma.min.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Color Spaces"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

@@ -1,20 +1,20 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Functions (WIP)",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"style.css": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Functions (WIP)",
+		"forum": ""
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

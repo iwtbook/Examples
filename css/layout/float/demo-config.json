@@ -1,20 +1,19 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Float",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"style.css": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Float"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

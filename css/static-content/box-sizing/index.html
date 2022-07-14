@@ -1,95 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Box Sizing</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Box Sizing</title>
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Box Sizing</h1>
-    </header>
-    <main>
-      <section>
-        <header>
-          <h2>What is Box Sizing?</h2>
-        </header>
-        <p>
-          Box sizing allows you to specify what the <code>width</code> and
-          <code>height</code> attributes refer to. By default, they refer to the
-          box size of the <code>content-box</code>. This means that when you set
-          <code>400px</code> as the <code>width</code>, the inner-most box width
-          (the content box) is <code>400px</code> wide, and everything else is
-          added on top of that width.
-        </p>
-        <p>
-          By changing the CSS rule <code>box-sizing</code> from
-          <code>content-box</code> to <code>border-box</code>, you make it so
-          that the <code>width</code> and <code>height</code> attributes refer
-          to all boxes up to the border (the content, padding, and border
-          boxes). With that, you can know the exact width of your entire element
-          without having to manually account for the padding and border size.
-        </p>
-        <p>
-          NOTE: the <code>margin</code> box is not factored into any of this as
-          that is considered "outside" the element.
-        </p>
-      </section>
-      <section>
-        <header>
-          <h2>Box Sizing in Action</h2>
-        </header>
-        <div id="code-demos">
-          <pre><code>img {
+		<!-- Main Stylesheet -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Box Sizing</h1>
+		</header>
+		<main>
+			<section>
+				<header>
+					<h2>Box Sizing in Action</h2>
+				</header>
+				<div id="code-demos">
+					<pre><code>img {
   border-width: 10px;
   padding: 40px;
   width: 400px;
 }</code></pre>
-          <pre><code>img#content-box {
+					<pre><code>img#content-box {
   box-sizing: content-box;
 }</code></pre>
-          <pre><code>img#border-box {
+					<pre><code>img#border-box {
   box-sizing: border-box;
 }</code></pre>
-        </div>
-        <div id="figure-wrapper">
-          <figure>
-            <figcaption>
-              <code>box-sizing: content-box </code><span>(default)</span>
-            </figcaption>
-            <dialog id="content-dialog"></dialog>
-            <img
-              id="content-box"
-              src="wave.webp"
-              alt="Ocean wave curling over"
-            />
-          </figure>
-          <figure>
-            <figcaption><code>box-sizing: border-box</code></figcaption>
-            <dialog id="border-dialog"></dialog>
-            <img
-              id="border-box"
-              src="wave.webp"
-              alt="Ocean wave curling over"
-            />
-          </figure>
-        </div>
-      </section>
-    </main>
-    <script>
-      const dialogs = Array.from(document.querySelectorAll('dialog'));
-      const imgs = Array.from(document.querySelectorAll('img'));
-      for (let i = 0; i < imgs.length; i++) {
-        imgs[i].addEventListener('mouseenter', () => {
-          dialogs[i].setAttribute('open', '');
-        });
-        dialogs[i].addEventListener('mouseleave', () => {
-          dialogs[i].removeAttribute('open');
-        });
-      }
-    </script>
-  </body>
+				</div>
+				<div id="figure-wrapper">
+					<figure>
+						<figcaption>
+							<code>box-sizing: content-box </code><span>(default)</span>
+						</figcaption>
+						<dialog id="content-dialog"></dialog>
+						<img
+							id="content-box"
+							src="wave.webp"
+							alt="Ocean wave curling over"
+						/>
+					</figure>
+					<figure>
+						<figcaption><code>box-sizing: border-box</code></figcaption>
+						<dialog id="border-dialog"></dialog>
+						<img
+							id="border-box"
+							src="wave.webp"
+							alt="Ocean wave curling over"
+						/>
+					</figure>
+				</div>
+			</section>
+		</main>
+		<script>
+			const dialogs = Array.from(document.querySelectorAll('dialog'));
+			const imgs = Array.from(document.querySelectorAll('img'));
+			for (let i = 0; i < imgs.length; i++) {
+				imgs[i].addEventListener('mouseenter', () => {
+					dialogs[i].setAttribute('open', '');
+				});
+				dialogs[i].addEventListener('mouseleave', () => {
+					dialogs[i].removeAttribute('open');
+				});
+			}
+		</script>
+	</body>
 </html>

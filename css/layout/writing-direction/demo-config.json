@@ -1,20 +1,19 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Writing Direction",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"style.css": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Writing Direction"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

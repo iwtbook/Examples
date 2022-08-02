@@ -1,20 +1,15 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Bundle Size",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": [
-      "markdown",
-      "editor",
-      "view"
-    ]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Bundle Size"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

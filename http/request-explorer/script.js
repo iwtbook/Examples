@@ -54,6 +54,7 @@ function rate(rating, comment, contentType) {
 			payload = payloadYaml.dump([{ rating: rating, comment: comment }]);
 			break;
 		case 'base64':
+			// b -> a (b to a) converts from string to base64
 			payload = btoa(`rating=${rating},comment=${comment}`);
 			break;
 		case 'text/plain':
@@ -108,7 +109,11 @@ function sendRequest(payload, contentType) {
 	})
 		.then((response) => response.json())
 		.then((data) => {
-			document.querySelector('output').innerHTML = JSON.stringify(data, null 2);
+			document.querySelector('output').innerHTML = JSON.stringify(
+				data,
+				null,
+				2
+			);
 		})
 		.catch((err) => {
 			console.error(err);

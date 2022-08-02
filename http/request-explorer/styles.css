@@ -17,16 +17,18 @@ label[for="comment"] {
 }
 
 output {
-  border: 1px solid rgb(118,118,118);
+  border: 1px solid rgb(118, 118, 118);
   border-radius: 2px;
+  box-sizing: border-box;
   display: inline-block;
   font-family: monospace;
   font-size: 0.9rem;
   margin-top: -16px;
   min-height: 20px;
+  overflow: scroll;
   padding: 5px 10px;
   word-wrap: break-word;
-  width: 320px;
+  width: 100%;
 }
 
 #ajax-rating {

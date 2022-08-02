@@ -17,9 +17,8 @@ function init() {
 		const rating = ratingForm.elements.rating.value;
 		const comment = ratingForm.elements.comment.value;
 		const contentType = ratingForm.elements.contentType.value;
-		const httpMethod = ratingForm.elements.httpMethod.value;
 		// Sends the rating to the server and displays response
-		rate(rating, comment, contentType, httpMethod);
+		rate(rating, comment, contentType);
 	});
 }
 
@@ -30,9 +29,8 @@ function init() {
  * @param {string} rating The user's rating, a value from 1-5
  * @param {string} comment The user's comment, a block of text
  * @param {string} contentType The content-type to send the data as
- * @param {string} httpMethod the HTTP method to use when sending this payload
  */
-function rate(rating, comment, contentType, httpMethod) {
+function rate(rating, comment, contentType) {
 	// Encode the rating and the comment so they are URL safe
 	rating = encodeVal(rating);
 	comment = encodeVal(comment);
@@ -68,7 +66,7 @@ function rate(rating, comment, contentType, httpMethod) {
 			break;
 	}
 	// Send the request to the server and display the response
-	sendRequest(payload, contentType, httpMethod);
+	sendRequest(payload, contentType);
 }
 
 /**
@@ -92,9 +90,8 @@ function encodeVal(val) {
  * the page
  * @param {string} payload the encoded & prepared payload to send to the server
  * @param {string} contentType the content type to use when sending this payload
- * @param {string} httpMethod the HTTP method to use when sending this payload
  */
-function sendRequest(payload, contentType, httpMethod) {
+function sendRequest(payload, contentType) {
 	// Headers for the POST request to use
 	const headers = {
 		'Content-Type': contentType,
@@ -106,7 +103,7 @@ function sendRequest(payload, contentType, httpMethod) {
 	}
 
 	fetch(url, {
-		method: httpMethod,
+		method: 'POST',
 		headers: headers,
 		body: payload,
 	})

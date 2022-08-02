@@ -11,10 +11,6 @@
 		"script.js": {
 			"show": [],
 			"highlight": []
-		},
-		"yaml_dumper.js": {
-			"show": [],
-			"highlight": []
 		}
 	},
 	"metadata": {

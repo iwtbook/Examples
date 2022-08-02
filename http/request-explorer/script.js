@@ -50,8 +50,7 @@ function rate(rating, comment, contentType) {
 			payload = JSON.stringify({ rating: rating, comment: comment });
 			break;
 		case 'text/x-yaml':
-			let payloadYaml = new YAML();
-			payload = payloadYaml.dump([{ rating: rating, comment: comment }]);
+			payload = `rating: ${rating}\ncomment: ${comment}`;
 			break;
 		case 'base64':
 			// b -> a (b to a) converts from string to base64

@@ -108,7 +108,7 @@ function sendRequest(payload, contentType) {
 	})
 		.then((response) => response.json())
 		.then((data) => {
-			document.querySelector('output').innerHTML = JSON.stringify(data);
+			document.querySelector('output').innerHTML = JSON.stringify(data, null 2);
 		})
 		.catch((err) => {
 			console.error(err);

@@ -1,4 +1,4 @@
-var AjaxTCR = {};
+export var AjaxTCR = {};
 
 AjaxTCR.comm = {
 /* readyState constants as defined by w3c */

@@ -4,11 +4,11 @@
 			"show": [],
 			"highlight": []
 		},
-		"myLib.js": {
+		"someLib.js": {
 			"show": [],
 			"highlight": []
 		},
-		"yourLib.js": {
+		"yourCode.js": {
 			"show": [],
 			"highlight": []
 		}
@@ -18,6 +18,6 @@
 	},
 	"settings": {
 		"module": false,
-		"frames": ["markdown", "editor", "view"]
+		"frames": ["markdown", "editor"]
 	}
 }

@@ -1,4 +1,4 @@
-// myLib.js
+// yourCode.js
 
 import { foo } from './someLib.js';
 

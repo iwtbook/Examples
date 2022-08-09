@@ -1,16 +1,27 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Lifecycle",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": ["markdown", "editor", "view"]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"style.css": {
+			"show": [],
+			"highlight": []
+		},
+		"player-card.js": {
+			"show": [],
+			"highlight": []
+		},
+		"script.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Lifecycle"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

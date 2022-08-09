@@ -26,7 +26,7 @@ function createCustomElement() {
 	let template = document.createElement('template');
 	template.innerHTML = `
     <player-card>
-      <player-img src="assets/cristiano-ronaldo.jpeg"></player-img>
+      <player-img src="https://introweb.tech/demo-file/web-components/lifecycle/assets/cristiano-ronaldo.jpeg"></player-img>
       <player-name slot="name">Cristiano Ronaldo</player-name>
       <player-bday slot="bday">February 2nd, 1985 (Age 36)</player-bday>
       <player-nationality slot="nationality">Portuguese</player-nationality>
@@ -82,7 +82,9 @@ function bindEvents() {
 
 	btnModify.addEventListener('click', () => {
 		if (!isModified && isAdded) {
-			newCustomElement.editPic('assets/lionel-messi.jpeg');
+			newCustomElement.editPic(
+				'https://introweb.tech/demo-file/web-components/lifecycle//lionel-messi.jpeg'
+			);
 			newCustomElement.editName('Lionel Messi');
 			newCustomElement.editBday('June 24, 1987 (age 34 years)');
 			newCustomElement.editNationality('Argentinian');

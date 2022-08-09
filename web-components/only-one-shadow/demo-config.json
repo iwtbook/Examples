@@ -1,16 +1,31 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Only One Shadow",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": ["markdown", "editor", "view"]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"styles.css": {
+			"show": [],
+			"highlight": []
+		},
+		"custom-console.js": {
+			"show": [],
+			"highlight": []
+		},
+		"only-one-shadow.js": {
+			"show": [],
+			"highlight": []
+		},
+		"main.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Only One Shadow"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

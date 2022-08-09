@@ -3,11 +3,14 @@
 		"index.html": {
 			"show": [],
 			"highlight": []
+		},
+		"player-card.js": {
+			"show": [],
+			"highlight": []
 		}
 	},
 	"metadata": {
-		"title": "Template & Slot",
-		"forum": ""
+		"title": "Template & Slot"
 	},
 	"settings": {
 		"module": false,

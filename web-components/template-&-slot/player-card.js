@@ -1,10 +1,29 @@
 class PlayerCard extends HTMLElement {
+	// A variable to store whether we have run the connectedCallback
+	// function before
+	hasBeenConnected = false;
+
+	// Runs once when the element is created with createElement()
+	// or when the element is written directly into the DOM
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
+	/**
+	 * Runs every time the element is inserted into the DOM. Runs once right
+	 * after page load if element is written into the DOM already.
+	 */
 	connectedCallback() {
+		// Detect if this element has been inserted into the DOM before so we
+		// don't accidentally double up the markup.
+		if (this.hasBeenConnected) return;
+		this.hasBeenConnected = true;
+
+		/* With <template> & <slot> we don't need to track any attribute changes,
+		   we can use the slot element and slot attribute to associate data
+			 together and automatically insert data into our <template> (You can
+			 only use <slot> inside of a <template> element) */
 		let template = document.createElement('template');
 		template.innerHTML = `
 			<article>
@@ -42,6 +61,7 @@ class PlayerCard extends HTMLElement {
 			</article>
 		`;
 
+		// The styles for our element
 		let styles = document.createElement('style');
 		styles.innerHTML = `
 			* {
@@ -107,9 +127,14 @@ class PlayerCard extends HTMLElement {
 			}
 		`;
 
-		if (this.shadowRoot.innerHTML !== '') return;
+		/* Append our styles element and the content within our template
+			 element into the shadowRoot (you have to clone the content out of
+			 the template element since the <template> element is insert and won't
+			 render if you insert directly). <template> & <slot> MUST be used
+			 with a shadow DOM, they will not work otherwise. */
 		this.shadowRoot.append(styles, template.content.cloneNode(true));
 	}
 }
 
+// Define the <player-card> element so our code above gets associated with it
 customElements.define('player-card', PlayerCard);

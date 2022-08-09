@@ -4,7 +4,7 @@
 			"show": [],
 			"highlight": []
 		},
-		"style.css": {
+		"styles.css": {
 			"show": [],
 			"highlight": []
 		},
@@ -12,7 +12,7 @@
 			"show": [],
 			"highlight": []
 		},
-		"script.js": {
+		"main.js": {
 			"show": [],
 			"highlight": []
 		}

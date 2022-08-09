@@ -1,18 +1,18 @@
 // host-selector.js
 
 class HostSelector extends HTMLElement {
-  // Private property named shadow which will store the closed shadowRoot
-  #closedShadow;
+	// Private property named shadow which will store the closed shadowRoot
+	#closedShadow;
 
-  /**
-   * Always call super() first thing in your web component constructor().
-   * super is a reference to the class we're inhereting, and super() calls
-   * that class' constructor
-   */
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = `
+	/**
+	 * Always call super() first thing in your web component constructor().
+	 * super is a reference to the class we're inhereting, and super() calls
+	 * that class' constructor
+	 */
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+		this.shadowRoot.innerHTML = `
       <style>
         * {
           font-family: sans-serif;
@@ -47,11 +47,13 @@ class HostSelector extends HTMLElement {
           width: 60%;
         }
       </style>
-      <p>Everything outside this green square is the light DOM, though ALL of the styles are written within the shadow DOM using the <code>:host</code> CSS selector</p>
+      <p>Everything outside this green square is the light DOM, though ALL of
+         the styles are written within the shadow DOM using the
+         <code>:host</code> CSS selector.</p>
     `;
-  }
+	}
 }
 
-// Always define the element in the customElements registry so that you're able to
-// use the element properly in the DOM
+// Always define the element in the customElements registry so that you're
+// able to use the element properly in the DOM
 customElements.define('host-selector', HostSelector);

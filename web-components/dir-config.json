@@ -1,4 +1,17 @@
 {
-  "name": "Web Components",
-  "order": []
+	"name": "Web Components",
+	"order": [
+		"hello-web-components",
+		"template-&-slot",
+		"shadow-dom",
+		"open-vs-closed",
+		"only-one-shadow",
+		"host-selector",
+		"part-attribute",
+		"css-variables",
+		"lifecycle",
+		"custom-elements",
+		"bypassing-mode-closed",
+		"hello-react-components"
+	]
 }

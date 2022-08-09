@@ -1,16 +1,31 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Open vs. Closed",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": ["markdown", "editor", "view"]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"styles.css": {
+			"show": [],
+			"highlight": []
+		},
+		"custom-console.js": {
+			"show": [],
+			"highlight": []
+		},
+		"open-vs-closed.js": {
+			"show": [],
+			"highlight": []
+		},
+		"index.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Open vs. Closed"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

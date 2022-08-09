@@ -7,10 +7,6 @@
 		"player-card.js": {
 			"show": [],
 			"highlight": []
-		},
-		"player-card-styles.js": {
-			"show": [],
-			"highlight": []
 		}
 	},
 	"metadata": {

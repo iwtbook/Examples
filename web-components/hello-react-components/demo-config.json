@@ -4,6 +4,18 @@
 			"show": [],
 			"highlight": []
 		},
+		"react.production.min.js": {
+			"show": [],
+			"highlight": []
+		},
+		"react-dom.production.min.js": {
+			"show": [],
+			"highlight": []
+		},
+		"babel.min.js": {
+			"show": [],
+			"highlight": []
+		},
 		"hello-react.js": {
 			"show": [],
 			"highlight": []

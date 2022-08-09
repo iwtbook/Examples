@@ -5,8 +5,13 @@ class HelloWC extends HTMLElement {
 		super();
 	}
 
+	/**
+	 * connectedCallback is a special function name for web components that the browser
+	 * calls automatically when the element is inserted into the DOM
+	 */
 	connectedCallback() {
-		this.innerHTML = '<h1>Hello, Web Components!</h1>';
+		let markup = '<h1>Hello, Web Components!</h1>';
+		this.insertAdjacentHTML('beforeend', markup);
 	}
 }
 

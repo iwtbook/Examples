@@ -1,16 +1,35 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "CSS Variables",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": ["markdown", "editor", "view"]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"styles.css": {
+			"show": [],
+			"highlight": []
+		},
+		"custom-console.js": {
+			"show": [],
+			"highlight": []
+		},
+		"constants.js": {
+			"show": [],
+			"highlight": []
+		},
+		"css-variables.js": {
+			"show": [],
+			"highlight": []
+		},
+		"main.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "CSS Variables"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

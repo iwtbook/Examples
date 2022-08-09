@@ -1,3 +1,30 @@
-time {
-	font-size: 1.5rem;
+*:not(code) {
+	font-family: sans-serif;
+}
+
+code {
+	background-color: #DCDCDC;
+	border-radius: 2px;
+	font-size: 1rem;
+	padding: 3px 6px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	padding: 5px 7px;
+}
+
+.not-specified {
+	font-style: italic;
 }

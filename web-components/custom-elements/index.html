@@ -4,15 +4,77 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Custom Elements</title>
+
+		<!-- stylesheet -->
 		<link rel="stylesheet" href="styles.css" />
-		<script src="extended-time.js"></script>
+
+		<!-- custom element -->
+		<script src="time-extended.js"></script>
 	</head>
 
 	<body>
-		<time
-			is="extended-time"
-			data-epoch="1628639853385"
-			data-format="time"
-		></time>
+		<table>
+			<thead>
+				<tr>
+					<th>Format</th>
+					<th>Epoch Time</th>
+					<th>Rendered Element</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span class="not-specified">not specified</span></td>
+					<td><span class="not-specified">not specified</span></td>
+					<td><time is="time-extended"></time></td>
+				</tr>
+				<tr>
+					<td><code>time</code></td>
+					<td><span class="not-specified">not specified</span></td>
+					<td><time is="time-extended" format="time"></time></td>
+				</tr>
+				<tr>
+					<td><code>date</code></td>
+					<td><span class="not-specified">not specified</span></td>
+					<td><time is="time-extended" format="date"></time></td>
+				</tr>
+				<tr>
+					<td><code>datetime</code></td>
+					<td><span class="not-specified">not specified</span></td>
+					<td><time is="time-extended" format="datetime"></time></td>
+				</tr>
+				<tr>
+					<td><span class="not-specified">not specified</span></td>
+					<td><code>1628639853385</code></td>
+					<td>
+						<time is="time-extended" epoch="1628639853385"></time>
+					</td>
+				</tr>
+				<tr>
+					<td><code>time</code></td>
+					<td><code>1628639853385</code></td>
+					<td>
+						<time is="time-extended" epoch="1628639853385" format="time"></time>
+					</td>
+				</tr>
+				<tr>
+					<td><code>date</code></td>
+					<td><code>1628639853385</code></td>
+					<td>
+						<time is="time-extended" epoch="1628639853385" format="date"></time>
+					</td>
+				</tr>
+				<tr>
+					<td><code>datetime</code></td>
+					<td><code>1628639853385</code></td>
+					<td>
+						<time
+							is="time-extended"
+							epoch="1628639853385"
+							format="datetime"
+						></time>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</body>
 </html>

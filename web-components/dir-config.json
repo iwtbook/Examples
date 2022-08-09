@@ -2,8 +2,8 @@
 	"name": "Web Components",
 	"order": [
 		"hello-web-components",
-		"template-&-slot",
 		"shadow-dom",
+		"template-&-slot",
 		"open-vs-closed",
 		"only-one-shadow",
 		"host-selector",

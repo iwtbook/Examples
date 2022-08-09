@@ -1,16 +1,20 @@
 {
-  "files": {
-    "index.html": {
-      "show": [],
-      "highlight": []
-    }
-  },
-  "metadata": {
-    "title": "Shadow DOM",
-    "forum": ""
-  },
-  "settings": {
-    "module": false,
-    "frames": ["markdown", "editor", "view"]
-  }
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"player-card.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Shadow DOM",
+		"forum": ""
+	},
+	"settings": {
+		"module": false,
+		"frames": ["editor", "view"]
+	}
 }

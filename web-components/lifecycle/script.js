@@ -83,7 +83,7 @@ function bindEvents() {
 	btnModify.addEventListener('click', () => {
 		if (!isModified && isAdded) {
 			newCustomElement.editPic(
-				'https://introweb.tech/demo-file/web-components/lifecycle//lionel-messi.jpeg'
+				'https://introweb.tech/demo-file/web-components/lifecycle/lionel-messi.jpeg'
 			);
 			newCustomElement.editName('Lionel Messi');
 			newCustomElement.editBday('June 24, 1987 (age 34 years)');

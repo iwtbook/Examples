@@ -4,6 +4,10 @@
 			"show": [],
 			"highlight": []
 		},
+		"hello-react.js": {
+			"show": [],
+			"highlight": []
+		},
 		"react.production.min.js": {
 			"show": [],
 			"highlight": []
@@ -13,10 +17,6 @@
 			"highlight": []
 		},
 		"babel.min.js": {
-			"show": [],
-			"highlight": []
-		},
-		"hello-react.js": {
 			"show": [],
 			"highlight": []
 		}

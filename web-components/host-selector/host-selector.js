@@ -47,9 +47,9 @@ class HostSelector extends HTMLElement {
           width: 60%;
         }
       </style>
-      <p>Everything outside this green square is the light DOM, though ALL of
-         the styles are written within the shadow DOM using the
-         <code>:host</code> CSS selector.</p>
+      <p>Everything outside this green square is the light DOM, even though
+         ALL of the styles are written within the shadow DOM, the light DOM
+         is able to be reached using the <code>:host</code> CSS selector.</p>
     `;
 	}
 }

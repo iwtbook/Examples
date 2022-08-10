@@ -10,8 +10,9 @@ class HelloWC extends HTMLElement {
 	 * browser calls automatically when the element is inserted into the DOM
 	 */
 	connectedCallback() {
+		let styles = '<style>* { font-family: sans-serif; }</style>';
 		let markup = '<h1>Hello, Web Components!</h1>';
-		this.insertAdjacentHTML('beforeend', markup);
+		this.insertAdjacentHTML('beforeend', styles + markup);
 	}
 }
 

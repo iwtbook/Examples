@@ -1,0 +1,12 @@
+* {
+	font-family: sans-serif;
+}
+
+button {
+	display: block;
+	margin-top: 10px;
+}
+
+iframe {
+	margin-top: 20px;
+}

@@ -1,0 +1,27 @@
+{
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"styles.css": {
+			"show": [],
+			"highlight": []
+		},
+		"main.js": {
+			"show": [],
+			"highlight": []
+		},
+		"hello-wc.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": "Lifecycle Callbacks"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["markdown", "editor", "view"]
+	}
+}

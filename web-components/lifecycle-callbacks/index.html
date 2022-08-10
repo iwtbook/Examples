@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lifecycle Callbacks</title>
+		<!-- stylesheet -->
+		<link rel="stylesheet" href="styles.css" />
+		<!-- Load the web component -->
+		<script src="./hello-wc.js"></script>
+		<!-- Main Script -->
+		<script src="./main.js"></script>
+	</head>
+	<body>
+		<h1>Lifecycle Callbacks</h1>
+
+		<div id="btnWrapper">
+			<button id="createWC">Create Web Component</button>
+			<button id="connectWC">Add Web Component to Document</button>
+			<button id="disconnectWC">Remove Web Component from Document</button>
+			<button id="adoptWC">Adopt Web Component to other Document</button>
+			<button id="changeAttribute">Change Web Component Attribute</button>
+		</div>
+
+		<iframe
+			srcdoc="<h1 style='font-family:sans-serif'>Other Document</h1>"
+		></iframe>
+	</body>
+</html>

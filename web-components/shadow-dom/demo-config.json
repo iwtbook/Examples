@@ -10,11 +10,10 @@
 		}
 	},
 	"metadata": {
-		"title": "Shadow DOM",
-		"forum": ""
+		"title": "Shadow DOM"
 	},
 	"settings": {
 		"module": false,
-		"frames": ["editor", "view"]
+		"frames": ["markdown", "editor", "view"]
 	}
 }

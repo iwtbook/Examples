@@ -2,6 +2,7 @@
 	"name": "Web Components",
 	"order": [
 		"hello-web-components",
+		"lifecycle-callbacks",
 		"shadow-dom",
 		"template-&-slot",
 		"open-vs-closed",

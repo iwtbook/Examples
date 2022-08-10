@@ -80,7 +80,7 @@ class ExampleComponent extends HTMLElement {
     return ['color', 'href'];
   }
 
-  attributeChangedCallback(name, oldVal, newValf) {
+  attributeChangedCallback(name, oldVal, newVal) {
     // Runs whenever 'color' or 'href' is modified.
     // Will NOT run if any other attribute is modified.
   }

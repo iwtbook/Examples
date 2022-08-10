@@ -46,7 +46,7 @@ function bindListeners() {
 			console.log('Web Component already adopted into document 2');
 		} else if (webComponent) {
 			let iframeBody = ELEMS.iframe.contentDocument.body;
-			iframeBody.append(ELEMS.iframe.contentDocument.adoptNode(webComponent));
+			ELEMS.iframe.contentDocument.adoptNode(webComponent);
 		} else {
 			console.log('Web Component not created yet');
 		}

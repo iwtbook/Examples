@@ -7,7 +7,8 @@ function queryElements() {
 	ELEMS.disconnectWC = document.querySelector('#disconnectWC');
 	ELEMS.adoptWC = document.querySelector('#adoptWC');
 	ELEMS.changeAttribute = document.querySelector('#changeAttribute');
-	ELEMS.iframe = document.querySelector('iframe');
+	ELEMS.iframe1 = document.querySelectorAll('iframe')[0];
+	ELEMS.iframe2 = document.querySelectorAll('iframe')[1];
 }
 
 function bindListeners() {
@@ -21,9 +22,10 @@ function bindListeners() {
 
 	ELEMS.connectWC.addEventListener('click', () => {
 		if (webComponent?.connected) {
-			console.log('Web Component already connected');
+			console.log('Web Component already connected to document 1');
 		} else if (webComponent) {
-			document.body.append(webComponent);
+			let iframeBody = ELEMS.iframe1.contentDocument.body;
+			iframeBody.append(webComponent);
 		} else {
 			console.log('Web Component not created yet');
 		}
@@ -40,9 +42,11 @@ function bindListeners() {
 	});
 
 	ELEMS.adoptWC.addEventListener('click', () => {
-		if (webComponent) {
-			let iframeBody = ELEMS.iframe.contentDocument.body;
-			iframeBody.append(ELEMS.iframe.contentDocument.adoptNode(webComponent));
+		if (webComponent?.adopted) {
+			console.log('Web Component already adopted into document 2');
+		} else if (webComponent) {
+			let iframeBody = ELEMS.iframe2.contentDocument.body;
+			iframeBody.append(ELEMS.iframe2.contentDocument.adoptNode(webComponent));
 		} else {
 			console.log('Web Component not created yet');
 		}

@@ -6,6 +6,7 @@
 class HelloWC extends HTMLElement {
 	// Stores whether the element is currently in a DOM or not
 	connected = false;
+	adopted = false;
 
 	/**
 	 * Called when the element is created with document.createElement() or
@@ -54,6 +55,7 @@ class HelloWC extends HTMLElement {
 	 */
 	disconnectedCallback() {
 		this.connected = false;
+		this.adopted = false;
 		console.log('disconnectedCallback() has been called!');
 	}
 
@@ -65,6 +67,7 @@ class HelloWC extends HTMLElement {
 	 */
 	adoptedCallback() {
 		this.connected = true;
+		this.adopted = true;
 		console.log('adoptNode() has been called!');
 	}
 

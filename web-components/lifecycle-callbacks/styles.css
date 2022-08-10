@@ -8,5 +8,18 @@ button {
 }
 
 iframe {
+	border: 2px solid rgb(180, 180, 180);
+	box-sizing: border-box;
+	height: auto;
 	margin-top: 20px;
+	min-height: 300px;
+	width: 100%;
+}
+
+#iframeWrapper {
+	box-sizing: border-box;
+	display: grid;
+	gap: 8px;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
 }

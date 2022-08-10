@@ -23,3 +23,9 @@ iframe {
 	grid-template-columns: 1fr 1fr;
 	width: 100%;
 }
+
+#iframeWrapper p {
+	font-family: sans-serif;
+	font-size: 3rem;
+	font-weight: bold;
+}

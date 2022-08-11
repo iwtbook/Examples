@@ -15,7 +15,7 @@ class ShadowDemo extends HTMLElement {
 		let paragraph = document.createElement('p');
 		paragraph.innerHTML = `
 		  This is the Shadow DOM and is not reachable
-		  from document-wide stylesheets.
+		  from document-wide stylesheets and scripts.
 		`;
 
 		this.shadowRoot.append(styles, paragraph);

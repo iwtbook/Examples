@@ -69,7 +69,7 @@ class PlayerCard extends HTMLElement {
 			</p>
 			<p class="birthday">
 				<span class="prop">Birthday:</span>
-				<span class="value">${this.bday}</span>
+				<span class="value">${this.birthday}</span>
 			</p>
 			<p class="nationality">
 				<span class="prop">Nationality:</span>

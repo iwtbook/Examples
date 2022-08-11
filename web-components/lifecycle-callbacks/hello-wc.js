@@ -66,7 +66,6 @@ class HelloWC extends HTMLElement {
 	 * any parameters.
 	 */
 	adoptedCallback() {
-		this.connected = true;
 		this.adopted = true;
 		console.log('adoptNode() has been called!');
 	}

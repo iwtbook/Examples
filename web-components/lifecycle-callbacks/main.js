@@ -23,7 +23,7 @@ function bindListeners() {
 
 	ELEMS.connectWC.addEventListener('click', () => {
 		if (webComponent?.connected) {
-			console.log('Web Component already connected to document 1');
+			console.log('Web Component already connected to this document');
 		} else if (webComponent) {
 			ELEMS.doc1.append(webComponent);
 		} else {
@@ -35,7 +35,7 @@ function bindListeners() {
 		if (webComponent?.connected) {
 			webComponent.remove();
 		} else if (webComponent) {
-			console.log('Web Component not currently in document');
+			console.log('Web Component not currently in any document');
 		} else {
 			console.log('Web Component not created yet');
 		}
@@ -43,7 +43,7 @@ function bindListeners() {
 
 	ELEMS.adoptWC.addEventListener('click', () => {
 		if (webComponent?.adopted) {
-			console.log('Web Component already adopted into document 2');
+			console.log('Web Component already adopted into iframe');
 		} else if (webComponent) {
 			let iframeBody = ELEMS.iframe.contentDocument.body;
 			ELEMS.iframe.contentDocument.adoptNode(webComponent);
@@ -54,12 +54,11 @@ function bindListeners() {
 
 	ELEMS.connectWC2.addEventListener('click', () => {
 		if (webComponent?.adopted && webComponent?.connected) {
-			console.log('Web Component already connected into document 2');
 		} else if (webComponent?.adopted) {
 			let iframeBody = ELEMS.iframe.contentDocument.body;
 			iframeBody.append(webComponent);
 		} else if (webComponent) {
-			console.log('Web Component not adopted into document 2 yet');
+			console.log('Web Component not adopted into iframe yet');
 		} else {
 			console.log('Web Component not created yet');
 		}

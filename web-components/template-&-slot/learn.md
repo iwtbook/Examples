@@ -1,1 +1,1 @@
-# Reading Data - `<template>` & `<slot>`
+# Reading Data - template & slot

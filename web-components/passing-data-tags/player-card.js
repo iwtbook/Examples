@@ -21,6 +21,8 @@ class PlayerCard extends HTMLElement {
 			this[child.nodeName.toLowerCase()] = child.innerText;
 		}
 
+		// Remove the children so that there's nothing inside this Web Component
+		// in the light DOM
 		this.innerHTML = '';
 
 		// The semantic root element that will hold our markup for this element.

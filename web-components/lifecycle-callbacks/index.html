@@ -16,16 +16,16 @@
 
 		<div id="btnWrapper">
 			<button id="createWC">Create Web Component</button>
-			<button id="connectWC">Connect Web Component to Document 1</button>
+			<button id="connectWC">Connect Web Component to Current Document</button>
 			<button id="disconnectWC">Remove Web Component</button>
-			<button id="adoptWC">Adopt Web Component to Document 2</button>
-			<button id="connectWC2">Connect Web Component to Document 2</button>
+			<button id="adoptWC">Adopt Web Component to &lt;iframe&gt;</button>
+			<button id="connectWC2">Connect Web Component to &lt;iframe&gt;</button>
 			<button id="changeAttribute">Change Web Component Attribute</button>
 		</div>
 
 		<div id="iframeWrapper">
 			<div>
-				<p>Document 1</p>
+				<p>Current Document</p>
 			</div>
 			<iframe
 				srcdoc="
@@ -36,7 +36,7 @@
 							font-weight: bold;
 						}
 				  </style>
-					<p>Document 2</p>
+					<p>&lt;iframe&gt;</p>
 				"
 			></iframe>
 		</div>

@@ -1,9 +1,6 @@
-# Reading Data - Attributes
+# Passing Data - Attributes
 
-Often times when making Web Components the need arises to be able to allow the
-developer using the web component to configure the component in some way - in
-essence a way to pass data from the developer using the component to the code
-the web component is executing.
+Often times when making Web Components we want to allow developers to pass data into the our Web Component so they might be able to change some settings or style it a little bit.
 
 There are two ways this is commonly done:
 

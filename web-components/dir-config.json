@@ -4,6 +4,7 @@
 		"hello-web-components",
 		"lifecycle-callbacks",
 		"shadow-dom",
+		"reading-attributes",
 		"template-&-slot",
 		"open-vs-closed",
 		"only-one-shadow",

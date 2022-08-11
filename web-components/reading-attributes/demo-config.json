@@ -4,13 +4,13 @@
 			"show": [],
 			"highlight": []
 		},
-		"shadow-demo.js": {
+		"player-card.js": {
 			"show": [],
 			"highlight": []
 		}
 	},
 	"metadata": {
-		"title": "The Shadow DOM"
+		"title": "Reading Data - Attributes"
 	},
 	"settings": {
 		"module": false,

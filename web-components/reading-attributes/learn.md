@@ -9,11 +9,11 @@ There are two ways this is commonly done:
 
 ```html
 <!-- Through attributes -->
-<my-component name="foo"></my-component>
+<my-component fav-color="red"></my-component>
 
 <!-- Through tags -->
 <my-component>
-  <p slot="name">foo</p>
+  <fav-color>red</fav-color>
 </my-component>
 ```
 

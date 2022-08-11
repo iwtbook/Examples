@@ -5,6 +5,7 @@
 		"lifecycle-callbacks",
 		"shadow-dom",
 		"reading-attributes",
+		"reading-tags",
 		"template-&-slot",
 		"open-vs-closed",
 		"only-one-shadow",

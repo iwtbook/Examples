@@ -12,27 +12,16 @@ class PlayerCard extends HTMLElement {
 
 	/**
 	 * Grabs all of the children and adds their innerText to the Web Component
-	 * inner object using the "this" keyword
+	 * inner object using the "this" keyword. Then creates the markup template
+	 * and appends to DOM.
 	 */
-	getTagData() {
-		for (let i = 0; i < this.children; i++) {
+	populateShadow() {
+		for (let i = 0; i < this.children.length; i++) {
 			let child = this.children[i];
-			this[child.nodeName.toLowerCase()] = child[i].innerText;
+			this[child.nodeName.toLowerCase()] = child.innerText;
 		}
-	}
 
-	/**
-	 * Runs every time the element is inserted into the DOM. Runs once right
-	 * after page load if element is written into the DOM already.
-	 */
-	connectedCallback() {
-		// Detect if this element has been inserted into the DOM before so we
-		// don't accidentally double up the markup.
-		if (this.hasBeenConnected) return;
-		this.hasBeenConnected = true;
-
-		// Grab the data from the tag children
-		this.getTagData();
+		this.innerHTML = '';
 
 		// The semantic root element that will hold our markup for this element.
 		// More semantic than just shadowRoot so we insert everything here.
@@ -142,6 +131,22 @@ class PlayerCard extends HTMLElement {
 
 		// Append the styles and markup to our shadowRoot
 		this.shadowRoot.append(styles, article);
+	}
+
+	/**
+	 * Runs every time the element is inserted into the DOM. Runs once right
+	 * after page load if element is written into the DOM already.
+	 */
+	connectedCallback() {
+		// Detect if this element has been inserted into the DOM before so we
+		// don't accidentally double up the markup.
+		if (this.hasBeenConnected) return;
+		this.hasBeenConnected = true;
+
+		// Wait for children to load before accessing their data
+		setTimeout(() => {
+			this.populateShadow();
+		}, 0);
 	}
 }
 

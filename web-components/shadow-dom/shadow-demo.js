@@ -19,6 +19,13 @@ class ShadowDemo extends HTMLElement {
 		`;
 
 		this.shadowRoot.append(styles, paragraph);
+
+		this.editText();
+	}
+
+	editText() {
+		let paragraph = this.shadowRoot.querySelector('p');
+		paragraph.innerHTML = 'Shadow Demo - ' + paragraph.innerHTML;
 	}
 }
 

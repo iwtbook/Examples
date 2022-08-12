@@ -1,5 +1,4 @@
-/* Hide all of the undefined components. Helps to
-   prevent flashes of unstyled content. */
+/* Hide all of the undefined components. */
 :not(:defined) {
 	display: none;
 }

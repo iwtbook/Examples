@@ -7,22 +7,10 @@
 		"styles.css": {
 			"show": [],
 			"highlight": []
-		},
-		"custom-console.js": {
-			"show": [],
-			"highlight": []
-		},
-		"part-attribute.js": {
-			"show": [],
-			"highlight": []
-		},
-		"main.js": {
-			"show": [],
-			"highlight": []
 		}
 	},
 	"metadata": {
-		"title": "Part Attribute"
+		"title": ":defined Selector"
 	},
 	"settings": {
 		"module": false,

@@ -1,0 +1,19 @@
+{
+	"files": {
+		"index.html": {
+			"show": [],
+			"highlight": []
+		},
+		"host-context-selector.js": {
+			"show": [],
+			"highlight": []
+		}
+	},
+	"metadata": {
+		"title": ":host-context() Selector"
+	},
+	"settings": {
+		"module": false,
+		"frames": ["markdown", "editor", "view"]
+	}
+}

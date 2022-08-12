@@ -7,6 +7,10 @@
 		"styles.css": {
 			"show": [],
 			"highlight": []
+		},
+		"defined-component.js": {
+			"show": [],
+			"highlight": []
 		}
 	},
 	"metadata": {

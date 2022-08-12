@@ -1,10 +1,5 @@
-/* Hide all of the undefined components */
+/* Hide all of the undefined components. Helps to
+   prevent flashes of unstyled content. */
 :not(:defined) {
 	display: none;
-}
-
-/* Once the element has been defined, display it. Helps to
-   prevent flashes of unstyled content. */
-:defined {
-	display: block;
 }

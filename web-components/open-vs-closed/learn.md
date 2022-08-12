@@ -44,7 +44,7 @@ class MyComponent extends HTMLElement {
     this.#shadowRoot = this.attachShadow({ mode: 'closed' });
   }
   connectedCallback() {
-    this.#shadowRoot; // Successfully accesses to the shadowRoot reference
+    this.#shadowRoot; // Successfully accesses the shadowRoot reference
   }
 }
 customElements.define('my-component', MyComponent);

@@ -1,6 +1,6 @@
 # `:host` selector
 
-Web Components have a few special CSS selectors of their own. The first of which that we'll talk about is the `:host` selector. This selector only works from inside the Shadow DOM, and selects the Web Component element that is "hosting" that Shadow DOM - meaning that it technically reaches outside of the Shadow into the light DOM.
+The next Web Component specific CSS selector that we'll talk about is the `:host` selector. This selector only works from inside the Shadow DOM, and selects the Web Component element that is "hosting" that Shadow DOM - meaning that it technically reaches outside of the Shadow into the light DOM.
 
 A basic example:
 

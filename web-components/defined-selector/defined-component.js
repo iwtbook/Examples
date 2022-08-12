@@ -1,7 +1,7 @@
 class DefinedComponent extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow();
+		this.attachShadow({ mode: 'open' });
 	}
 
 	connectedCallback() {

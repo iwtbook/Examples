@@ -1,6 +1,6 @@
 # Passing Data - Tags
 
-The other way to pass data into Web Components is through tags.
+The second way to pass data into Web Components is through tags.
 It's a little less straightforward than using attributes but it's not too bad.
 
 ## Lifecycle Methods

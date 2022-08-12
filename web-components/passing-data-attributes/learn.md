@@ -2,7 +2,7 @@
 
 Often times when making Web Components we want to allow developers to pass data into the our Web Component so they might be able to change some settings or style it a little bit.
 
-There are two ways this is commonly done:
+There are three ways this is commonly done:
 
 ```html
 <!-- Through attributes -->
@@ -11,6 +11,11 @@ There are two ways this is commonly done:
 <!-- Through tags -->
 <my-component>
   <fav-color>red</fav-color>
+</my-component>
+
+<!-- Through tags using <template> & <slot> -->
+<my-component>
+  <span slot="fav-color">red</span>
 </my-component>
 ```
 

@@ -1,0 +1,59 @@
+{
+	"schemaVersion": "1.0.0",
+	"readme": "",
+	"modules": [
+		{
+			"kind": "javascript-module",
+			"path": "demo-component.js",
+			"declarations": [
+				{
+					"kind": "class",
+					"description": "",
+					"name": "DemoComponent",
+					"members": [
+						{
+							"kind": "field",
+							"name": "timesConnected",
+							"type": {
+								"text": "number"
+							},
+							"default": "0"
+						},
+						{
+							"kind": "method",
+							"name": "someMethod"
+						}
+					],
+					"events": [
+						{
+							"name": "demo-event",
+							"type": {
+								"text": "Event"
+							}
+						}
+					],
+					"attributes": [
+						{
+							"name": "color"
+						}
+					],
+					"superclass": {
+						"name": "HTMLElement"
+					},
+					"tagName": "demo-component",
+					"customElement": true
+				}
+			],
+			"exports": [
+				{
+					"kind": "custom-element-definition",
+					"name": "demo-component",
+					"declaration": {
+						"name": "DemoComponent",
+						"module": "demo-component.js"
+					}
+				}
+			]
+		}
+	]
+}

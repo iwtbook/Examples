@@ -17,9 +17,9 @@ The information can live with the code it describes in the form of [JSDoc](https
 
 ## The Basics
 
-Out of the box the [Custom Element Manifest Analyzer](https://custom-elements-manifest.open-wc.org/analyzer/getting-started/) can recognize all of the properties, methods, observed attributes, events being fired, along with a few other details - but all it can do is name them and determine whether they are public or private. It cannot describe what they do or their purpose without comments. Adding those comments though is pretty straightforward, as you can see in the `demo-component.js` tab on the right.
+Out of the box the [Custom Element Manifest Analyzer](https://custom-elements-manifest.open-wc.org/analyzer/getting-started/) can recognize all of the properties, methods, observed attributes, events being fired, along with a few other details - but all it can do is name them and determine whether they are public or private. You will see this with the `demo-component-1.js` class and its resulting `custom-elements-1.json` manifest on the right. Do note though that the lifecycle methods of the Custom Element are not listed.
 
-The resulting `custom-elements.json` manifest that is generated for `demo-component.js` is also in a tab on the right. Note that none of the lifecycle methods of the Custom Element are listed.
+Comments are needed to describe what they do or their purpose without comments. Adding those comments is pretty straightforward as you can see in the `demo-component-2.js` tab. The resulting `custom-elements-2.json` manifest is also in a tab on the right.
 
 ## All of the Supported JSDoc
 

@@ -1,10 +1,18 @@
 {
 	"files": {
-		"demo-component.js": {
+		"demo-component-1.js": {
 			"show": [],
 			"highlight": []
 		},
-		"custom-elements.json": {
+		"custom-elements-1.json": {
+			"show": [],
+			"highlight": []
+		},
+		"demo-component-2.js": {
+			"show": [],
+			"highlight": []
+		},
+		"custom-elements-2.json": {
 			"show": [],
 			"highlight": []
 		}

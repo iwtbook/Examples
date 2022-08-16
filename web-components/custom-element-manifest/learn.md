@@ -61,7 +61,7 @@ class DemoComponent extends HTMLElement {
 }
 ```
 
-This is the resulting `custom-elements.json` manifest for the above component:
+This is the resulting `custom-elements.json` manifest for the above component. Note that none of the lifecycle methods of the Custom Element are listed.
 
 ```json
 {
@@ -132,7 +132,47 @@ This is the resulting `custom-elements.json` manifest for the above component:
 }
 ```
 
-## All of the Available @ Types
+## All of the Supported JSDoc
+
+| JSDoc | Description |
+|---|---|
+| `@attr`, `@attribute` | Documents attributes for your custom element |
+| `@prop`, `@property` | Documents properties for your custom element |
+| `@csspart` | Documents your custom elements CSS Shadow Parts |
+| `@slot` | Documents the Slots used in your components |
+| `@cssprop`, `@cssproperty` | Documents CSS Custom Properties for your component |
+| `@fires`, `@event` | Documents the name of your custom element |
+| `@tag`, `@tagname` | Documents the name of your custom element |
+| `@summary` | Documents a short summary |
+| `@internal`, `@ignore` | To omit documentation of internal details |
+
+```js
+/**
+ * @attr {boolean} disabled - disables the element
+ * @attribute {string} foo - description for foo
+ *
+ * @csspart bar - Styles the color of bar
+ *
+ * @slot - This is a default/unnamed slot
+ * @slot container - You can put some elements here
+ *
+ * @cssprop --text-color - Controls the color of foo
+ * @cssproperty [--background-color=red] - Controls the color of bar
+ *
+ * @prop {boolean} prop1 - some description
+ * @property {number} prop2 - some description
+ *
+ * @fires custom-event - some description for custom-event
+ * @fires {Event} typed-event - some description for typed-event
+ * @event {CustomEvent} typed-custom-event - some description for typed-custom-event
+ *
+ * @summary This is MyElement
+ *
+ * @tag my-element
+ * @tagname my-element
+ */
+class MyElement extends HTMLElement {}
+```
 
 ## Hiding Properties and Methods
 

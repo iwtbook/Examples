@@ -2,3 +2,7 @@
 :not(:defined) {
 	display: none;
 }
+
+p {
+	font-size: 2rem;
+}

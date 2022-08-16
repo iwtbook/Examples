@@ -17,6 +17,7 @@
 		"lifecycle",
 		"custom-elements",
 		"bypassing-mode-closed",
-		"hello-react-components"
+		"hello-react-components",
+		"custom-element-manifest"
 	]
 }

@@ -13,7 +13,7 @@ Having a machine-readable description of custom elements helps in many areas:
 - Graphic design tools
 - Component Directories
 
-The information can live with the code it describes in the form of [JSDoc](https://jsdoc.app/) style comments, [a tool](https://custom-elements-manifest.open-wc.org/) can generate a manifest of all of your components, then anything that needs information about the components can pull from the JSON file(s).
+The information can live with the code it describes in the form of [JSDoc](https://jsdoc.app/) style comments, [a tool](https://custom-elements-manifest.open-wc.org/analyzer/getting-started/) can generate a manifest of all of your components, then anything that needs information about the components can pull from the JSON file(s).
 
 ## The Basics
 
@@ -176,6 +176,21 @@ class MyElement extends HTMLElement {}
 
 ## Hiding Properties and Methods
 
-## Custom Elements Manifest Analyzer
+By default **everything** is shown, even `private` properties and methods, so to omit details from the manifest use
+`/** @internal **/` or `/** @ignore **/`
 
-[Located here](https://custom-elements-manifest.open-wc.org/analyzer/getting-started/)
+```js
+class DemoComponent extends HTMLElement {
+  /** @internal **/
+  #privateProperty;
+
+  constructor() {
+    super();
+  }
+}
+```
+
+## Extending Support of the Custom Element Manifest Analyzer
+
+There is [extensive documentation](https://custom-elements-manifest.open-wc.org/analyzer/plugins/intro/) on writing your own
+plugins to extend the analyzer if need be (for example, add your own custom JSDoc style comment).

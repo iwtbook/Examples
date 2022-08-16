@@ -1,10 +1,19 @@
 {
-	"files": {},
+	"files": {
+		"demo-component.js": {
+			"show": [],
+			"highlight": []
+		},
+		"custom-elements.json": {
+			"show": [],
+			"highlight": []
+		}
+	},
 	"metadata": {
 		"title": "Custom Element Manifest"
 	},
 	"settings": {
 		"module": false,
-		"frames": ["markdown"]
+		"frames": ["markdown", "editor"]
 	}
 }

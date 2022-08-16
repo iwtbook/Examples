@@ -1,0 +1,66 @@
+{
+	"schemaVersion": "1.0.0",
+	"readme": "",
+	"modules": [
+		{
+			"kind": "javascript-module",
+			"path": "demo-component.js",
+			"declarations": [
+				{
+					"kind": "class",
+					"description": "This component is made to demonstrate what kinds of comments you can use\nto describe your component with the Custom Element Manifest Analyzer. This\ndescription will be added under \"description\" in the manifest.",
+					"name": "DemoComponent",
+					"members": [
+						{
+							"kind": "field",
+							"name": "timesConnected",
+							"type": {
+								"text": "number"
+							},
+							"default": "0",
+							"description": "The number of times this component has been connected to the DOM"
+						},
+						{
+							"kind": "method",
+							"name": "someMethod",
+							"description": "Methed descriptions are attached to the methods themselves.\nThis method fires the 'demo-event' event when called."
+						}
+					],
+					"events": [
+						{
+							"name": "demo-event",
+							"type": {
+								"text": "Event"
+							},
+							"description": "A demo event dispatched by someMethod()"
+						}
+					],
+					"attributes": [
+						{
+							"name": "color",
+							"type": {
+								"text": "string"
+							},
+							"description": "Sets the font color of the paragraph text"
+						}
+					],
+					"superclass": {
+						"name": "HTMLElement"
+					},
+					"tagName": "demo-component",
+					"customElement": true
+				}
+			],
+			"exports": [
+				{
+					"kind": "custom-element-definition",
+					"name": "demo-component",
+					"declaration": {
+						"name": "DemoComponent",
+						"module": "demo-component.js"
+					}
+				}
+			]
+		}
+	]
+}
